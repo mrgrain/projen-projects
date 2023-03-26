@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "npx projen build",
+    "bump": "npx projen bump",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -20,8 +21,10 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
+    "release": "npx projen release",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
+    "unbump": "npx projen unbump",
     "upgrade": "npx projen upgrade",
     "watch": "npx projen watch",
     "projen": "npx projen"
@@ -50,6 +53,7 @@
     "jsii-pacmak": "^1.79.0",
     "npm-check-updates": "^16",
     "projen": "^0.69.9",
+    "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
     "typescript": "5.0.x"

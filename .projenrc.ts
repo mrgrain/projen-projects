@@ -11,7 +11,7 @@ const project = new ProjenProject({
   authorAddress: 'https://moritzkornher.de',
 
   // Release & Automation
-  release: false,
+  release: true,
   upgradesSchedule: javascript.UpgradeDependenciesSchedule.WEEKLY,
   automationAppName: 'projen-builder',
 });
