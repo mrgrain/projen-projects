@@ -6906,6 +6906,7 @@ new ConstructProject(options: AwsCdkConstructLibraryOptions)
 | <code><a href="#mrpj.ConstructProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.ConstructProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.ConstructProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.ConstructProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#mrpj.ConstructProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.ConstructProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.ConstructProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
@@ -7321,6 +7322,22 @@ be installed in the next `npx projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `yarn
 add/upgrade`. If you wish to specify a version range use this syntax:
 `module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.ConstructProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ConstructProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
 
 ---
 
@@ -8332,6 +8349,7 @@ new ProjenProject(options: ProjenProjectOptions)
 | <code><a href="#mrpj.ProjenProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.ProjenProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.ProjenProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.ProjenProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#mrpj.ProjenProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.ProjenProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.ProjenProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
@@ -8745,6 +8763,22 @@ be installed in the next `npx projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `yarn
 add/upgrade`. If you wish to specify a version range use this syntax:
 `module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.ProjenProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ProjenProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
 
 ---
 
@@ -9683,6 +9717,7 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 | <code><a href="#mrpj.TypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.TypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.TypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
 | <code><a href="#mrpj.TypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.TypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.TypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
@@ -10096,6 +10131,22 @@ be installed in the next `npx projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `yarn
 add/upgrade`. If you wish to specify a version range use this syntax:
 `module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.TypeScriptProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.TypeScriptProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
 
 ---
 
