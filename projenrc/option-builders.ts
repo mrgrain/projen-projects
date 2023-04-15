@@ -12,7 +12,7 @@ export class ProjenProjectOptionsBuilder extends Component {
       filePath: path.join(project.srcdir, 'projen-project-options.ts'),
     });
 
-    struct.mixin(Struct.fromFqn('projen.cdk.JsiiProjectOptions'))
+    struct.mixin(Struct.fromFqn('projen.cdk.JsiiProjectOptions')).withoutDeprecated()
       // Forced defaults
       .omit('projenrcTs', 'jsiiVersion', 'typescriptVersion', 'sampleCode')
 
@@ -70,7 +70,7 @@ export class TypeScriptProjectOptionsBuilder extends Component {
       filePath: path.join(project.srcdir, 'typescript-project-options.ts'),
     });
 
-    struct.mixin(Struct.fromFqn('projen.typescript.TypeScriptProjectOptions'));
+    struct.mixin(Struct.fromFqn('projen.typescript.TypeScriptProjectOptions').withoutDeprecated());
   }
 }
 
@@ -83,6 +83,6 @@ export class ConstructProjectOptionsBuilder extends Component {
       filePath: path.join(project.srcdir, 'construct-project-options.ts'),
     });
 
-    struct.mixin(Struct.fromFqn('projen.awscdk.AwsCdkConstructLibraryOptions'));
+    struct.mixin(Struct.fromFqn('projen.awscdk.AwsCdkConstructLibraryOptions').withoutDeprecated());
   }
 }
