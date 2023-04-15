@@ -1,4 +1,6 @@
 import { cdk, github, javascript } from 'projen';
+import { LogoSystem } from './logo';
+import { findLogo } from './logo/private.ts/find-logo';
 import { ProjenProjectOptions } from './projen-project-options';
 import { deepDefaults, ifSet, noEmpties } from './utils';
 
@@ -66,6 +68,12 @@ export class ProjenProject extends cdk.JsiiProject {
       'eol-last': ['error', 'always'],
       'space-in-parens': ['error', 'never'],
     });
+
+    // Add wordmarks if a logo is found, or when forced
+    const { logo } = findLogo(options.logoOptions);
+    if (logo || options.logo) {
+      new LogoSystem(this, options.logoOptions);
+    }
   }
 }
 
