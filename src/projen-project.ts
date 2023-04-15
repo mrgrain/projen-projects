@@ -54,11 +54,17 @@ export class ProjenProject extends cdk.JsiiProject {
           },
         },
       }),
+
       // Forced options
       sampleCode: false,
       projenrcTs: true,
       jsiiVersion: '5.0.x',
       typescriptVersion: '5.0.x',
+    });
+
+    this.eslint?.addRules({
+      'eol-last': ['error', 'always'],
+      'space-in-parens': ['error', 'never'],
     });
   }
 }
