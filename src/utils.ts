@@ -41,7 +41,7 @@ export function deepMerge(...data: any[]): any {
         result[key] = deepMerge(resultValue, currentValue);
       } else if (isPlainObject(currentValue)) {
         result[key] = deepMerge({}, currentValue);
-      } else {
+      } else if (currentValue != null) {
         result[key] = currentValue;
       };
     });

@@ -3,6 +3,45 @@
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### ColorScheme <a name="ColorScheme" id="mrpj.logo.ColorScheme"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.ColorScheme.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const colorScheme: logo.ColorScheme = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.ColorScheme.property.dark">dark</a></code> | <code>mrpj.logo.FontOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.ColorScheme.property.light">light</a></code> | <code>mrpj.logo.FontOptions</code> | *No description.* |
+
+---
+
+##### `dark`<sup>Optional</sup> <a name="dark" id="mrpj.logo.ColorScheme.property.dark"></a>
+
+```typescript
+public readonly dark: FontOptions;
+```
+
+- *Type:* mrpj.logo.FontOptions
+
+---
+
+##### `light`<sup>Optional</sup> <a name="light" id="mrpj.logo.ColorScheme.property.light"></a>
+
+```typescript
+public readonly light: FontOptions;
+```
+
+- *Type:* mrpj.logo.FontOptions
+
+---
+
 ### ConstructProjectOptions <a name="ConstructProjectOptions" id="mrpj.ConstructProjectOptions"></a>
 
 ConstructProjectOptions.
@@ -2272,6 +2311,200 @@ Github Runner selection labels.
 
 ---
 
+### FontOptions <a name="FontOptions" id="mrpj.logo.FontOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.FontOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const fontOptions: logo.FontOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.FontOptions.property.color">color</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.FontOptions.property.family">family</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.FontOptions.property.size">size</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.FontOptions.property.weight">weight</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `color`<sup>Optional</sup> <a name="color" id="mrpj.logo.FontOptions.property.color"></a>
+
+```typescript
+public readonly color: string;
+```
+
+- *Type:* string
+
+---
+
+##### `family`<sup>Optional</sup> <a name="family" id="mrpj.logo.FontOptions.property.family"></a>
+
+```typescript
+public readonly family: string;
+```
+
+- *Type:* string
+
+---
+
+##### `size`<sup>Optional</sup> <a name="size" id="mrpj.logo.FontOptions.property.size"></a>
+
+```typescript
+public readonly size: number;
+```
+
+- *Type:* number
+
+---
+
+##### `weight`<sup>Optional</sup> <a name="weight" id="mrpj.logo.FontOptions.property.weight"></a>
+
+```typescript
+public readonly weight: string;
+```
+
+- *Type:* string
+
+---
+
+### LogoOptions <a name="LogoOptions" id="mrpj.logo.LogoOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const logoOptions: logo.LogoOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoOptions.property.dx">dx</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoOptions.property.dy">dy</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoOptions.property.file">file</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `height`<sup>Optional</sup> <a name="height" id="mrpj.logo.LogoOptions.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.LogoOptions.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Optional</sup> <a name="width" id="mrpj.logo.LogoOptions.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `dx`<sup>Optional</sup> <a name="dx" id="mrpj.logo.LogoOptions.property.dx"></a>
+
+```typescript
+public readonly dx: number;
+```
+
+- *Type:* number
+
+---
+
+##### `dy`<sup>Optional</sup> <a name="dy" id="mrpj.logo.LogoOptions.property.dy"></a>
+
+```typescript
+public readonly dy: number;
+```
+
+- *Type:* number
+
+---
+
+##### `file`<sup>Optional</sup> <a name="file" id="mrpj.logo.LogoOptions.property.file"></a>
+
+```typescript
+public readonly file: string;
+```
+
+- *Type:* string
+
+---
+
+### LogoSystemOptions <a name="LogoSystemOptions" id="mrpj.logo.LogoSystemOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoSystemOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const logoSystemOptions: logo.LogoSystemOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoSystemOptions.property.dirName">dirName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoSystemOptions.property.logo">logo</a></code> | <code>mrpj.logo.LogoOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoSystemOptions.property.wordmark">wordmark</a></code> | <code>mrpj.logo.WordmarkOptions</code> | *No description.* |
+
+---
+
+##### `dirName`<sup>Optional</sup> <a name="dirName" id="mrpj.logo.LogoSystemOptions.property.dirName"></a>
+
+```typescript
+public readonly dirName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.logo.LogoSystemOptions.property.logo"></a>
+
+```typescript
+public readonly logo: LogoOptions;
+```
+
+- *Type:* mrpj.logo.LogoOptions
+
+---
+
+##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.logo.LogoSystemOptions.property.wordmark"></a>
+
+```typescript
+public readonly wordmark: WordmarkOptions;
+```
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
 ### ProjenProjectOptions <a name="ProjenProjectOptions" id="mrpj.ProjenProjectOptions"></a>
 
 ProjenProjectOptions.
@@ -2354,6 +2587,8 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.logo">logo</a></code> | <code>boolean</code> | Generates wordmarks from a logo. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.logoOptions">logoOptions</a></code> | <code>mrpj.logo.LogoSystemOptions</code> | Generate Wordmark from a logo if found. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
@@ -3335,6 +3570,34 @@ public readonly logging: LoggerOptions;
 - *Default:* {}
 
 Configure logging options such as verbosity.
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.ProjenProjectOptions.property.logo"></a>
+
+```typescript
+public readonly logo: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true if a logo file is found, otherwise false
+
+Generates wordmarks from a logo.
+
+If no logo is found and set to `true`, a placeholder image is used.
+
+---
+
+##### `logoOptions`<sup>Optional</sup> <a name="logoOptions" id="mrpj.ProjenProjectOptions.property.logoOptions"></a>
+
+```typescript
+public readonly logoOptions: LogoSystemOptions;
+```
+
+- *Type:* mrpj.logo.LogoSystemOptions
+- *Default:* "true"
+
+Generate Wordmark from a logo if found.
 
 ---
 
@@ -4371,6 +4634,197 @@ public readonly workflowRunsOn: string[];
 - *Default:* ["ubuntu-latest"]
 
 Github Runner selection labels.
+
+---
+
+### SizeOptions <a name="SizeOptions" id="mrpj.logo.SizeOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.SizeOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const sizeOptions: logo.SizeOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SizeOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.SizeOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.SizeOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `height`<sup>Optional</sup> <a name="height" id="mrpj.logo.SizeOptions.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.SizeOptions.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Optional</sup> <a name="width" id="mrpj.logo.SizeOptions.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+### SvgFileOptions <a name="SvgFileOptions" id="mrpj.logo.SvgFileOptions"></a>
+
+Options for SvgFile.
+
+#### Initializer <a name="Initializer" id="mrpj.logo.SvgFileOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const svgFileOptions: logo.SvgFileOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.indent">indent</a></code> | <code>number</code> | Indentation size. |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.readonly">readonly</a></code> | <code>boolean</code> | Whether the generated file should be readonly. |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.content">content</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.style">style</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `indent`<sup>Optional</sup> <a name="indent" id="mrpj.logo.SvgFileOptions.property.indent"></a>
+
+```typescript
+public readonly indent: number;
+```
+
+- *Type:* number
+- *Default:* 2
+
+Indentation size.
+
+---
+
+##### `readonly`<sup>Optional</sup> <a name="readonly" id="mrpj.logo.SvgFileOptions.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Whether the generated file should be readonly.
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.SvgFileOptions.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.SvgFileOptions.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `content`<sup>Optional</sup> <a name="content" id="mrpj.logo.SvgFileOptions.property.content"></a>
+
+```typescript
+public readonly content: string;
+```
+
+- *Type:* string
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.SvgFileOptions.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+
+---
+
+##### `style`<sup>Optional</sup> <a name="style" id="mrpj.logo.SvgFileOptions.property.style"></a>
+
+```typescript
+public readonly style: string;
+```
+
+- *Type:* string
+
+---
+
+### TranslateOptions <a name="TranslateOptions" id="mrpj.logo.TranslateOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.TranslateOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const translateOptions: logo.TranslateOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.TranslateOptions.property.dx">dx</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.TranslateOptions.property.dy">dy</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `dx`<sup>Optional</sup> <a name="dx" id="mrpj.logo.TranslateOptions.property.dx"></a>
+
+```typescript
+public readonly dx: number;
+```
+
+- *Type:* number
+
+---
+
+##### `dy`<sup>Optional</sup> <a name="dy" id="mrpj.logo.TranslateOptions.property.dy"></a>
+
+```typescript
+public readonly dy: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -6282,6 +6736,194 @@ Github Runner selection labels.
 
 ---
 
+### WordmarkLogoOptions <a name="WordmarkLogoOptions" id="mrpj.logo.WordmarkLogoOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.WordmarkLogoOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const wordmarkLogoOptions: logo.WordmarkLogoOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.content">content</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.translate">translate</a></code> | <code>mrpj.logo.TranslateOptions</code> | *No description.* |
+
+---
+
+##### `height`<sup>Optional</sup> <a name="height" id="mrpj.logo.WordmarkLogoOptions.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.WordmarkLogoOptions.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+
+---
+
+##### `width`<sup>Optional</sup> <a name="width" id="mrpj.logo.WordmarkLogoOptions.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+---
+
+##### `content`<sup>Optional</sup> <a name="content" id="mrpj.logo.WordmarkLogoOptions.property.content"></a>
+
+```typescript
+public readonly content: string;
+```
+
+- *Type:* string
+
+---
+
+##### `translate`<sup>Optional</sup> <a name="translate" id="mrpj.logo.WordmarkLogoOptions.property.translate"></a>
+
+```typescript
+public readonly translate: TranslateOptions;
+```
+
+- *Type:* mrpj.logo.TranslateOptions
+
+---
+
+### WordmarkOptions <a name="WordmarkOptions" id="mrpj.logo.WordmarkOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.logo.WordmarkOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const wordmarkOptions: logo.WordmarkOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.colorScheme">colorScheme</a></code> | <code>mrpj.logo.ColorScheme</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.dirName">dirName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.fileBaseName">fileBaseName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.font">font</a></code> | <code>mrpj.logo.FontOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.logo">logo</a></code> | <code>mrpj.logo.WordmarkLogoOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.padding">padding</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.raw">raw</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.size">size</a></code> | <code>mrpj.logo.SizeOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.text">text</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `colorScheme`<sup>Optional</sup> <a name="colorScheme" id="mrpj.logo.WordmarkOptions.property.colorScheme"></a>
+
+```typescript
+public readonly colorScheme: ColorScheme;
+```
+
+- *Type:* mrpj.logo.ColorScheme
+
+---
+
+##### `dirName`<sup>Optional</sup> <a name="dirName" id="mrpj.logo.WordmarkOptions.property.dirName"></a>
+
+```typescript
+public readonly dirName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `fileBaseName`<sup>Optional</sup> <a name="fileBaseName" id="mrpj.logo.WordmarkOptions.property.fileBaseName"></a>
+
+```typescript
+public readonly fileBaseName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `font`<sup>Optional</sup> <a name="font" id="mrpj.logo.WordmarkOptions.property.font"></a>
+
+```typescript
+public readonly font: FontOptions;
+```
+
+- *Type:* mrpj.logo.FontOptions
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.logo.WordmarkOptions.property.logo"></a>
+
+```typescript
+public readonly logo: WordmarkLogoOptions;
+```
+
+- *Type:* mrpj.logo.WordmarkLogoOptions
+
+---
+
+##### `padding`<sup>Optional</sup> <a name="padding" id="mrpj.logo.WordmarkOptions.property.padding"></a>
+
+```typescript
+public readonly padding: number;
+```
+
+- *Type:* number
+
+---
+
+##### `raw`<sup>Optional</sup> <a name="raw" id="mrpj.logo.WordmarkOptions.property.raw"></a>
+
+```typescript
+public readonly raw: string;
+```
+
+- *Type:* string
+
+---
+
+##### `size`<sup>Optional</sup> <a name="size" id="mrpj.logo.WordmarkOptions.property.size"></a>
+
+```typescript
+public readonly size: SizeOptions;
+```
+
+- *Type:* mrpj.logo.SizeOptions
+
+---
+
+##### `text`<sup>Optional</sup> <a name="text" id="mrpj.logo.WordmarkOptions.property.text"></a>
+
+```typescript
+public readonly text: string;
+```
+
+- *Type:* string
+
+---
+
 ## Classes <a name="Classes" id="Classes"></a>
 
 ### ConstructProject <a name="ConstructProject" id="mrpj.ConstructProject"></a>
@@ -7725,6 +8367,102 @@ this task should synthesize the project files.
 
 ---
 
+### LogoSystem <a name="LogoSystem" id="mrpj.logo.LogoSystem"></a>
+
+#### Initializers <a name="Initializers" id="mrpj.logo.LogoSystem.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+new logo.LogoSystem(project: Project, options?: LogoSystemOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoSystem.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoSystem.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.LogoSystemOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.LogoSystem.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.LogoSystem.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.logo.LogoSystemOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.LogoSystem.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.logo.LogoSystem.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.logo.LogoSystem.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.LogoSystem.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.LogoSystem.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.logo.LogoSystem.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoSystem.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoSystem.property.convertTask">convertTask</a></code> | <code>projen.Task</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.LogoSystem.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `convertTask`<sup>Optional</sup> <a name="convertTask" id="mrpj.logo.LogoSystem.property.convertTask"></a>
+
+```typescript
+public readonly convertTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+
 ### ProjenProject <a name="ProjenProject" id="mrpj.ProjenProject"></a>
 
 A project to create new projen projects & components.
@@ -9095,6 +9833,190 @@ this task should synthesize the project files.
 
 ---
 
+### SvgFile <a name="SvgFile" id="mrpj.logo.SvgFile"></a>
+
+A SVG file.
+
+#### Initializers <a name="Initializers" id="mrpj.logo.SvgFile.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+new logo.SvgFile(project: Project, filePath: string, options: SvgFileOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.SvgFileOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.Initializer.parameter.filePath"></a>
+
+- *Type:* string
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.SvgFile.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.logo.SvgFileOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.logo.SvgFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.logo.SvgFile.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#mrpj.logo.SvgFile.close">close</a></code> | Decreases the indentation level and closes a code block. |
+| <code><a href="#mrpj.logo.SvgFile.line">line</a></code> | Emit a line of code. |
+| <code><a href="#mrpj.logo.SvgFile.open">open</a></code> | Opens a code block and increases the indentation level. |
+| <code><a href="#mrpj.logo.SvgFile.lines">lines</a></code> | Adds text as lines to the text file. |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.SvgFile.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.SvgFile.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.logo.SvgFile.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `close` <a name="close" id="mrpj.logo.SvgFile.close"></a>
+
+```typescript
+public close(code?: string): void
+```
+
+Decreases the indentation level and closes a code block.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.close.parameter.code"></a>
+
+- *Type:* string
+
+The code after the block is closed (e.g. `}`).
+
+---
+
+##### `line` <a name="line" id="mrpj.logo.SvgFile.line"></a>
+
+```typescript
+public line(code?: string): void
+```
+
+Emit a line of code.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.line.parameter.code"></a>
+
+- *Type:* string
+
+The contents, if not specified, just adds a newline.
+
+---
+
+##### `open` <a name="open" id="mrpj.logo.SvgFile.open"></a>
+
+```typescript
+public open(code?: string): void
+```
+
+Opens a code block and increases the indentation level.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.open.parameter.code"></a>
+
+- *Type:* string
+
+The code before the block starts (e.g. `export class {`).
+
+---
+
+##### `lines` <a name="lines" id="mrpj.logo.SvgFile.lines"></a>
+
+```typescript
+public lines(lines: string): void
+```
+
+Adds text as lines to the text file.
+
+###### `lines`<sup>Required</sup> <a name="lines" id="mrpj.logo.SvgFile.lines.parameter.lines"></a>
+
+- *Type:* string
+
+the text with line breaks to add.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.property.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.property.marker">marker</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.property.filePath"></a>
+
+```typescript
+public readonly filePath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="mrpj.logo.SvgFile.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### TypeScriptProject <a name="TypeScriptProject" id="mrpj.TypeScriptProject"></a>
 
 #### Initializers <a name="Initializers" id="mrpj.TypeScriptProject.Initializer"></a>
@@ -10462,5 +11384,128 @@ Normally
 this task should synthesize the project files.
 
 ---
+
+### Wordmark <a name="Wordmark" id="mrpj.logo.Wordmark"></a>
+
+#### Initializers <a name="Initializers" id="mrpj.logo.Wordmark.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+new logo.Wordmark(project: Project, options?: WordmarkOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.WordmarkOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.Wordmark.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.logo.Wordmark.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.logo.Wordmark.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#mrpj.logo.Wordmark.dynamic">dynamic</a></code> | *No description.* |
+| <code><a href="#mrpj.logo.Wordmark.variant">variant</a></code> | *No description.* |
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.Wordmark.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.Wordmark.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.logo.Wordmark.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `dynamic` <a name="dynamic" id="mrpj.logo.Wordmark.dynamic"></a>
+
+```typescript
+public dynamic(dark: WordmarkOptions, light: WordmarkOptions): Wordmark[]
+```
+
+###### `dark`<sup>Required</sup> <a name="dark" id="mrpj.logo.Wordmark.dynamic.parameter.dark"></a>
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
+###### `light`<sup>Required</sup> <a name="light" id="mrpj.logo.Wordmark.dynamic.parameter.light"></a>
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
+##### `variant` <a name="variant" id="mrpj.logo.Wordmark.variant"></a>
+
+```typescript
+public variant(name: string, options: WordmarkOptions): Wordmark
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.logo.Wordmark.variant.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.Wordmark.variant.parameter.options"></a>
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
 
 

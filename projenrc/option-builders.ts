@@ -55,6 +55,25 @@ export class ProjenProjectOptionsBuilder extends Component {
           default: 'UpgradeDependenciesSchedule.DAILY',
         },
       })
+      .add({
+        name: 'logo',
+        optional: true,
+        type: { primitive: PrimitiveType.Boolean },
+        docs: {
+          summary: 'Generates wordmarks from a logo.',
+          remarks: 'If no logo is found and set to `true`, a placeholder image is used.',
+          default: '- true if a logo file is found, otherwise false',
+        },
+      })
+      .add({
+        name: 'logoOptions',
+        optional: true,
+        type: { fqn: 'mrpj.logo.LogoSystemOptions' },
+        docs: {
+          summary: 'Generate Wordmark from a logo if found.',
+          default: '"true"',
+        },
+      })
 
       // footer
       .omit('foobar');
