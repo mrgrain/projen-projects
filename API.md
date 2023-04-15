@@ -44,11 +44,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.cdkAssert">cdkAssert</a></code> | <code>boolean</code> | Warning: NodeJS only. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
-| <code><a href="#mrpj.ConstructProjectOptions.property.cdkDependencies">cdkDependencies</a></code> | <code>string[]</code> | Which AWS CDKv1 modules this project requires. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.cdkDependenciesAsDeps">cdkDependenciesAsDeps</a></code> | <code>boolean</code> | If this is enabled (default), all modules declared in `cdkDependencies` will be also added as normal `dependencies` (as well as `peerDependencies`). |
-| <code><a href="#mrpj.ConstructProjectOptions.property.cdkTestDependencies">cdkTestDependencies</a></code> | <code>string[]</code> | AWS CDK modules required for testing. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
@@ -74,7 +70,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.dotnet">dotnet</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProjectOptions.property.edgeLambdaAutoDiscover">edgeLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). Set to an empty string to not include `main` in your package.json. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
@@ -103,17 +98,13 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
-| <code><a href="#mrpj.ConstructProjectOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -128,7 +119,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.prettier">prettier</a></code> | <code>boolean</code> | Setup prettier. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.prettierOptions">prettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | Prettier options. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
@@ -138,7 +128,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
@@ -148,18 +137,14 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.python">python</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
@@ -169,7 +154,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProjectOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
@@ -540,23 +524,6 @@ mentioned in the tweet.
 
 ---
 
-##### ~~`cdkAssert`~~<sup>Optional</sup> <a name="cdkAssert" id="mrpj.ConstructProjectOptions.property.cdkAssert"></a>
-
-- *Deprecated:* The
-
-```typescript
-public readonly cdkAssert: boolean;
-```
-
-- *Type:* boolean
-- *Default:* will be included by default for AWS CDK >= 1.0.0 < 2.0.0
-
-Warning: NodeJS only.
-
-Install the @aws-cdk/assert library?
-
----
-
 ##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="mrpj.ConstructProjectOptions.property.cdkAssertions"></a>
 
 ```typescript
@@ -570,56 +537,6 @@ Install the assertions library?
 
 Only needed for CDK 1.x. If using CDK 2.x then
 assertions is already included in 'aws-cdk-lib'
-
----
-
-##### ~~`cdkDependencies`~~<sup>Optional</sup> <a name="cdkDependencies" id="mrpj.ConstructProjectOptions.property.cdkDependencies"></a>
-
-- *Deprecated:* For CDK 2.x use "deps" instead. (or "peerDeps" if you're building a library)
-
-```typescript
-public readonly cdkDependencies: string[];
-```
-
-- *Type:* string[]
-
-Which AWS CDKv1 modules this project requires.
-
----
-
-##### ~~`cdkDependenciesAsDeps`~~<sup>Optional</sup> <a name="cdkDependenciesAsDeps" id="mrpj.ConstructProjectOptions.property.cdkDependenciesAsDeps"></a>
-
-- *Deprecated:* Not supported in CDK v2.
-
-```typescript
-public readonly cdkDependenciesAsDeps: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-If this is enabled (default), all modules declared in `cdkDependencies` will be also added as normal `dependencies` (as well as `peerDependencies`).
-
-This is to ensure that downstream consumers actually have your CDK dependencies installed
-when using npm < 7 or yarn, where peer dependencies are not automatically installed.
-If this is disabled, `cdkDependencies` will be added to `devDependencies` to ensure
-they are present during development.
-
-Note: this setting only applies to construct library projects
-
----
-
-##### ~~`cdkTestDependencies`~~<sup>Optional</sup> <a name="cdkTestDependencies" id="mrpj.ConstructProjectOptions.property.cdkTestDependencies"></a>
-
-- *Deprecated:* For CDK 2.x use 'devDeps' (in node.js projects) or 'testDeps' (in java projects) instead
-
-```typescript
-public readonly cdkTestDependencies: string[];
-```
-
-- *Type:* string[]
-
-AWS CDK modules required for testing.
 
 ---
 
@@ -976,18 +893,6 @@ public readonly docsDirectory: string;
 - *Default:* "docs"
 
 Docs directory.
-
----
-
-##### ~~`dotnet`~~<sup>Optional</sup> <a name="dotnet" id="mrpj.ConstructProjectOptions.property.dotnet"></a>
-
-- *Deprecated:* use `publishToNuget`
-
-```typescript
-public readonly dotnet: JsiiDotNetTarget;
-```
-
-- *Type:* projen.cdk.JsiiDotNetTarget
 
 ---
 
@@ -1368,36 +1273,6 @@ Minimum node.js version to require via `engines` (inclusive).
 
 ---
 
-##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="mrpj.ConstructProjectOptions.property.mergify"></a>
-
-- *Deprecated:* use `githubOptions.mergify` instead
-
-```typescript
-public readonly mergify: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Whether mergify should be enabled on this repository or not.
-
----
-
-##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="mrpj.ConstructProjectOptions.property.mergifyOptions"></a>
-
-- *Deprecated:* use `githubOptions.mergifyOptions` instead
-
-```typescript
-public readonly mergifyOptions: MergifyOptions;
-```
-
-- *Type:* projen.github.MergifyOptions
-- *Default:* default options
-
-Options for mergify.
-
----
-
 ##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="mrpj.ConstructProjectOptions.property.minMajorVersion"></a>
 
 ```typescript
@@ -1477,20 +1352,6 @@ for each branch.
 
 ---
 
-##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="mrpj.ConstructProjectOptions.property.npmignore"></a>
-
-- *Deprecated:* - use `project.addPackageIgnore`
-
-```typescript
-public readonly npmignore: string[];
-```
-
-- *Type:* string[]
-
-Additional entries to .npmignore.
-
----
-
 ##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="mrpj.ConstructProjectOptions.property.npmignoreEnabled"></a>
 
 ```typescript
@@ -1513,22 +1374,6 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
-
----
-
-##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="mrpj.ConstructProjectOptions.property.npmRegistry"></a>
-
-- *Deprecated:* use `npmRegistryUrl` instead
-
-```typescript
-public readonly npmRegistry: string;
-```
-
-- *Type:* string
-
-The host name of the npm registry to publish to.
-
-Cannot be set together with `npmRegistryUrl`.
 
 ---
 
@@ -1732,21 +1577,6 @@ Prettier options.
 
 ---
 
-##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="mrpj.ConstructProjectOptions.property.projectType"></a>
-
-- *Deprecated:* no longer supported at the base project level
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-- *Default:* ProjectType.UNKNOWN
-
-Which type of project this is (library/app).
-
----
-
 ##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="mrpj.ConstructProjectOptions.property.projenCommand"></a>
 
 ```typescript
@@ -1862,24 +1692,6 @@ public readonly projenrcTsOptions: ProjenrcOptions;
 - *Type:* projen.typescript.ProjenrcOptions
 
 Options for .projenrc.ts.
-
----
-
-##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="mrpj.ConstructProjectOptions.property.projenTokenSecret"></a>
-
-- *Deprecated:* use `projenCredentials`
-
-```typescript
-public readonly projenTokenSecret: string;
-```
-
-- *Type:* string
-- *Default:* "PROJEN_GITHUB_TOKEN"
-
-The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows.
-
-This token needs to have the `repo`, `workflows`
-and `packages` scope.
 
 ---
 
@@ -2003,18 +1815,6 @@ The contents of the pull request template.
 
 ---
 
-##### ~~`python`~~<sup>Optional</sup> <a name="python" id="mrpj.ConstructProjectOptions.property.python"></a>
-
-- *Deprecated:* use `publishToPyPi`
-
-```typescript
-public readonly python: JsiiPythonTarget;
-```
-
-- *Type:* projen.cdk.JsiiPythonTarget
-
----
-
 ##### `readme`<sup>Optional</sup> <a name="readme" id="mrpj.ConstructProjectOptions.property.readme"></a>
 
 ```typescript
@@ -2061,21 +1861,6 @@ be provided for the default branch.
 
 ---
 
-##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="mrpj.ConstructProjectOptions.property.releaseEveryCommit"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
-
-```typescript
-public readonly releaseEveryCommit: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically release new versions every commit to one of branches in `releaseBranches`.
-
----
-
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mrpj.ConstructProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -2101,21 +1886,6 @@ public readonly releaseFailureIssueLabel: string;
 The label to apply to issues indicating publish failures.
 
 Only applies if `releaseFailureIssue` is true.
-
----
-
-##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="mrpj.ConstructProjectOptions.property.releaseSchedule"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
-
-```typescript
-public readonly releaseSchedule: string;
-```
-
-- *Type:* string
-- *Default:* no scheduled releases
-
-CRON schedule to trigger new releases.
 
 ---
 
@@ -2161,21 +1931,6 @@ public readonly releaseTrigger: ReleaseTrigger;
 - *Default:* Continuous releases (`ReleaseTrigger.continuous()`)
 
 The release trigger to use.
-
----
-
-##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="mrpj.ConstructProjectOptions.property.releaseWorkflow"></a>
-
-- *Deprecated:* see `release`.
-
-```typescript
-public readonly releaseWorkflow: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true if not a subproject
-
-DEPRECATED: renamed to `release`.
 
 ---
 
@@ -2290,25 +2045,6 @@ public readonly scopedPackagesOptions: ScopedPackagesOptions[];
 - *Default:* fetch all scoped packages from the public npm registry
 
 Options for privately hosted scoped packages.
-
----
-
-##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="mrpj.ConstructProjectOptions.property.scripts"></a>
-
-- *Deprecated:* use `project.addTask()` or `package.setScript()`
-
-```typescript
-public readonly scripts: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-- *Default:* {}
-
-npm scripts to include.
-
-If a script has the same name as a standard script,
-the standard script will be overwritten.
-Also adds the script as a task.
 
 ---
 
@@ -2598,7 +2334,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.dotnet">dotnet</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). Set to an empty string to not include `main` in your package.json. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.eslint">eslint</a></code> | <code>boolean</code> | Setup eslint. |
@@ -2621,18 +2356,14 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
-| <code><a href="#mrpj.ProjenProjectOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -2648,7 +2379,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.prettier">prettier</a></code> | <code>boolean</code> | Setup prettier. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.prettierOptions">prettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | Prettier options. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
@@ -2657,7 +2387,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
@@ -2667,18 +2396,14 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.python">python</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
@@ -2688,7 +2413,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
@@ -3351,18 +3075,6 @@ Docs directory.
 
 ---
 
-##### ~~`dotnet`~~<sup>Optional</sup> <a name="dotnet" id="mrpj.ProjenProjectOptions.property.dotnet"></a>
-
-- *Deprecated:* use `publishToNuget`
-
-```typescript
-public readonly dotnet: JsiiDotNetTarget;
-```
-
-- *Type:* projen.cdk.JsiiDotNetTarget
-
----
-
 ##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="mrpj.ProjenProjectOptions.property.entrypoint"></a>
 
 ```typescript
@@ -3655,36 +3367,6 @@ Minimum node.js version to require via `engines` (inclusive).
 
 ---
 
-##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="mrpj.ProjenProjectOptions.property.mergify"></a>
-
-- *Deprecated:* use `githubOptions.mergify` instead
-
-```typescript
-public readonly mergify: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Whether mergify should be enabled on this repository or not.
-
----
-
-##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="mrpj.ProjenProjectOptions.property.mergifyOptions"></a>
-
-- *Deprecated:* use `githubOptions.mergifyOptions` instead
-
-```typescript
-public readonly mergifyOptions: MergifyOptions;
-```
-
-- *Type:* projen.github.MergifyOptions
-- *Default:* default options
-
-Options for mergify.
-
----
-
 ##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="mrpj.ProjenProjectOptions.property.minMajorVersion"></a>
 
 ```typescript
@@ -3777,20 +3459,6 @@ for each branch.
 
 ---
 
-##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="mrpj.ProjenProjectOptions.property.npmignore"></a>
-
-- *Deprecated:* - use `project.addPackageIgnore`
-
-```typescript
-public readonly npmignore: string[];
-```
-
-- *Type:* string[]
-
-Additional entries to .npmignore.
-
----
-
 ##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="mrpj.ProjenProjectOptions.property.npmignoreEnabled"></a>
 
 ```typescript
@@ -3813,22 +3481,6 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
-
----
-
-##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="mrpj.ProjenProjectOptions.property.npmRegistry"></a>
-
-- *Deprecated:* use `npmRegistryUrl` instead
-
-```typescript
-public readonly npmRegistry: string;
-```
-
-- *Type:* string
-
-The host name of the npm registry to publish to.
-
-Cannot be set together with `npmRegistryUrl`.
 
 ---
 
@@ -4045,21 +3697,6 @@ Prettier options.
 
 ---
 
-##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="mrpj.ProjenProjectOptions.property.projectType"></a>
-
-- *Deprecated:* no longer supported at the base project level
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-- *Default:* ProjectType.UNKNOWN
-
-Which type of project this is (library/app).
-
----
-
 ##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="mrpj.ProjenProjectOptions.property.projenCommand"></a>
 
 ```typescript
@@ -4162,24 +3799,6 @@ public readonly projenrcTsOptions: ProjenrcOptions;
 - *Type:* projen.typescript.ProjenrcOptions
 
 Options for .projenrc.ts.
-
----
-
-##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="mrpj.ProjenProjectOptions.property.projenTokenSecret"></a>
-
-- *Deprecated:* use `projenCredentials`
-
-```typescript
-public readonly projenTokenSecret: string;
-```
-
-- *Type:* string
-- *Default:* "PROJEN_GITHUB_TOKEN"
-
-The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows.
-
-This token needs to have the `repo`, `workflows`
-and `packages` scope.
 
 ---
 
@@ -4303,18 +3922,6 @@ The contents of the pull request template.
 
 ---
 
-##### ~~`python`~~<sup>Optional</sup> <a name="python" id="mrpj.ProjenProjectOptions.property.python"></a>
-
-- *Deprecated:* use `publishToPyPi`
-
-```typescript
-public readonly python: JsiiPythonTarget;
-```
-
-- *Type:* projen.cdk.JsiiPythonTarget
-
----
-
 ##### `readme`<sup>Optional</sup> <a name="readme" id="mrpj.ProjenProjectOptions.property.readme"></a>
 
 ```typescript
@@ -4361,21 +3968,6 @@ be provided for the default branch.
 
 ---
 
-##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="mrpj.ProjenProjectOptions.property.releaseEveryCommit"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
-
-```typescript
-public readonly releaseEveryCommit: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically release new versions every commit to one of branches in `releaseBranches`.
-
----
-
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mrpj.ProjenProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -4401,21 +3993,6 @@ public readonly releaseFailureIssueLabel: string;
 The label to apply to issues indicating publish failures.
 
 Only applies if `releaseFailureIssue` is true.
-
----
-
-##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="mrpj.ProjenProjectOptions.property.releaseSchedule"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
-
-```typescript
-public readonly releaseSchedule: string;
-```
-
-- *Type:* string
-- *Default:* no scheduled releases
-
-CRON schedule to trigger new releases.
 
 ---
 
@@ -4461,21 +4038,6 @@ public readonly releaseTrigger: ReleaseTrigger;
 - *Default:* Continuous releases (`ReleaseTrigger.continuous()`)
 
 The release trigger to use.
-
----
-
-##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="mrpj.ProjenProjectOptions.property.releaseWorkflow"></a>
-
-- *Deprecated:* see `release`.
-
-```typescript
-public readonly releaseWorkflow: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true if not a subproject
-
-DEPRECATED: renamed to `release`.
 
 ---
 
@@ -4590,25 +4152,6 @@ public readonly scopedPackagesOptions: ScopedPackagesOptions[];
 - *Default:* fetch all scoped packages from the public npm registry
 
 Options for privately hosted scoped packages.
-
----
-
-##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="mrpj.ProjenProjectOptions.property.scripts"></a>
-
-- *Deprecated:* use `project.addTask()` or `package.setScript()`
-
-```typescript
-public readonly scripts: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-- *Default:* {}
-
-npm scripts to include.
-
-If a script has the same name as a standard script,
-the standard script will be overwritten.
-Also adds the script as a task.
 
 ---
 
@@ -4907,17 +4450,13 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.mergify">mergify</a></code> | <code>boolean</code> | Whether mergify should be enabled on this repository or not. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.mergifyOptions">mergifyOptions</a></code> | <code>projen.github.MergifyOptions</code> | Options for mergify. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmignore">npmignore</a></code> | <code>string[]</code> | Additional entries to .npmignore. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistry">npmRegistry</a></code> | <code>string</code> | The host name of the npm registry to publish to. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -4932,7 +4471,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.prettier">prettier</a></code> | <code>boolean</code> | Setup prettier. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.prettierOptions">prettierOptions</a></code> | <code>projen.javascript.PrettierOptions</code> | Prettier options. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | Which type of project this is (library/app). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
@@ -4942,7 +4480,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.projenTokenSecret">projenTokenSecret</a></code> | <code>string</code> | The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
@@ -4951,14 +4488,11 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseEveryCommit">releaseEveryCommit</a></code> | <code>boolean</code> | Automatically release new versions every commit to one of branches in `releaseBranches`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseSchedule">releaseSchedule</a></code> | <code>string</code> | CRON schedule to trigger new releases. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseWorkflow">releaseWorkflow</a></code> | <code>boolean</code> | DEPRECATED: renamed to `release`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
@@ -4967,7 +4501,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.scripts">scripts</a></code> | <code>{[ key: string ]: string}</code> | npm scripts to include. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
@@ -5813,36 +5346,6 @@ Minimum node.js version to require via `engines` (inclusive).
 
 ---
 
-##### ~~`mergify`~~<sup>Optional</sup> <a name="mergify" id="mrpj.TypeScriptProjectOptions.property.mergify"></a>
-
-- *Deprecated:* use `githubOptions.mergify` instead
-
-```typescript
-public readonly mergify: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Whether mergify should be enabled on this repository or not.
-
----
-
-##### ~~`mergifyOptions`~~<sup>Optional</sup> <a name="mergifyOptions" id="mrpj.TypeScriptProjectOptions.property.mergifyOptions"></a>
-
-- *Deprecated:* use `githubOptions.mergifyOptions` instead
-
-```typescript
-public readonly mergifyOptions: MergifyOptions;
-```
-
-- *Type:* projen.github.MergifyOptions
-- *Default:* default options
-
-Options for mergify.
-
----
-
 ##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="mrpj.TypeScriptProjectOptions.property.minMajorVersion"></a>
 
 ```typescript
@@ -5922,20 +5425,6 @@ for each branch.
 
 ---
 
-##### ~~`npmignore`~~<sup>Optional</sup> <a name="npmignore" id="mrpj.TypeScriptProjectOptions.property.npmignore"></a>
-
-- *Deprecated:* - use `project.addPackageIgnore`
-
-```typescript
-public readonly npmignore: string[];
-```
-
-- *Type:* string[]
-
-Additional entries to .npmignore.
-
----
-
 ##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="mrpj.TypeScriptProjectOptions.property.npmignoreEnabled"></a>
 
 ```typescript
@@ -5958,22 +5447,6 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
-
----
-
-##### ~~`npmRegistry`~~<sup>Optional</sup> <a name="npmRegistry" id="mrpj.TypeScriptProjectOptions.property.npmRegistry"></a>
-
-- *Deprecated:* use `npmRegistryUrl` instead
-
-```typescript
-public readonly npmRegistry: string;
-```
-
-- *Type:* string
-
-The host name of the npm registry to publish to.
-
-Cannot be set together with `npmRegistryUrl`.
 
 ---
 
@@ -6177,21 +5650,6 @@ Prettier options.
 
 ---
 
-##### ~~`projectType`~~<sup>Optional</sup> <a name="projectType" id="mrpj.TypeScriptProjectOptions.property.projectType"></a>
-
-- *Deprecated:* no longer supported at the base project level
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-- *Default:* ProjectType.UNKNOWN
-
-Which type of project this is (library/app).
-
----
-
 ##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="mrpj.TypeScriptProjectOptions.property.projenCommand"></a>
 
 ```typescript
@@ -6310,24 +5768,6 @@ Options for .projenrc.ts.
 
 ---
 
-##### ~~`projenTokenSecret`~~<sup>Optional</sup> <a name="projenTokenSecret" id="mrpj.TypeScriptProjectOptions.property.projenTokenSecret"></a>
-
-- *Deprecated:* use `projenCredentials`
-
-```typescript
-public readonly projenTokenSecret: string;
-```
-
-- *Type:* string
-- *Default:* "PROJEN_GITHUB_TOKEN"
-
-The name of a secret which includes a GitHub Personal Access Token to be used by projen workflows.
-
-This token needs to have the `repo`, `workflows`
-and `packages` scope.
-
----
-
 ##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="mrpj.TypeScriptProjectOptions.property.projenVersion"></a>
 
 ```typescript
@@ -6442,21 +5882,6 @@ be provided for the default branch.
 
 ---
 
-##### ~~`releaseEveryCommit`~~<sup>Optional</sup> <a name="releaseEveryCommit" id="mrpj.TypeScriptProjectOptions.property.releaseEveryCommit"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.continuous()` instead
-
-```typescript
-public readonly releaseEveryCommit: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically release new versions every commit to one of branches in `releaseBranches`.
-
----
-
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mrpj.TypeScriptProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -6482,21 +5907,6 @@ public readonly releaseFailureIssueLabel: string;
 The label to apply to issues indicating publish failures.
 
 Only applies if `releaseFailureIssue` is true.
-
----
-
-##### ~~`releaseSchedule`~~<sup>Optional</sup> <a name="releaseSchedule" id="mrpj.TypeScriptProjectOptions.property.releaseSchedule"></a>
-
-- *Deprecated:* Use `releaseTrigger: ReleaseTrigger.scheduled()` instead
-
-```typescript
-public readonly releaseSchedule: string;
-```
-
-- *Type:* string
-- *Default:* no scheduled releases
-
-CRON schedule to trigger new releases.
 
 ---
 
@@ -6542,21 +5952,6 @@ public readonly releaseTrigger: ReleaseTrigger;
 - *Default:* Continuous releases (`ReleaseTrigger.continuous()`)
 
 The release trigger to use.
-
----
-
-##### ~~`releaseWorkflow`~~<sup>Optional</sup> <a name="releaseWorkflow" id="mrpj.TypeScriptProjectOptions.property.releaseWorkflow"></a>
-
-- *Deprecated:* see `release`.
-
-```typescript
-public readonly releaseWorkflow: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true if not a subproject
-
-DEPRECATED: renamed to `release`.
 
 ---
 
@@ -6660,25 +6055,6 @@ public readonly scopedPackagesOptions: ScopedPackagesOptions[];
 - *Default:* fetch all scoped packages from the public npm registry
 
 Options for privately hosted scoped packages.
-
----
-
-##### ~~`scripts`~~<sup>Optional</sup> <a name="scripts" id="mrpj.TypeScriptProjectOptions.property.scripts"></a>
-
-- *Deprecated:* use `project.addTask()` or `package.setScript()`
-
-```typescript
-public readonly scripts: {[ key: string ]: string};
-```
-
-- *Type:* {[ key: string ]: string}
-- *Default:* {}
-
-npm scripts to include.
-
-If a script has the same name as a standard script,
-the standard script will be overwritten.
-Also adds the script as a task.
 
 ---
 

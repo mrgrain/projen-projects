@@ -41,7 +41,7 @@ export class ProjenProject extends cdk.JsiiProject {
         autoApproveOptions: {
           allowedUsernames: noEmpties([
             ifSet(options.automationAppName, `${options.automationAppName}[bot]`),
-            ifSet(options.ownerCanSelfApprovePRs, pkgInfo.githubUser),
+            ifSet(options.ownerCanSelfApprovePRs ?? true, pkgInfo.githubUser),
           ]),
         },
 
