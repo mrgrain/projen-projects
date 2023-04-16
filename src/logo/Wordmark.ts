@@ -45,10 +45,9 @@ export interface TranslateOptions {
 /**
  * @internal
  */
-type FullWordmarkOptions = Omit<Required<WordmarkOptions>, 'raw' | 'colorScheme'> & WordmarkOptions & {
+type FullWordmarkOptions = Omit<Required<WordmarkOptions>, 'raw' | 'colorScheme' | 'logoPosition'> & WordmarkOptions & {
   readonly size: Required<SizeOptions>;
   readonly textPosition: Required<TranslateOptions>;
-  readonly logoPosition: Required<TranslateOptions>;
 };
 
 export class Wordmark extends Component {
@@ -57,7 +56,10 @@ export class Wordmark extends Component {
   public constructor(project: Project, options: WordmarkOptions = {}) {
     super(project);
 
-    this.options = deepDefaults(options, {
+    this.options = deepDefaults<FullWordmarkOptions>({
+      ...options,
+      colorScheme: {},
+    }, {
       dirName: 'images',
       fileBaseName: 'wordmark',
       text: this.project.name,
@@ -73,19 +75,15 @@ export class Wordmark extends Component {
       },
       logo: Logo.placeholder(),
       logoScale: 2,
-      logoPosition: {
-        dx: 0,
-        dy: 0,
-      },
       size: {
         width: 720,
         height: 200,
         scale: 1,
       },
-    }) as FullWordmarkOptions;
+    });
 
+    // Default variant
     new WordmarkVariant(project, this.options);
-
 
     // Allow colorScheme to be disabled
     const colorScheme = options.colorScheme ?? {

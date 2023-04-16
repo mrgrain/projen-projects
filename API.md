@@ -8515,17 +8515,17 @@ Create a logo for the project.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#mrpj.logo.Logo.synth">synth</a></code> | Synth the logo and return the file path. |
+| <code><a href="#mrpj.logo.Logo.synth">synth</a></code> | Synth the logo. |
 
 ---
 
 ##### `synth` <a name="synth" id="mrpj.logo.Logo.synth"></a>
 
 ```typescript
-public synth(project: Project): string
+public synth(project: Project): void
 ```
 
-Synth the logo and return the file path.
+Synth the logo.
 
 ###### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Logo.synth.parameter.project"></a>
 
@@ -11714,17 +11714,17 @@ Implementation interface of a logo.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#mrpj.logo.ILogo.synth">synth</a></code> | Synth the logo and return the file path. |
+| <code><a href="#mrpj.logo.ILogo.synth">synth</a></code> | Synth the logo. |
 
 ---
 
 ##### `synth` <a name="synth" id="mrpj.logo.ILogo.synth"></a>
 
 ```typescript
-public synth(project: Project): string
+public synth(project: Project): void
 ```
 
-Synth the logo and return the file path.
+Synth the logo.
 
 ###### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.ILogo.synth.parameter.project"></a>
 

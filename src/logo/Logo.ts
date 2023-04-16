@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { Project } from 'projen';
+import { logoToPngTask } from './private.ts/logo-task';
 import { SvgFile } from './SvgFile';
 
 /**
@@ -108,9 +109,9 @@ export interface ILogo {
    **/
   readonly content: string;
   /**
-   * Synth the logo and return the file path.
+   * Synth the logo.
    */
-  synth(project: Project): string;
+  synth(project: Project): void;
 }
 
 /**
@@ -219,9 +220,11 @@ export class Logo implements ILogo {
 
   public synth(project: Project) {
     if (!this.outFile) {
-      return this.sourceFile!;
+      logoToPngTask(project, this.sourceFile!);
+      return;
     }
 
-    return new SvgFile(project, this.outFile, this).filePath;
+    const svg = new SvgFile(project, this.outFile, this);
+    logoToPngTask(project, svg.filePath);
   }
 }
