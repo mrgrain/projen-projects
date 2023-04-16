@@ -1,6 +1,6 @@
 import { cdk, github, javascript } from 'projen';
-import { LogoSystem } from './logo';
-import { findLogo } from './logo/private.ts/find-logo';
+import { SvgFile, Wordmark } from './logo';
+import { logoToPngTask } from './logo/private.ts/logo-task';
 import { ProjenProjectOptions } from './projen-project-options';
 import { deepDefaults, ifSet, noEmpties } from './utils';
 
@@ -9,6 +9,9 @@ import { deepDefaults, ifSet, noEmpties } from './utils';
  * @pjid projen
  */
 export class ProjenProject extends cdk.JsiiProject {
+  public readonly logo?: SvgFile;
+  public readonly wordmark?: Wordmark;
+
   public constructor(options: ProjenProjectOptions) {
     const pkgInfo = packageInfo(options.repo);
 
@@ -69,10 +72,13 @@ export class ProjenProject extends cdk.JsiiProject {
       'space-in-parens': ['error', 'never'],
     });
 
-    // Add wordmarks if a logo is found, or when forced
-    const { logo } = findLogo(options.logoOptions);
-    if (logo || options.logo) {
-      new LogoSystem(this, options.logoOptions);
+    if (options.logo) {
+      const logoPath = options.logo.synth(this);
+      logoToPngTask(this, logoPath);
+      this.wordmark = new Wordmark(this, {
+        logo: options.logo,
+        ...options.wordmarkOptions,
+      });
     }
   }
 }

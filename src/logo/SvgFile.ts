@@ -39,7 +39,7 @@ export class SvgFile extends SourceCode {
    * Adds text as lines to the text file.
    * @param lines the text with line breaks to add
    */
-  lines(lines: string) {
+  private lines(lines: string) {
     for (const line of lines.split('\n')) {
       this.line(line);
     }

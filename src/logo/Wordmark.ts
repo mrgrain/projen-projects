@@ -1,19 +1,22 @@
 import * as path from 'path';
 import { Component, Project } from 'projen';
+import { Logo, LogoInfo } from './Logo';
+import { logoToPngTask } from './private.ts/logo-task';
 import { SvgFile } from './SvgFile';
-import { deepMerge } from '../utils';
-
+import { deepDefaults, deepMerge } from '../utils';
 
 export interface WordmarkOptions {
   readonly fileBaseName?: string;
   readonly dirName?: string;
+  readonly raw?: string;
   readonly text?: string;
   readonly textPosition?: TranslateOptions;
-  readonly raw?: string;
-  readonly size?: SizeOptions;
-  readonly logo?: WordmarkLogoOptions;
   readonly font?: FontOptions;
   readonly colorScheme?: ColorScheme;
+  readonly size?: SizeOptions;
+  readonly logo?: LogoInfo;
+  readonly logoPosition?: TranslateOptions;
+  readonly logoScale?: number;
 }
 
 export interface ColorScheme {
@@ -39,34 +42,102 @@ export interface TranslateOptions {
   readonly dy?: number;
 }
 
-export interface WordmarkLogoOptions extends SizeOptions {
-  readonly content?: string;
-  readonly translate?: TranslateOptions;
-}
-
+/**
+ * @internal
+ */
 type FullWordmarkOptions = Omit<Required<WordmarkOptions>, 'raw' | 'colorScheme'> & WordmarkOptions & {
   readonly size: Required<SizeOptions>;
   readonly textPosition: Required<TranslateOptions>;
-  readonly logo: Omit<Required<WordmarkLogoOptions>, | 'scale' | 'translate'> & {
-    readonly translate?: TranslateOptions;
-    readonly scale?: number;
-  };
+  readonly logoPosition: Required<TranslateOptions>;
 };
-
 
 export class Wordmark extends Component {
   private readonly options: FullWordmarkOptions;
+
   public constructor(project: Project, options: WordmarkOptions = {}) {
     super(project);
 
-    this.options = this.getOptions(options) as FullWordmarkOptions;
+    this.options = deepDefaults(options, {
+      dirName: 'images',
+      fileBaseName: 'wordmark',
+      text: this.project.name,
+      textPosition: {
+        dx: 35,
+        dy: 0,
+      },
+      font: {
+        family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
+        weight: '700',
+        size: 90,
+        color: '#6F7174',
+      },
+      logo: Logo.placeholder(),
+      logoScale: 2,
+      logoPosition: {
+        dx: 0,
+        dy: 0,
+      },
+      size: {
+        width: 720,
+        height: 200,
+        scale: 1,
+      },
+    }) as FullWordmarkOptions;
+
+    new WordmarkVariant(project, this.options);
+
+
+    // Allow colorScheme to be disabled
+    const colorScheme = options.colorScheme ?? {
+      dark: { color: '#f0f6fc' },
+      light: { color: '#191919' },
+    };
+
+    // Add variants
+    if (colorScheme.dark) {
+      this.variant('dark', {
+        font: colorScheme.dark,
+        colorScheme: {},
+      });
+    }
+
+    if (colorScheme.light) {
+      this.variant('light', {
+        font: colorScheme.light,
+        colorScheme: {},
+      });
+    }
+
+    if (colorScheme.dark && colorScheme.light) {
+      this.variant('dynamic', {
+        colorScheme: {
+          dark: colorScheme.dark,
+          light: colorScheme.light,
+        },
+      });
+    }
+  }
+
+  private variant(name: string, options: WordmarkOptions): WordmarkVariant {
+    const variant = {
+      ...options,
+      fileBaseName: `${this.options.fileBaseName}-${name}`,
+    };
+    return new WordmarkVariant(this.project, deepMerge(this.options, variant));
+  }
+
+}
+
+class WordmarkVariant extends Component {
+  public constructor(project: Project, private readonly options: FullWordmarkOptions) {
+    super(project);
 
     const halfHeight = this.options.size.height/2;
     const expectedLogoScale = this.options.size.height/this.options.logo.height;
-    const logoScale = this.options.logo.scale ?? expectedLogoScale;
+    const logoScale = this.options.logoScale ?? expectedLogoScale;
     const logoTranslate = {
-      x: 0 + (this.options.logo.translate?.dx ?? 0),
-      y: this.options.logo.translate?.dy ?? (logoScale/expectedLogoScale * -1 * halfHeight + halfHeight),
+      x: 0 + (this.options.logoPosition?.dx ?? 0),
+      y: this.options.logoPosition?.dy ?? (logoScale/expectedLogoScale * -1 * halfHeight + halfHeight),
     };
 
     const wordmark = this.options.raw ?? this.wordmark(this.options.text, {
@@ -81,68 +152,16 @@ ${this.options.logo.content.split('\n').map(l => ' '.repeat(indent) + l).join('\
 </g>
 `;
 
-    new SvgFile(project, path.join(this.options.dirName, this.options.fileBaseName) + '.svg', {
+    // Render Wordmark
+    const file = new SvgFile(project, path.join(this.options.dirName, this.options.fileBaseName) + '.svg', {
       ...this.options.size,
       content: content + '\n' + wordmark,
       style: this.style(),
       indent,
-    },
-    );
-  }
+    });
 
-  public variant(name: string, options: WordmarkOptions): Wordmark {
-    const variant = {
-      ...options,
-      fileBaseName: `${this.options.fileBaseName}-${name}`,
-    };
-    return new Wordmark(this.project, deepMerge(this.options, variant));
-  }
-
-  public dynamic(dark: WordmarkOptions, light: WordmarkOptions): Wordmark[] {
-    return [
-      this.variant('dark', dark),
-      this.variant('light', light),
-      this.variant('dynamic', {
-        colorScheme: {
-          dark: dark.font,
-          light: light.font,
-        },
-      }),
-    ];
-  }
-
-  private getOptions(options: WordmarkOptions): FullWordmarkOptions {
-    const defaults: FullWordmarkOptions = {
-      dirName: 'images',
-      fileBaseName: 'wordmark',
-      text: this.project.name,
-      textPosition: {
-        dx: 35,
-        dy: 0,
-      },
-      font: {
-        family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
-        weight: '700',
-        size: 90,
-        color: '#6F7174',
-      },
-      logo: {
-        width: 80,
-        height: 80,
-        content: `<svg xmlns="http://www.w3.org/2000/svg">
-    <rect fill="#AAAAAA" width="80" height="80" />
-    <line x1="0" x2="80" y1="0" y2="80" stroke="red" stroke-width="2" />
-    <line x1="80" x2="0" y1="0" y2="80" stroke="red" stroke-width="2" />
-</svg>`,
-      },
-      size: {
-        width: 720,
-        height: 200,
-        scale: 1,
-      },
-    };
-
-    return deepMerge(defaults, options);
+    // Conversion task
+    logoToPngTask(project, file.filePath);
   }
 
   private wordmark(text: string, { x, y }: {

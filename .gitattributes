@@ -17,6 +17,7 @@
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
 /API.md linguist-generated
+/images/logo.svg linguist-generated
 /images/wordmark-dark.svg linguist-generated
 /images/wordmark-dynamic.svg linguist-generated
 /images/wordmark-light.svg linguist-generated

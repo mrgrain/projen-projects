@@ -152,7 +152,19 @@
       "name": "logo",
       "steps": [
         {
-          "exec": "find images -iname \"*.svg\" | xargs -L1 -I{} sh -c \"rsvg-convert -h 1024 {} > images/\\$(basename {} .svg).png\""
+          "exec": "rsvg-convert -h 1024 images/logo.svg > images/logo.png"
+        },
+        {
+          "exec": "rsvg-convert -h 1024 images/wordmark.svg > images/wordmark.png"
+        },
+        {
+          "exec": "rsvg-convert -h 1024 images/wordmark-dark.svg > images/wordmark-dark.png"
+        },
+        {
+          "exec": "rsvg-convert -h 1024 images/wordmark-light.svg > images/wordmark-light.png"
+        },
+        {
+          "exec": "rsvg-convert -h 1024 images/wordmark-dynamic.svg > images/wordmark-dynamic.png"
         }
       ]
     },

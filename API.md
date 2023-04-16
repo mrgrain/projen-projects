@@ -2372,30 +2372,29 @@ public readonly weight: string;
 
 ---
 
-### LogoOptions <a name="LogoOptions" id="mrpj.logo.LogoOptions"></a>
+### LogoConfig <a name="LogoConfig" id="mrpj.logo.LogoConfig"></a>
 
-#### Initializer <a name="Initializer" id="mrpj.logo.LogoOptions.Initializer"></a>
+Provide additional configuration for the logo.
+
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoConfig.Initializer"></a>
 
 ```typescript
 import { logo } from 'mrpj'
 
-const logoOptions: logo.LogoOptions = { ... }
+const logoConfig: logo.LogoConfig = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mrpj.logo.LogoOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoOptions.property.dx">dx</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoOptions.property.dy">dy</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoOptions.property.file">file</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoConfig.property.height">height</a></code> | <code>number</code> | The height of the logo in px. |
+| <code><a href="#mrpj.logo.LogoConfig.property.width">width</a></code> | <code>number</code> | The width of the logo in px. |
+| <code><a href="#mrpj.logo.LogoConfig.property.scale">scale</a></code> | <code>number</code> | Scale the logo by a factor. |
 
 ---
 
-##### `height`<sup>Optional</sup> <a name="height" id="mrpj.logo.LogoOptions.property.height"></a>
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.LogoConfig.property.height"></a>
 
 ```typescript
 public readonly height: number;
@@ -2403,19 +2402,11 @@ public readonly height: number;
 
 - *Type:* number
 
----
-
-##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.LogoOptions.property.scale"></a>
-
-```typescript
-public readonly scale: number;
-```
-
-- *Type:* number
+The height of the logo in px.
 
 ---
 
-##### `width`<sup>Optional</sup> <a name="width" id="mrpj.logo.LogoOptions.property.width"></a>
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.LogoConfig.property.width"></a>
 
 ```typescript
 public readonly width: number;
@@ -2423,85 +2414,281 @@ public readonly width: number;
 
 - *Type:* number
 
+The width of the logo in px.
+
 ---
 
-##### `dx`<sup>Optional</sup> <a name="dx" id="mrpj.logo.LogoOptions.property.dx"></a>
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.LogoConfig.property.scale"></a>
 
 ```typescript
-public readonly dx: number;
+public readonly scale: number;
 ```
 
 - *Type:* number
+- *Default:* 1
+
+Scale the logo by a factor.
 
 ---
 
-##### `dy`<sup>Optional</sup> <a name="dy" id="mrpj.logo.LogoOptions.property.dy"></a>
+### LogoForProjenOptions <a name="LogoForProjenOptions" id="mrpj.logo.LogoForProjenOptions"></a>
 
-```typescript
-public readonly dy: number;
-```
+Options to create a logo from an SVG string.
 
-- *Type:* number
-
----
-
-##### `file`<sup>Optional</sup> <a name="file" id="mrpj.logo.LogoOptions.property.file"></a>
-
-```typescript
-public readonly file: string;
-```
-
-- *Type:* string
-
----
-
-### LogoSystemOptions <a name="LogoSystemOptions" id="mrpj.logo.LogoSystemOptions"></a>
-
-#### Initializer <a name="Initializer" id="mrpj.logo.LogoSystemOptions.Initializer"></a>
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoForProjenOptions.Initializer"></a>
 
 ```typescript
 import { logo } from 'mrpj'
 
-const logoSystemOptions: logo.LogoSystemOptions = { ... }
+const logoForProjenOptions: logo.LogoForProjenOptions = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mrpj.logo.LogoSystemOptions.property.dirName">dirName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoSystemOptions.property.logo">logo</a></code> | <code>mrpj.logo.LogoOptions</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoSystemOptions.property.wordmark">wordmark</a></code> | <code>mrpj.logo.WordmarkOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.frontColor">frontColor</a></code> | <code>string</code> | The hex code for the color of the front of the box. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.icon">icon</a></code> | <code>string</code> | The icon in front of the parcel box. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.iconTransform">iconTransform</a></code> | <code>string</code> | SVG transform for the icon. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.outFile">outFile</a></code> | <code>string</code> | The path where the logo file will be created. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.outlineColor">outlineColor</a></code> | <code>string</code> | The hex code for the color of the parcel outline. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.tapeColor">tapeColor</a></code> | <code>string</code> | The hex code for the color of the packaging tape. |
+| <code><a href="#mrpj.logo.LogoForProjenOptions.property.topColor">topColor</a></code> | <code>string</code> | The hex code for the color of the top of the box. |
 
 ---
 
-##### `dirName`<sup>Optional</sup> <a name="dirName" id="mrpj.logo.LogoSystemOptions.property.dirName"></a>
+##### `frontColor`<sup>Optional</sup> <a name="frontColor" id="mrpj.logo.LogoForProjenOptions.property.frontColor"></a>
 
 ```typescript
-public readonly dirName: string;
+public readonly frontColor: string;
+```
+
+- *Type:* string
+- *Default:* "#fa983c"
+
+The hex code for the color of the front of the box.
+
+---
+
+##### `icon`<sup>Optional</sup> <a name="icon" id="mrpj.logo.LogoForProjenOptions.property.icon"></a>
+
+```typescript
+public readonly icon: string;
+```
+
+- *Type:* string
+- *Default:* no icon
+
+The icon in front of the parcel box.
+
+---
+
+##### `iconTransform`<sup>Optional</sup> <a name="iconTransform" id="mrpj.logo.LogoForProjenOptions.property.iconTransform"></a>
+
+```typescript
+public readonly iconTransform: string;
 ```
 
 - *Type:* string
 
----
+SVG transform for the icon.
 
-##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.logo.LogoSystemOptions.property.logo"></a>
-
-```typescript
-public readonly logo: LogoOptions;
-```
-
-- *Type:* mrpj.logo.LogoOptions
+Likely needed to position the icon correctly.
 
 ---
 
-##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.logo.LogoSystemOptions.property.wordmark"></a>
+##### `outFile`<sup>Optional</sup> <a name="outFile" id="mrpj.logo.LogoForProjenOptions.property.outFile"></a>
 
 ```typescript
-public readonly wordmark: WordmarkOptions;
+public readonly outFile: string;
 ```
 
-- *Type:* mrpj.logo.WordmarkOptions
+- *Type:* string
+
+The path where the logo file will be created.
+
+---
+
+##### `outlineColor`<sup>Optional</sup> <a name="outlineColor" id="mrpj.logo.LogoForProjenOptions.property.outlineColor"></a>
+
+```typescript
+public readonly outlineColor: string;
+```
+
+- *Type:* string
+- *Default:* "#66200b"
+
+The hex code for the color of the parcel outline.
+
+---
+
+##### `tapeColor`<sup>Optional</sup> <a name="tapeColor" id="mrpj.logo.LogoForProjenOptions.property.tapeColor"></a>
+
+```typescript
+public readonly tapeColor: string;
+```
+
+- *Type:* string
+- *Default:* "#cbdada"
+
+The hex code for the color of the packaging tape.
+
+---
+
+##### `topColor`<sup>Optional</sup> <a name="topColor" id="mrpj.logo.LogoForProjenOptions.property.topColor"></a>
+
+```typescript
+public readonly topColor: string;
+```
+
+- *Type:* string
+- *Default:* "#fcc161"
+
+The hex code for the color of the top of the box.
+
+---
+
+### LogoFromContentOptions <a name="LogoFromContentOptions" id="mrpj.logo.LogoFromContentOptions"></a>
+
+Options to create a logo from an SVG string.
+
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoFromContentOptions.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const logoFromContentOptions: logo.LogoFromContentOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoFromContentOptions.property.height">height</a></code> | <code>number</code> | The height of the logo in px. |
+| <code><a href="#mrpj.logo.LogoFromContentOptions.property.width">width</a></code> | <code>number</code> | The width of the logo in px. |
+| <code><a href="#mrpj.logo.LogoFromContentOptions.property.scale">scale</a></code> | <code>number</code> | Scale the logo by a factor. |
+| <code><a href="#mrpj.logo.LogoFromContentOptions.property.outFile">outFile</a></code> | <code>string</code> | The path where the logo file will be created. |
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.LogoFromContentOptions.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+The height of the logo in px.
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.LogoFromContentOptions.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+The width of the logo in px.
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.LogoFromContentOptions.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+- *Default:* 1
+
+Scale the logo by a factor.
+
+---
+
+##### `outFile`<sup>Optional</sup> <a name="outFile" id="mrpj.logo.LogoFromContentOptions.property.outFile"></a>
+
+```typescript
+public readonly outFile: string;
+```
+
+- *Type:* string
+
+The path where the logo file will be created.
+
+---
+
+### LogoInfo <a name="LogoInfo" id="mrpj.logo.LogoInfo"></a>
+
+All required information to represent a logo.
+
+#### Initializer <a name="Initializer" id="mrpj.logo.LogoInfo.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+const logoInfo: logo.LogoInfo = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.LogoInfo.property.height">height</a></code> | <code>number</code> | The height of the logo in px. |
+| <code><a href="#mrpj.logo.LogoInfo.property.width">width</a></code> | <code>number</code> | The width of the logo in px. |
+| <code><a href="#mrpj.logo.LogoInfo.property.scale">scale</a></code> | <code>number</code> | Scale the logo by a factor. |
+| <code><a href="#mrpj.logo.LogoInfo.property.content">content</a></code> | <code>string</code> | The SVG content of the logo as a string. |
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.LogoInfo.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+The height of the logo in px.
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.LogoInfo.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+The width of the logo in px.
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.LogoInfo.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+- *Default:* 1
+
+Scale the logo by a factor.
+
+---
+
+##### `content`<sup>Required</sup> <a name="content" id="mrpj.logo.LogoInfo.property.content"></a>
+
+```typescript
+public readonly content: string;
+```
+
+- *Type:* string
+
+The SVG content of the logo as a string.
 
 ---
 
@@ -2587,8 +2774,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.logo">logo</a></code> | <code>boolean</code> | Generates wordmarks from a logo. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.logoOptions">logoOptions</a></code> | <code>mrpj.logo.LogoSystemOptions</code> | Generate Wordmark from a logo if found. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.logo">logo</a></code> | <code>mrpj.logo.ILogo</code> | Add a logo. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
@@ -2659,6 +2845,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.upgradesSchedule">upgradesSchedule</a></code> | <code>projen.javascript.UpgradeDependenciesSchedule</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.wordmarkOptions">wordmarkOptions</a></code> | <code>mrpj.logo.WordmarkOptions</code> | Configure how the wordmark is created from a logo. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
@@ -3576,28 +3763,14 @@ Configure logging options such as verbosity.
 ##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.ProjenProjectOptions.property.logo"></a>
 
 ```typescript
-public readonly logo: boolean;
+public readonly logo: ILogo;
 ```
 
-- *Type:* boolean
-- *Default:* true if a logo file is found, otherwise false
+- *Type:* mrpj.logo.ILogo
 
-Generates wordmarks from a logo.
+Add a logo.
 
-If no logo is found and set to `true`, a placeholder image is used.
-
----
-
-##### `logoOptions`<sup>Optional</sup> <a name="logoOptions" id="mrpj.ProjenProjectOptions.property.logoOptions"></a>
-
-```typescript
-public readonly logoOptions: LogoSystemOptions;
-```
-
-- *Type:* mrpj.logo.LogoSystemOptions
-- *Default:* "true"
-
-Generate Wordmark from a logo if found.
+Use `Logo.placeholder()` to get started.
 
 ---
 
@@ -4569,6 +4742,21 @@ public readonly vscode: boolean;
 Enable VSCode integration.
 
 Enabled by default for root projects. Disabled for non-root projects.
+
+---
+
+##### `wordmarkOptions`<sup>Optional</sup> <a name="wordmarkOptions" id="mrpj.ProjenProjectOptions.property.wordmarkOptions"></a>
+
+```typescript
+public readonly wordmarkOptions: WordmarkOptions;
+```
+
+- *Type:* mrpj.logo.WordmarkOptions
+- *Default:* derived from logo and project
+
+Configure how the wordmark is created from a logo.
+
+Wordmarks are only created when a logo is available.
 
 ---
 
@@ -6736,78 +6924,6 @@ Github Runner selection labels.
 
 ---
 
-### WordmarkLogoOptions <a name="WordmarkLogoOptions" id="mrpj.logo.WordmarkLogoOptions"></a>
-
-#### Initializer <a name="Initializer" id="mrpj.logo.WordmarkLogoOptions.Initializer"></a>
-
-```typescript
-import { logo } from 'mrpj'
-
-const wordmarkLogoOptions: logo.WordmarkLogoOptions = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.width">width</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.content">content</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkLogoOptions.property.translate">translate</a></code> | <code>mrpj.logo.TranslateOptions</code> | *No description.* |
-
----
-
-##### `height`<sup>Optional</sup> <a name="height" id="mrpj.logo.WordmarkLogoOptions.property.height"></a>
-
-```typescript
-public readonly height: number;
-```
-
-- *Type:* number
-
----
-
-##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.WordmarkLogoOptions.property.scale"></a>
-
-```typescript
-public readonly scale: number;
-```
-
-- *Type:* number
-
----
-
-##### `width`<sup>Optional</sup> <a name="width" id="mrpj.logo.WordmarkLogoOptions.property.width"></a>
-
-```typescript
-public readonly width: number;
-```
-
-- *Type:* number
-
----
-
-##### `content`<sup>Optional</sup> <a name="content" id="mrpj.logo.WordmarkLogoOptions.property.content"></a>
-
-```typescript
-public readonly content: string;
-```
-
-- *Type:* string
-
----
-
-##### `translate`<sup>Optional</sup> <a name="translate" id="mrpj.logo.WordmarkLogoOptions.property.translate"></a>
-
-```typescript
-public readonly translate: TranslateOptions;
-```
-
-- *Type:* mrpj.logo.TranslateOptions
-
----
-
 ### WordmarkOptions <a name="WordmarkOptions" id="mrpj.logo.WordmarkOptions"></a>
 
 #### Initializer <a name="Initializer" id="mrpj.logo.WordmarkOptions.Initializer"></a>
@@ -6826,7 +6942,9 @@ const wordmarkOptions: logo.WordmarkOptions = { ... }
 | <code><a href="#mrpj.logo.WordmarkOptions.property.dirName">dirName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.fileBaseName">fileBaseName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.font">font</a></code> | <code>mrpj.logo.FontOptions</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkOptions.property.logo">logo</a></code> | <code>mrpj.logo.WordmarkLogoOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.logo">logo</a></code> | <code>mrpj.logo.LogoInfo</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.logoPosition">logoPosition</a></code> | <code>mrpj.logo.TranslateOptions</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.logoScale">logoScale</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.raw">raw</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.size">size</a></code> | <code>mrpj.logo.SizeOptions</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.text">text</a></code> | <code>string</code> | *No description.* |
@@ -6877,10 +6995,30 @@ public readonly font: FontOptions;
 ##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.logo.WordmarkOptions.property.logo"></a>
 
 ```typescript
-public readonly logo: WordmarkLogoOptions;
+public readonly logo: LogoInfo;
 ```
 
-- *Type:* mrpj.logo.WordmarkLogoOptions
+- *Type:* mrpj.logo.LogoInfo
+
+---
+
+##### `logoPosition`<sup>Optional</sup> <a name="logoPosition" id="mrpj.logo.WordmarkOptions.property.logoPosition"></a>
+
+```typescript
+public readonly logoPosition: TranslateOptions;
+```
+
+- *Type:* mrpj.logo.TranslateOptions
+
+---
+
+##### `logoScale`<sup>Optional</sup> <a name="logoScale" id="mrpj.logo.WordmarkOptions.property.logoScale"></a>
+
+```typescript
+public readonly logoScale: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -8367,98 +8505,187 @@ this task should synthesize the project files.
 
 ---
 
-### LogoSystem <a name="LogoSystem" id="mrpj.logo.LogoSystem"></a>
+### Logo <a name="Logo" id="mrpj.logo.Logo"></a>
 
-#### Initializers <a name="Initializers" id="mrpj.logo.LogoSystem.Initializer"></a>
+- *Implements:* mrpj.logo.ILogo
 
-```typescript
-import { logo } from 'mrpj'
-
-new logo.LogoSystem(project: Project, options?: LogoSystemOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.LogoSystem.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoSystem.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.LogoSystemOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.LogoSystem.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.LogoSystem.Initializer.parameter.options"></a>
-
-- *Type:* mrpj.logo.LogoSystemOptions
-
----
+Create a logo for the project.
 
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#mrpj.logo.LogoSystem.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#mrpj.logo.LogoSystem.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#mrpj.logo.LogoSystem.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#mrpj.logo.Logo.synth">synth</a></code> | Synth the logo and return the file path. |
 
 ---
 
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.LogoSystem.postSynthesize"></a>
+##### `synth` <a name="synth" id="mrpj.logo.Logo.synth"></a>
 
 ```typescript
-public postSynthesize(): void
+public synth(project: Project): string
 ```
 
-Called after synthesis.
+Synth the logo and return the file path.
 
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.LogoSystem.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="mrpj.logo.LogoSystem.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.LogoSystem.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#mrpj.logo.LogoSystem.property.convertTask">convertTask</a></code> | <code>projen.Task</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.LogoSystem.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
+###### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Logo.synth.parameter.project"></a>
 
 - *Type:* projen.Project
 
 ---
 
-##### `convertTask`<sup>Optional</sup> <a name="convertTask" id="mrpj.logo.LogoSystem.property.convertTask"></a>
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.Logo.forProjen">forProjen</a></code> | A logo for projen related projects. |
+| <code><a href="#mrpj.logo.Logo.fromContent">fromContent</a></code> | Create the logo from this svg snippet. |
+| <code><a href="#mrpj.logo.Logo.fromFile">fromFile</a></code> | Use an existing logo from a file. |
+| <code><a href="#mrpj.logo.Logo.placeholder">placeholder</a></code> | An empty placeholder logo. |
+
+---
+
+##### `forProjen` <a name="forProjen" id="mrpj.logo.Logo.forProjen"></a>
 
 ```typescript
-public readonly convertTask: Task;
+import { logo } from 'mrpj'
+
+logo.Logo.forProjen(path?: string, options?: LogoForProjenOptions)
 ```
 
-- *Type:* projen.Task
+A logo for projen related projects.
+
+###### `path`<sup>Optional</sup> <a name="path" id="mrpj.logo.Logo.forProjen.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.Logo.forProjen.parameter.options"></a>
+
+- *Type:* mrpj.logo.LogoForProjenOptions
+
+---
+
+##### `fromContent` <a name="fromContent" id="mrpj.logo.Logo.fromContent"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.Logo.fromContent(content: string, options: LogoFromContentOptions)
+```
+
+Create the logo from this svg snippet.
+
+Content should NOT include the outermost <svg> tag.
+
+###### `content`<sup>Required</sup> <a name="content" id="mrpj.logo.Logo.fromContent.parameter.content"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.Logo.fromContent.parameter.options"></a>
+
+- *Type:* mrpj.logo.LogoFromContentOptions
+
+---
+
+##### `fromFile` <a name="fromFile" id="mrpj.logo.Logo.fromFile"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.Logo.fromFile(path: string, options: LogoConfig)
+```
+
+Use an existing logo from a file.
+
+###### `path`<sup>Required</sup> <a name="path" id="mrpj.logo.Logo.fromFile.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+###### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.Logo.fromFile.parameter.options"></a>
+
+- *Type:* mrpj.logo.LogoConfig
+
+---
+
+##### `placeholder` <a name="placeholder" id="mrpj.logo.Logo.placeholder"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.Logo.placeholder(path?: string)
+```
+
+An empty placeholder logo.
+
+Can be used the get started before a logo is created.
+
+###### `path`<sup>Optional</sup> <a name="path" id="mrpj.logo.Logo.placeholder.parameter.path"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.Logo.property.content">content</a></code> | <code>string</code> | The SVG content of the logo as a string. |
+| <code><a href="#mrpj.logo.Logo.property.height">height</a></code> | <code>number</code> | The height of the logo in px. |
+| <code><a href="#mrpj.logo.Logo.property.width">width</a></code> | <code>number</code> | The width of the logo in px. |
+| <code><a href="#mrpj.logo.Logo.property.scale">scale</a></code> | <code>number</code> | Scale the logo by a factor. |
+
+---
+
+##### `content`<sup>Required</sup> <a name="content" id="mrpj.logo.Logo.property.content"></a>
+
+```typescript
+public readonly content: string;
+```
+
+- *Type:* string
+
+The SVG content of the logo as a string.
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.Logo.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+The height of the logo in px.
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.Logo.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+The width of the logo in px.
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.Logo.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+
+Scale the logo by a factor.
 
 ---
 
@@ -9097,6 +9324,8 @@ The command to execute.
 | <code><a href="#mrpj.ProjenProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
 
 ---
 
@@ -9810,6 +10039,26 @@ public readonly tsconfigEslint: TypescriptConfig;
 
 ---
 
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.ProjenProject.property.logo"></a>
+
+```typescript
+public readonly logo: SvgFile;
+```
+
+- *Type:* mrpj.logo.SvgFile
+
+---
+
+##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.ProjenProject.property.wordmark"></a>
+
+```typescript
+public readonly wordmark: Wordmark;
+```
+
+- *Type:* mrpj.logo.Wordmark
+
+---
+
 #### Constants <a name="Constants" id="Constants"></a>
 
 | **Name** | **Type** | **Description** |
@@ -9881,7 +10130,6 @@ new logo.SvgFile(project: Project, filePath: string, options: SvgFileOptions)
 | <code><a href="#mrpj.logo.SvgFile.close">close</a></code> | Decreases the indentation level and closes a code block. |
 | <code><a href="#mrpj.logo.SvgFile.line">line</a></code> | Emit a line of code. |
 | <code><a href="#mrpj.logo.SvgFile.open">open</a></code> | Opens a code block and increases the indentation level. |
-| <code><a href="#mrpj.logo.SvgFile.lines">lines</a></code> | Adds text as lines to the text file. |
 
 ---
 
@@ -9956,22 +10204,6 @@ Opens a code block and increases the indentation level.
 - *Type:* string
 
 The code before the block starts (e.g. `export class {`).
-
----
-
-##### `lines` <a name="lines" id="mrpj.logo.SvgFile.lines"></a>
-
-```typescript
-public lines(lines: string): void
-```
-
-Adds text as lines to the text file.
-
-###### `lines`<sup>Required</sup> <a name="lines" id="mrpj.logo.SvgFile.lines.parameter.lines"></a>
-
-- *Type:* string
-
-the text with line breaks to add.
 
 ---
 
@@ -11421,8 +11653,6 @@ new logo.Wordmark(project: Project, options?: WordmarkOptions)
 | <code><a href="#mrpj.logo.Wordmark.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#mrpj.logo.Wordmark.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#mrpj.logo.Wordmark.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#mrpj.logo.Wordmark.dynamic">dynamic</a></code> | *No description.* |
-| <code><a href="#mrpj.logo.Wordmark.variant">variant</a></code> | *No description.* |
 
 ---
 
@@ -11452,42 +11682,6 @@ public synthesize(): void
 
 Synthesizes files to the project output directory.
 
-##### `dynamic` <a name="dynamic" id="mrpj.logo.Wordmark.dynamic"></a>
-
-```typescript
-public dynamic(dark: WordmarkOptions, light: WordmarkOptions): Wordmark[]
-```
-
-###### `dark`<sup>Required</sup> <a name="dark" id="mrpj.logo.Wordmark.dynamic.parameter.dark"></a>
-
-- *Type:* mrpj.logo.WordmarkOptions
-
----
-
-###### `light`<sup>Required</sup> <a name="light" id="mrpj.logo.Wordmark.dynamic.parameter.light"></a>
-
-- *Type:* mrpj.logo.WordmarkOptions
-
----
-
-##### `variant` <a name="variant" id="mrpj.logo.Wordmark.variant"></a>
-
-```typescript
-public variant(name: string, options: WordmarkOptions): Wordmark
-```
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.logo.Wordmark.variant.parameter.name"></a>
-
-- *Type:* string
-
----
-
-###### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.Wordmark.variant.parameter.options"></a>
-
-- *Type:* mrpj.logo.WordmarkOptions
-
----
-
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -11508,4 +11702,93 @@ public readonly project: Project;
 ---
 
 
+## Protocols <a name="Protocols" id="Protocols"></a>
+
+### ILogo <a name="ILogo" id="mrpj.logo.ILogo"></a>
+
+- *Implemented By:* mrpj.logo.Logo, mrpj.logo.ILogo
+
+Implementation interface of a logo.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.ILogo.synth">synth</a></code> | Synth the logo and return the file path. |
+
+---
+
+##### `synth` <a name="synth" id="mrpj.logo.ILogo.synth"></a>
+
+```typescript
+public synth(project: Project): string
+```
+
+Synth the logo and return the file path.
+
+###### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.ILogo.synth.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.ILogo.property.content">content</a></code> | <code>string</code> | The SVG content of the logo as a string. |
+| <code><a href="#mrpj.logo.ILogo.property.height">height</a></code> | <code>number</code> | The height of the logo in px. |
+| <code><a href="#mrpj.logo.ILogo.property.width">width</a></code> | <code>number</code> | The width of the logo in px. |
+| <code><a href="#mrpj.logo.ILogo.property.scale">scale</a></code> | <code>number</code> | Scale the logo by a factor. |
+
+---
+
+##### `content`<sup>Required</sup> <a name="content" id="mrpj.logo.ILogo.property.content"></a>
+
+```typescript
+public readonly content: string;
+```
+
+- *Type:* string
+
+The SVG content of the logo as a string.
+
+---
+
+##### `height`<sup>Required</sup> <a name="height" id="mrpj.logo.ILogo.property.height"></a>
+
+```typescript
+public readonly height: number;
+```
+
+- *Type:* number
+
+The height of the logo in px.
+
+---
+
+##### `width`<sup>Required</sup> <a name="width" id="mrpj.logo.ILogo.property.width"></a>
+
+```typescript
+public readonly width: number;
+```
+
+- *Type:* number
+
+The width of the logo in px.
+
+---
+
+##### `scale`<sup>Optional</sup> <a name="scale" id="mrpj.logo.ILogo.property.scale"></a>
+
+```typescript
+public readonly scale: number;
+```
+
+- *Type:* number
+- *Default:* 1
+
+Scale the logo by a factor.
+
+---
 

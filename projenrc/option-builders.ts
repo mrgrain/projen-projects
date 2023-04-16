@@ -58,20 +58,21 @@ export class ProjenProjectOptionsBuilder extends Component {
       .add({
         name: 'logo',
         optional: true,
-        type: { primitive: PrimitiveType.Boolean },
+        type: { fqn: 'mrpj.logo.ILogo' },
         docs: {
-          summary: 'Generates wordmarks from a logo.',
-          remarks: 'If no logo is found and set to `true`, a placeholder image is used.',
-          default: '- true if a logo file is found, otherwise false',
+          summary: 'Add a logo.',
+          remarks: 'Use `Logo.placeholder()` to get started.',
+          example: 'Logo.fromFile("images/my-logo.svg", { width: 100, height: 100 })',
         },
       })
       .add({
-        name: 'logoOptions',
+        name: 'wordmarkOptions',
         optional: true,
-        type: { fqn: 'mrpj.logo.LogoSystemOptions' },
+        type: { fqn: 'mrpj.logo.WordmarkOptions' },
         docs: {
-          summary: 'Generate Wordmark from a logo if found.',
-          default: '"true"',
+          summary: 'Configure how the wordmark is created from a logo.',
+          remarks: 'Wordmarks are only created when a logo is available.',
+          default: '- derived from logo and project',
         },
       })
 
