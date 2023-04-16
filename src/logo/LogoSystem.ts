@@ -28,6 +28,7 @@ export class LogoSystem extends Component {
       dirName,
       size: options.wordmark?.size,
       text: options.wordmark?.text,
+      textPosition: options.wordmark?.textPosition,
       raw: options.wordmark?.raw,
       font: options.wordmark?.font,
       logo: {
