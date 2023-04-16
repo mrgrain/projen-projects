@@ -16,11 +16,15 @@ export function noEmpties(list: any[]): any[] {
   return list.filter(e => e !== undefined && e !== null);
 }
 
+type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+
 /**
  * Deep merge a user provided options object with defaults.
  * User options take precedence.
  */
-export function deepDefaults<T>(options: Partial<T> = {} as any, defaults: Partial<T> = {} as any): T {
+export function deepDefaults<T>(options: DeepPartial<T> = {} as any, defaults: DeepPartial<T> = {} as any): T {
   return deepMerge(defaults, options);
 }
 

@@ -10,7 +10,7 @@
     </style>
 
 
-    <g transform="translate(0 0) scale(2)">
+    <g transform="translate(0 2) scale(2)">
         <g transform="translate(4 19)" shape-rendering="crispEdges">
             <!-- fill -->
             <path d="m 0,0 l 10,-15.6 h 60 l 10,15.6 z" fill="#d89751" />
