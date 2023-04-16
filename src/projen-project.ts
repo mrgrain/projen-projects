@@ -1,6 +1,5 @@
 import { cdk, github, javascript } from 'projen';
 import { SvgFile, Wordmark } from './logo';
-import { logoToPngTask } from './logo/private.ts/logo-task';
 import { ProjenProjectOptions } from './projen-project-options';
 import { deepDefaults, ifSet, noEmpties } from './utils';
 
@@ -73,8 +72,7 @@ export class ProjenProject extends cdk.JsiiProject {
     });
 
     if (options.logo) {
-      const logoPath = options.logo.synth(this);
-      logoToPngTask(this, logoPath);
+      options.logo.synth(this);
       this.wordmark = new Wordmark(this, {
         logo: options.logo,
         ...options.wordmarkOptions,
