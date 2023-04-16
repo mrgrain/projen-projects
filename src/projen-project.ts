@@ -73,10 +73,10 @@ export class ProjenProject extends cdk.JsiiProject {
     });
 
     if (options.logo) {
-      const logoPath = options.logo.render(this);
+      const logoPath = options.logo.synth(this);
       logoToPngTask(this, logoPath);
       this.wordmark = new Wordmark(this, {
-        logo: options.logo.info,
+        logo: options.logo,
         ...options.wordmarkOptions,
       });
     }

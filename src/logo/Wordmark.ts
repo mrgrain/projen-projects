@@ -71,7 +71,7 @@ export class Wordmark extends Component {
         size: 90,
         color: '#6F7174',
       },
-      logo: Logo.placeholder().info,
+      logo: Logo.placeholder(),
       logoScale: 2,
       logoPosition: {
         dx: 0,

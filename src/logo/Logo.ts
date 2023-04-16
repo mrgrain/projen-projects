@@ -21,7 +21,6 @@ export interface LogoConfig {
   readonly scale?: number;
 }
 
-
 /**
  * All required information to represent a logo.
  */
@@ -88,14 +87,35 @@ interface LogoFromOptions extends LogoConfig {
 }
 
 /**
- *
+ * Implementation interface of a logo
  */
 export interface ILogo {
-  readonly info: LogoInfo;
-  render(project: Project): string;
+  /**
+   * The width of the logo in px.
+   */
+  readonly width: number;
+  /**
+   * The height of the logo in px.
+   */
+  readonly height: number;
+  /**
+   * Scale the logo by a factor.
+   * @default 1
+   */
+  readonly scale?: number;
+  /**
+   * The SVG content of the logo as a string.
+   **/
+  readonly content: string;
+  /**
+   * Synth the logo and return the file path.
+   */
+  synth(project: Project): string;
 }
 
-
+/**
+ * Create a logo for the project.
+ */
 export class Logo implements ILogo {
   /**
    * Use an existing logo from a file.
@@ -178,28 +198,29 @@ export class Logo implements ILogo {
     });
   }
 
+  public readonly width: number;
+  public readonly height: number;
+  public readonly scale?: number;
+  public readonly content: string;
 
-  public readonly info: LogoInfo;
   private readonly outFile?: string;
   private readonly sourceFile?: string;
 
   private constructor(content: string, options: LogoFromOptions) {
-    this.info = {
-      content,
-      width: options.width,
-      height: options.height,
-      scale: options.scale,
-    };
+    this.content = content;
+    this.width = options.width;
+    this.height = options.height;
+    this.scale= options.scale;
 
     this.sourceFile = options.sourceFile;
     this.outFile = options.outFile;
   }
 
-  public render(project: Project) {
+  public synth(project: Project) {
     if (!this.outFile) {
       return this.sourceFile!;
     }
 
-    return new SvgFile(project, this.outFile, this.info).filePath;
+    return new SvgFile(project, this.outFile, this).filePath;
   }
 }
