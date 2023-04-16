@@ -1,6 +1,8 @@
-# mrpj: **mr**grain **p**ro**j**en
+![Mr. PJ](./images/wordmark-dynamic.svg)
 
-Opinionate projen project types. Just for me.
+# **Mr**grain **P**ro**J**en types
+
+Opinionated projen project types. Just for me.
 
 ## Usage
 
