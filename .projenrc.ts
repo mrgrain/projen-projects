@@ -14,6 +14,25 @@ const project = new ProjenProject({
   release: true,
   upgradesSchedule: javascript.UpgradeDependenciesSchedule.WEEKLY,
   automationAppName: 'projen-builder',
+
+  // Marketing
+  logoOptions: {
+    wordmark: {
+      text: 'Mr. PJ',
+      textPosition: {
+        dx: 30,
+        dy: 20,
+      },
+      size: {
+        height: 180,
+        width: 500,
+      },
+    },
+    logo: {
+      height: 88,
+      width: 88,
+    },
+  },
 });
 
 new ConstructProjectOptionsBuilder(project);

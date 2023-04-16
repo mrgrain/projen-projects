@@ -51,6 +51,10 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+!/images/wordmark.svg
+!/images/wordmark-dark.svg
+!/images/wordmark-light.svg
+!/images/wordmark-dynamic.svg
 !/src/construct-project-options.ts
 !/src/projen-project-options.ts
 !/src/typescript-project-options.ts

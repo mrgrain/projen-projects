@@ -17,6 +17,10 @@
 /.projen/files.json linguist-generated
 /.projen/tasks.json linguist-generated
 /API.md linguist-generated
+/images/wordmark-dark.svg linguist-generated
+/images/wordmark-dynamic.svg linguist-generated
+/images/wordmark-light.svg linguist-generated
+/images/wordmark.svg linguist-generated
 /LICENSE linguist-generated
 /package.json linguist-generated
 /src/construct-project-options.ts linguist-generated
