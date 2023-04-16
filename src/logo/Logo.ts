@@ -165,10 +165,11 @@ export class Logo implements ILogo {
       tapeColor = '#cbdada',
       outlineColor = '#66200b',
       icon,
-      iconTransform = '',
+      iconTransform,
     } = options;
 
-    const iconGroup = icon ? `<g transform="${iconTransform}">${icon}</g>` : '';
+    const iconGroupTransform = iconTransform ? ` transform="${iconTransform}"` : '';
+    const iconGroup = icon ? `<g id="icon"${iconGroupTransform}>${icon}</g>` : '';
 
     const content = `<g transform="translate(4 19)" shape-rendering="crispEdges">
     <!-- fill -->
