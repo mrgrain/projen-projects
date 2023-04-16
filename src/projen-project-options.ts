@@ -929,14 +929,14 @@ export interface ProjenProjectOptions {
    */
   readonly upgradesSchedule?: javascript.UpgradeDependenciesSchedule;
   /**
-   * Generates wordmarks from a logo.
-   * If no logo is found and set to `true`, a placeholder image is used.
-   * @default - true if a logo file is found, otherwise false
+   * Add a logo.
+   * Use `Logo.placeholder()` to get started.
    */
-  readonly logo?: boolean;
+  readonly logo?: logo.ILogo;
   /**
-   * Generate Wordmark from a logo if found.
-   * @default "true"
+   * Configure how the wordmark is created from a logo.
+   * Wordmarks are only created when a logo is available.
+   * @default - derived from logo and project
    */
-  readonly logoOptions?: logo.LogoSystemOptions;
+  readonly wordmarkOptions?: logo.WordmarkOptions;
 }

@@ -10,7 +10,7 @@
     </style>
 
 
-    <g transform="translate(0 0) scale(2.0454545454545454)">
+    <g transform="translate(0 0) scale(2)">
         <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewbox="0 0 88 88">
             <g transform="translate(4 19)" shape-rendering="crispEdges">
                 <!-- fill -->
@@ -47,5 +47,5 @@
         </svg>
     </g>
 
-    <text x="210" y="110"><tspan dy="0.5ex">Mr. PJ</tspan></text>
+    <text x="206" y="110"><tspan dy="0.5ex">Mr. PJ</tspan></text>
 </svg>

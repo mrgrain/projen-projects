@@ -1,6 +1,7 @@
 import { javascript } from 'projen';
 import { ConstructProjectOptionsBuilder, ProjenProjectOptionsBuilder, TypeScriptProjectOptionsBuilder } from './projenrc/option-builders';
 import { ProjenProject } from './src';
+import { Logo } from './src/logo';
 
 const project = new ProjenProject({
   // Repo info
@@ -16,21 +17,19 @@ const project = new ProjenProject({
   automationAppName: 'projen-builder',
 
   // Marketing
-  logoOptions: {
-    wordmark: {
-      text: 'Mr. PJ',
-      textPosition: {
-        dx: 30,
-        dy: 20,
-      },
-      size: {
-        height: 180,
-        width: 500,
-      },
+  logo: Logo.fromFile('images/logo.svg', {
+    height: 88,
+    width: 88,
+  }),
+  wordmarkOptions: {
+    text: 'Mr. PJ',
+    textPosition: {
+      dx: 30,
+      dy: 20,
     },
-    logo: {
-      height: 88,
-      width: 88,
+    size: {
+      height: 180,
+      width: 500,
     },
   },
 });
