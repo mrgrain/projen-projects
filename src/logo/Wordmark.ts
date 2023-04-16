@@ -57,7 +57,10 @@ export class Wordmark extends Component {
   public constructor(project: Project, options: WordmarkOptions = {}) {
     super(project);
 
-    this.options = deepDefaults(options, {
+    this.options = deepDefaults({
+      ...options,
+      colorScheme: {},
+    }, {
       dirName: 'images',
       fileBaseName: 'wordmark',
       text: this.project.name,
@@ -84,8 +87,8 @@ export class Wordmark extends Component {
       },
     }) as FullWordmarkOptions;
 
+    // Default variant
     new WordmarkVariant(project, this.options);
-
 
     // Allow colorScheme to be disabled
     const colorScheme = options.colorScheme ?? {
