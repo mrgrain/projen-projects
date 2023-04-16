@@ -6827,10 +6827,10 @@ const wordmarkOptions: logo.WordmarkOptions = { ... }
 | <code><a href="#mrpj.logo.WordmarkOptions.property.fileBaseName">fileBaseName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.font">font</a></code> | <code>mrpj.logo.FontOptions</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.logo">logo</a></code> | <code>mrpj.logo.WordmarkLogoOptions</code> | *No description.* |
-| <code><a href="#mrpj.logo.WordmarkOptions.property.padding">padding</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.raw">raw</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.size">size</a></code> | <code>mrpj.logo.SizeOptions</code> | *No description.* |
 | <code><a href="#mrpj.logo.WordmarkOptions.property.text">text</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.WordmarkOptions.property.textPosition">textPosition</a></code> | <code>mrpj.logo.TranslateOptions</code> | *No description.* |
 
 ---
 
@@ -6884,16 +6884,6 @@ public readonly logo: WordmarkLogoOptions;
 
 ---
 
-##### `padding`<sup>Optional</sup> <a name="padding" id="mrpj.logo.WordmarkOptions.property.padding"></a>
-
-```typescript
-public readonly padding: number;
-```
-
-- *Type:* number
-
----
-
 ##### `raw`<sup>Optional</sup> <a name="raw" id="mrpj.logo.WordmarkOptions.property.raw"></a>
 
 ```typescript
@@ -6921,6 +6911,16 @@ public readonly text: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `textPosition`<sup>Optional</sup> <a name="textPosition" id="mrpj.logo.WordmarkOptions.property.textPosition"></a>
+
+```typescript
+public readonly textPosition: TranslateOptions;
+```
+
+- *Type:* mrpj.logo.TranslateOptions
 
 ---
 
