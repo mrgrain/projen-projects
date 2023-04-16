@@ -28,8 +28,10 @@ export class LogoSystem extends Component {
       dirName,
       size: options.wordmark?.size,
       text: options.wordmark?.text,
+      textPosition: options.wordmark?.textPosition,
       raw: options.wordmark?.raw,
       font: options.wordmark?.font,
+      colorScheme: options.wordmark?.colorScheme,
       logo: {
         ...options.logo,
         content: logo,
@@ -40,7 +42,10 @@ export class LogoSystem extends Component {
       },
     });
 
-    const colorScheme = options.wordmark?.colorScheme;
+    const colorScheme = options.wordmark?.colorScheme ?? {
+      dark: { color: '#f0f6fc' },
+      light: { color: '#191919' },
+    };
     if (colorScheme?.dark && colorScheme.light) {
       wordmark.dynamic({
         font: colorScheme?.dark,

@@ -8,10 +8,10 @@ export interface WordmarkOptions {
   readonly fileBaseName?: string;
   readonly dirName?: string;
   readonly text?: string;
+  readonly textPosition?: TranslateOptions;
   readonly raw?: string;
   readonly size?: SizeOptions;
   readonly logo?: WordmarkLogoOptions;
-  readonly padding?: number;
   readonly font?: FontOptions;
   readonly colorScheme?: ColorScheme;
 }
@@ -46,26 +46,13 @@ export interface WordmarkLogoOptions extends SizeOptions {
 
 type FullWordmarkOptions = Omit<Required<WordmarkOptions>, 'raw' | 'colorScheme'> & WordmarkOptions & {
   readonly size: Required<SizeOptions>;
+  readonly textPosition: Required<TranslateOptions>;
   readonly logo: Omit<Required<WordmarkLogoOptions>, | 'scale' | 'translate'> & {
     readonly translate?: TranslateOptions;
     readonly scale?: number;
   };
 };
 
-// {
-//   readonly fileBaseName: string;
-//   readonly dirName: string;
-//   readonly text: string;
-//   readonly raw?: string;
-//   readonly size: SizeOptions;
-//   readonly logo: LogoOptions;
-//   readonly padding: number;
-//   readonly font: FontOptions;
-//   readonly colorScheme?: {
-//     dark?: FontOptions;
-//     light?: FontOptions;
-//   };
-// }
 
 export class Wordmark extends Component {
   private readonly options: FullWordmarkOptions;
@@ -83,8 +70,8 @@ export class Wordmark extends Component {
     };
 
     const wordmark = this.options.raw ?? this.wordmark(this.options.text, {
-      x: logoScale * this.options.logo.width + this.options.padding,
-      y: this.options.size.height/2,
+      x: logoScale * this.options.logo.width + this.options.textPosition.dx,
+      y: this.options.size.height/2 + this.options.textPosition.dy,
     });
 
     const indent = 4;
@@ -129,13 +116,16 @@ ${this.options.logo.content.split('\n').map(l => ' '.repeat(indent) + l).join('\
       dirName: 'images',
       fileBaseName: 'wordmark',
       text: this.project.name,
+      textPosition: {
+        dx: 35,
+        dy: 0,
+      },
       font: {
         family: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
         weight: '700',
         size: 90,
         color: '#6F7174',
       },
-      padding: 35,
       logo: {
         width: 80,
         height: 80,
