@@ -116,6 +116,7 @@ export interface ConstructProjectOptions {
    * (e.g. `~5.0.0`).
    * @default "1.x"
    * @stability experimental
+   * @pjnew "~5.0.0"
    */
   readonly jsiiVersion?: string;
   /**
@@ -229,6 +230,7 @@ export interface ConstructProjectOptions {
    * Use TypeScript for your projenrc file (`.projenrc.ts`).
    * @default false
    * @stability experimental
+   * @pjnew true
    */
   readonly projenrcTs?: boolean;
   /**
@@ -674,6 +676,7 @@ export interface ConstructProjectOptions {
    * The "name" in package.json.
    * @default - defaults to project name
    * @stability experimental
+   * @featured true
    */
   readonly packageName?: string;
   /**
@@ -760,6 +763,7 @@ export interface ConstructProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly devDeps?: Array<string>;
   /**
@@ -767,6 +771,7 @@ export interface ConstructProjectOptions {
    * It can be used when searching for packages in a package manager as well.
    * See https://classic.yarnpkg.com/en/docs/package-json/#toc-description
    * @stability experimental
+   * @featured true
    */
   readonly description?: string;
   /**
@@ -779,6 +784,7 @@ export interface ConstructProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly deps?: Array<string>;
   /**
@@ -1014,6 +1020,7 @@ export interface ConstructProjectOptions {
    * This is the name of your project.
    * @default $BASEDIR
    * @stability experimental
+   * @featured true
    */
   readonly name: string;
 }
