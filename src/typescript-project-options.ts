@@ -62,6 +62,7 @@ export interface TypeScriptProjectOptions {
    * Use TypeScript for your projenrc file (`.projenrc.ts`).
    * @default false
    * @stability experimental
+   * @pjnew true
    */
   readonly projenrcTs?: boolean;
   /**
@@ -507,6 +508,7 @@ export interface TypeScriptProjectOptions {
    * The "name" in package.json.
    * @default - defaults to project name
    * @stability experimental
+   * @featured true
    */
   readonly packageName?: string;
   /**
@@ -593,6 +595,7 @@ export interface TypeScriptProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly devDeps?: Array<string>;
   /**
@@ -600,6 +603,7 @@ export interface TypeScriptProjectOptions {
    * It can be used when searching for packages in a package manager as well.
    * See https://classic.yarnpkg.com/en/docs/package-json/#toc-description
    * @stability experimental
+   * @featured true
    */
   readonly description?: string;
   /**
@@ -612,6 +616,7 @@ export interface TypeScriptProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly deps?: Array<string>;
   /**
@@ -847,6 +852,7 @@ export interface TypeScriptProjectOptions {
    * This is the name of your project.
    * @default $BASEDIR
    * @stability experimental
+   * @featured true
    */
   readonly name: string;
 }

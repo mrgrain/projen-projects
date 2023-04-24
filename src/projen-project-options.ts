@@ -571,6 +571,7 @@ export interface ProjenProjectOptions {
    * The "name" in package.json.
    * @default - defaults to project name
    * @stability experimental
+   * @featured true
    */
   readonly packageName?: string;
   /**
@@ -657,6 +658,7 @@ export interface ProjenProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly devDeps?: Array<string>;
   /**
@@ -664,6 +666,7 @@ export interface ProjenProjectOptions {
    * It can be used when searching for packages in a package manager as well.
    * See https://classic.yarnpkg.com/en/docs/package-json/#toc-description
    * @stability experimental
+   * @featured true
    */
   readonly description?: string;
   /**
@@ -676,6 +679,7 @@ export interface ProjenProjectOptions {
    * this will be what you `package.json` will eventually include.
    * @default []
    * @stability experimental
+   * @featured true
    */
   readonly deps?: Array<string>;
   /**
@@ -911,6 +915,7 @@ export interface ProjenProjectOptions {
    * This is the name of your project.
    * @default $BASEDIR
    * @stability experimental
+   * @featured true
    */
   readonly name?: string;
   readonly repo: string;
