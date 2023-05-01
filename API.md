@@ -239,7 +239,6 @@ public readonly author: string;
 ```
 
 - *Type:* string
-- *Default:* $GIT_USER_NAME
 
 The name of the library author.
 
@@ -252,7 +251,6 @@ public readonly authorAddress: string;
 ```
 
 - *Type:* string
-- *Default:* $GIT_USER_EMAIL
 
 Email or URL of the library author.
 
@@ -265,7 +263,6 @@ public readonly cdkVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "2.1.0"
 
 Minimum version of the AWS CDK to depend on.
 
@@ -278,7 +275,6 @@ public readonly defaultReleaseBranch: string;
 ```
 
 - *Type:* string
-- *Default:* "main"
 
 The name of the main release branch.
 
@@ -291,7 +287,6 @@ public readonly name: string;
 ```
 
 - *Type:* string
-- *Default:* $BASEDIR
 
 This is the name of your project.
 
@@ -304,7 +299,6 @@ public readonly repositoryUrl: string;
 ```
 
 - *Type:* string
-- *Default:* $GIT_REMOTE
 
 Git repository URL.
 
@@ -2881,7 +2875,6 @@ public readonly author: string;
 ```
 
 - *Type:* string
-- *Default:* $GIT_USER_NAME
 
 The name of the library author.
 
@@ -5189,7 +5182,6 @@ public readonly defaultReleaseBranch: string;
 ```
 
 - *Type:* string
-- *Default:* "main"
 
 The name of the main release branch.
 
@@ -5202,7 +5194,6 @@ public readonly name: string;
 ```
 
 - *Type:* string
-- *Default:* $BASEDIR
 
 This is the name of your project.
 
@@ -7728,6 +7719,7 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 | <code><a href="#mrpj.ConstructProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.ConstructProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
 | <code><a href="#mrpj.ConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
@@ -8180,6 +8172,18 @@ public readonly manifest: any;
 ```
 
 - *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ConstructProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
 
 ---
 
@@ -9320,6 +9324,7 @@ The command to execute.
 | <code><a href="#mrpj.ProjenProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.ProjenProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
 | <code><a href="#mrpj.ProjenProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ProjenProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
@@ -9771,6 +9776,18 @@ public readonly manifest: any;
 ```
 
 - *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ProjenProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
 
 ---
 
@@ -10877,6 +10894,7 @@ The command to execute.
 | <code><a href="#mrpj.TypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.TypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
 | <code><a href="#mrpj.TypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.TypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
@@ -11326,6 +11344,18 @@ public readonly manifest: any;
 ```
 
 - *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.TypeScriptProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
 
 ---
 

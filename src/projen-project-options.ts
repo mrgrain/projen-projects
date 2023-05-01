@@ -85,7 +85,6 @@ export interface ProjenProjectOptions {
   readonly authorAddress?: string;
   /**
    * The name of the library author.
-   * @default $GIT_USER_NAME
    * @stability experimental
    */
   readonly author: string;

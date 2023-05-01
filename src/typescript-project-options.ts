@@ -318,7 +318,6 @@ export interface TypeScriptProjectOptions {
   readonly artifactsDirectory?: string;
   /**
    * The name of the main release branch.
-   * @default "main"
    * @stability experimental
    */
   readonly defaultReleaseBranch: string;
@@ -850,7 +849,6 @@ export interface TypeScriptProjectOptions {
   readonly commitGenerated?: boolean;
   /**
    * This is the name of your project.
-   * @default $BASEDIR
    * @stability experimental
    * @featured true
    */
