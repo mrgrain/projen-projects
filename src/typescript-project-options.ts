@@ -114,6 +114,12 @@ export interface TypeScriptProjectOptions {
    */
   readonly disableTsconfig?: boolean;
   /**
+   * Enable Node.js package cache in GitHub workflows.
+   * @default false
+   * @stability experimental
+   */
+  readonly workflowPackageCache?: boolean;
+  /**
    * The node version to use in GitHub workflows.
    * @default - same as `minNodeVersion`
    * @stability experimental
