@@ -53,14 +53,14 @@
     "jsii-docgen": "^7.2.9",
     "jsii-pacmak": "^1.84.0",
     "npm-check-updates": "^16",
-    "projen": "^0.71.100",
+    "projen": "^0.71.110",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
     "typescript": "5.0.x"
   },
   "peerDependencies": {
-    "projen": "^0.71.100"
+    "projen": "^0.71.110"
   },
   "main": "lib/index.js",
   "license": "MIT",
