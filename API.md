@@ -197,6 +197,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
@@ -1882,6 +1883,19 @@ The README setup.
 
 ---
 
+##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="mrpj.ConstructProjectOptions.property.releasableCommits"></a>
+
+```typescript
+public readonly releasableCommits: ReleasableCommits;
+```
+
+- *Type:* projen.ReleasableCommits
+- *Default:* ReleasableCommits.everyCommit()
+
+Find commits that should be considered releasable Used to decide if a release is required.
+
+---
+
 ##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ConstructProjectOptions.property.release"></a>
 
 ```typescript
@@ -2738,6 +2752,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | --- | --- | --- |
 | <code><a href="#mrpj.ProjenProjectOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.repo">repo</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProjectOptions.property.allowedCommitTypes">allowedCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
@@ -2846,6 +2861,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.releasableCommitTypes">releasableCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types should be released. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
@@ -2902,6 +2918,19 @@ public readonly repo: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `allowedCommitTypes`<sup>Optional</sup> <a name="allowedCommitTypes" id="mrpj.ProjenProjectOptions.property.allowedCommitTypes"></a>
+
+```typescript
+public readonly allowedCommitTypes: string[];
+```
+
+- *Type:* string[]
+- *Default:* ['feat', 'fix', 'chore', 'revert', 'docs', 'ci']
+
+Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed.
 
 ---
 
@@ -4399,6 +4428,19 @@ The README setup.
 
 ---
 
+##### `releasableCommitTypes`<sup>Optional</sup> <a name="releasableCommitTypes" id="mrpj.ProjenProjectOptions.property.releasableCommitTypes"></a>
+
+```typescript
+public readonly releasableCommitTypes: string[];
+```
+
+- *Type:* string[]
+- *Default:* ['feat', 'fix', 'chore', 'revert']
+
+Which conventional commit types should be released.
+
+---
+
 ##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ProjenProjectOptions.property.release"></a>
 
 ```typescript
@@ -4739,7 +4781,7 @@ public readonly upgradesSchedule: UpgradeDependenciesSchedule;
 ```
 
 - *Type:* projen.javascript.UpgradeDependenciesSchedule
-- *Default:* UpgradeDependenciesSchedule.DAILY
+- *Default:* UpgradeDependenciesSchedule.WEEKLY
 
 ---
 
@@ -5169,6 +5211,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
@@ -6528,6 +6571,19 @@ public readonly readme: SampleReadmeProps;
 - *Default:* { filename: 'README.md', contents: '# replace this' }
 
 The README setup.
+
+---
+
+##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="mrpj.TypeScriptProjectOptions.property.releasableCommits"></a>
+
+```typescript
+public readonly releasableCommits: ReleasableCommits;
+```
+
+- *Type:* projen.ReleasableCommits
+- *Default:* ReleasableCommits.everyCommit()
+
+Find commits that should be considered releasable Used to decide if a release is required.
 
 ---
 

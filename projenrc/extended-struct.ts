@@ -65,8 +65,8 @@ export class ExtendedStruct extends ProjenStruct {
           },
         },
         docs: {
-          summary: 'Which conventional commit types are allowed be released',
-          remarks: 'Types listed in `releasableCommitTypes` are always allowed.',
+          summary: 'Which conventional commit types are allowed to be used',
+          remarks: 'Types listed in `releasableCommitTypes` are always allowed',
           default: "['feat', 'fix', 'chore', 'revert', 'docs', 'ci']",
         },
       })

@@ -930,8 +930,8 @@ export interface ProjenProjectOptions {
    */
   readonly releasableCommitTypes?: Array<string>;
   /**
-   * Which conventional commit types are allowed be released
-   * Types listed in `releasableCommitTypes` are always allowed.
+   * Which conventional commit types are allowed to be used
+   * Types listed in `releasableCommitTypes` are always allowed
    * @default ['feat', 'fix', 'chore', 'revert', 'docs', 'ci']
    */
   readonly allowedCommitTypes?: Array<string>;
