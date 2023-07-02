@@ -1,8 +1,8 @@
 import { synthSnapshot } from 'projen/lib/util/synth';
-import { ProjenProject } from '../src';
+import { TypeScriptProject } from '../src';
 
 test('default snapshot', () => {
-  const project = new ProjenProject({
+  const project = new TypeScriptProject({
     authorName: 'Test Author',
     repo: 'mrgrain/test',
     release: true,
