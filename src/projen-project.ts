@@ -1,4 +1,4 @@
-import { cdk, github, javascript } from 'projen';
+import { ReleasableCommits, cdk, github, javascript } from 'projen';
 import { SvgFile, Wordmark } from './logo';
 import { ProjenProjectOptions } from './projen-project-options';
 import { deepDefaults, ifSet, noEmpties } from './utils';
@@ -13,12 +13,13 @@ export class ProjenProject extends cdk.JsiiProject {
 
   public constructor(options: ProjenProjectOptions) {
     const pkgInfo = packageInfo(options.repo);
+    const commitOptions = commitTypes(options) ;
 
     super({
       // Improved defaults
       ...deepDefaults<cdk.JsiiProjectOptions>(options, {
-        // Package info
         ...pkgInfo,
+        ...commitOptions,
         license: 'MIT',
 
         // Releases
@@ -35,11 +36,7 @@ export class ProjenProject extends cdk.JsiiProject {
         // Automation
         githubOptions: {
           projenCredentials: ifSet(options.automationAppName, github.GithubCredentials.fromApp()),
-          pullRequestLintOptions: {
-            semanticTitleOptions: {
-              types: ['feat', 'fix', 'chore', 'docs', 'ci', 'revert'],
-            },
-          },
+          ...commitOptions.githubOptions,
         },
         autoApproveUpgrades: true,
         autoApproveOptions: {
@@ -54,10 +51,11 @@ export class ProjenProject extends cdk.JsiiProject {
         peerDeps: ['projen'],
         depsUpgradeOptions: {
           workflowOptions: {
-            schedule: options.upgradesSchedule,
+            schedule: options.upgradesSchedule ?? javascript.UpgradeDependenciesSchedule.WEEKLY,
           },
         },
-      }),
+      },
+      ),
 
       // Forced options
       sampleCode: false,
@@ -90,5 +88,24 @@ function packageInfo(repo: string) {
     repositoryUrl: `git@github.com:${repo}.git`,
     homepage: `https://github.com/${repo}`,
     authorAddress: `https://github.com/${githubUser}`,
+  };
+}
+
+function commitTypes({
+  allowedCommitTypes = ['feat', 'fix', 'chore', 'revert', 'docs', 'ci'],
+  releasableCommitTypes = ['feat', 'fix', 'chore', 'revert'],
+}: {
+  allowedCommitTypes?: string[];
+  releasableCommitTypes?: string[];
+}) {
+  return {
+    githubOptions: {
+      pullRequestLintOptions: {
+        semanticTitleOptions: {
+          types: Array.from(new Set([...allowedCommitTypes, ...releasableCommitTypes])).sort(),
+        },
+      },
+    },
+    releasableCommits: ReleasableCommits.ofType(releasableCommitTypes.sort(), '.'),
   };
 }

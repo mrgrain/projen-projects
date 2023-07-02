@@ -925,6 +925,17 @@ export interface ProjenProjectOptions {
   readonly name?: string;
   readonly repo: string;
   /**
+   * Which conventional commit types should be released
+   * @default ['feat', 'fix', 'chore', 'revert']
+   */
+  readonly releasableCommitTypes?: Array<string>;
+  /**
+   * Which conventional commit types are allowed to be used
+   * Types listed in `releasableCommitTypes` are always allowed
+   * @default ['feat', 'fix', 'chore', 'revert', 'docs', 'ci']
+   */
+  readonly allowedCommitTypes?: Array<string>;
+  /**
    * Use this app for workflow automation. Remember to install the app and to configure credentials.
    * @default - tokens will be used
    */
@@ -935,7 +946,7 @@ export interface ProjenProjectOptions {
    */
   readonly ownerCanSelfApprovePRs?: boolean;
   /**
-   * @default UpgradeDependenciesSchedule.DAILY
+   * @default UpgradeDependenciesSchedule.WEEKLY
    */
   readonly upgradesSchedule?: javascript.UpgradeDependenciesSchedule;
   /**
