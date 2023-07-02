@@ -1,23 +1,20 @@
-import { javascript } from 'projen';
-import { ConstructProjectOptionsBuilder, ProjenProjectOptionsBuilder, TypeScriptProjectOptionsBuilder } from './projenrc/option-builders';
-import { ProjenProject } from './src';
-import { Logo } from './src/logo';
+import * as builders from './projenrc';
+import { ProjenProject, logo } from './src';
 
 const project = new ProjenProject({
   // Repo info
   repo: 'mrgrain/projen-projects',
   name: 'mrpj',
-  description: 'Opinionated projen project types. Just for me.',
+  description: 'Opinionated projen project types.',
   author: 'Momo Kornher',
   authorAddress: 'https://moritzkornher.de',
 
   // Release & Automation
   release: true,
-  upgradesSchedule: javascript.UpgradeDependenciesSchedule.WEEKLY,
   automationAppName: 'projen-builder',
 
   // Marketing
-  logo: Logo.forProjen('images/logo.svg', {
+  logo: logo.Logo.forProjen('images/logo.svg', {
     tapeColor: '#e9f1f1',
     outlineColor: '#1f3043',
     topColor: '#d89751',
@@ -41,8 +38,8 @@ const project = new ProjenProject({
   },
 });
 
-new ConstructProjectOptionsBuilder(project);
-new ProjenProjectOptionsBuilder(project);
-new TypeScriptProjectOptionsBuilder(project);
+new builders.ConstructProjectOptionsBuilder(project);
+new builders.ProjenProjectOptionsBuilder(project);
+new builders.TypeScriptProjectOptionsBuilder(project);
 
 project.synth();
