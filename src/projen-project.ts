@@ -23,8 +23,8 @@ export class ProjenProject extends cdk.JsiiProject {
         authorUrl: undefined,
         sampleCode: false,
         projenrcTs: true,
-        jsiiVersion: '5.0.x',
-        typescriptVersion: '5.0.x',
+        jsiiVersion: '5.1.x',
+        typescriptVersion: '5.1.x',
       }),
     )(options);
 
