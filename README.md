@@ -1,8 +1,7 @@
-![Mr. PJ](./images/wordmark-dynamic.svg)
+# ![Mr. PJ](./images/wordmark-dynamic.svg)
 
-# **Mr**grain **P**ro**J**en types
-
-Opinionated projen project types.
+**Mr**grain **P**ro**J**en types.
+Opinionated projen project types for everyone.
 
 ## Usage
 
