@@ -813,6 +813,11 @@ tsconfig.tsbuildinfo
         "type": "build",
       },
       {
+        "name": "jsii-rosetta",
+        "type": "build",
+        "version": "5.0.x",
+      },
+      {
         "name": "jsii",
         "type": "build",
         "version": "5.0.x",
@@ -1152,19 +1157,19 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
             "exec": "yarn upgrade npm-check-updates",
           },
           {
-            "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='jsii,typescript'",
+            "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='jsii-rosetta,jsii,typescript'",
           },
           {
-            "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='jsii,typescript'",
+            "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='jsii-rosetta,jsii,typescript'",
           },
           {
-            "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='jsii,typescript'",
+            "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='jsii-rosetta,jsii,typescript'",
           },
           {
-            "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='jsii,typescript'",
+            "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='jsii-rosetta,jsii,typescript'",
           },
           {
-            "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='jsii,typescript'",
+            "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='jsii-rosetta,jsii,typescript'",
           },
           {
             "exec": "yarn install --check-files",
@@ -1236,6 +1241,7 @@ SOFTWARE.
       "jsii-diff": "*",
       "jsii-docgen": "*",
       "jsii-pacmak": "*",
+      "jsii-rosetta": "5.0.x",
       "mrpj": "*",
       "npm-check-updates": "^16",
       "projen": "*",

@@ -11,6 +11,9 @@ export class ProjenProjectOptionsBuilder extends Component {
     new ExtendedStruct(project, {
       name: 'ProjenProjectOptions',
       filePath: path.join(project.srcdir, 'projen-project-options.ts'),
+      outputFileOptions: {
+        useTypeImports: true,
+      },
     })
       .mixin(Struct.fromFqn('projen.cdk.JsiiProjectOptions'))
       .forcedDefaults('projenrcTs', 'jsiiVersion', 'typescriptVersion', 'sampleCode')
