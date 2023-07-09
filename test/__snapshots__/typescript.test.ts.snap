@@ -751,6 +751,10 @@ tsconfig.tsbuildinfo
         "version": "^15",
       },
       {
+        "name": "mrpj",
+        "type": "build",
+      },
+      {
         "name": "npm-check-updates",
         "type": "build",
         "version": "^16",
@@ -1122,6 +1126,7 @@ SOFTWARE.
       "eslint-plugin-import": "*",
       "jest": "*",
       "jest-junit": "^15",
+      "mrpj": "*",
       "npm-check-updates": "^16",
       "projen": "*",
       "standard-version": "^9",

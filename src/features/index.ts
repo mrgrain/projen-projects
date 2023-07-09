@@ -1,5 +1,5 @@
 export { optionsMiddleware as automation } from './automation';
-export { optionsMiddleware as dependencies } from './dependencies';
+export { optionsMiddleware as dependencies, preventSelfDependency } from './dependencies';
 export { featureMiddleware as eslint } from './eslint';
 export { makeMiddleware as forceDefaults } from './force-defaults';
 export { featureMiddleware as logo } from './logo';

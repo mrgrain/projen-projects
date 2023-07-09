@@ -1,13 +1,13 @@
-import { javascript } from 'projen';
+import { Project, javascript } from 'projen';
 import { TypeScriptProjectOptions } from '../typescript-project-options';
-import { OptionsMiddleware, deepMerge } from '../utils';
+import { FeatureMiddleware, OptionsMiddleware, deepMerge } from '../utils';
 
 export interface DependenciesOptionsTrait {
   readonly upgradesSchedule?: TypeScriptProjectOptions['upgradesSchedule'];
 }
 
 export const optionsMiddleware: OptionsMiddleware<DependenciesOptionsTrait> = (options) => deepMerge({
-  devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec'],
+  devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec', 'mrpj'],
   peerDeps: ['projen'],
   depsUpgradeOptions: {
     workflowOptions: {
@@ -15,3 +15,9 @@ export const optionsMiddleware: OptionsMiddleware<DependenciesOptionsTrait> = (o
     },
   },
 }, options);
+
+export const preventSelfDependency: FeatureMiddleware<Project> = (project) => {
+  project.deps.removeDependency(project.name);
+
+  return project;
+};
