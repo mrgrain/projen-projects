@@ -1,4 +1,5 @@
 import path from 'path';
+import { Stability } from '@jsii/spec';
 import { Struct } from '@mrgrain/jsii-struct-builder';
 import { Component, typescript } from 'projen';
 import { ExtendedStruct } from './extended-struct';
@@ -17,6 +18,7 @@ export class ProjenProjectOptionsBuilder extends Component {
       .releaseConfig()
       .automationConfig()
       .logoSystem()
-      .withoutDeprecated();
+      .withoutDeprecated()
+      .withStability(Stability.Stable);
   }
 }

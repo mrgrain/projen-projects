@@ -25,3 +25,5 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
+.nvmrc
+.node-version

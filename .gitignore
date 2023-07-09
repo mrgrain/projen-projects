@@ -57,6 +57,8 @@ tsconfig.json
 !/images/wordmark-dark.svg
 !/images/wordmark-light.svg
 !/images/wordmark-dynamic.svg
+!/.nvmrc
+!/.node-version
 !/src/construct-project-options.ts
 !/src/projen-project-options.ts
 !/src/typescript-project-options.ts

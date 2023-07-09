@@ -1,3 +1,4 @@
+import { Project } from 'projen';
 
 /**
  * Return a value if the check value is truthy, undefined otherwise.
@@ -68,3 +69,24 @@ export function isObject(x: any): x is object {
 export function isPlainObject(x: any): x is object {
   return Boolean(isObject(x) && Object.getPrototypeOf(x) === Object.prototype);
 }
+
+/**
+ * Middleware stack to set default options
+ */
+export function defaultOptions<T>(...middleware: OptionsMiddleware<T>[]): OptionsMiddleware<T> {
+  return (options: T) => middleware.reduce((opts, mw) => mw(opts), options);
+}
+export type OptionsMiddleware<T> = (options: T) => any;
+
+/**
+ * Middleware stack to configure features
+ */
+export function configureFeatures<T extends Project = Project>(...middleware: FeatureMiddleware<T>[]): FeatureMiddleware<T> {
+  return (project: T, options: any) => middleware.reduce((p, mw) => mw(p, options), project);
+}
+export type FeatureMiddleware<T extends Project = Project> = (project: T, options: any) => T;
+
+
+export type Mutable<T> = {
+  -readonly[P in keyof T]: T[P]
+};

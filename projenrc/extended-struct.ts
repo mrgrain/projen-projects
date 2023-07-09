@@ -1,10 +1,18 @@
-import { CollectionKind, PrimitiveType } from '@jsii/spec';
+import { CollectionKind, PrimitiveType, Stability } from '@jsii/spec';
 import { ProjenStruct } from '@mrgrain/jsii-struct-builder';
 
 /**
  * An extended projen struct that sets options for commonly used components
  */
 export class ExtendedStruct extends ProjenStruct {
+  public withStability(stability: Stability) {
+    return this.updateAll({
+      docs: {
+        stability,
+      },
+    });
+  }
+
   /**
    * Upstream options that are forced (unchangeable) in this project type
    */
@@ -16,14 +24,25 @@ export class ExtendedStruct extends ProjenStruct {
    * Options for the RepoInfo component
    */
   public repoInfo(licenseDefault = 'MIT') {
-    return this.add({
-      name: 'repo',
-      type: { primitive: PrimitiveType.String },
-    })
+    const result = this
+      .add({
+        name: 'repo',
+        type: { primitive: PrimitiveType.String },
+      })
       .update('name', { optional: true })
-      .update('repositoryUrl', { optional: true })
-      .update('authorAddress', { optional: true })
-      .update('license', { docs: { default: `"${licenseDefault}"` } });
+      .update('license', { docs: { default: `"${licenseDefault}"` } })
+      .update('authorName', { optional: false });
+
+    // JsiiProject
+    if (this.properties.some(p => p.name === 'repositoryUrl')) {
+      return result
+        .omit('author')
+        .update('repositoryUrl', { optional: true })
+        .update('authorAddress', { optional: true });
+    }
+
+    // TypeScriptProject
+    return result;
   }
 
   /**

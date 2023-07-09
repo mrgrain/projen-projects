@@ -2750,14 +2750,13 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mrpj.ProjenProjectOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.repo">repo</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.allowedCommitTypes">allowedCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
@@ -2899,15 +2898,15 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 
 ---
 
-##### `author`<sup>Required</sup> <a name="author" id="mrpj.ProjenProjectOptions.property.author"></a>
+##### `authorName`<sup>Required</sup> <a name="authorName" id="mrpj.ProjenProjectOptions.property.authorName"></a>
 
 ```typescript
-public readonly author: string;
+public readonly authorName: string;
 ```
 
 - *Type:* string
 
-The name of the library author.
+Author's name.
 
 ---
 
@@ -2985,18 +2984,6 @@ public readonly authorEmail: string;
 - *Type:* string
 
 Author's e-mail.
-
----
-
-##### `authorName`<sup>Optional</sup> <a name="authorName" id="mrpj.ProjenProjectOptions.property.authorName"></a>
-
-```typescript
-public readonly authorName: string;
-```
-
-- *Type:* string
-
-Author's name.
 
 ---
 
@@ -5115,17 +5102,18 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.repo">repo</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.allowedCommitTypes">allowedCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.automationAppName">automationAppName</a></code> | <code>string</code> | Use this app for workflow automation. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
@@ -5142,6 +5130,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
@@ -5173,11 +5162,13 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.logo">logo</a></code> | <code>mrpj.logo.ILogo</code> | Add a logo. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
@@ -5185,6 +5176,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.ownerCanSelfApprovePRs">ownerCanSelfApprovePRs</a></code> | <code>boolean</code> | Allow the repo owner to self approve PRs by putting a label on it. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
@@ -5203,7 +5195,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
@@ -5211,7 +5202,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.releasableCommitTypes">releasableCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types should be released. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
@@ -5225,7 +5216,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
@@ -5236,8 +5226,10 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.upgradesSchedule">upgradesSchedule</a></code> | <code>projen.javascript.UpgradeDependenciesSchedule</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.wordmarkOptions">wordmarkOptions</a></code> | <code>mrpj.logo.WordmarkOptions</code> | Configure how the wordmark is created from a logo. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
@@ -5247,27 +5239,38 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 
 ---
 
-##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="mrpj.TypeScriptProjectOptions.property.defaultReleaseBranch"></a>
+##### `authorName`<sup>Required</sup> <a name="authorName" id="mrpj.TypeScriptProjectOptions.property.authorName"></a>
 
 ```typescript
-public readonly defaultReleaseBranch: string;
+public readonly authorName: string;
 ```
 
 - *Type:* string
 
-The name of the main release branch.
+Author's name.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProjectOptions.property.name"></a>
+##### `repo`<sup>Required</sup> <a name="repo" id="mrpj.TypeScriptProjectOptions.property.repo"></a>
 
 ```typescript
-public readonly name: string;
+public readonly repo: string;
 ```
 
 - *Type:* string
 
-This is the name of your project.
+---
+
+##### `allowedCommitTypes`<sup>Optional</sup> <a name="allowedCommitTypes" id="mrpj.TypeScriptProjectOptions.property.allowedCommitTypes"></a>
+
+```typescript
+public readonly allowedCommitTypes: string[];
+```
+
+- *Type:* string[]
+- *Default:* ['feat', 'fix', 'chore', 'revert', 'docs', 'ci']
+
+Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed.
 
 ---
 
@@ -5309,18 +5312,6 @@ public readonly authorEmail: string;
 - *Type:* string
 
 Author's e-mail.
-
----
-
-##### `authorName`<sup>Optional</sup> <a name="authorName" id="mrpj.TypeScriptProjectOptions.property.authorName"></a>
-
-```typescript
-public readonly authorName: string;
-```
-
-- *Type:* string
-
-Author's name.
 
 ---
 
@@ -5386,6 +5377,21 @@ public readonly autoDetectBin: boolean;
 - *Default:* true
 
 Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section.
+
+---
+
+##### `automationAppName`<sup>Optional</sup> <a name="automationAppName" id="mrpj.TypeScriptProjectOptions.property.automationAppName"></a>
+
+```typescript
+public readonly automationAppName: string;
+```
+
+- *Type:* string
+- *Default:* tokens will be used
+
+Use this app for workflow automation.
+
+Remember to install the app and to configure credentials.
 
 ---
 
@@ -5612,6 +5618,19 @@ public readonly copyrightPeriod: string;
 - *Default:* current year
 
 The copyright years to put in the LICENSE file.
+
+---
+
+##### `defaultReleaseBranch`<sup>Optional</sup> <a name="defaultReleaseBranch" id="mrpj.TypeScriptProjectOptions.property.defaultReleaseBranch"></a>
+
+```typescript
+public readonly defaultReleaseBranch: string;
+```
+
+- *Type:* string
+- *Default:* "main"
+
+The name of the main release branch.
 
 ---
 
@@ -6007,7 +6026,7 @@ public readonly license: string;
 ```
 
 - *Type:* string
-- *Default:* "Apache-2.0"
+- *Default:* "MIT"
 
 License's SPDX identifier.
 
@@ -6039,6 +6058,20 @@ public readonly logging: LoggerOptions;
 - *Default:* {}
 
 Configure logging options such as verbosity.
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.TypeScriptProjectOptions.property.logo"></a>
+
+```typescript
+public readonly logo: ILogo;
+```
+
+- *Type:* mrpj.logo.ILogo
+
+Add a logo.
+
+Use `Logo.placeholder()` to get started.
 
 ---
 
@@ -6118,6 +6151,19 @@ that any files synthesized by projen or e.g. test snapshots will always be up-to
 before a PR is merged.
 
 Implies that PR builds do not have anti-tamper checks.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="mrpj.TypeScriptProjectOptions.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+- *Default:* $BASEDIR
+
+This is the name of your project.
 
 ---
 
@@ -6217,6 +6263,19 @@ The root directory of the project. Relative to this directory, all files are syn
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
 sub-projects.
+
+---
+
+##### `ownerCanSelfApprovePRs`<sup>Optional</sup> <a name="ownerCanSelfApprovePRs" id="mrpj.TypeScriptProjectOptions.property.ownerCanSelfApprovePRs"></a>
+
+```typescript
+public readonly ownerCanSelfApprovePRs: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Allow the repo owner to self approve PRs by putting a label on it.
 
 ---
 
@@ -6468,19 +6527,6 @@ Options for .projenrc.js.
 
 ---
 
-##### `projenrcTs`<sup>Optional</sup> <a name="projenrcTs" id="mrpj.TypeScriptProjectOptions.property.projenrcTs"></a>
-
-```typescript
-public readonly projenrcTs: boolean;
-```
-
-- *Type:* boolean
-- *Default:* false
-
-Use TypeScript for your projenrc file (`.projenrc.ts`).
-
----
-
 ##### `projenrcTsOptions`<sup>Optional</sup> <a name="projenrcTsOptions" id="mrpj.TypeScriptProjectOptions.property.projenrcTsOptions"></a>
 
 ```typescript
@@ -6574,16 +6620,16 @@ The README setup.
 
 ---
 
-##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="mrpj.TypeScriptProjectOptions.property.releasableCommits"></a>
+##### `releasableCommitTypes`<sup>Optional</sup> <a name="releasableCommitTypes" id="mrpj.TypeScriptProjectOptions.property.releasableCommitTypes"></a>
 
 ```typescript
-public readonly releasableCommits: ReleasableCommits;
+public readonly releasableCommitTypes: string[];
 ```
 
-- *Type:* projen.ReleasableCommits
-- *Default:* ReleasableCommits.everyCommit()
+- *Type:* string[]
+- *Default:* ['feat', 'fix', 'chore', 'revert']
 
-Find commits that should be considered releasable Used to decide if a release is required.
+Which conventional commit types should be released.
 
 ---
 
@@ -6594,7 +6640,7 @@ public readonly release: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true (false for subprojects)
+- *Default:* false
 
 Add release management to this project.
 
@@ -6770,19 +6816,6 @@ If the package.json for your package is not in the root directory (for example i
 
 ---
 
-##### `sampleCode`<sup>Optional</sup> <a name="sampleCode" id="mrpj.TypeScriptProjectOptions.property.sampleCode"></a>
-
-```typescript
-public readonly sampleCode: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Generate one-time sample in `src/` and `test/` if there are no files there.
-
----
-
 ##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="mrpj.TypeScriptProjectOptions.property.scopedPackagesOptions"></a>
 
 ```typescript
@@ -6925,6 +6958,17 @@ same minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).
 
 ---
 
+##### `upgradesSchedule`<sup>Optional</sup> <a name="upgradesSchedule" id="mrpj.TypeScriptProjectOptions.property.upgradesSchedule"></a>
+
+```typescript
+public readonly upgradesSchedule: UpgradeDependenciesSchedule;
+```
+
+- *Type:* projen.javascript.UpgradeDependenciesSchedule
+- *Default:* UpgradeDependenciesSchedule.WEEKLY
+
+---
+
 ##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="mrpj.TypeScriptProjectOptions.property.versionrcOptions"></a>
 
 ```typescript
@@ -6952,6 +6996,21 @@ public readonly vscode: boolean;
 Enable VSCode integration.
 
 Enabled by default for root projects. Disabled for non-root projects.
+
+---
+
+##### `wordmarkOptions`<sup>Optional</sup> <a name="wordmarkOptions" id="mrpj.TypeScriptProjectOptions.property.wordmarkOptions"></a>
+
+```typescript
+public readonly wordmarkOptions: WordmarkOptions;
+```
+
+- *Type:* mrpj.logo.WordmarkOptions
+- *Default:* derived from logo and project
+
+Configure how the wordmark is created from a logo.
+
+Wordmarks are only created when a logo is available.
 
 ---
 
@@ -10422,13 +10481,13 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#mrpj.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code>projen.typescript.TypeScriptProjectOptions</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a></code> | *No description.* |
 
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="mrpj.TypeScriptProject.Initializer.parameter.options"></a>
 
-- *Type:* projen.typescript.TypeScriptProjectOptions
+- *Type:* <a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a>
 
 ---
 
@@ -11044,6 +11103,8 @@ The command to execute.
 | <code><a href="#mrpj.TypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
 
 ---
 
@@ -11778,6 +11839,26 @@ public readonly tsconfigEslint: TypescriptConfig;
 ```
 
 - *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.TypeScriptProject.property.logo"></a>
+
+```typescript
+public readonly logo: SvgFile;
+```
+
+- *Type:* mrpj.logo.SvgFile
+
+---
+
+##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.TypeScriptProject.property.wordmark"></a>
+
+```typescript
+public readonly wordmark: Wordmark;
+```
+
+- *Type:* mrpj.logo.Wordmark
 
 ---
 
