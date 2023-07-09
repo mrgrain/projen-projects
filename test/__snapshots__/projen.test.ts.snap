@@ -818,6 +818,10 @@ tsconfig.tsbuildinfo
         "version": "5.0.x",
       },
       {
+        "name": "mrpj",
+        "type": "build",
+      },
+      {
         "name": "npm-check-updates",
         "type": "build",
         "version": "^16",
@@ -1232,6 +1236,7 @@ SOFTWARE.
       "jsii-diff": "*",
       "jsii-docgen": "*",
       "jsii-pacmak": "*",
+      "mrpj": "*",
       "npm-check-updates": "^16",
       "projen": "*",
       "standard-version": "^9",
