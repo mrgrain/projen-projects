@@ -15,7 +15,7 @@ export class TypeScriptProjectOptionsBuilder extends Component {
     })
       .mixin(Struct.fromFqn('projen.typescript.TypeScriptProjectOptions'))
       .forcedDefaults('projenrcTs', 'sampleCode')
-      .repoInfo()
+      .packageInfo()
       .releaseConfig()
       .automationConfig()
       .logoSystem()

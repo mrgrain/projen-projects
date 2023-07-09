@@ -72,12 +72,6 @@ export interface ProjenProjectOptions {
    */
   readonly compat?: boolean;
   /**
-   * Git repository URL.
-   * @default $GIT_REMOTE
-   * @stability stable
-   */
-  readonly repositoryUrl?: string;
-  /**
    * Email or URL of the library author.
    * @default $GIT_USER_EMAIL
    * @stability stable

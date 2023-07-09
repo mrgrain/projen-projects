@@ -1,6 +1,11 @@
 import { CollectionKind, PrimitiveType, Stability } from '@jsii/spec';
 import { ProjenStruct } from '@mrgrain/jsii-struct-builder';
 
+export interface PackageInfoOptions {
+  license?: string;
+  isJsii?: boolean;
+}
+
 /**
  * An extended projen struct that sets options for commonly used components
  */
@@ -21,23 +26,25 @@ export class ExtendedStruct extends ProjenStruct {
   }
 
   /**
-   * Options for the RepoInfo component
+   * Options for the PackageInfo component
    */
-  public repoInfo(licenseDefault = 'MIT') {
+  public packageInfo({
+    license = 'MIT',
+    isJsii = false,
+  }: PackageInfoOptions = {}) {
     const result = this
       .add({
         name: 'repo',
         type: { primitive: PrimitiveType.String },
       })
       .update('name', { optional: true })
-      .update('license', { docs: { default: `"${licenseDefault}"` } })
+      .update('license', { docs: { default: `"${license}"` } })
       .update('authorName', { optional: false });
 
     // JsiiProject
-    if (this.properties.some(p => p.name === 'repositoryUrl')) {
+    if (isJsii) {
       return result
-        .omit('author')
-        .update('repositoryUrl', { optional: true })
+        .omit('author', 'repositoryUrl')
         .update('authorAddress', { optional: true });
     }
 
