@@ -12,6 +12,9 @@ export class TypeScriptProjectOptionsBuilder extends Component {
     new ExtendedStruct(project, {
       name: 'TypeScriptProjectOptions',
       filePath: path.join(project.srcdir, 'typescript-project-options.ts'),
+      outputFileOptions: {
+        useTypeImports: true,
+      },
     })
       .mixin(Struct.fromFqn('projen.typescript.TypeScriptProjectOptions'))
       .forcedDefaults('projenrcTs', 'sampleCode')
