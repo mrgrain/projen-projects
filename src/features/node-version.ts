@@ -7,7 +7,7 @@ export interface ProjectTrait {
 
 export const featureMiddleware: FeatureMiddleware<Project & ProjectTrait> = (project, options) => {
   const version = options.workflowNodeVersion ?? project.minNodeVersion ?? '18';
-  const lines = [`v${version}`];
+  const lines = [`v${version}`, ''];
 
   new TextFile(project, '.nvmrc', { lines });
   project.addPackageIgnore('.nvmrc');
