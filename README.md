@@ -2,7 +2,7 @@
 
 # **Mr**grain **P**ro**J**en types
 
-Opinionated projen project types. Just for me.
+Opinionated projen project types.
 
 ## Usage
 
