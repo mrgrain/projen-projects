@@ -11,6 +11,7 @@ export function makeMiddleware(license: string = 'MIT'): OptionsMiddleware<RepoI
     return deepMerge({
       name: `@${options.repo}`,
       repositoryUrl: `git@github.com:${options.repo}.git`,
+      repository: `git@github.com:${options.repo}.git`,
       homepage: `https://github.com/${options.repo}`,
       authorAddress: `https://github.com/${user}`,
       authorUrl: `https://github.com/${user}`,

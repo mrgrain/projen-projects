@@ -2874,7 +2874,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
@@ -4608,19 +4607,6 @@ public readonly repositoryDirectory: string;
 - *Type:* string
 
 If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives.
-
----
-
-##### `repositoryUrl`<sup>Optional</sup> <a name="repositoryUrl" id="mrpj.ProjenProjectOptions.property.repositoryUrl"></a>
-
-```typescript
-public readonly repositoryUrl: string;
-```
-
-- *Type:* string
-- *Default:* $GIT_REMOTE
-
-Git repository URL.
 
 ---
 

@@ -1179,6 +1179,10 @@ SOFTWARE.
     "publishConfig": {
       "access": "public",
     },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:mrgrain/test.git",
+    },
     "scripts": {
       "build": "npx projen build",
       "bump": "npx projen bump",
