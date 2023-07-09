@@ -11,5 +11,6 @@ function logoTask(project: Project) {
 
 export function logoToPngTask(project: Project, path: string) {
   const pngPath = path.substring(0, path.length-4) + '.png';
+  project.addPackageIgnore(pngPath);
   logoTask(project).exec(`rsvg-convert -h 1024 ${path} > ${pngPath}`);
 }

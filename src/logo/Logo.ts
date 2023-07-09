@@ -219,6 +219,13 @@ export class Logo implements ILogo {
   }
 
   public synth(project: Project) {
+    if (this.sourceFile) {
+      project.addPackageIgnore(this.sourceFile);
+    }
+    if (this.outFile) {
+      project.addPackageIgnore(this.outFile);
+    }
+
     if (!this.outFile) {
       logoToPngTask(project, this.sourceFile!);
       return;
