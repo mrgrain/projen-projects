@@ -157,6 +157,7 @@ ${this.options.logo.content.split('\n').map(l => ' '.repeat(indent) + l).join('\
       style: this.style(),
       indent,
     });
+    project.addPackageIgnore(file.filePath);
 
     // Conversion task
     logoToPngTask(project, file.filePath);
