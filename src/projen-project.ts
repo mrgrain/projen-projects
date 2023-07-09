@@ -31,10 +31,10 @@ export class ProjenProject extends cdk.JsiiProject {
     super(opts);
 
     configureFeatures(
-      preventSelfDependency,
       eslint,
       logo,
       nodeVersion,
+      preventSelfDependency,
     )(this, opts);
   }
 }

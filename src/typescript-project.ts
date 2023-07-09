@@ -26,10 +26,10 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
     super(opts);
 
     configureFeatures(
-      preventSelfDependency,
       eslint,
       logo,
       nodeVersion,
+      preventSelfDependency,
     )(this, opts);
   }
 }
