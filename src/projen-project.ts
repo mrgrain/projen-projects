@@ -1,5 +1,5 @@
 import { cdk } from 'projen';
-import { automation, dependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, release } from './features';
+import { automation, dependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import { SvgFile, Wordmark } from './logo';
 import { ProjenProjectOptions } from './projen-project-options';
 import { configureFeatures, defaultOptions } from './utils';
@@ -30,6 +30,11 @@ export class ProjenProject extends cdk.JsiiProject {
 
     super(opts);
 
-    configureFeatures(logo, eslint, nodeVersion)(this, opts);
+    configureFeatures(
+      preventSelfDependency,
+      eslint,
+      logo,
+      nodeVersion,
+    )(this, opts);
   }
 }
