@@ -815,7 +815,7 @@ tsconfig.tsbuildinfo
       {
         "name": "jsii-rosetta",
         "type": "build",
-        "version": "5.0.x",
+        "version": "5.1.x",
       },
       {
         "name": "jsii",
@@ -1241,7 +1241,7 @@ SOFTWARE.
       "jsii-diff": "*",
       "jsii-docgen": "*",
       "jsii-pacmak": "*",
-      "jsii-rosetta": "5.0.x",
+      "jsii-rosetta": "5.1.x",
       "mrpj": "*",
       "npm-check-updates": "^16",
       "projen": "*",
