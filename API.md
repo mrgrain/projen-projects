@@ -240,6 +240,7 @@ public readonly author: string;
 ```
 
 - *Type:* string
+- *Default:* $GIT_USER_NAME
 
 The name of the library author.
 
@@ -252,6 +253,7 @@ public readonly authorAddress: string;
 ```
 
 - *Type:* string
+- *Default:* $GIT_USER_EMAIL
 
 Email or URL of the library author.
 
@@ -264,6 +266,7 @@ public readonly cdkVersion: string;
 ```
 
 - *Type:* string
+- *Default:* "2.1.0"
 
 Minimum version of the AWS CDK to depend on.
 
@@ -276,6 +279,7 @@ public readonly defaultReleaseBranch: string;
 ```
 
 - *Type:* string
+- *Default:* "main"
 
 The name of the main release branch.
 
@@ -288,6 +292,7 @@ public readonly name: string;
 ```
 
 - *Type:* string
+- *Default:* $BASEDIR
 
 This is the name of your project.
 
@@ -300,6 +305,7 @@ public readonly repositoryUrl: string;
 ```
 
 - *Type:* string
+- *Default:* $GIT_REMOTE
 
 Git repository URL.
 
