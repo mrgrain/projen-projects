@@ -59,6 +59,7 @@ export interface ConstructProjectOptions {
   readonly cdkAssertions?: boolean;
   /**
    * Minimum version of the AWS CDK to depend on.
+   * @default "2.1.0"
    * @stability stable
    */
   readonly cdkVersion: string;
@@ -156,16 +157,19 @@ export interface ConstructProjectOptions {
   readonly compat?: boolean;
   /**
    * Git repository URL.
+   * @default $GIT_REMOTE
    * @stability stable
    */
   readonly repositoryUrl: string;
   /**
    * Email or URL of the library author.
+   * @default $GIT_USER_EMAIL
    * @stability stable
    */
   readonly authorAddress: string;
   /**
    * The name of the library author.
+   * @default $GIT_USER_NAME
    * @stability stable
    */
   readonly author: string;
@@ -488,6 +492,7 @@ export interface ConstructProjectOptions {
   readonly artifactsDirectory?: string;
   /**
    * The name of the main release branch.
+   * @default "main"
    * @stability stable
    */
   readonly defaultReleaseBranch: string;
@@ -1025,6 +1030,7 @@ export interface ConstructProjectOptions {
   readonly commitGenerated?: boolean;
   /**
    * This is the name of your project.
+   * @default $BASEDIR
    * @stability stable
    * @featured true
    */

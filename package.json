@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@jsii/spec": "^1.84.0",
-    "@mrgrain/jsii-struct-builder": "^0.4.10",
+    "@mrgrain/jsii-struct-builder": "^0.5.0",
     "@types/jest": "^27",
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
@@ -54,14 +54,14 @@
     "jsii-pacmak": "^1.84.0",
     "jsii-rosetta": "5.1.x",
     "npm-check-updates": "^16",
-    "projen": "^0.71.129",
+    "projen": "^0.71.138",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.1",
     "typescript": "5.1.x"
   },
   "peerDependencies": {
-    "projen": "^0.71.129"
+    "projen": "^0.71.138"
   },
   "main": "lib/index.js",
   "license": "MIT",
