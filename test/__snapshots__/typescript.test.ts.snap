@@ -718,12 +718,12 @@ tsconfig.tsbuildinfo
       {
         "name": "@typescript-eslint/eslint-plugin",
         "type": "build",
-        "version": "^5",
+        "version": "^6",
       },
       {
         "name": "@typescript-eslint/parser",
         "type": "build",
-        "version": "^5",
+        "version": "^6",
       },
       {
         "name": "eslint-import-resolver-node",
@@ -1047,7 +1047,7 @@ tsconfig.tsbuildinfo
             "exec": "yarn upgrade npm-check-updates",
           },
           {
-            "exec": "npm-check-updates --upgrade --target=minor --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
+            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
           },
           {
             "exec": "yarn install --check-files",
@@ -1107,8 +1107,8 @@ SOFTWARE.
       "@mrgrain/jsii-struct-builder": "*",
       "@types/jest": "*",
       "@types/node": "^16",
-      "@typescript-eslint/eslint-plugin": "^5",
-      "@typescript-eslint/parser": "^5",
+      "@typescript-eslint/eslint-plugin": "^6",
+      "@typescript-eslint/parser": "^6",
       "eslint": "^8",
       "eslint-import-resolver-node": "*",
       "eslint-import-resolver-typescript": "*",
