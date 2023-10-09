@@ -30,6 +30,12 @@ export interface ConstructProjectOptions {
    */
   readonly integrationTestAutoDiscover?: boolean;
   /**
+   * Enable experimental support for the AWS CDK integ-runner.
+   * @default false
+   * @stability stable
+   */
+  readonly experimentalIntegRunner?: boolean;
+  /**
    * Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project.
    * @default true
    * @stability stable
