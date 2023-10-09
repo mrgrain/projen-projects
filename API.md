@@ -134,6 +134,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.eslint">eslint</a></code> | <code>boolean</code> | Setup eslint. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.eslintOptions">eslintOptions</a></code> | <code>projen.javascript.EslintOptions</code> | Eslint options. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. Files matching any of those patterns will be excluded from the TypeScript compiler input. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
@@ -1035,6 +1036,19 @@ Accepts a list of glob patterns. Files matching any of those patterns will be ex
 By default, jsii will include all *.ts files (except .d.ts files) in the TypeScript compiler input.
 This can be problematic for example when the package's build or test procedure generates .ts files
 that cannot be compiled with jsii's compiler settings.
+
+---
+
+##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="mrpj.ConstructProjectOptions.property.experimentalIntegRunner"></a>
+
+```typescript
+public readonly experimentalIntegRunner: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Enable experimental support for the AWS CDK integ-runner.
 
 ---
 
