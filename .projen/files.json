@@ -11,7 +11,6 @@
     ".gitignore",
     ".mergify.yml",
     ".node-version",
-    ".npmrc",
     ".nvmrc",
     ".projen/deps.json",
     ".projen/files.json",
