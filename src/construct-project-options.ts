@@ -708,7 +708,7 @@ export interface ConstructProjectOptions {
   readonly packageName?: string;
   /**
    * The Node Package Manager used to execute scripts.
-   * @default NodePackageManager.YARN
+   * @default NodePackageManager.YARN_CLASSIC
    * @stability stable
    */
   readonly packageManager?: javascript.NodePackageManager;
@@ -1016,7 +1016,7 @@ export interface ConstructProjectOptions {
    *
    * If this project has a parent, this directory is relative to the parent
    * directory and it cannot be the same as the parent or any of it's other
-   * sub-projects.
+   * subprojects.
    * @default "."
    * @stability stable
    */
