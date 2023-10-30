@@ -259,7 +259,6 @@ exports[`default snapshot 1`] = `
 /.mergify.yml linguist-generated
 /.node-version linguist-generated
 /.npmignore linguist-generated
-/.npmrc linguist-generated
 /.nvmrc linguist-generated
 /.projen/** linguist-generated
 /.projen/deps.json linguist-generated
@@ -626,7 +625,6 @@ junit.xml
 !/.mergify.yml
 !/.github/workflows/upgrade-main.yml
 !/.github/pull_request_template.md
-!/.npmrc
 !/test/
 !/tsconfig.json
 !/tsconfig.dev.json
@@ -726,6 +724,11 @@ tsconfig.tsbuildinfo
         "version": "^6",
       },
       {
+        "name": "constructs",
+        "type": "build",
+        "version": "^10.0.0",
+      },
+      {
         "name": "eslint-import-resolver-node",
         "type": "build",
       },
@@ -802,7 +805,6 @@ tsconfig.tsbuildinfo
       ".mergify.yml",
       ".node-version",
       ".npmignore",
-      ".npmrc",
       ".nvmrc",
       ".projen/deps.json",
       ".projen/files.json",
@@ -1047,13 +1049,13 @@ tsconfig.tsbuildinfo
             "exec": "yarn upgrade npm-check-updates",
           },
           {
-            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
+            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
           },
           {
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit mrpj npm-check-updates projen standard-version ts-jest ts-node typescript",
+            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit mrpj npm-check-updates projen standard-version ts-jest ts-node typescript",
           },
           {
             "exec": "npx projen",
@@ -1109,6 +1111,7 @@ SOFTWARE.
       "@types/node": "^16",
       "@typescript-eslint/eslint-plugin": "^6",
       "@typescript-eslint/parser": "^6",
+      "constructs": "^10.0.0",
       "eslint": "^8",
       "eslint-import-resolver-node": "*",
       "eslint-import-resolver-typescript": "*",

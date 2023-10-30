@@ -19,6 +19,5007 @@ projen new --from mrpj ts
 
 # API Reference <a name="API Reference" id="api-reference"></a>
 
+## Constructs <a name="Constructs" id="Constructs"></a>
+
+### ConstructProject <a name="ConstructProject" id="mrpj.ConstructProject"></a>
+
+#### Initializers <a name="Initializers" id="mrpj.ConstructProject.Initializer"></a>
+
+```typescript
+import { ConstructProject } from 'mrpj'
+
+new ConstructProject(options: AwsCdkConstructLibraryOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ConstructProject.Initializer.parameter.options">options</a></code> | <code>projen.awscdk.AwsCdkConstructLibraryOptions</code> | *No description.* |
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="mrpj.ConstructProject.Initializer.parameter.options"></a>
+
+- *Type:* projen.awscdk.AwsCdkConstructLibraryOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.ConstructProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.ConstructProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#mrpj.ConstructProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#mrpj.ConstructProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#mrpj.ConstructProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#mrpj.ConstructProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#mrpj.ConstructProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#mrpj.ConstructProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#mrpj.ConstructProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#mrpj.ConstructProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#mrpj.ConstructProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#mrpj.ConstructProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#mrpj.ConstructProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#mrpj.ConstructProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#mrpj.ConstructProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#mrpj.ConstructProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#mrpj.ConstructProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#mrpj.ConstructProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.ConstructProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#mrpj.ConstructProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#mrpj.ConstructProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#mrpj.ConstructProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#mrpj.ConstructProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.ConstructProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#mrpj.ConstructProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.ConstructProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#mrpj.ConstructProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#mrpj.ConstructProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#mrpj.ConstructProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+| <code><a href="#mrpj.ConstructProject.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
+| <code><a href="#mrpj.ConstructProject.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.ConstructProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ConstructProject.addExcludeFromCleanup"></a>
+
+```typescript
+public addExcludeFromCleanup(globs: string): void
+```
+
+Exclude the matching files from pre-synth cleanup.
+
+Can be used when, for example, some
+source files include the projen marker and we don't want them to be erased during synth.
+
+###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.ConstructProject.addExcludeFromCleanup.parameter.globs"></a>
+
+- *Type:* string
+
+The glob patterns to match.
+
+---
+
+##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.ConstructProject.addGitIgnore"></a>
+
+```typescript
+public addGitIgnore(pattern: string): void
+```
+
+Adds a .gitignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ConstructProject.addGitIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The glob pattern to ignore.
+
+---
+
+##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.ConstructProject.addPackageIgnore"></a>
+
+```typescript
+public addPackageIgnore(pattern: string): void
+```
+
+Exclude these files from the bundled package.
+
+Implemented by project types based on the
+packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ConstructProject.addPackageIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addTask` <a name="addTask" id="mrpj.ConstructProject.addTask"></a>
+
+```typescript
+public addTask(name: string, props?: TaskOptions): Task
+```
+
+Adds a new task to this project.
+
+This will fail if the project already has
+a task with this name.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.addTask.parameter.name"></a>
+
+- *Type:* string
+
+The task name to add.
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="mrpj.ConstructProject.addTask.parameter.props"></a>
+
+- *Type:* projen.TaskOptions
+
+Task properties.
+
+---
+
+##### ~~`addTip`~~ <a name="addTip" id="mrpj.ConstructProject.addTip"></a>
+
+```typescript
+public addTip(message: string): void
+```
+
+Prints a "tip" message during synthesis.
+
+###### `message`<sup>Required</sup> <a name="message" id="mrpj.ConstructProject.addTip.parameter.message"></a>
+
+- *Type:* string
+
+The message.
+
+---
+
+##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.ConstructProject.annotateGenerated"></a>
+
+```typescript
+public annotateGenerated(glob: string): void
+```
+
+Marks the provided file(s) as being generated.
+
+This is achieved using the
+github-linguist attributes. Generated files do not count against the
+repository statistics and language breakdown.
+
+> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
+
+###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.ConstructProject.annotateGenerated.parameter.glob"></a>
+
+- *Type:* string
+
+the glob pattern to match (could be a file path).
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.ConstructProject.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after all components are synthesized.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.ConstructProject.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before all components are synthesized.
+
+##### `removeTask` <a name="removeTask" id="mrpj.ConstructProject.removeTask"></a>
+
+```typescript
+public removeTask(name: string): Task
+```
+
+Removes a task from a project.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.removeTask.parameter.name"></a>
+
+- *Type:* string
+
+The name of the task to remove.
+
+---
+
+##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.ConstructProject.runTaskCommand"></a>
+
+```typescript
+public runTaskCommand(task: Task): string
+```
+
+Returns the shell command to execute in order to run a task.
+
+This will
+typically be `npx projen TASK`.
+
+###### `task`<sup>Required</sup> <a name="task" id="mrpj.ConstructProject.runTaskCommand.parameter.task"></a>
+
+- *Type:* projen.Task
+
+The task for which the command is required.
+
+---
+
+##### `synth` <a name="synth" id="mrpj.ConstructProject.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesize all project files into `outdir`.
+
+1. Call "this.preSynthesize()"
+2. Delete all generated files
+3. Synthesize all subprojects
+4. Synthesize all components of this project
+5. Call "postSynthesize()" for all components of this project
+6. Call "this.postSynthesize()"
+
+##### `tryFindFile` <a name="tryFindFile" id="mrpj.ConstructProject.tryFindFile"></a>
+
+```typescript
+public tryFindFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and all its subprojects.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be resolved
+from the root of _this_ project.
+
+---
+
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ConstructProject.tryFindJsonFile"></a>
+
+```typescript
+public tryFindJsonFile(filePath: string): JsonFile
+```
+
+Finds a json file by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindJsonFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ConstructProject.tryFindObjectFile"></a>
+
+```typescript
+public tryFindObjectFile(filePath: string): ObjectFile
+```
+
+Finds an object file (like JsonFile, YamlFile, etc.) by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindObjectFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.ConstructProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
+
+---
+
+##### `addBins` <a name="addBins" id="mrpj.ConstructProject.addBins"></a>
+
+```typescript
+public addBins(bins: {[ key: string ]: string}): void
+```
+
+###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.ConstructProject.addBins.parameter.bins"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.ConstructProject.addBundledDeps"></a>
+
+```typescript
+public addBundledDeps(deps: string): void
+```
+
+Defines bundled dependencies.
+
+Bundled dependencies will be added as normal dependencies as well as to the
+`bundledDependencies` section of your `package.json`.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addBundledDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ConstructProject.addCompileCommand"></a>
+
+```typescript
+public addCompileCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addCompileCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### `addDeps` <a name="addDeps" id="mrpj.ConstructProject.addDeps"></a>
+
+```typescript
+public addDeps(deps: string): void
+```
+
+Defines normal dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addDevDeps` <a name="addDevDeps" id="mrpj.ConstructProject.addDevDeps"></a>
+
+```typescript
+public addDevDeps(deps: string): void
+```
+
+Defines development/test dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addDevDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addFields` <a name="addFields" id="mrpj.ConstructProject.addFields"></a>
+
+```typescript
+public addFields(fields: {[ key: string ]: any}): void
+```
+
+Directly set fields in `package.json`.
+
+###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.ConstructProject.addFields.parameter.fields"></a>
+
+- *Type:* {[ key: string ]: any}
+
+The fields to set.
+
+---
+
+##### `addKeywords` <a name="addKeywords" id="mrpj.ConstructProject.addKeywords"></a>
+
+```typescript
+public addKeywords(keywords: string): void
+```
+
+Adds keywords to package.json (deduplicated).
+
+###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.ConstructProject.addKeywords.parameter.keywords"></a>
+
+- *Type:* string
+
+The keywords to add.
+
+---
+
+##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.ConstructProject.addPeerDeps"></a>
+
+```typescript
+public addPeerDeps(deps: string): void
+```
+
+Defines peer dependencies.
+
+When adding peer dependencies, a devDependency will also be added on the
+pinned version of the declared peer. This will ensure that you are testing
+your code against the minimum version required from your consumers.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addPeerDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.ConstructProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ConstructProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
+
+---
+
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ConstructProject.addTestCommand"></a>
+
+```typescript
+public addTestCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addTestCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ConstructProject.hasScript"></a>
+
+```typescript
+public hasScript(name: string): boolean
+```
+
+Indicates if a script by the name name is defined.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.hasScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `removeScript` <a name="removeScript" id="mrpj.ConstructProject.removeScript"></a>
+
+```typescript
+public removeScript(name: string): void
+```
+
+Removes the npm script (always successful).
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.removeScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.ConstructProject.renderWorkflowSetup"></a>
+
+```typescript
+public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
+```
+
+Returns the set of workflow steps which should be executed to bootstrap a workflow.
+
+###### `options`<sup>Optional</sup> <a name="options" id="mrpj.ConstructProject.renderWorkflowSetup.parameter.options"></a>
+
+- *Type:* projen.javascript.RenderWorkflowSetupOptions
+
+Options.
+
+---
+
+##### `setScript` <a name="setScript" id="mrpj.ConstructProject.setScript"></a>
+
+```typescript
+public setScript(name: string, command: string): void
+```
+
+Replaces the contents of an npm package.json script.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.setScript.parameter.name"></a>
+
+- *Type:* string
+
+The script name.
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="mrpj.ConstructProject.setScript.parameter.command"></a>
+
+- *Type:* string
+
+The command to execute.
+
+---
+
+##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="mrpj.ConstructProject.addCdkDependencies"></a>
+
+```typescript
+public addCdkDependencies(deps: string): void
+```
+
+Adds dependencies to AWS CDK modules.
+
+Since this is a library project, dependencies will be added as peer dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkDependencies.parameter.deps"></a>
+
+- *Type:* string
+
+names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
+
+---
+
+##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="mrpj.ConstructProject.addCdkTestDependencies"></a>
+
+```typescript
+public addCdkTestDependencies(deps: string): void
+```
+
+Adds AWS CDK modules as dev dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkTestDependencies.parameter.deps"></a>
+
+- *Type:* string
+
+names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.ConstructProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.ConstructProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#mrpj.ConstructProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.ConstructProject.isConstruct"></a>
+
+```typescript
+import { ConstructProject } from 'mrpj'
+
+ConstructProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.ConstructProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="mrpj.ConstructProject.isProject"></a>
+
+```typescript
+import { ConstructProject } from 'mrpj'
+
+ConstructProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.ConstructProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="mrpj.ConstructProject.of"></a>
+
+```typescript
+import { ConstructProject } from 'mrpj'
+
+ConstructProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="mrpj.ConstructProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ConstructProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.ConstructProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#mrpj.ConstructProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#mrpj.ConstructProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#mrpj.ConstructProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#mrpj.ConstructProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#mrpj.ConstructProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#mrpj.ConstructProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#mrpj.ConstructProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#mrpj.ConstructProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#mrpj.ConstructProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#mrpj.ConstructProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#mrpj.ConstructProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#mrpj.ConstructProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#mrpj.ConstructProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#mrpj.ConstructProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#mrpj.ConstructProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#mrpj.ConstructProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#mrpj.ConstructProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#mrpj.ConstructProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#mrpj.ConstructProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#mrpj.ConstructProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#mrpj.ConstructProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#mrpj.ConstructProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#mrpj.ConstructProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#mrpj.ConstructProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#mrpj.ConstructProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#mrpj.ConstructProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#mrpj.ConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#mrpj.ConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#mrpj.ConstructProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.ConstructProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#mrpj.ConstructProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#mrpj.ConstructProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#mrpj.ConstructProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
+| <code><a href="#mrpj.ConstructProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
+| <code><a href="#mrpj.ConstructProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#mrpj.ConstructProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#mrpj.ConstructProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#mrpj.ConstructProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#mrpj.ConstructProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.ConstructProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#mrpj.ConstructProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#mrpj.ConstructProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#mrpj.ConstructProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#mrpj.ConstructProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProject.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
+| <code><a href="#mrpj.ConstructProject.property.version">version</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.ConstructProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.ConstructProject.property.buildTask"></a>
+
+```typescript
+public readonly buildTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.ConstructProject.property.commitGenerated"></a>
+
+```typescript
+public readonly commitGenerated: boolean;
+```
+
+- *Type:* boolean
+
+Whether to commit the managed files by default.
+
+---
+
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.ConstructProject.property.compileTask"></a>
+
+```typescript
+public readonly compileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `components`<sup>Required</sup> <a name="components" id="mrpj.ConstructProject.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* projen.Component[]
+
+Returns all the components within this project.
+
+---
+
+##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.property.deps"></a>
+
+```typescript
+public readonly deps: Dependencies;
+```
+
+- *Type:* projen.Dependencies
+
+Project dependencies.
+
+---
+
+##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.ConstructProject.property.ejected"></a>
+
+```typescript
+public readonly ejected: boolean;
+```
+
+- *Type:* boolean
+
+Whether or not the project is being ejected.
+
+---
+
+##### `files`<sup>Required</sup> <a name="files" id="mrpj.ConstructProject.property.files"></a>
+
+```typescript
+public readonly files: FileBase[];
+```
+
+- *Type:* projen.FileBase[]
+
+All files in this project.
+
+---
+
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.ConstructProject.property.gitattributes"></a>
+
+```typescript
+public readonly gitattributes: GitAttributesFile;
+```
+
+- *Type:* projen.GitAttributesFile
+
+The .gitattributes file for this repository.
+
+---
+
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.ConstructProject.property.gitignore"></a>
+
+```typescript
+public readonly gitignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+.gitignore.
+
+---
+
+##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.ConstructProject.property.logger"></a>
+
+```typescript
+public readonly logger: Logger;
+```
+
+- *Type:* projen.Logger
+
+Logging utilities.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Project name.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.ConstructProject.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+Absolute output directory of this project.
+
+---
+
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.ConstructProject.property.packageTask"></a>
+
+```typescript
+public readonly packageTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.ConstructProject.property.postCompileTask"></a>
+
+```typescript
+public readonly postCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.ConstructProject.property.preCompileTask"></a>
+
+```typescript
+public readonly preCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.ConstructProject.property.projectBuild"></a>
+
+```typescript
+public readonly projectBuild: ProjectBuild;
+```
+
+- *Type:* projen.ProjectBuild
+
+Manages the build process of the project.
+
+---
+
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.ConstructProject.property.projenCommand"></a>
+
+```typescript
+public readonly projenCommand: string;
+```
+
+- *Type:* string
+
+The command to use in order to run the projen CLI.
+
+---
+
+##### `root`<sup>Required</sup> <a name="root" id="mrpj.ConstructProject.property.root"></a>
+
+```typescript
+public readonly root: Project;
+```
+
+- *Type:* projen.Project
+
+The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.ConstructProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
+
+---
+
+##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.ConstructProject.property.tasks"></a>
+
+```typescript
+public readonly tasks: Tasks;
+```
+
+- *Type:* projen.Tasks
+
+Project tasks.
+
+---
+
+##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.ConstructProject.property.testTask"></a>
+
+```typescript
+public readonly testTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.ConstructProject.property.defaultTask"></a>
+
+```typescript
+public readonly defaultTask: Task;
+```
+
+- *Type:* projen.Task
+
+This is the "default" task, the one that executes "projen".
+
+Undefined if
+the project is being ejected.
+
+---
+
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.ConstructProject.property.initProject"></a>
+
+```typescript
+public readonly initProject: InitProject;
+```
+
+- *Type:* projen.InitProject
+
+The options used when this project is bootstrapped via `projen new`.
+
+It
+includes the original set of options passed to the CLI and also the JSII
+FQN of the project type.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.ConstructProject.property.parent"></a>
+
+```typescript
+public readonly parent: Project;
+```
+
+- *Type:* projen.Project
+
+A parent project.
+
+If undefined, this is the root project.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ConstructProject.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* projen.ProjectType
+
+---
+
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ConstructProject.property.autoApprove"></a>
+
+```typescript
+public readonly autoApprove: AutoApprove;
+```
+
+- *Type:* projen.github.AutoApprove
+
+Auto approve set up for this project.
+
+---
+
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.ConstructProject.property.devContainer"></a>
+
+```typescript
+public readonly devContainer: DevContainer;
+```
+
+- *Type:* projen.vscode.DevContainer
+
+Access for .devcontainer.json (used for GitHub Codespaces).
+
+This will be `undefined` if devContainer boolean is false
+
+---
+
+##### `github`<sup>Optional</sup> <a name="github" id="mrpj.ConstructProject.property.github"></a>
+
+```typescript
+public readonly github: GitHub;
+```
+
+- *Type:* projen.github.GitHub
+
+Access all github components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.ConstructProject.property.gitpod"></a>
+
+```typescript
+public readonly gitpod: Gitpod;
+```
+
+- *Type:* projen.Gitpod
+
+Access for Gitpod.
+
+This will be `undefined` if gitpod boolean is false
+
+---
+
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.ConstructProject.property.vscode"></a>
+
+```typescript
+public readonly vscode: VsCode;
+```
+
+- *Type:* projen.vscode.VsCode
+
+Access all VSCode components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ConstructProject.property.allowLibraryDependencies"></a>
+
+- *Deprecated:* use `package.allowLibraryDependencies`
+
+```typescript
+public readonly allowLibraryDependencies: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ConstructProject.property.artifactsDirectory"></a>
+
+```typescript
+public readonly artifactsDirectory: string;
+```
+
+- *Type:* string
+
+The build output directory.
+
+An npm tarball will be created under the `js`
+subdirectory. For example, if this is set to `dist` (the default), the npm
+tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
+
+---
+
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.ConstructProject.property.artifactsJavascriptDirectory"></a>
+
+```typescript
+public readonly artifactsJavascriptDirectory: string;
+```
+
+- *Type:* string
+
+The location of the npm tarball after build (`${artifactsDirectory}/js`).
+
+---
+
+##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.ConstructProject.property.bundler"></a>
+
+```typescript
+public readonly bundler: Bundler;
+```
+
+- *Type:* projen.javascript.Bundler
+
+---
+
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ConstructProject.property.entrypoint"></a>
+
+- *Deprecated:* use `package.entrypoint`
+
+```typescript
+public readonly entrypoint: string;
+```
+
+- *Type:* string
+
+---
+
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ConstructProject.property.manifest"></a>
+
+- *Deprecated:* use `package.addField(x, y)`
+
+```typescript
+public readonly manifest: any;
+```
+
+- *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ConstructProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
+
+---
+
+##### `package`<sup>Required</sup> <a name="package" id="mrpj.ConstructProject.property.package"></a>
+
+```typescript
+public readonly package: NodePackage;
+```
+
+- *Type:* projen.javascript.NodePackage
+
+API for managing the node package.
+
+---
+
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ConstructProject.property.packageManager"></a>
+
+- *Deprecated:* use `package.packageManager`
+
+```typescript
+public readonly packageManager: NodePackageManager;
+```
+
+- *Type:* projen.javascript.NodePackageManager
+
+The package manager to use.
+
+---
+
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.ConstructProject.property.runScriptCommand"></a>
+
+```typescript
+public readonly runScriptCommand: string;
+```
+
+- *Type:* string
+
+The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
+
+---
+
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.ConstructProject.property.autoMerge"></a>
+
+```typescript
+public readonly autoMerge: AutoMerge;
+```
+
+- *Type:* projen.github.AutoMerge
+
+Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.ConstructProject.property.buildWorkflow"></a>
+
+```typescript
+public readonly buildWorkflow: BuildWorkflow;
+```
+
+- *Type:* projen.build.BuildWorkflow
+
+The PR build GitHub workflow.
+
+`undefined` if `buildWorkflow` is disabled.
+
+---
+
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.ConstructProject.property.buildWorkflowJobId"></a>
+
+```typescript
+public readonly buildWorkflowJobId: string;
+```
+
+- *Type:* string
+
+The job ID of the build workflow.
+
+---
+
+##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.ConstructProject.property.jest"></a>
+
+```typescript
+public readonly jest: Jest;
+```
+
+- *Type:* projen.javascript.Jest
+
+The Jest configuration (if enabled).
+
+---
+
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.ConstructProject.property.maxNodeVersion"></a>
+
+```typescript
+public readonly maxNodeVersion: string;
+```
+
+- *Type:* string
+
+Maximum node version required by this package.
+
+---
+
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.ConstructProject.property.minNodeVersion"></a>
+
+```typescript
+public readonly minNodeVersion: string;
+```
+
+- *Type:* string
+
+Minimum node.js version required by this package.
+
+---
+
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.ConstructProject.property.npmignore"></a>
+
+```typescript
+public readonly npmignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .npmignore file.
+
+---
+
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.ConstructProject.property.prettier"></a>
+
+```typescript
+public readonly prettier: Prettier;
+```
+
+- *Type:* projen.javascript.Prettier
+
+---
+
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ConstructProject.property.publisher"></a>
+
+- *Deprecated:* use `release.publisher`.
+
+```typescript
+public readonly publisher: Publisher;
+```
+
+- *Type:* projen.release.Publisher
+
+Package publisher.
+
+This will be `undefined` if the project does not have a
+release workflow.
+
+---
+
+##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ConstructProject.property.release"></a>
+
+```typescript
+public readonly release: Release;
+```
+
+- *Type:* projen.release.Release
+
+Release management.
+
+---
+
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.ConstructProject.property.upgradeWorkflow"></a>
+
+```typescript
+public readonly upgradeWorkflow: UpgradeDependencies;
+```
+
+- *Type:* projen.javascript.UpgradeDependencies
+
+The upgrade workflow.
+
+---
+
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.ConstructProject.property.docsDirectory"></a>
+
+```typescript
+public readonly docsDirectory: string;
+```
+
+- *Type:* string
+
+---
+
+##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.ConstructProject.property.libdir"></a>
+
+```typescript
+public readonly libdir: string;
+```
+
+- *Type:* string
+
+The directory in which compiled .js files reside.
+
+---
+
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.ConstructProject.property.srcdir"></a>
+
+```typescript
+public readonly srcdir: string;
+```
+
+- *Type:* string
+
+The directory in which the .ts sources reside.
+
+---
+
+##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.ConstructProject.property.testdir"></a>
+
+```typescript
+public readonly testdir: string;
+```
+
+- *Type:* string
+
+The directory in which tests reside.
+
+---
+
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.ConstructProject.property.tsconfigDev"></a>
+
+```typescript
+public readonly tsconfigDev: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+A typescript configuration file which covers all files (sources, tests, projen).
+
+---
+
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.ConstructProject.property.watchTask"></a>
+
+```typescript
+public readonly watchTask: Task;
+```
+
+- *Type:* projen.Task
+
+The "watch" task.
+
+---
+
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.ConstructProject.property.docgen"></a>
+
+```typescript
+public readonly docgen: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.ConstructProject.property.eslint"></a>
+
+```typescript
+public readonly eslint: Eslint;
+```
+
+- *Type:* projen.javascript.Eslint
+
+---
+
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.ConstructProject.property.tsconfig"></a>
+
+```typescript
+public readonly tsconfig: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.ConstructProject.property.tsconfigEslint"></a>
+
+```typescript
+public readonly tsconfigEslint: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="mrpj.ConstructProject.property.cdkDeps"></a>
+
+```typescript
+public readonly cdkDeps: AwsCdkDeps;
+```
+
+- *Type:* projen.awscdk.AwsCdkDeps
+
+---
+
+##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="mrpj.ConstructProject.property.cdkVersion"></a>
+
+```typescript
+public readonly cdkVersion: string;
+```
+
+- *Type:* string
+
+The target CDK version for this library.
+
+---
+
+##### ~~`version`~~<sup>Required</sup> <a name="version" id="mrpj.ConstructProject.property.version"></a>
+
+- *Deprecated:* use `cdkVersion`
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ConstructProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+
+---
+
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.ConstructProject.property.DEFAULT_TASK"></a>
+
+```typescript
+public readonly DEFAULT_TASK: string;
+```
+
+- *Type:* string
+
+The name of the default task (the task executed when `projen` is run without arguments).
+
+Normally
+this task should synthesize the project files.
+
+---
+
+### ProjenProject <a name="ProjenProject" id="mrpj.ProjenProject"></a>
+
+A project to create new projen projects & components.
+
+#### Initializers <a name="Initializers" id="mrpj.ProjenProject.Initializer"></a>
+
+```typescript
+import { ProjenProject } from 'mrpj'
+
+new ProjenProject(options: ProjenProjectOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ProjenProject.Initializer.parameter.options">options</a></code> | <code><a href="#mrpj.ProjenProjectOptions">ProjenProjectOptions</a></code> | *No description.* |
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="mrpj.ProjenProject.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#mrpj.ProjenProjectOptions">ProjenProjectOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.ProjenProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.ProjenProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#mrpj.ProjenProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#mrpj.ProjenProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#mrpj.ProjenProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#mrpj.ProjenProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#mrpj.ProjenProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#mrpj.ProjenProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#mrpj.ProjenProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#mrpj.ProjenProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#mrpj.ProjenProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#mrpj.ProjenProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#mrpj.ProjenProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#mrpj.ProjenProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#mrpj.ProjenProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#mrpj.ProjenProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#mrpj.ProjenProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#mrpj.ProjenProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.ProjenProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#mrpj.ProjenProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#mrpj.ProjenProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#mrpj.ProjenProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#mrpj.ProjenProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.ProjenProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#mrpj.ProjenProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.ProjenProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#mrpj.ProjenProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#mrpj.ProjenProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#mrpj.ProjenProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.ProjenProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ProjenProject.addExcludeFromCleanup"></a>
+
+```typescript
+public addExcludeFromCleanup(globs: string): void
+```
+
+Exclude the matching files from pre-synth cleanup.
+
+Can be used when, for example, some
+source files include the projen marker and we don't want them to be erased during synth.
+
+###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.ProjenProject.addExcludeFromCleanup.parameter.globs"></a>
+
+- *Type:* string
+
+The glob patterns to match.
+
+---
+
+##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.ProjenProject.addGitIgnore"></a>
+
+```typescript
+public addGitIgnore(pattern: string): void
+```
+
+Adds a .gitignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ProjenProject.addGitIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The glob pattern to ignore.
+
+---
+
+##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.ProjenProject.addPackageIgnore"></a>
+
+```typescript
+public addPackageIgnore(pattern: string): void
+```
+
+Exclude these files from the bundled package.
+
+Implemented by project types based on the
+packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ProjenProject.addPackageIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addTask` <a name="addTask" id="mrpj.ProjenProject.addTask"></a>
+
+```typescript
+public addTask(name: string, props?: TaskOptions): Task
+```
+
+Adds a new task to this project.
+
+This will fail if the project already has
+a task with this name.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.addTask.parameter.name"></a>
+
+- *Type:* string
+
+The task name to add.
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="mrpj.ProjenProject.addTask.parameter.props"></a>
+
+- *Type:* projen.TaskOptions
+
+Task properties.
+
+---
+
+##### ~~`addTip`~~ <a name="addTip" id="mrpj.ProjenProject.addTip"></a>
+
+```typescript
+public addTip(message: string): void
+```
+
+Prints a "tip" message during synthesis.
+
+###### `message`<sup>Required</sup> <a name="message" id="mrpj.ProjenProject.addTip.parameter.message"></a>
+
+- *Type:* string
+
+The message.
+
+---
+
+##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.ProjenProject.annotateGenerated"></a>
+
+```typescript
+public annotateGenerated(glob: string): void
+```
+
+Marks the provided file(s) as being generated.
+
+This is achieved using the
+github-linguist attributes. Generated files do not count against the
+repository statistics and language breakdown.
+
+> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
+
+###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.ProjenProject.annotateGenerated.parameter.glob"></a>
+
+- *Type:* string
+
+the glob pattern to match (could be a file path).
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.ProjenProject.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after all components are synthesized.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.ProjenProject.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before all components are synthesized.
+
+##### `removeTask` <a name="removeTask" id="mrpj.ProjenProject.removeTask"></a>
+
+```typescript
+public removeTask(name: string): Task
+```
+
+Removes a task from a project.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.removeTask.parameter.name"></a>
+
+- *Type:* string
+
+The name of the task to remove.
+
+---
+
+##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.ProjenProject.runTaskCommand"></a>
+
+```typescript
+public runTaskCommand(task: Task): string
+```
+
+Returns the shell command to execute in order to run a task.
+
+This will
+typically be `npx projen TASK`.
+
+###### `task`<sup>Required</sup> <a name="task" id="mrpj.ProjenProject.runTaskCommand.parameter.task"></a>
+
+- *Type:* projen.Task
+
+The task for which the command is required.
+
+---
+
+##### `synth` <a name="synth" id="mrpj.ProjenProject.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesize all project files into `outdir`.
+
+1. Call "this.preSynthesize()"
+2. Delete all generated files
+3. Synthesize all subprojects
+4. Synthesize all components of this project
+5. Call "postSynthesize()" for all components of this project
+6. Call "this.postSynthesize()"
+
+##### `tryFindFile` <a name="tryFindFile" id="mrpj.ProjenProject.tryFindFile"></a>
+
+```typescript
+public tryFindFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and all its subprojects.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be resolved
+from the root of _this_ project.
+
+---
+
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ProjenProject.tryFindJsonFile"></a>
+
+```typescript
+public tryFindJsonFile(filePath: string): JsonFile
+```
+
+Finds a json file by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindJsonFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ProjenProject.tryFindObjectFile"></a>
+
+```typescript
+public tryFindObjectFile(filePath: string): ObjectFile
+```
+
+Finds an object file (like JsonFile, YamlFile, etc.) by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindObjectFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.ProjenProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
+
+---
+
+##### `addBins` <a name="addBins" id="mrpj.ProjenProject.addBins"></a>
+
+```typescript
+public addBins(bins: {[ key: string ]: string}): void
+```
+
+###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.ProjenProject.addBins.parameter.bins"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.ProjenProject.addBundledDeps"></a>
+
+```typescript
+public addBundledDeps(deps: string): void
+```
+
+Defines bundled dependencies.
+
+Bundled dependencies will be added as normal dependencies as well as to the
+`bundledDependencies` section of your `package.json`.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addBundledDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ProjenProject.addCompileCommand"></a>
+
+```typescript
+public addCompileCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addCompileCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### `addDeps` <a name="addDeps" id="mrpj.ProjenProject.addDeps"></a>
+
+```typescript
+public addDeps(deps: string): void
+```
+
+Defines normal dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addDevDeps` <a name="addDevDeps" id="mrpj.ProjenProject.addDevDeps"></a>
+
+```typescript
+public addDevDeps(deps: string): void
+```
+
+Defines development/test dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addDevDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addFields` <a name="addFields" id="mrpj.ProjenProject.addFields"></a>
+
+```typescript
+public addFields(fields: {[ key: string ]: any}): void
+```
+
+Directly set fields in `package.json`.
+
+###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.ProjenProject.addFields.parameter.fields"></a>
+
+- *Type:* {[ key: string ]: any}
+
+The fields to set.
+
+---
+
+##### `addKeywords` <a name="addKeywords" id="mrpj.ProjenProject.addKeywords"></a>
+
+```typescript
+public addKeywords(keywords: string): void
+```
+
+Adds keywords to package.json (deduplicated).
+
+###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.ProjenProject.addKeywords.parameter.keywords"></a>
+
+- *Type:* string
+
+The keywords to add.
+
+---
+
+##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.ProjenProject.addPeerDeps"></a>
+
+```typescript
+public addPeerDeps(deps: string): void
+```
+
+Defines peer dependencies.
+
+When adding peer dependencies, a devDependency will also be added on the
+pinned version of the declared peer. This will ensure that you are testing
+your code against the minimum version required from your consumers.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addPeerDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.ProjenProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ProjenProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
+
+---
+
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ProjenProject.addTestCommand"></a>
+
+```typescript
+public addTestCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addTestCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ProjenProject.hasScript"></a>
+
+```typescript
+public hasScript(name: string): boolean
+```
+
+Indicates if a script by the name name is defined.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.hasScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `removeScript` <a name="removeScript" id="mrpj.ProjenProject.removeScript"></a>
+
+```typescript
+public removeScript(name: string): void
+```
+
+Removes the npm script (always successful).
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.removeScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.ProjenProject.renderWorkflowSetup"></a>
+
+```typescript
+public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
+```
+
+Returns the set of workflow steps which should be executed to bootstrap a workflow.
+
+###### `options`<sup>Optional</sup> <a name="options" id="mrpj.ProjenProject.renderWorkflowSetup.parameter.options"></a>
+
+- *Type:* projen.javascript.RenderWorkflowSetupOptions
+
+Options.
+
+---
+
+##### `setScript` <a name="setScript" id="mrpj.ProjenProject.setScript"></a>
+
+```typescript
+public setScript(name: string, command: string): void
+```
+
+Replaces the contents of an npm package.json script.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.setScript.parameter.name"></a>
+
+- *Type:* string
+
+The script name.
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="mrpj.ProjenProject.setScript.parameter.command"></a>
+
+- *Type:* string
+
+The command to execute.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.ProjenProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.ProjenProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#mrpj.ProjenProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.ProjenProject.isConstruct"></a>
+
+```typescript
+import { ProjenProject } from 'mrpj'
+
+ProjenProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.ProjenProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="mrpj.ProjenProject.isProject"></a>
+
+```typescript
+import { ProjenProject } from 'mrpj'
+
+ProjenProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.ProjenProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="mrpj.ProjenProject.of"></a>
+
+```typescript
+import { ProjenProject } from 'mrpj'
+
+ProjenProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="mrpj.ProjenProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ProjenProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.ProjenProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#mrpj.ProjenProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#mrpj.ProjenProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#mrpj.ProjenProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#mrpj.ProjenProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#mrpj.ProjenProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#mrpj.ProjenProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#mrpj.ProjenProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#mrpj.ProjenProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#mrpj.ProjenProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#mrpj.ProjenProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#mrpj.ProjenProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#mrpj.ProjenProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#mrpj.ProjenProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#mrpj.ProjenProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#mrpj.ProjenProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#mrpj.ProjenProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#mrpj.ProjenProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#mrpj.ProjenProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#mrpj.ProjenProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#mrpj.ProjenProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#mrpj.ProjenProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#mrpj.ProjenProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#mrpj.ProjenProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#mrpj.ProjenProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#mrpj.ProjenProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#mrpj.ProjenProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#mrpj.ProjenProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#mrpj.ProjenProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#mrpj.ProjenProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.ProjenProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#mrpj.ProjenProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#mrpj.ProjenProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#mrpj.ProjenProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
+| <code><a href="#mrpj.ProjenProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
+| <code><a href="#mrpj.ProjenProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#mrpj.ProjenProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#mrpj.ProjenProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#mrpj.ProjenProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#mrpj.ProjenProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.ProjenProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#mrpj.ProjenProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#mrpj.ProjenProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#mrpj.ProjenProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#mrpj.ProjenProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.ProjenProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.ProjenProject.property.buildTask"></a>
+
+```typescript
+public readonly buildTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.ProjenProject.property.commitGenerated"></a>
+
+```typescript
+public readonly commitGenerated: boolean;
+```
+
+- *Type:* boolean
+
+Whether to commit the managed files by default.
+
+---
+
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.ProjenProject.property.compileTask"></a>
+
+```typescript
+public readonly compileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `components`<sup>Required</sup> <a name="components" id="mrpj.ProjenProject.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* projen.Component[]
+
+Returns all the components within this project.
+
+---
+
+##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.property.deps"></a>
+
+```typescript
+public readonly deps: Dependencies;
+```
+
+- *Type:* projen.Dependencies
+
+Project dependencies.
+
+---
+
+##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.ProjenProject.property.ejected"></a>
+
+```typescript
+public readonly ejected: boolean;
+```
+
+- *Type:* boolean
+
+Whether or not the project is being ejected.
+
+---
+
+##### `files`<sup>Required</sup> <a name="files" id="mrpj.ProjenProject.property.files"></a>
+
+```typescript
+public readonly files: FileBase[];
+```
+
+- *Type:* projen.FileBase[]
+
+All files in this project.
+
+---
+
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.ProjenProject.property.gitattributes"></a>
+
+```typescript
+public readonly gitattributes: GitAttributesFile;
+```
+
+- *Type:* projen.GitAttributesFile
+
+The .gitattributes file for this repository.
+
+---
+
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.ProjenProject.property.gitignore"></a>
+
+```typescript
+public readonly gitignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+.gitignore.
+
+---
+
+##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.ProjenProject.property.logger"></a>
+
+```typescript
+public readonly logger: Logger;
+```
+
+- *Type:* projen.Logger
+
+Logging utilities.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Project name.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.ProjenProject.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+Absolute output directory of this project.
+
+---
+
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.ProjenProject.property.packageTask"></a>
+
+```typescript
+public readonly packageTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.ProjenProject.property.postCompileTask"></a>
+
+```typescript
+public readonly postCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.ProjenProject.property.preCompileTask"></a>
+
+```typescript
+public readonly preCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.ProjenProject.property.projectBuild"></a>
+
+```typescript
+public readonly projectBuild: ProjectBuild;
+```
+
+- *Type:* projen.ProjectBuild
+
+Manages the build process of the project.
+
+---
+
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.ProjenProject.property.projenCommand"></a>
+
+```typescript
+public readonly projenCommand: string;
+```
+
+- *Type:* string
+
+The command to use in order to run the projen CLI.
+
+---
+
+##### `root`<sup>Required</sup> <a name="root" id="mrpj.ProjenProject.property.root"></a>
+
+```typescript
+public readonly root: Project;
+```
+
+- *Type:* projen.Project
+
+The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.ProjenProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
+
+---
+
+##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.ProjenProject.property.tasks"></a>
+
+```typescript
+public readonly tasks: Tasks;
+```
+
+- *Type:* projen.Tasks
+
+Project tasks.
+
+---
+
+##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.ProjenProject.property.testTask"></a>
+
+```typescript
+public readonly testTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.ProjenProject.property.defaultTask"></a>
+
+```typescript
+public readonly defaultTask: Task;
+```
+
+- *Type:* projen.Task
+
+This is the "default" task, the one that executes "projen".
+
+Undefined if
+the project is being ejected.
+
+---
+
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.ProjenProject.property.initProject"></a>
+
+```typescript
+public readonly initProject: InitProject;
+```
+
+- *Type:* projen.InitProject
+
+The options used when this project is bootstrapped via `projen new`.
+
+It
+includes the original set of options passed to the CLI and also the JSII
+FQN of the project type.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.ProjenProject.property.parent"></a>
+
+```typescript
+public readonly parent: Project;
+```
+
+- *Type:* projen.Project
+
+A parent project.
+
+If undefined, this is the root project.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ProjenProject.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* projen.ProjectType
+
+---
+
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ProjenProject.property.autoApprove"></a>
+
+```typescript
+public readonly autoApprove: AutoApprove;
+```
+
+- *Type:* projen.github.AutoApprove
+
+Auto approve set up for this project.
+
+---
+
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.ProjenProject.property.devContainer"></a>
+
+```typescript
+public readonly devContainer: DevContainer;
+```
+
+- *Type:* projen.vscode.DevContainer
+
+Access for .devcontainer.json (used for GitHub Codespaces).
+
+This will be `undefined` if devContainer boolean is false
+
+---
+
+##### `github`<sup>Optional</sup> <a name="github" id="mrpj.ProjenProject.property.github"></a>
+
+```typescript
+public readonly github: GitHub;
+```
+
+- *Type:* projen.github.GitHub
+
+Access all github components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.ProjenProject.property.gitpod"></a>
+
+```typescript
+public readonly gitpod: Gitpod;
+```
+
+- *Type:* projen.Gitpod
+
+Access for Gitpod.
+
+This will be `undefined` if gitpod boolean is false
+
+---
+
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.ProjenProject.property.vscode"></a>
+
+```typescript
+public readonly vscode: VsCode;
+```
+
+- *Type:* projen.vscode.VsCode
+
+Access all VSCode components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ProjenProject.property.allowLibraryDependencies"></a>
+
+- *Deprecated:* use `package.allowLibraryDependencies`
+
+```typescript
+public readonly allowLibraryDependencies: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ProjenProject.property.artifactsDirectory"></a>
+
+```typescript
+public readonly artifactsDirectory: string;
+```
+
+- *Type:* string
+
+The build output directory.
+
+An npm tarball will be created under the `js`
+subdirectory. For example, if this is set to `dist` (the default), the npm
+tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
+
+---
+
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.ProjenProject.property.artifactsJavascriptDirectory"></a>
+
+```typescript
+public readonly artifactsJavascriptDirectory: string;
+```
+
+- *Type:* string
+
+The location of the npm tarball after build (`${artifactsDirectory}/js`).
+
+---
+
+##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.ProjenProject.property.bundler"></a>
+
+```typescript
+public readonly bundler: Bundler;
+```
+
+- *Type:* projen.javascript.Bundler
+
+---
+
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ProjenProject.property.entrypoint"></a>
+
+- *Deprecated:* use `package.entrypoint`
+
+```typescript
+public readonly entrypoint: string;
+```
+
+- *Type:* string
+
+---
+
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ProjenProject.property.manifest"></a>
+
+- *Deprecated:* use `package.addField(x, y)`
+
+```typescript
+public readonly manifest: any;
+```
+
+- *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ProjenProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
+
+---
+
+##### `package`<sup>Required</sup> <a name="package" id="mrpj.ProjenProject.property.package"></a>
+
+```typescript
+public readonly package: NodePackage;
+```
+
+- *Type:* projen.javascript.NodePackage
+
+API for managing the node package.
+
+---
+
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ProjenProject.property.packageManager"></a>
+
+- *Deprecated:* use `package.packageManager`
+
+```typescript
+public readonly packageManager: NodePackageManager;
+```
+
+- *Type:* projen.javascript.NodePackageManager
+
+The package manager to use.
+
+---
+
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.ProjenProject.property.runScriptCommand"></a>
+
+```typescript
+public readonly runScriptCommand: string;
+```
+
+- *Type:* string
+
+The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
+
+---
+
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.ProjenProject.property.autoMerge"></a>
+
+```typescript
+public readonly autoMerge: AutoMerge;
+```
+
+- *Type:* projen.github.AutoMerge
+
+Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.ProjenProject.property.buildWorkflow"></a>
+
+```typescript
+public readonly buildWorkflow: BuildWorkflow;
+```
+
+- *Type:* projen.build.BuildWorkflow
+
+The PR build GitHub workflow.
+
+`undefined` if `buildWorkflow` is disabled.
+
+---
+
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.ProjenProject.property.buildWorkflowJobId"></a>
+
+```typescript
+public readonly buildWorkflowJobId: string;
+```
+
+- *Type:* string
+
+The job ID of the build workflow.
+
+---
+
+##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.ProjenProject.property.jest"></a>
+
+```typescript
+public readonly jest: Jest;
+```
+
+- *Type:* projen.javascript.Jest
+
+The Jest configuration (if enabled).
+
+---
+
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.ProjenProject.property.maxNodeVersion"></a>
+
+```typescript
+public readonly maxNodeVersion: string;
+```
+
+- *Type:* string
+
+Maximum node version required by this package.
+
+---
+
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.ProjenProject.property.minNodeVersion"></a>
+
+```typescript
+public readonly minNodeVersion: string;
+```
+
+- *Type:* string
+
+Minimum node.js version required by this package.
+
+---
+
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.ProjenProject.property.npmignore"></a>
+
+```typescript
+public readonly npmignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .npmignore file.
+
+---
+
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.ProjenProject.property.prettier"></a>
+
+```typescript
+public readonly prettier: Prettier;
+```
+
+- *Type:* projen.javascript.Prettier
+
+---
+
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ProjenProject.property.publisher"></a>
+
+- *Deprecated:* use `release.publisher`.
+
+```typescript
+public readonly publisher: Publisher;
+```
+
+- *Type:* projen.release.Publisher
+
+Package publisher.
+
+This will be `undefined` if the project does not have a
+release workflow.
+
+---
+
+##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ProjenProject.property.release"></a>
+
+```typescript
+public readonly release: Release;
+```
+
+- *Type:* projen.release.Release
+
+Release management.
+
+---
+
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.ProjenProject.property.upgradeWorkflow"></a>
+
+```typescript
+public readonly upgradeWorkflow: UpgradeDependencies;
+```
+
+- *Type:* projen.javascript.UpgradeDependencies
+
+The upgrade workflow.
+
+---
+
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.ProjenProject.property.docsDirectory"></a>
+
+```typescript
+public readonly docsDirectory: string;
+```
+
+- *Type:* string
+
+---
+
+##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.ProjenProject.property.libdir"></a>
+
+```typescript
+public readonly libdir: string;
+```
+
+- *Type:* string
+
+The directory in which compiled .js files reside.
+
+---
+
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.ProjenProject.property.srcdir"></a>
+
+```typescript
+public readonly srcdir: string;
+```
+
+- *Type:* string
+
+The directory in which the .ts sources reside.
+
+---
+
+##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.ProjenProject.property.testdir"></a>
+
+```typescript
+public readonly testdir: string;
+```
+
+- *Type:* string
+
+The directory in which tests reside.
+
+---
+
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.ProjenProject.property.tsconfigDev"></a>
+
+```typescript
+public readonly tsconfigDev: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+A typescript configuration file which covers all files (sources, tests, projen).
+
+---
+
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.ProjenProject.property.watchTask"></a>
+
+```typescript
+public readonly watchTask: Task;
+```
+
+- *Type:* projen.Task
+
+The "watch" task.
+
+---
+
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.ProjenProject.property.docgen"></a>
+
+```typescript
+public readonly docgen: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.ProjenProject.property.eslint"></a>
+
+```typescript
+public readonly eslint: Eslint;
+```
+
+- *Type:* projen.javascript.Eslint
+
+---
+
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.ProjenProject.property.tsconfig"></a>
+
+```typescript
+public readonly tsconfig: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.ProjenProject.property.tsconfigEslint"></a>
+
+```typescript
+public readonly tsconfigEslint: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.ProjenProject.property.logo"></a>
+
+```typescript
+public readonly logo: SvgFile;
+```
+
+- *Type:* mrpj.logo.SvgFile
+
+---
+
+##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.ProjenProject.property.wordmark"></a>
+
+```typescript
+public readonly wordmark: Wordmark;
+```
+
+- *Type:* mrpj.logo.Wordmark
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.ProjenProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+
+---
+
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.ProjenProject.property.DEFAULT_TASK"></a>
+
+```typescript
+public readonly DEFAULT_TASK: string;
+```
+
+- *Type:* string
+
+The name of the default task (the task executed when `projen` is run without arguments).
+
+Normally
+this task should synthesize the project files.
+
+---
+
+### SvgFile <a name="SvgFile" id="mrpj.logo.SvgFile"></a>
+
+A SVG file.
+
+#### Initializers <a name="Initializers" id="mrpj.logo.SvgFile.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+new logo.SvgFile(project: Project, filePath: string, options: SvgFileOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.SvgFileOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.Initializer.parameter.filePath"></a>
+
+- *Type:* string
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.SvgFile.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.logo.SvgFileOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.logo.SvgFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.logo.SvgFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.logo.SvgFile.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#mrpj.logo.SvgFile.close">close</a></code> | Decreases the indentation level and closes a code block. |
+| <code><a href="#mrpj.logo.SvgFile.line">line</a></code> | Emit a line of code. |
+| <code><a href="#mrpj.logo.SvgFile.open">open</a></code> | Opens a code block and increases the indentation level. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.logo.SvgFile.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.SvgFile.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.SvgFile.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.logo.SvgFile.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+##### `close` <a name="close" id="mrpj.logo.SvgFile.close"></a>
+
+```typescript
+public close(code?: string): void
+```
+
+Decreases the indentation level and closes a code block.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.close.parameter.code"></a>
+
+- *Type:* string
+
+The code after the block is closed (e.g. `}`).
+
+---
+
+##### `line` <a name="line" id="mrpj.logo.SvgFile.line"></a>
+
+```typescript
+public line(code?: string): void
+```
+
+Emit a line of code.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.line.parameter.code"></a>
+
+- *Type:* string
+
+The contents, if not specified, just adds a newline.
+
+---
+
+##### `open` <a name="open" id="mrpj.logo.SvgFile.open"></a>
+
+```typescript
+public open(code?: string): void
+```
+
+Opens a code block and increases the indentation level.
+
+###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.open.parameter.code"></a>
+
+- *Type:* string
+
+The code before the block starts (e.g. `export class {`).
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.logo.SvgFile.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.logo.SvgFile.isConstruct"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.SvgFile.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.logo.SvgFile.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="mrpj.logo.SvgFile.isComponent"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.SvgFile.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.logo.SvgFile.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.logo.SvgFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.property.filePath">filePath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.logo.SvgFile.property.marker">marker</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.logo.SvgFile.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.property.filePath"></a>
+
+```typescript
+public readonly filePath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `marker`<sup>Optional</sup> <a name="marker" id="mrpj.logo.SvgFile.property.marker"></a>
+
+```typescript
+public readonly marker: string;
+```
+
+- *Type:* string
+
+---
+
+
+### TypeScriptProject <a name="TypeScriptProject" id="mrpj.TypeScriptProject"></a>
+
+#### Initializers <a name="Initializers" id="mrpj.TypeScriptProject.Initializer"></a>
+
+```typescript
+import { TypeScriptProject } from 'mrpj'
+
+new TypeScriptProject(options: TypeScriptProjectOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a></code> | *No description.* |
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="mrpj.TypeScriptProject.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.TypeScriptProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.TypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#mrpj.TypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#mrpj.TypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#mrpj.TypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#mrpj.TypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#mrpj.TypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#mrpj.TypeScriptProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#mrpj.TypeScriptProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#mrpj.TypeScriptProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#mrpj.TypeScriptProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#mrpj.TypeScriptProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#mrpj.TypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#mrpj.TypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#mrpj.TypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#mrpj.TypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#mrpj.TypeScriptProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.TypeScriptProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#mrpj.TypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#mrpj.TypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#mrpj.TypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#mrpj.TypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#mrpj.TypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#mrpj.TypeScriptProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#mrpj.TypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.TypeScriptProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.TypeScriptProject.addExcludeFromCleanup"></a>
+
+```typescript
+public addExcludeFromCleanup(globs: string): void
+```
+
+Exclude the matching files from pre-synth cleanup.
+
+Can be used when, for example, some
+source files include the projen marker and we don't want them to be erased during synth.
+
+###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.TypeScriptProject.addExcludeFromCleanup.parameter.globs"></a>
+
+- *Type:* string
+
+The glob patterns to match.
+
+---
+
+##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.TypeScriptProject.addGitIgnore"></a>
+
+```typescript
+public addGitIgnore(pattern: string): void
+```
+
+Adds a .gitignore pattern.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.TypeScriptProject.addGitIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+The glob pattern to ignore.
+
+---
+
+##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.TypeScriptProject.addPackageIgnore"></a>
+
+```typescript
+public addPackageIgnore(pattern: string): void
+```
+
+Exclude these files from the bundled package.
+
+Implemented by project types based on the
+packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+
+###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.TypeScriptProject.addPackageIgnore.parameter.pattern"></a>
+
+- *Type:* string
+
+---
+
+##### `addTask` <a name="addTask" id="mrpj.TypeScriptProject.addTask"></a>
+
+```typescript
+public addTask(name: string, props?: TaskOptions): Task
+```
+
+Adds a new task to this project.
+
+This will fail if the project already has
+a task with this name.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.addTask.parameter.name"></a>
+
+- *Type:* string
+
+The task name to add.
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="mrpj.TypeScriptProject.addTask.parameter.props"></a>
+
+- *Type:* projen.TaskOptions
+
+Task properties.
+
+---
+
+##### ~~`addTip`~~ <a name="addTip" id="mrpj.TypeScriptProject.addTip"></a>
+
+```typescript
+public addTip(message: string): void
+```
+
+Prints a "tip" message during synthesis.
+
+###### `message`<sup>Required</sup> <a name="message" id="mrpj.TypeScriptProject.addTip.parameter.message"></a>
+
+- *Type:* string
+
+The message.
+
+---
+
+##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.TypeScriptProject.annotateGenerated"></a>
+
+```typescript
+public annotateGenerated(glob: string): void
+```
+
+Marks the provided file(s) as being generated.
+
+This is achieved using the
+github-linguist attributes. Generated files do not count against the
+repository statistics and language breakdown.
+
+> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
+
+###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.TypeScriptProject.annotateGenerated.parameter.glob"></a>
+
+- *Type:* string
+
+the glob pattern to match (could be a file path).
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.TypeScriptProject.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after all components are synthesized.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.TypeScriptProject.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before all components are synthesized.
+
+##### `removeTask` <a name="removeTask" id="mrpj.TypeScriptProject.removeTask"></a>
+
+```typescript
+public removeTask(name: string): Task
+```
+
+Removes a task from a project.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.removeTask.parameter.name"></a>
+
+- *Type:* string
+
+The name of the task to remove.
+
+---
+
+##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.TypeScriptProject.runTaskCommand"></a>
+
+```typescript
+public runTaskCommand(task: Task): string
+```
+
+Returns the shell command to execute in order to run a task.
+
+This will
+typically be `npx projen TASK`.
+
+###### `task`<sup>Required</sup> <a name="task" id="mrpj.TypeScriptProject.runTaskCommand.parameter.task"></a>
+
+- *Type:* projen.Task
+
+The task for which the command is required.
+
+---
+
+##### `synth` <a name="synth" id="mrpj.TypeScriptProject.synth"></a>
+
+```typescript
+public synth(): void
+```
+
+Synthesize all project files into `outdir`.
+
+1. Call "this.preSynthesize()"
+2. Delete all generated files
+3. Synthesize all subprojects
+4. Synthesize all components of this project
+5. Call "postSynthesize()" for all components of this project
+6. Call "this.postSynthesize()"
+
+##### `tryFindFile` <a name="tryFindFile" id="mrpj.TypeScriptProject.tryFindFile"></a>
+
+```typescript
+public tryFindFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and all its subprojects.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be resolved
+from the root of _this_ project.
+
+---
+
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.TypeScriptProject.tryFindJsonFile"></a>
+
+```typescript
+public tryFindJsonFile(filePath: string): JsonFile
+```
+
+Finds a json file by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindJsonFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.TypeScriptProject.tryFindObjectFile"></a>
+
+```typescript
+public tryFindObjectFile(filePath: string): ObjectFile
+```
+
+Finds an object file (like JsonFile, YamlFile, etc.) by name.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindObjectFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+---
+
+##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.TypeScriptProject.tryRemoveFile"></a>
+
+```typescript
+public tryRemoveFile(filePath: string): FileBase
+```
+
+Finds a file at the specified relative path within this project and removes it.
+
+###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryRemoveFile.parameter.filePath"></a>
+
+- *Type:* string
+
+The file path.
+
+If this path is relative, it will be
+resolved from the root of _this_ project.
+
+---
+
+##### `addBins` <a name="addBins" id="mrpj.TypeScriptProject.addBins"></a>
+
+```typescript
+public addBins(bins: {[ key: string ]: string}): void
+```
+
+###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.TypeScriptProject.addBins.parameter.bins"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.TypeScriptProject.addBundledDeps"></a>
+
+```typescript
+public addBundledDeps(deps: string): void
+```
+
+Defines bundled dependencies.
+
+Bundled dependencies will be added as normal dependencies as well as to the
+`bundledDependencies` section of your `package.json`.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addBundledDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.TypeScriptProject.addCompileCommand"></a>
+
+```typescript
+public addCompileCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addCompileCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### `addDeps` <a name="addDeps" id="mrpj.TypeScriptProject.addDeps"></a>
+
+```typescript
+public addDeps(deps: string): void
+```
+
+Defines normal dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addDevDeps` <a name="addDevDeps" id="mrpj.TypeScriptProject.addDevDeps"></a>
+
+```typescript
+public addDevDeps(deps: string): void
+```
+
+Defines development/test dependencies.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addDevDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addFields` <a name="addFields" id="mrpj.TypeScriptProject.addFields"></a>
+
+```typescript
+public addFields(fields: {[ key: string ]: any}): void
+```
+
+Directly set fields in `package.json`.
+
+###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.TypeScriptProject.addFields.parameter.fields"></a>
+
+- *Type:* {[ key: string ]: any}
+
+The fields to set.
+
+---
+
+##### `addKeywords` <a name="addKeywords" id="mrpj.TypeScriptProject.addKeywords"></a>
+
+```typescript
+public addKeywords(keywords: string): void
+```
+
+Adds keywords to package.json (deduplicated).
+
+###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.TypeScriptProject.addKeywords.parameter.keywords"></a>
+
+- *Type:* string
+
+The keywords to add.
+
+---
+
+##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.TypeScriptProject.addPeerDeps"></a>
+
+```typescript
+public addPeerDeps(deps: string): void
+```
+
+Defines peer dependencies.
+
+When adding peer dependencies, a devDependency will also be added on the
+pinned version of the declared peer. This will ensure that you are testing
+your code against the minimum version required from your consumers.
+
+###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addPeerDeps.parameter.deps"></a>
+
+- *Type:* string
+
+Names modules to install.
+
+By default, the the dependency will
+be installed in the next `npx projen` run and the version will be recorded
+in your `package.json` file. You can upgrade manually or using `yarn
+add/upgrade`. If you wish to specify a version range use this syntax:
+`module@^7`.
+
+---
+
+##### `addScripts` <a name="addScripts" id="mrpj.TypeScriptProject.addScripts"></a>
+
+```typescript
+public addScripts(scripts: {[ key: string ]: string}): void
+```
+
+Replaces the contents of multiple npm package.json scripts.
+
+###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.TypeScriptProject.addScripts.parameter.scripts"></a>
+
+- *Type:* {[ key: string ]: string}
+
+The scripts to set.
+
+---
+
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.TypeScriptProject.addTestCommand"></a>
+
+```typescript
+public addTestCommand(commands: string): void
+```
+
+DEPRECATED.
+
+###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addTestCommand.parameter.commands"></a>
+
+- *Type:* string
+
+---
+
+##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.TypeScriptProject.hasScript"></a>
+
+```typescript
+public hasScript(name: string): boolean
+```
+
+Indicates if a script by the name name is defined.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.hasScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `removeScript` <a name="removeScript" id="mrpj.TypeScriptProject.removeScript"></a>
+
+```typescript
+public removeScript(name: string): void
+```
+
+Removes the npm script (always successful).
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.removeScript.parameter.name"></a>
+
+- *Type:* string
+
+The name of the script.
+
+---
+
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.TypeScriptProject.renderWorkflowSetup"></a>
+
+```typescript
+public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
+```
+
+Returns the set of workflow steps which should be executed to bootstrap a workflow.
+
+###### `options`<sup>Optional</sup> <a name="options" id="mrpj.TypeScriptProject.renderWorkflowSetup.parameter.options"></a>
+
+- *Type:* projen.javascript.RenderWorkflowSetupOptions
+
+Options.
+
+---
+
+##### `setScript` <a name="setScript" id="mrpj.TypeScriptProject.setScript"></a>
+
+```typescript
+public setScript(name: string, command: string): void
+```
+
+Replaces the contents of an npm package.json script.
+
+###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.setScript.parameter.name"></a>
+
+- *Type:* string
+
+The script name.
+
+---
+
+###### `command`<sup>Required</sup> <a name="command" id="mrpj.TypeScriptProject.setScript.parameter.command"></a>
+
+- *Type:* string
+
+The command to execute.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.TypeScriptProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.TypeScriptProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#mrpj.TypeScriptProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.TypeScriptProject.isConstruct"></a>
+
+```typescript
+import { TypeScriptProject } from 'mrpj'
+
+TypeScriptProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.TypeScriptProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="mrpj.TypeScriptProject.isProject"></a>
+
+```typescript
+import { TypeScriptProject } from 'mrpj'
+
+TypeScriptProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.TypeScriptProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="mrpj.TypeScriptProject.of"></a>
+
+```typescript
+import { TypeScriptProject } from 'mrpj'
+
+TypeScriptProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="mrpj.TypeScriptProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.TypeScriptProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.TypeScriptProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#mrpj.TypeScriptProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#mrpj.TypeScriptProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#mrpj.TypeScriptProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#mrpj.TypeScriptProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#mrpj.TypeScriptProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#mrpj.TypeScriptProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#mrpj.TypeScriptProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#mrpj.TypeScriptProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#mrpj.TypeScriptProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#mrpj.TypeScriptProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#mrpj.TypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#mrpj.TypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#mrpj.TypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#mrpj.TypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#mrpj.TypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#mrpj.TypeScriptProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#mrpj.TypeScriptProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#mrpj.TypeScriptProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#mrpj.TypeScriptProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#mrpj.TypeScriptProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#mrpj.TypeScriptProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#mrpj.TypeScriptProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#mrpj.TypeScriptProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#mrpj.TypeScriptProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#mrpj.TypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#mrpj.TypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#mrpj.TypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#mrpj.TypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#mrpj.TypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.TypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#mrpj.TypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#mrpj.TypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#mrpj.TypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
+| <code><a href="#mrpj.TypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
+| <code><a href="#mrpj.TypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#mrpj.TypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#mrpj.TypeScriptProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#mrpj.TypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#mrpj.TypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.TypeScriptProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#mrpj.TypeScriptProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#mrpj.TypeScriptProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#mrpj.TypeScriptProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#mrpj.TypeScriptProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
+| <code><a href="#mrpj.TypeScriptProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.TypeScriptProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.TypeScriptProject.property.buildTask"></a>
+
+```typescript
+public readonly buildTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.TypeScriptProject.property.commitGenerated"></a>
+
+```typescript
+public readonly commitGenerated: boolean;
+```
+
+- *Type:* boolean
+
+Whether to commit the managed files by default.
+
+---
+
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.TypeScriptProject.property.compileTask"></a>
+
+```typescript
+public readonly compileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `components`<sup>Required</sup> <a name="components" id="mrpj.TypeScriptProject.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* projen.Component[]
+
+Returns all the components within this project.
+
+---
+
+##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.property.deps"></a>
+
+```typescript
+public readonly deps: Dependencies;
+```
+
+- *Type:* projen.Dependencies
+
+Project dependencies.
+
+---
+
+##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.TypeScriptProject.property.ejected"></a>
+
+```typescript
+public readonly ejected: boolean;
+```
+
+- *Type:* boolean
+
+Whether or not the project is being ejected.
+
+---
+
+##### `files`<sup>Required</sup> <a name="files" id="mrpj.TypeScriptProject.property.files"></a>
+
+```typescript
+public readonly files: FileBase[];
+```
+
+- *Type:* projen.FileBase[]
+
+All files in this project.
+
+---
+
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.TypeScriptProject.property.gitattributes"></a>
+
+```typescript
+public readonly gitattributes: GitAttributesFile;
+```
+
+- *Type:* projen.GitAttributesFile
+
+The .gitattributes file for this repository.
+
+---
+
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.TypeScriptProject.property.gitignore"></a>
+
+```typescript
+public readonly gitignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+.gitignore.
+
+---
+
+##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.TypeScriptProject.property.logger"></a>
+
+```typescript
+public readonly logger: Logger;
+```
+
+- *Type:* projen.Logger
+
+Logging utilities.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Project name.
+
+---
+
+##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.TypeScriptProject.property.outdir"></a>
+
+```typescript
+public readonly outdir: string;
+```
+
+- *Type:* string
+
+Absolute output directory of this project.
+
+---
+
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.TypeScriptProject.property.packageTask"></a>
+
+```typescript
+public readonly packageTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.TypeScriptProject.property.postCompileTask"></a>
+
+```typescript
+public readonly postCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.TypeScriptProject.property.preCompileTask"></a>
+
+```typescript
+public readonly preCompileTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.TypeScriptProject.property.projectBuild"></a>
+
+```typescript
+public readonly projectBuild: ProjectBuild;
+```
+
+- *Type:* projen.ProjectBuild
+
+Manages the build process of the project.
+
+---
+
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.TypeScriptProject.property.projenCommand"></a>
+
+```typescript
+public readonly projenCommand: string;
+```
+
+- *Type:* string
+
+The command to use in order to run the projen CLI.
+
+---
+
+##### `root`<sup>Required</sup> <a name="root" id="mrpj.TypeScriptProject.property.root"></a>
+
+```typescript
+public readonly root: Project;
+```
+
+- *Type:* projen.Project
+
+The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.TypeScriptProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
+
+---
+
+##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.TypeScriptProject.property.tasks"></a>
+
+```typescript
+public readonly tasks: Tasks;
+```
+
+- *Type:* projen.Tasks
+
+Project tasks.
+
+---
+
+##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.TypeScriptProject.property.testTask"></a>
+
+```typescript
+public readonly testTask: Task;
+```
+
+- *Type:* projen.Task
+
+---
+
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.TypeScriptProject.property.defaultTask"></a>
+
+```typescript
+public readonly defaultTask: Task;
+```
+
+- *Type:* projen.Task
+
+This is the "default" task, the one that executes "projen".
+
+Undefined if
+the project is being ejected.
+
+---
+
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.TypeScriptProject.property.initProject"></a>
+
+```typescript
+public readonly initProject: InitProject;
+```
+
+- *Type:* projen.InitProject
+
+The options used when this project is bootstrapped via `projen new`.
+
+It
+includes the original set of options passed to the CLI and also the JSII
+FQN of the project type.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.TypeScriptProject.property.parent"></a>
+
+```typescript
+public readonly parent: Project;
+```
+
+- *Type:* projen.Project
+
+A parent project.
+
+If undefined, this is the root project.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.TypeScriptProject.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* projen.ProjectType
+
+---
+
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.TypeScriptProject.property.autoApprove"></a>
+
+```typescript
+public readonly autoApprove: AutoApprove;
+```
+
+- *Type:* projen.github.AutoApprove
+
+Auto approve set up for this project.
+
+---
+
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.TypeScriptProject.property.devContainer"></a>
+
+```typescript
+public readonly devContainer: DevContainer;
+```
+
+- *Type:* projen.vscode.DevContainer
+
+Access for .devcontainer.json (used for GitHub Codespaces).
+
+This will be `undefined` if devContainer boolean is false
+
+---
+
+##### `github`<sup>Optional</sup> <a name="github" id="mrpj.TypeScriptProject.property.github"></a>
+
+```typescript
+public readonly github: GitHub;
+```
+
+- *Type:* projen.github.GitHub
+
+Access all github components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.TypeScriptProject.property.gitpod"></a>
+
+```typescript
+public readonly gitpod: Gitpod;
+```
+
+- *Type:* projen.Gitpod
+
+Access for Gitpod.
+
+This will be `undefined` if gitpod boolean is false
+
+---
+
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.TypeScriptProject.property.vscode"></a>
+
+```typescript
+public readonly vscode: VsCode;
+```
+
+- *Type:* projen.vscode.VsCode
+
+Access all VSCode components.
+
+This will be `undefined` for subprojects.
+
+---
+
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.TypeScriptProject.property.allowLibraryDependencies"></a>
+
+- *Deprecated:* use `package.allowLibraryDependencies`
+
+```typescript
+public readonly allowLibraryDependencies: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.TypeScriptProject.property.artifactsDirectory"></a>
+
+```typescript
+public readonly artifactsDirectory: string;
+```
+
+- *Type:* string
+
+The build output directory.
+
+An npm tarball will be created under the `js`
+subdirectory. For example, if this is set to `dist` (the default), the npm
+tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
+
+---
+
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.TypeScriptProject.property.artifactsJavascriptDirectory"></a>
+
+```typescript
+public readonly artifactsJavascriptDirectory: string;
+```
+
+- *Type:* string
+
+The location of the npm tarball after build (`${artifactsDirectory}/js`).
+
+---
+
+##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.TypeScriptProject.property.bundler"></a>
+
+```typescript
+public readonly bundler: Bundler;
+```
+
+- *Type:* projen.javascript.Bundler
+
+---
+
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.TypeScriptProject.property.entrypoint"></a>
+
+- *Deprecated:* use `package.entrypoint`
+
+```typescript
+public readonly entrypoint: string;
+```
+
+- *Type:* string
+
+---
+
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.TypeScriptProject.property.manifest"></a>
+
+- *Deprecated:* use `package.addField(x, y)`
+
+```typescript
+public readonly manifest: any;
+```
+
+- *Type:* any
+
+---
+
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.TypeScriptProject.property.npmrc"></a>
+
+```typescript
+public readonly npmrc: NpmConfig;
+```
+
+- *Type:* projen.javascript.NpmConfig
+
+The .npmrc file.
+
+---
+
+##### `package`<sup>Required</sup> <a name="package" id="mrpj.TypeScriptProject.property.package"></a>
+
+```typescript
+public readonly package: NodePackage;
+```
+
+- *Type:* projen.javascript.NodePackage
+
+API for managing the node package.
+
+---
+
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.TypeScriptProject.property.packageManager"></a>
+
+- *Deprecated:* use `package.packageManager`
+
+```typescript
+public readonly packageManager: NodePackageManager;
+```
+
+- *Type:* projen.javascript.NodePackageManager
+
+The package manager to use.
+
+---
+
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.TypeScriptProject.property.runScriptCommand"></a>
+
+```typescript
+public readonly runScriptCommand: string;
+```
+
+- *Type:* string
+
+The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
+
+---
+
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.TypeScriptProject.property.autoMerge"></a>
+
+```typescript
+public readonly autoMerge: AutoMerge;
+```
+
+- *Type:* projen.github.AutoMerge
+
+Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.TypeScriptProject.property.buildWorkflow"></a>
+
+```typescript
+public readonly buildWorkflow: BuildWorkflow;
+```
+
+- *Type:* projen.build.BuildWorkflow
+
+The PR build GitHub workflow.
+
+`undefined` if `buildWorkflow` is disabled.
+
+---
+
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.TypeScriptProject.property.buildWorkflowJobId"></a>
+
+```typescript
+public readonly buildWorkflowJobId: string;
+```
+
+- *Type:* string
+
+The job ID of the build workflow.
+
+---
+
+##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.TypeScriptProject.property.jest"></a>
+
+```typescript
+public readonly jest: Jest;
+```
+
+- *Type:* projen.javascript.Jest
+
+The Jest configuration (if enabled).
+
+---
+
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.TypeScriptProject.property.maxNodeVersion"></a>
+
+```typescript
+public readonly maxNodeVersion: string;
+```
+
+- *Type:* string
+
+Maximum node version required by this package.
+
+---
+
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.TypeScriptProject.property.minNodeVersion"></a>
+
+```typescript
+public readonly minNodeVersion: string;
+```
+
+- *Type:* string
+
+Minimum node.js version required by this package.
+
+---
+
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.TypeScriptProject.property.npmignore"></a>
+
+```typescript
+public readonly npmignore: IgnoreFile;
+```
+
+- *Type:* projen.IgnoreFile
+
+The .npmignore file.
+
+---
+
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.TypeScriptProject.property.prettier"></a>
+
+```typescript
+public readonly prettier: Prettier;
+```
+
+- *Type:* projen.javascript.Prettier
+
+---
+
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.TypeScriptProject.property.publisher"></a>
+
+- *Deprecated:* use `release.publisher`.
+
+```typescript
+public readonly publisher: Publisher;
+```
+
+- *Type:* projen.release.Publisher
+
+Package publisher.
+
+This will be `undefined` if the project does not have a
+release workflow.
+
+---
+
+##### `release`<sup>Optional</sup> <a name="release" id="mrpj.TypeScriptProject.property.release"></a>
+
+```typescript
+public readonly release: Release;
+```
+
+- *Type:* projen.release.Release
+
+Release management.
+
+---
+
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.TypeScriptProject.property.upgradeWorkflow"></a>
+
+```typescript
+public readonly upgradeWorkflow: UpgradeDependencies;
+```
+
+- *Type:* projen.javascript.UpgradeDependencies
+
+The upgrade workflow.
+
+---
+
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.TypeScriptProject.property.docsDirectory"></a>
+
+```typescript
+public readonly docsDirectory: string;
+```
+
+- *Type:* string
+
+---
+
+##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.TypeScriptProject.property.libdir"></a>
+
+```typescript
+public readonly libdir: string;
+```
+
+- *Type:* string
+
+The directory in which compiled .js files reside.
+
+---
+
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.TypeScriptProject.property.srcdir"></a>
+
+```typescript
+public readonly srcdir: string;
+```
+
+- *Type:* string
+
+The directory in which the .ts sources reside.
+
+---
+
+##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.TypeScriptProject.property.testdir"></a>
+
+```typescript
+public readonly testdir: string;
+```
+
+- *Type:* string
+
+The directory in which tests reside.
+
+---
+
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.TypeScriptProject.property.tsconfigDev"></a>
+
+```typescript
+public readonly tsconfigDev: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+A typescript configuration file which covers all files (sources, tests, projen).
+
+---
+
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.TypeScriptProject.property.watchTask"></a>
+
+```typescript
+public readonly watchTask: Task;
+```
+
+- *Type:* projen.Task
+
+The "watch" task.
+
+---
+
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.TypeScriptProject.property.docgen"></a>
+
+```typescript
+public readonly docgen: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.TypeScriptProject.property.eslint"></a>
+
+```typescript
+public readonly eslint: Eslint;
+```
+
+- *Type:* projen.javascript.Eslint
+
+---
+
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.TypeScriptProject.property.tsconfig"></a>
+
+```typescript
+public readonly tsconfig: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.TypeScriptProject.property.tsconfigEslint"></a>
+
+```typescript
+public readonly tsconfigEslint: TypescriptConfig;
+```
+
+- *Type:* projen.javascript.TypescriptConfig
+
+---
+
+##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.TypeScriptProject.property.logo"></a>
+
+```typescript
+public readonly logo: SvgFile;
+```
+
+- *Type:* mrpj.logo.SvgFile
+
+---
+
+##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.TypeScriptProject.property.wordmark"></a>
+
+```typescript
+public readonly wordmark: Wordmark;
+```
+
+- *Type:* mrpj.logo.Wordmark
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.TypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+
+---
+
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.TypeScriptProject.property.DEFAULT_TASK"></a>
+
+```typescript
+public readonly DEFAULT_TASK: string;
+```
+
+- *Type:* string
+
+The name of the default task (the task executed when `projen` is run without arguments).
+
+Normally
+this task should synthesize the project files.
+
+---
+
+### Wordmark <a name="Wordmark" id="mrpj.logo.Wordmark"></a>
+
+#### Initializers <a name="Initializers" id="mrpj.logo.Wordmark.Initializer"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+new logo.Wordmark(project: Project, options?: WordmarkOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.WordmarkOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.Wordmark.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.logo.WordmarkOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.logo.Wordmark.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.logo.Wordmark.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.logo.Wordmark.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.logo.Wordmark.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.Wordmark.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.Wordmark.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.logo.Wordmark.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.logo.Wordmark.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.logo.Wordmark.isConstruct"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.Wordmark.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.logo.Wordmark.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="mrpj.logo.Wordmark.isComponent"></a>
+
+```typescript
+import { logo } from 'mrpj'
+
+logo.Wordmark.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.logo.Wordmark.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.logo.Wordmark.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.logo.Wordmark.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.logo.Wordmark.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
 
 ## Structs <a name="Structs" id="Structs"></a>
 
@@ -1493,7 +6494,7 @@ The root directory of the project. Relative to this directory, all files are syn
 
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
-sub-projects.
+subprojects.
 
 ---
 
@@ -1517,7 +6518,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN
+- *Default:* NodePackageManager.YARN_CLASSIC
 
 The Node Package Manager used to execute scripts.
 
@@ -4037,7 +9038,7 @@ The root directory of the project. Relative to this directory, all files are syn
 
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
-sub-projects.
+subprojects.
 
 ---
 
@@ -4074,7 +9075,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN
+- *Default:* NodePackageManager.YARN_CLASSIC
 
 The Node Package Manager used to execute scripts.
 
@@ -6294,7 +11295,7 @@ The root directory of the project. Relative to this directory, all files are syn
 
 If this project has a parent, this directory is relative to the parent
 directory and it cannot be the same as the parent or any of it's other
-sub-projects.
+subprojects.
 
 ---
 
@@ -6331,7 +11332,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* NodePackageManager.YARN
+- *Default:* NodePackageManager.YARN_CLASSIC
 
 The Node Package Manager used to execute scripts.
 
@@ -7276,1473 +12277,6 @@ public readonly textPosition: TranslateOptions;
 
 ## Classes <a name="Classes" id="Classes"></a>
 
-### ConstructProject <a name="ConstructProject" id="mrpj.ConstructProject"></a>
-
-#### Initializers <a name="Initializers" id="mrpj.ConstructProject.Initializer"></a>
-
-```typescript
-import { ConstructProject } from 'mrpj'
-
-new ConstructProject(options: AwsCdkConstructLibraryOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ConstructProject.Initializer.parameter.options">options</a></code> | <code>projen.awscdk.AwsCdkConstructLibraryOptions</code> | *No description.* |
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="mrpj.ConstructProject.Initializer.parameter.options"></a>
-
-- *Type:* projen.awscdk.AwsCdkConstructLibraryOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#mrpj.ConstructProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#mrpj.ConstructProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#mrpj.ConstructProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
-| <code><a href="#mrpj.ConstructProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.ConstructProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#mrpj.ConstructProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#mrpj.ConstructProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#mrpj.ConstructProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#mrpj.ConstructProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#mrpj.ConstructProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#mrpj.ConstructProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#mrpj.ConstructProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.ConstructProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#mrpj.ConstructProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#mrpj.ConstructProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#mrpj.ConstructProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.ConstructProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ConstructProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#mrpj.ConstructProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#mrpj.ConstructProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#mrpj.ConstructProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#mrpj.ConstructProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#mrpj.ConstructProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.ConstructProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ConstructProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#mrpj.ConstructProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#mrpj.ConstructProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#mrpj.ConstructProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-| <code><a href="#mrpj.ConstructProject.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
-| <code><a href="#mrpj.ConstructProject.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
-
----
-
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ConstructProject.addExcludeFromCleanup"></a>
-
-```typescript
-public addExcludeFromCleanup(globs: string): void
-```
-
-Exclude the matching files from pre-synth cleanup.
-
-Can be used when, for example, some
-source files include the projen marker and we don't want them to be erased during synth.
-
-###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.ConstructProject.addExcludeFromCleanup.parameter.globs"></a>
-
-- *Type:* string
-
-The glob patterns to match.
-
----
-
-##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.ConstructProject.addGitIgnore"></a>
-
-```typescript
-public addGitIgnore(pattern: string): void
-```
-
-Adds a .gitignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ConstructProject.addGitIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
-The glob pattern to ignore.
-
----
-
-##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.ConstructProject.addPackageIgnore"></a>
-
-```typescript
-public addPackageIgnore(pattern: string): void
-```
-
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ConstructProject.addPackageIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addTask` <a name="addTask" id="mrpj.ConstructProject.addTask"></a>
-
-```typescript
-public addTask(name: string, props?: TaskOptions): Task
-```
-
-Adds a new task to this project.
-
-This will fail if the project already has
-a task with this name.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.addTask.parameter.name"></a>
-
-- *Type:* string
-
-The task name to add.
-
----
-
-###### `props`<sup>Optional</sup> <a name="props" id="mrpj.ConstructProject.addTask.parameter.props"></a>
-
-- *Type:* projen.TaskOptions
-
-Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.ConstructProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.ConstructProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
-##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.ConstructProject.annotateGenerated"></a>
-
-```typescript
-public annotateGenerated(glob: string): void
-```
-
-Marks the provided file(s) as being generated.
-
-This is achieved using the
-github-linguist attributes. Generated files do not count against the
-repository statistics and language breakdown.
-
-> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
-
-###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.ConstructProject.annotateGenerated.parameter.glob"></a>
-
-- *Type:* string
-
-the glob pattern to match (could be a file path).
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.ConstructProject.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after all components are synthesized.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.ConstructProject.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before all components are synthesized.
-
-##### `removeTask` <a name="removeTask" id="mrpj.ConstructProject.removeTask"></a>
-
-```typescript
-public removeTask(name: string): Task
-```
-
-Removes a task from a project.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.removeTask.parameter.name"></a>
-
-- *Type:* string
-
-The name of the task to remove.
-
----
-
-##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.ConstructProject.runTaskCommand"></a>
-
-```typescript
-public runTaskCommand(task: Task): string
-```
-
-Returns the shell command to execute in order to run a task.
-
-This will
-typically be `npx projen TASK`.
-
-###### `task`<sup>Required</sup> <a name="task" id="mrpj.ConstructProject.runTaskCommand.parameter.task"></a>
-
-- *Type:* projen.Task
-
-The task for which the command is required.
-
----
-
-##### `synth` <a name="synth" id="mrpj.ConstructProject.synth"></a>
-
-```typescript
-public synth(): void
-```
-
-Synthesize all project files into `outdir`.
-
-1. Call "this.preSynthesize()"
-2. Delete all generated files
-3. Synthesize all sub-projects
-4. Synthesize all components of this project
-5. Call "postSynthesize()" for all components of this project
-6. Call "this.postSynthesize()"
-
-##### `tryFindFile` <a name="tryFindFile" id="mrpj.ConstructProject.tryFindFile"></a>
-
-```typescript
-public tryFindFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and all its subprojects.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be resolved
-from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ConstructProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ConstructProject.tryFindObjectFile"></a>
-
-```typescript
-public tryFindObjectFile(filePath: string): ObjectFile
-```
-
-Finds an object file (like JsonFile, YamlFile, etc.) by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindObjectFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.ConstructProject.tryRemoveFile"></a>
-
-```typescript
-public tryRemoveFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and removes it.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryRemoveFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be
-resolved from the root of _this_ project.
-
----
-
-##### `addBins` <a name="addBins" id="mrpj.ConstructProject.addBins"></a>
-
-```typescript
-public addBins(bins: {[ key: string ]: string}): void
-```
-
-###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.ConstructProject.addBins.parameter.bins"></a>
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.ConstructProject.addBundledDeps"></a>
-
-```typescript
-public addBundledDeps(deps: string): void
-```
-
-Defines bundled dependencies.
-
-Bundled dependencies will be added as normal dependencies as well as to the
-`bundledDependencies` section of your `package.json`.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addBundledDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ConstructProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### `addDeps` <a name="addDeps" id="mrpj.ConstructProject.addDeps"></a>
-
-```typescript
-public addDeps(deps: string): void
-```
-
-Defines normal dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addDevDeps` <a name="addDevDeps" id="mrpj.ConstructProject.addDevDeps"></a>
-
-```typescript
-public addDevDeps(deps: string): void
-```
-
-Defines development/test dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addDevDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addFields` <a name="addFields" id="mrpj.ConstructProject.addFields"></a>
-
-```typescript
-public addFields(fields: {[ key: string ]: any}): void
-```
-
-Directly set fields in `package.json`.
-
-###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.ConstructProject.addFields.parameter.fields"></a>
-
-- *Type:* {[ key: string ]: any}
-
-The fields to set.
-
----
-
-##### `addKeywords` <a name="addKeywords" id="mrpj.ConstructProject.addKeywords"></a>
-
-```typescript
-public addKeywords(keywords: string): void
-```
-
-Adds keywords to package.json (deduplicated).
-
-###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.ConstructProject.addKeywords.parameter.keywords"></a>
-
-- *Type:* string
-
-The keywords to add.
-
----
-
-##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.ConstructProject.addPeerDeps"></a>
-
-```typescript
-public addPeerDeps(deps: string): void
-```
-
-Defines peer dependencies.
-
-When adding peer dependencies, a devDependency will also be added on the
-pinned version of the declared peer. This will ensure that you are testing
-your code against the minimum version required from your consumers.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addPeerDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addScripts` <a name="addScripts" id="mrpj.ConstructProject.addScripts"></a>
-
-```typescript
-public addScripts(scripts: {[ key: string ]: string}): void
-```
-
-Replaces the contents of multiple npm package.json scripts.
-
-###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ConstructProject.addScripts.parameter.scripts"></a>
-
-- *Type:* {[ key: string ]: string}
-
-The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ConstructProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ConstructProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `removeScript` <a name="removeScript" id="mrpj.ConstructProject.removeScript"></a>
-
-```typescript
-public removeScript(name: string): void
-```
-
-Removes the npm script (always successful).
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.removeScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.ConstructProject.renderWorkflowSetup"></a>
-
-```typescript
-public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
-```
-
-Returns the set of workflow steps which should be executed to bootstrap a workflow.
-
-###### `options`<sup>Optional</sup> <a name="options" id="mrpj.ConstructProject.renderWorkflowSetup.parameter.options"></a>
-
-- *Type:* projen.javascript.RenderWorkflowSetupOptions
-
-Options.
-
----
-
-##### `setScript` <a name="setScript" id="mrpj.ConstructProject.setScript"></a>
-
-```typescript
-public setScript(name: string, command: string): void
-```
-
-Replaces the contents of an npm package.json script.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.setScript.parameter.name"></a>
-
-- *Type:* string
-
-The script name.
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="mrpj.ConstructProject.setScript.parameter.command"></a>
-
-- *Type:* string
-
-The command to execute.
-
----
-
-##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="mrpj.ConstructProject.addCdkDependencies"></a>
-
-```typescript
-public addCdkDependencies(deps: string): void
-```
-
-Adds dependencies to AWS CDK modules.
-
-Since this is a library project, dependencies will be added as peer dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkDependencies.parameter.deps"></a>
-
-- *Type:* string
-
-names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
-
----
-
-##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="mrpj.ConstructProject.addCdkTestDependencies"></a>
-
-```typescript
-public addCdkTestDependencies(deps: string): void
-```
-
-Adds AWS CDK modules as dev dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkTestDependencies.parameter.deps"></a>
-
-- *Type:* string
-
-names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ConstructProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#mrpj.ConstructProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#mrpj.ConstructProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#mrpj.ConstructProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#mrpj.ConstructProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#mrpj.ConstructProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#mrpj.ConstructProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#mrpj.ConstructProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#mrpj.ConstructProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#mrpj.ConstructProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#mrpj.ConstructProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#mrpj.ConstructProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#mrpj.ConstructProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#mrpj.ConstructProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#mrpj.ConstructProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#mrpj.ConstructProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#mrpj.ConstructProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#mrpj.ConstructProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.ConstructProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#mrpj.ConstructProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#mrpj.ConstructProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#mrpj.ConstructProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#mrpj.ConstructProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.ConstructProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#mrpj.ConstructProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#mrpj.ConstructProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#mrpj.ConstructProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.ConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#mrpj.ConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#mrpj.ConstructProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#mrpj.ConstructProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#mrpj.ConstructProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#mrpj.ConstructProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#mrpj.ConstructProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#mrpj.ConstructProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
-| <code><a href="#mrpj.ConstructProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#mrpj.ConstructProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#mrpj.ConstructProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#mrpj.ConstructProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#mrpj.ConstructProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#mrpj.ConstructProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#mrpj.ConstructProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#mrpj.ConstructProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#mrpj.ConstructProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#mrpj.ConstructProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
-| <code><a href="#mrpj.ConstructProject.property.version">version</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.ConstructProject.property.buildTask"></a>
-
-```typescript
-public readonly buildTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.ConstructProject.property.commitGenerated"></a>
-
-```typescript
-public readonly commitGenerated: boolean;
-```
-
-- *Type:* boolean
-
-Whether to commit the managed files by default.
-
----
-
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.ConstructProject.property.compileTask"></a>
-
-```typescript
-public readonly compileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `components`<sup>Required</sup> <a name="components" id="mrpj.ConstructProject.property.components"></a>
-
-```typescript
-public readonly components: Component[];
-```
-
-- *Type:* projen.Component[]
-
-Returns all the components within this project.
-
----
-
-##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.property.deps"></a>
-
-```typescript
-public readonly deps: Dependencies;
-```
-
-- *Type:* projen.Dependencies
-
-Project dependencies.
-
----
-
-##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.ConstructProject.property.ejected"></a>
-
-```typescript
-public readonly ejected: boolean;
-```
-
-- *Type:* boolean
-
-Whether or not the project is being ejected.
-
----
-
-##### `files`<sup>Required</sup> <a name="files" id="mrpj.ConstructProject.property.files"></a>
-
-```typescript
-public readonly files: FileBase[];
-```
-
-- *Type:* projen.FileBase[]
-
-All files in this project.
-
----
-
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.ConstructProject.property.gitattributes"></a>
-
-```typescript
-public readonly gitattributes: GitAttributesFile;
-```
-
-- *Type:* projen.GitAttributesFile
-
-The .gitattributes file for this repository.
-
----
-
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.ConstructProject.property.gitignore"></a>
-
-```typescript
-public readonly gitignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-.gitignore.
-
----
-
-##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.ConstructProject.property.logger"></a>
-
-```typescript
-public readonly logger: Logger;
-```
-
-- *Type:* projen.Logger
-
-Logging utilities.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Project name.
-
----
-
-##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.ConstructProject.property.outdir"></a>
-
-```typescript
-public readonly outdir: string;
-```
-
-- *Type:* string
-
-Absolute output directory of this project.
-
----
-
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.ConstructProject.property.packageTask"></a>
-
-```typescript
-public readonly packageTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.ConstructProject.property.postCompileTask"></a>
-
-```typescript
-public readonly postCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.ConstructProject.property.preCompileTask"></a>
-
-```typescript
-public readonly preCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.ConstructProject.property.projectBuild"></a>
-
-```typescript
-public readonly projectBuild: ProjectBuild;
-```
-
-- *Type:* projen.ProjectBuild
-
-Manages the build process of the project.
-
----
-
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.ConstructProject.property.projenCommand"></a>
-
-```typescript
-public readonly projenCommand: string;
-```
-
-- *Type:* string
-
-The command to use in order to run the projen CLI.
-
----
-
-##### `root`<sup>Required</sup> <a name="root" id="mrpj.ConstructProject.property.root"></a>
-
-```typescript
-public readonly root: Project;
-```
-
-- *Type:* projen.Project
-
-The root project.
-
----
-
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.ConstructProject.property.subprojects"></a>
-
-```typescript
-public readonly subprojects: Project[];
-```
-
-- *Type:* projen.Project[]
-
-Returns all the subprojects within this project.
-
----
-
-##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.ConstructProject.property.tasks"></a>
-
-```typescript
-public readonly tasks: Tasks;
-```
-
-- *Type:* projen.Tasks
-
-Project tasks.
-
----
-
-##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.ConstructProject.property.testTask"></a>
-
-```typescript
-public readonly testTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.ConstructProject.property.defaultTask"></a>
-
-```typescript
-public readonly defaultTask: Task;
-```
-
-- *Type:* projen.Task
-
-This is the "default" task, the one that executes "projen".
-
-Undefined if
-the project is being ejected.
-
----
-
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.ConstructProject.property.initProject"></a>
-
-```typescript
-public readonly initProject: InitProject;
-```
-
-- *Type:* projen.InitProject
-
-The options used when this project is bootstrapped via `projen new`.
-
-It
-includes the original set of options passed to the CLI and also the JSII
-FQN of the project type.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.ConstructProject.property.parent"></a>
-
-```typescript
-public readonly parent: Project;
-```
-
-- *Type:* projen.Project
-
-A parent project.
-
-If undefined, this is the root project.
-
----
-
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ConstructProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ConstructProject.property.autoApprove"></a>
-
-```typescript
-public readonly autoApprove: AutoApprove;
-```
-
-- *Type:* projen.github.AutoApprove
-
-Auto approve set up for this project.
-
----
-
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.ConstructProject.property.devContainer"></a>
-
-```typescript
-public readonly devContainer: DevContainer;
-```
-
-- *Type:* projen.vscode.DevContainer
-
-Access for .devcontainer.json (used for GitHub Codespaces).
-
-This will be `undefined` if devContainer boolean is false
-
----
-
-##### `github`<sup>Optional</sup> <a name="github" id="mrpj.ConstructProject.property.github"></a>
-
-```typescript
-public readonly github: GitHub;
-```
-
-- *Type:* projen.github.GitHub
-
-Access all github components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.ConstructProject.property.gitpod"></a>
-
-```typescript
-public readonly gitpod: Gitpod;
-```
-
-- *Type:* projen.Gitpod
-
-Access for Gitpod.
-
-This will be `undefined` if gitpod boolean is false
-
----
-
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.ConstructProject.property.vscode"></a>
-
-```typescript
-public readonly vscode: VsCode;
-```
-
-- *Type:* projen.vscode.VsCode
-
-Access all VSCode components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ConstructProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ConstructProject.property.artifactsDirectory"></a>
-
-```typescript
-public readonly artifactsDirectory: string;
-```
-
-- *Type:* string
-
-The build output directory.
-
-An npm tarball will be created under the `js`
-subdirectory. For example, if this is set to `dist` (the default), the npm
-tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
-
----
-
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.ConstructProject.property.artifactsJavascriptDirectory"></a>
-
-```typescript
-public readonly artifactsJavascriptDirectory: string;
-```
-
-- *Type:* string
-
-The location of the npm tarball after build (`${artifactsDirectory}/js`).
-
----
-
-##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.ConstructProject.property.bundler"></a>
-
-```typescript
-public readonly bundler: Bundler;
-```
-
-- *Type:* projen.javascript.Bundler
-
----
-
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ConstructProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ConstructProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ConstructProject.property.npmrc"></a>
-
-```typescript
-public readonly npmrc: NpmConfig;
-```
-
-- *Type:* projen.javascript.NpmConfig
-
-The .npmrc file.
-
----
-
-##### `package`<sup>Required</sup> <a name="package" id="mrpj.ConstructProject.property.package"></a>
-
-```typescript
-public readonly package: NodePackage;
-```
-
-- *Type:* projen.javascript.NodePackage
-
-API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ConstructProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
-
----
-
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.ConstructProject.property.runScriptCommand"></a>
-
-```typescript
-public readonly runScriptCommand: string;
-```
-
-- *Type:* string
-
-The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
-
----
-
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.ConstructProject.property.autoMerge"></a>
-
-```typescript
-public readonly autoMerge: AutoMerge;
-```
-
-- *Type:* projen.github.AutoMerge
-
-Component that sets up mergify for merging approved pull requests.
-
----
-
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.ConstructProject.property.buildWorkflow"></a>
-
-```typescript
-public readonly buildWorkflow: BuildWorkflow;
-```
-
-- *Type:* projen.build.BuildWorkflow
-
-The PR build GitHub workflow.
-
-`undefined` if `buildWorkflow` is disabled.
-
----
-
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.ConstructProject.property.buildWorkflowJobId"></a>
-
-```typescript
-public readonly buildWorkflowJobId: string;
-```
-
-- *Type:* string
-
-The job ID of the build workflow.
-
----
-
-##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.ConstructProject.property.jest"></a>
-
-```typescript
-public readonly jest: Jest;
-```
-
-- *Type:* projen.javascript.Jest
-
-The Jest configuration (if enabled).
-
----
-
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.ConstructProject.property.maxNodeVersion"></a>
-
-```typescript
-public readonly maxNodeVersion: string;
-```
-
-- *Type:* string
-
-Maximum node version required by this package.
-
----
-
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.ConstructProject.property.minNodeVersion"></a>
-
-```typescript
-public readonly minNodeVersion: string;
-```
-
-- *Type:* string
-
-Minimum node.js version required by this package.
-
----
-
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.ConstructProject.property.npmignore"></a>
-
-```typescript
-public readonly npmignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .npmignore file.
-
----
-
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.ConstructProject.property.prettier"></a>
-
-```typescript
-public readonly prettier: Prettier;
-```
-
-- *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ConstructProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
-
----
-
-##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ConstructProject.property.release"></a>
-
-```typescript
-public readonly release: Release;
-```
-
-- *Type:* projen.release.Release
-
-Release management.
-
----
-
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.ConstructProject.property.upgradeWorkflow"></a>
-
-```typescript
-public readonly upgradeWorkflow: UpgradeDependencies;
-```
-
-- *Type:* projen.javascript.UpgradeDependencies
-
-The upgrade workflow.
-
----
-
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.ConstructProject.property.docsDirectory"></a>
-
-```typescript
-public readonly docsDirectory: string;
-```
-
-- *Type:* string
-
----
-
-##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.ConstructProject.property.libdir"></a>
-
-```typescript
-public readonly libdir: string;
-```
-
-- *Type:* string
-
-The directory in which compiled .js files reside.
-
----
-
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.ConstructProject.property.srcdir"></a>
-
-```typescript
-public readonly srcdir: string;
-```
-
-- *Type:* string
-
-The directory in which the .ts sources reside.
-
----
-
-##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.ConstructProject.property.testdir"></a>
-
-```typescript
-public readonly testdir: string;
-```
-
-- *Type:* string
-
-The directory in which tests reside.
-
----
-
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.ConstructProject.property.tsconfigDev"></a>
-
-```typescript
-public readonly tsconfigDev: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
-A typescript configuration file which covers all files (sources, tests, projen).
-
----
-
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.ConstructProject.property.watchTask"></a>
-
-```typescript
-public readonly watchTask: Task;
-```
-
-- *Type:* projen.Task
-
-The "watch" task.
-
----
-
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.ConstructProject.property.docgen"></a>
-
-```typescript
-public readonly docgen: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.ConstructProject.property.eslint"></a>
-
-```typescript
-public readonly eslint: Eslint;
-```
-
-- *Type:* projen.javascript.Eslint
-
----
-
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.ConstructProject.property.tsconfig"></a>
-
-```typescript
-public readonly tsconfig: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.ConstructProject.property.tsconfigEslint"></a>
-
-```typescript
-public readonly tsconfigEslint: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="mrpj.ConstructProject.property.cdkDeps"></a>
-
-```typescript
-public readonly cdkDeps: AwsCdkDeps;
-```
-
-- *Type:* projen.awscdk.AwsCdkDeps
-
----
-
-##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="mrpj.ConstructProject.property.cdkVersion"></a>
-
-```typescript
-public readonly cdkVersion: string;
-```
-
-- *Type:* string
-
-The target CDK version for this library.
-
----
-
-##### ~~`version`~~<sup>Required</sup> <a name="version" id="mrpj.ConstructProject.property.version"></a>
-
-- *Deprecated:* use `cdkVersion`
-
-```typescript
-public readonly version: string;
-```
-
-- *Type:* string
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ConstructProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-
----
-
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.ConstructProject.property.DEFAULT_TASK"></a>
-
-```typescript
-public readonly DEFAULT_TASK: string;
-```
-
-- *Type:* string
-
-The name of the default task (the task executed when `projen` is run without arguments).
-
-Normally
-this task should synthesize the project files.
-
----
-
 ### Logo <a name="Logo" id="mrpj.logo.Logo"></a>
 
 - *Implements:* mrpj.logo.ILogo
@@ -8924,3092 +12458,6 @@ public readonly scale: number;
 - *Type:* number
 
 Scale the logo by a factor.
-
----
-
-
-### ProjenProject <a name="ProjenProject" id="mrpj.ProjenProject"></a>
-
-A project to create new projen projects & components.
-
-#### Initializers <a name="Initializers" id="mrpj.ProjenProject.Initializer"></a>
-
-```typescript
-import { ProjenProject } from 'mrpj'
-
-new ProjenProject(options: ProjenProjectOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ProjenProject.Initializer.parameter.options">options</a></code> | <code><a href="#mrpj.ProjenProjectOptions">ProjenProjectOptions</a></code> | *No description.* |
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="mrpj.ProjenProject.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#mrpj.ProjenProjectOptions">ProjenProjectOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#mrpj.ProjenProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#mrpj.ProjenProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#mrpj.ProjenProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
-| <code><a href="#mrpj.ProjenProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.ProjenProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#mrpj.ProjenProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#mrpj.ProjenProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#mrpj.ProjenProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#mrpj.ProjenProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#mrpj.ProjenProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#mrpj.ProjenProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#mrpj.ProjenProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.ProjenProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#mrpj.ProjenProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#mrpj.ProjenProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#mrpj.ProjenProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.ProjenProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ProjenProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#mrpj.ProjenProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#mrpj.ProjenProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#mrpj.ProjenProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#mrpj.ProjenProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#mrpj.ProjenProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.ProjenProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ProjenProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#mrpj.ProjenProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#mrpj.ProjenProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#mrpj.ProjenProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-
----
-
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ProjenProject.addExcludeFromCleanup"></a>
-
-```typescript
-public addExcludeFromCleanup(globs: string): void
-```
-
-Exclude the matching files from pre-synth cleanup.
-
-Can be used when, for example, some
-source files include the projen marker and we don't want them to be erased during synth.
-
-###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.ProjenProject.addExcludeFromCleanup.parameter.globs"></a>
-
-- *Type:* string
-
-The glob patterns to match.
-
----
-
-##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.ProjenProject.addGitIgnore"></a>
-
-```typescript
-public addGitIgnore(pattern: string): void
-```
-
-Adds a .gitignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ProjenProject.addGitIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
-The glob pattern to ignore.
-
----
-
-##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.ProjenProject.addPackageIgnore"></a>
-
-```typescript
-public addPackageIgnore(pattern: string): void
-```
-
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.ProjenProject.addPackageIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addTask` <a name="addTask" id="mrpj.ProjenProject.addTask"></a>
-
-```typescript
-public addTask(name: string, props?: TaskOptions): Task
-```
-
-Adds a new task to this project.
-
-This will fail if the project already has
-a task with this name.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.addTask.parameter.name"></a>
-
-- *Type:* string
-
-The task name to add.
-
----
-
-###### `props`<sup>Optional</sup> <a name="props" id="mrpj.ProjenProject.addTask.parameter.props"></a>
-
-- *Type:* projen.TaskOptions
-
-Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.ProjenProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.ProjenProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
-##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.ProjenProject.annotateGenerated"></a>
-
-```typescript
-public annotateGenerated(glob: string): void
-```
-
-Marks the provided file(s) as being generated.
-
-This is achieved using the
-github-linguist attributes. Generated files do not count against the
-repository statistics and language breakdown.
-
-> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
-
-###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.ProjenProject.annotateGenerated.parameter.glob"></a>
-
-- *Type:* string
-
-the glob pattern to match (could be a file path).
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.ProjenProject.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after all components are synthesized.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.ProjenProject.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before all components are synthesized.
-
-##### `removeTask` <a name="removeTask" id="mrpj.ProjenProject.removeTask"></a>
-
-```typescript
-public removeTask(name: string): Task
-```
-
-Removes a task from a project.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.removeTask.parameter.name"></a>
-
-- *Type:* string
-
-The name of the task to remove.
-
----
-
-##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.ProjenProject.runTaskCommand"></a>
-
-```typescript
-public runTaskCommand(task: Task): string
-```
-
-Returns the shell command to execute in order to run a task.
-
-This will
-typically be `npx projen TASK`.
-
-###### `task`<sup>Required</sup> <a name="task" id="mrpj.ProjenProject.runTaskCommand.parameter.task"></a>
-
-- *Type:* projen.Task
-
-The task for which the command is required.
-
----
-
-##### `synth` <a name="synth" id="mrpj.ProjenProject.synth"></a>
-
-```typescript
-public synth(): void
-```
-
-Synthesize all project files into `outdir`.
-
-1. Call "this.preSynthesize()"
-2. Delete all generated files
-3. Synthesize all sub-projects
-4. Synthesize all components of this project
-5. Call "postSynthesize()" for all components of this project
-6. Call "this.postSynthesize()"
-
-##### `tryFindFile` <a name="tryFindFile" id="mrpj.ProjenProject.tryFindFile"></a>
-
-```typescript
-public tryFindFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and all its subprojects.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be resolved
-from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ProjenProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ProjenProject.tryFindObjectFile"></a>
-
-```typescript
-public tryFindObjectFile(filePath: string): ObjectFile
-```
-
-Finds an object file (like JsonFile, YamlFile, etc.) by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindObjectFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.ProjenProject.tryRemoveFile"></a>
-
-```typescript
-public tryRemoveFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and removes it.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryRemoveFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be
-resolved from the root of _this_ project.
-
----
-
-##### `addBins` <a name="addBins" id="mrpj.ProjenProject.addBins"></a>
-
-```typescript
-public addBins(bins: {[ key: string ]: string}): void
-```
-
-###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.ProjenProject.addBins.parameter.bins"></a>
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.ProjenProject.addBundledDeps"></a>
-
-```typescript
-public addBundledDeps(deps: string): void
-```
-
-Defines bundled dependencies.
-
-Bundled dependencies will be added as normal dependencies as well as to the
-`bundledDependencies` section of your `package.json`.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addBundledDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ProjenProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### `addDeps` <a name="addDeps" id="mrpj.ProjenProject.addDeps"></a>
-
-```typescript
-public addDeps(deps: string): void
-```
-
-Defines normal dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addDevDeps` <a name="addDevDeps" id="mrpj.ProjenProject.addDevDeps"></a>
-
-```typescript
-public addDevDeps(deps: string): void
-```
-
-Defines development/test dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addDevDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addFields` <a name="addFields" id="mrpj.ProjenProject.addFields"></a>
-
-```typescript
-public addFields(fields: {[ key: string ]: any}): void
-```
-
-Directly set fields in `package.json`.
-
-###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.ProjenProject.addFields.parameter.fields"></a>
-
-- *Type:* {[ key: string ]: any}
-
-The fields to set.
-
----
-
-##### `addKeywords` <a name="addKeywords" id="mrpj.ProjenProject.addKeywords"></a>
-
-```typescript
-public addKeywords(keywords: string): void
-```
-
-Adds keywords to package.json (deduplicated).
-
-###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.ProjenProject.addKeywords.parameter.keywords"></a>
-
-- *Type:* string
-
-The keywords to add.
-
----
-
-##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.ProjenProject.addPeerDeps"></a>
-
-```typescript
-public addPeerDeps(deps: string): void
-```
-
-Defines peer dependencies.
-
-When adding peer dependencies, a devDependency will also be added on the
-pinned version of the declared peer. This will ensure that you are testing
-your code against the minimum version required from your consumers.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.addPeerDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addScripts` <a name="addScripts" id="mrpj.ProjenProject.addScripts"></a>
-
-```typescript
-public addScripts(scripts: {[ key: string ]: string}): void
-```
-
-Replaces the contents of multiple npm package.json scripts.
-
-###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.ProjenProject.addScripts.parameter.scripts"></a>
-
-- *Type:* {[ key: string ]: string}
-
-The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ProjenProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ProjenProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `removeScript` <a name="removeScript" id="mrpj.ProjenProject.removeScript"></a>
-
-```typescript
-public removeScript(name: string): void
-```
-
-Removes the npm script (always successful).
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.removeScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.ProjenProject.renderWorkflowSetup"></a>
-
-```typescript
-public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
-```
-
-Returns the set of workflow steps which should be executed to bootstrap a workflow.
-
-###### `options`<sup>Optional</sup> <a name="options" id="mrpj.ProjenProject.renderWorkflowSetup.parameter.options"></a>
-
-- *Type:* projen.javascript.RenderWorkflowSetupOptions
-
-Options.
-
----
-
-##### `setScript` <a name="setScript" id="mrpj.ProjenProject.setScript"></a>
-
-```typescript
-public setScript(name: string, command: string): void
-```
-
-Replaces the contents of an npm package.json script.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.setScript.parameter.name"></a>
-
-- *Type:* string
-
-The script name.
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="mrpj.ProjenProject.setScript.parameter.command"></a>
-
-- *Type:* string
-
-The command to execute.
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ProjenProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#mrpj.ProjenProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#mrpj.ProjenProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#mrpj.ProjenProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#mrpj.ProjenProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#mrpj.ProjenProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#mrpj.ProjenProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#mrpj.ProjenProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#mrpj.ProjenProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#mrpj.ProjenProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#mrpj.ProjenProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#mrpj.ProjenProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#mrpj.ProjenProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#mrpj.ProjenProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#mrpj.ProjenProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#mrpj.ProjenProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#mrpj.ProjenProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#mrpj.ProjenProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.ProjenProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#mrpj.ProjenProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#mrpj.ProjenProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#mrpj.ProjenProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#mrpj.ProjenProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.ProjenProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#mrpj.ProjenProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#mrpj.ProjenProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#mrpj.ProjenProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.ProjenProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#mrpj.ProjenProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#mrpj.ProjenProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#mrpj.ProjenProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#mrpj.ProjenProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#mrpj.ProjenProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#mrpj.ProjenProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#mrpj.ProjenProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
-| <code><a href="#mrpj.ProjenProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#mrpj.ProjenProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#mrpj.ProjenProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#mrpj.ProjenProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#mrpj.ProjenProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#mrpj.ProjenProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#mrpj.ProjenProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#mrpj.ProjenProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#mrpj.ProjenProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#mrpj.ProjenProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
-
----
-
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.ProjenProject.property.buildTask"></a>
-
-```typescript
-public readonly buildTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.ProjenProject.property.commitGenerated"></a>
-
-```typescript
-public readonly commitGenerated: boolean;
-```
-
-- *Type:* boolean
-
-Whether to commit the managed files by default.
-
----
-
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.ProjenProject.property.compileTask"></a>
-
-```typescript
-public readonly compileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `components`<sup>Required</sup> <a name="components" id="mrpj.ProjenProject.property.components"></a>
-
-```typescript
-public readonly components: Component[];
-```
-
-- *Type:* projen.Component[]
-
-Returns all the components within this project.
-
----
-
-##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ProjenProject.property.deps"></a>
-
-```typescript
-public readonly deps: Dependencies;
-```
-
-- *Type:* projen.Dependencies
-
-Project dependencies.
-
----
-
-##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.ProjenProject.property.ejected"></a>
-
-```typescript
-public readonly ejected: boolean;
-```
-
-- *Type:* boolean
-
-Whether or not the project is being ejected.
-
----
-
-##### `files`<sup>Required</sup> <a name="files" id="mrpj.ProjenProject.property.files"></a>
-
-```typescript
-public readonly files: FileBase[];
-```
-
-- *Type:* projen.FileBase[]
-
-All files in this project.
-
----
-
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.ProjenProject.property.gitattributes"></a>
-
-```typescript
-public readonly gitattributes: GitAttributesFile;
-```
-
-- *Type:* projen.GitAttributesFile
-
-The .gitattributes file for this repository.
-
----
-
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.ProjenProject.property.gitignore"></a>
-
-```typescript
-public readonly gitignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-.gitignore.
-
----
-
-##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.ProjenProject.property.logger"></a>
-
-```typescript
-public readonly logger: Logger;
-```
-
-- *Type:* projen.Logger
-
-Logging utilities.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Project name.
-
----
-
-##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.ProjenProject.property.outdir"></a>
-
-```typescript
-public readonly outdir: string;
-```
-
-- *Type:* string
-
-Absolute output directory of this project.
-
----
-
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.ProjenProject.property.packageTask"></a>
-
-```typescript
-public readonly packageTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.ProjenProject.property.postCompileTask"></a>
-
-```typescript
-public readonly postCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.ProjenProject.property.preCompileTask"></a>
-
-```typescript
-public readonly preCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.ProjenProject.property.projectBuild"></a>
-
-```typescript
-public readonly projectBuild: ProjectBuild;
-```
-
-- *Type:* projen.ProjectBuild
-
-Manages the build process of the project.
-
----
-
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.ProjenProject.property.projenCommand"></a>
-
-```typescript
-public readonly projenCommand: string;
-```
-
-- *Type:* string
-
-The command to use in order to run the projen CLI.
-
----
-
-##### `root`<sup>Required</sup> <a name="root" id="mrpj.ProjenProject.property.root"></a>
-
-```typescript
-public readonly root: Project;
-```
-
-- *Type:* projen.Project
-
-The root project.
-
----
-
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.ProjenProject.property.subprojects"></a>
-
-```typescript
-public readonly subprojects: Project[];
-```
-
-- *Type:* projen.Project[]
-
-Returns all the subprojects within this project.
-
----
-
-##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.ProjenProject.property.tasks"></a>
-
-```typescript
-public readonly tasks: Tasks;
-```
-
-- *Type:* projen.Tasks
-
-Project tasks.
-
----
-
-##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.ProjenProject.property.testTask"></a>
-
-```typescript
-public readonly testTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.ProjenProject.property.defaultTask"></a>
-
-```typescript
-public readonly defaultTask: Task;
-```
-
-- *Type:* projen.Task
-
-This is the "default" task, the one that executes "projen".
-
-Undefined if
-the project is being ejected.
-
----
-
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.ProjenProject.property.initProject"></a>
-
-```typescript
-public readonly initProject: InitProject;
-```
-
-- *Type:* projen.InitProject
-
-The options used when this project is bootstrapped via `projen new`.
-
-It
-includes the original set of options passed to the CLI and also the JSII
-FQN of the project type.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.ProjenProject.property.parent"></a>
-
-```typescript
-public readonly parent: Project;
-```
-
-- *Type:* projen.Project
-
-A parent project.
-
-If undefined, this is the root project.
-
----
-
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ProjenProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ProjenProject.property.autoApprove"></a>
-
-```typescript
-public readonly autoApprove: AutoApprove;
-```
-
-- *Type:* projen.github.AutoApprove
-
-Auto approve set up for this project.
-
----
-
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.ProjenProject.property.devContainer"></a>
-
-```typescript
-public readonly devContainer: DevContainer;
-```
-
-- *Type:* projen.vscode.DevContainer
-
-Access for .devcontainer.json (used for GitHub Codespaces).
-
-This will be `undefined` if devContainer boolean is false
-
----
-
-##### `github`<sup>Optional</sup> <a name="github" id="mrpj.ProjenProject.property.github"></a>
-
-```typescript
-public readonly github: GitHub;
-```
-
-- *Type:* projen.github.GitHub
-
-Access all github components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.ProjenProject.property.gitpod"></a>
-
-```typescript
-public readonly gitpod: Gitpod;
-```
-
-- *Type:* projen.Gitpod
-
-Access for Gitpod.
-
-This will be `undefined` if gitpod boolean is false
-
----
-
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.ProjenProject.property.vscode"></a>
-
-```typescript
-public readonly vscode: VsCode;
-```
-
-- *Type:* projen.vscode.VsCode
-
-Access all VSCode components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ProjenProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ProjenProject.property.artifactsDirectory"></a>
-
-```typescript
-public readonly artifactsDirectory: string;
-```
-
-- *Type:* string
-
-The build output directory.
-
-An npm tarball will be created under the `js`
-subdirectory. For example, if this is set to `dist` (the default), the npm
-tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
-
----
-
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.ProjenProject.property.artifactsJavascriptDirectory"></a>
-
-```typescript
-public readonly artifactsJavascriptDirectory: string;
-```
-
-- *Type:* string
-
-The location of the npm tarball after build (`${artifactsDirectory}/js`).
-
----
-
-##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.ProjenProject.property.bundler"></a>
-
-```typescript
-public readonly bundler: Bundler;
-```
-
-- *Type:* projen.javascript.Bundler
-
----
-
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ProjenProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ProjenProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ProjenProject.property.npmrc"></a>
-
-```typescript
-public readonly npmrc: NpmConfig;
-```
-
-- *Type:* projen.javascript.NpmConfig
-
-The .npmrc file.
-
----
-
-##### `package`<sup>Required</sup> <a name="package" id="mrpj.ProjenProject.property.package"></a>
-
-```typescript
-public readonly package: NodePackage;
-```
-
-- *Type:* projen.javascript.NodePackage
-
-API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ProjenProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
-
----
-
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.ProjenProject.property.runScriptCommand"></a>
-
-```typescript
-public readonly runScriptCommand: string;
-```
-
-- *Type:* string
-
-The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
-
----
-
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.ProjenProject.property.autoMerge"></a>
-
-```typescript
-public readonly autoMerge: AutoMerge;
-```
-
-- *Type:* projen.github.AutoMerge
-
-Component that sets up mergify for merging approved pull requests.
-
----
-
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.ProjenProject.property.buildWorkflow"></a>
-
-```typescript
-public readonly buildWorkflow: BuildWorkflow;
-```
-
-- *Type:* projen.build.BuildWorkflow
-
-The PR build GitHub workflow.
-
-`undefined` if `buildWorkflow` is disabled.
-
----
-
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.ProjenProject.property.buildWorkflowJobId"></a>
-
-```typescript
-public readonly buildWorkflowJobId: string;
-```
-
-- *Type:* string
-
-The job ID of the build workflow.
-
----
-
-##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.ProjenProject.property.jest"></a>
-
-```typescript
-public readonly jest: Jest;
-```
-
-- *Type:* projen.javascript.Jest
-
-The Jest configuration (if enabled).
-
----
-
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.ProjenProject.property.maxNodeVersion"></a>
-
-```typescript
-public readonly maxNodeVersion: string;
-```
-
-- *Type:* string
-
-Maximum node version required by this package.
-
----
-
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.ProjenProject.property.minNodeVersion"></a>
-
-```typescript
-public readonly minNodeVersion: string;
-```
-
-- *Type:* string
-
-Minimum node.js version required by this package.
-
----
-
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.ProjenProject.property.npmignore"></a>
-
-```typescript
-public readonly npmignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .npmignore file.
-
----
-
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.ProjenProject.property.prettier"></a>
-
-```typescript
-public readonly prettier: Prettier;
-```
-
-- *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ProjenProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
-
----
-
-##### `release`<sup>Optional</sup> <a name="release" id="mrpj.ProjenProject.property.release"></a>
-
-```typescript
-public readonly release: Release;
-```
-
-- *Type:* projen.release.Release
-
-Release management.
-
----
-
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.ProjenProject.property.upgradeWorkflow"></a>
-
-```typescript
-public readonly upgradeWorkflow: UpgradeDependencies;
-```
-
-- *Type:* projen.javascript.UpgradeDependencies
-
-The upgrade workflow.
-
----
-
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.ProjenProject.property.docsDirectory"></a>
-
-```typescript
-public readonly docsDirectory: string;
-```
-
-- *Type:* string
-
----
-
-##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.ProjenProject.property.libdir"></a>
-
-```typescript
-public readonly libdir: string;
-```
-
-- *Type:* string
-
-The directory in which compiled .js files reside.
-
----
-
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.ProjenProject.property.srcdir"></a>
-
-```typescript
-public readonly srcdir: string;
-```
-
-- *Type:* string
-
-The directory in which the .ts sources reside.
-
----
-
-##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.ProjenProject.property.testdir"></a>
-
-```typescript
-public readonly testdir: string;
-```
-
-- *Type:* string
-
-The directory in which tests reside.
-
----
-
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.ProjenProject.property.tsconfigDev"></a>
-
-```typescript
-public readonly tsconfigDev: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
-A typescript configuration file which covers all files (sources, tests, projen).
-
----
-
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.ProjenProject.property.watchTask"></a>
-
-```typescript
-public readonly watchTask: Task;
-```
-
-- *Type:* projen.Task
-
-The "watch" task.
-
----
-
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.ProjenProject.property.docgen"></a>
-
-```typescript
-public readonly docgen: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.ProjenProject.property.eslint"></a>
-
-```typescript
-public readonly eslint: Eslint;
-```
-
-- *Type:* projen.javascript.Eslint
-
----
-
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.ProjenProject.property.tsconfig"></a>
-
-```typescript
-public readonly tsconfig: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.ProjenProject.property.tsconfigEslint"></a>
-
-```typescript
-public readonly tsconfigEslint: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.ProjenProject.property.logo"></a>
-
-```typescript
-public readonly logo: SvgFile;
-```
-
-- *Type:* mrpj.logo.SvgFile
-
----
-
-##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.ProjenProject.property.wordmark"></a>
-
-```typescript
-public readonly wordmark: Wordmark;
-```
-
-- *Type:* mrpj.logo.Wordmark
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.ProjenProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-
----
-
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.ProjenProject.property.DEFAULT_TASK"></a>
-
-```typescript
-public readonly DEFAULT_TASK: string;
-```
-
-- *Type:* string
-
-The name of the default task (the task executed when `projen` is run without arguments).
-
-Normally
-this task should synthesize the project files.
-
----
-
-### SvgFile <a name="SvgFile" id="mrpj.logo.SvgFile"></a>
-
-A SVG file.
-
-#### Initializers <a name="Initializers" id="mrpj.logo.SvgFile.Initializer"></a>
-
-```typescript
-import { logo } from 'mrpj'
-
-new logo.SvgFile(project: Project, filePath: string, options: SvgFileOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.filePath">filePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.logo.SvgFile.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.SvgFileOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.Initializer.parameter.filePath"></a>
-
-- *Type:* string
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="mrpj.logo.SvgFile.Initializer.parameter.options"></a>
-
-- *Type:* mrpj.logo.SvgFileOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#mrpj.logo.SvgFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#mrpj.logo.SvgFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#mrpj.logo.SvgFile.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#mrpj.logo.SvgFile.close">close</a></code> | Decreases the indentation level and closes a code block. |
-| <code><a href="#mrpj.logo.SvgFile.line">line</a></code> | Emit a line of code. |
-| <code><a href="#mrpj.logo.SvgFile.open">open</a></code> | Opens a code block and increases the indentation level. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.SvgFile.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.SvgFile.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="mrpj.logo.SvgFile.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-##### `close` <a name="close" id="mrpj.logo.SvgFile.close"></a>
-
-```typescript
-public close(code?: string): void
-```
-
-Decreases the indentation level and closes a code block.
-
-###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.close.parameter.code"></a>
-
-- *Type:* string
-
-The code after the block is closed (e.g. `}`).
-
----
-
-##### `line` <a name="line" id="mrpj.logo.SvgFile.line"></a>
-
-```typescript
-public line(code?: string): void
-```
-
-Emit a line of code.
-
-###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.line.parameter.code"></a>
-
-- *Type:* string
-
-The contents, if not specified, just adds a newline.
-
----
-
-##### `open` <a name="open" id="mrpj.logo.SvgFile.open"></a>
-
-```typescript
-public open(code?: string): void
-```
-
-Opens a code block and increases the indentation level.
-
-###### `code`<sup>Optional</sup> <a name="code" id="mrpj.logo.SvgFile.open.parameter.code"></a>
-
-- *Type:* string
-
-The code before the block starts (e.g. `export class {`).
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.SvgFile.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#mrpj.logo.SvgFile.property.filePath">filePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.logo.SvgFile.property.marker">marker</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.SvgFile.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
-
----
-
-##### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.logo.SvgFile.property.filePath"></a>
-
-```typescript
-public readonly filePath: string;
-```
-
-- *Type:* string
-
----
-
-##### `marker`<sup>Optional</sup> <a name="marker" id="mrpj.logo.SvgFile.property.marker"></a>
-
-```typescript
-public readonly marker: string;
-```
-
-- *Type:* string
-
----
-
-
-### TypeScriptProject <a name="TypeScriptProject" id="mrpj.TypeScriptProject"></a>
-
-#### Initializers <a name="Initializers" id="mrpj.TypeScriptProject.Initializer"></a>
-
-```typescript
-import { TypeScriptProject } from 'mrpj'
-
-new TypeScriptProject(options: TypeScriptProjectOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a></code> | *No description.* |
-
----
-
-##### `options`<sup>Required</sup> <a name="options" id="mrpj.TypeScriptProject.Initializer.parameter.options"></a>
-
-- *Type:* <a href="#mrpj.TypeScriptProjectOptions">TypeScriptProjectOptions</a>
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#mrpj.TypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#mrpj.TypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#mrpj.TypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
-| <code><a href="#mrpj.TypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.TypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#mrpj.TypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#mrpj.TypeScriptProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#mrpj.TypeScriptProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#mrpj.TypeScriptProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#mrpj.TypeScriptProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#mrpj.TypeScriptProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#mrpj.TypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.TypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#mrpj.TypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#mrpj.TypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#mrpj.TypeScriptProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.TypeScriptProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#mrpj.TypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#mrpj.TypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.TypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.TypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#mrpj.TypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#mrpj.TypeScriptProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#mrpj.TypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-
----
-
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.TypeScriptProject.addExcludeFromCleanup"></a>
-
-```typescript
-public addExcludeFromCleanup(globs: string): void
-```
-
-Exclude the matching files from pre-synth cleanup.
-
-Can be used when, for example, some
-source files include the projen marker and we don't want them to be erased during synth.
-
-###### `globs`<sup>Required</sup> <a name="globs" id="mrpj.TypeScriptProject.addExcludeFromCleanup.parameter.globs"></a>
-
-- *Type:* string
-
-The glob patterns to match.
-
----
-
-##### `addGitIgnore` <a name="addGitIgnore" id="mrpj.TypeScriptProject.addGitIgnore"></a>
-
-```typescript
-public addGitIgnore(pattern: string): void
-```
-
-Adds a .gitignore pattern.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.TypeScriptProject.addGitIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
-The glob pattern to ignore.
-
----
-
-##### `addPackageIgnore` <a name="addPackageIgnore" id="mrpj.TypeScriptProject.addPackageIgnore"></a>
-
-```typescript
-public addPackageIgnore(pattern: string): void
-```
-
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
-
-###### `pattern`<sup>Required</sup> <a name="pattern" id="mrpj.TypeScriptProject.addPackageIgnore.parameter.pattern"></a>
-
-- *Type:* string
-
----
-
-##### `addTask` <a name="addTask" id="mrpj.TypeScriptProject.addTask"></a>
-
-```typescript
-public addTask(name: string, props?: TaskOptions): Task
-```
-
-Adds a new task to this project.
-
-This will fail if the project already has
-a task with this name.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.addTask.parameter.name"></a>
-
-- *Type:* string
-
-The task name to add.
-
----
-
-###### `props`<sup>Optional</sup> <a name="props" id="mrpj.TypeScriptProject.addTask.parameter.props"></a>
-
-- *Type:* projen.TaskOptions
-
-Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.TypeScriptProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.TypeScriptProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
-##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.TypeScriptProject.annotateGenerated"></a>
-
-```typescript
-public annotateGenerated(glob: string): void
-```
-
-Marks the provided file(s) as being generated.
-
-This is achieved using the
-github-linguist attributes. Generated files do not count against the
-repository statistics and language breakdown.
-
-> [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
-
-###### `glob`<sup>Required</sup> <a name="glob" id="mrpj.TypeScriptProject.annotateGenerated.parameter.glob"></a>
-
-- *Type:* string
-
-the glob pattern to match (could be a file path).
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.TypeScriptProject.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after all components are synthesized.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.TypeScriptProject.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before all components are synthesized.
-
-##### `removeTask` <a name="removeTask" id="mrpj.TypeScriptProject.removeTask"></a>
-
-```typescript
-public removeTask(name: string): Task
-```
-
-Removes a task from a project.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.removeTask.parameter.name"></a>
-
-- *Type:* string
-
-The name of the task to remove.
-
----
-
-##### `runTaskCommand` <a name="runTaskCommand" id="mrpj.TypeScriptProject.runTaskCommand"></a>
-
-```typescript
-public runTaskCommand(task: Task): string
-```
-
-Returns the shell command to execute in order to run a task.
-
-This will
-typically be `npx projen TASK`.
-
-###### `task`<sup>Required</sup> <a name="task" id="mrpj.TypeScriptProject.runTaskCommand.parameter.task"></a>
-
-- *Type:* projen.Task
-
-The task for which the command is required.
-
----
-
-##### `synth` <a name="synth" id="mrpj.TypeScriptProject.synth"></a>
-
-```typescript
-public synth(): void
-```
-
-Synthesize all project files into `outdir`.
-
-1. Call "this.preSynthesize()"
-2. Delete all generated files
-3. Synthesize all sub-projects
-4. Synthesize all components of this project
-5. Call "postSynthesize()" for all components of this project
-6. Call "this.postSynthesize()"
-
-##### `tryFindFile` <a name="tryFindFile" id="mrpj.TypeScriptProject.tryFindFile"></a>
-
-```typescript
-public tryFindFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and all its subprojects.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be resolved
-from the root of _this_ project.
-
----
-
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.TypeScriptProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.TypeScriptProject.tryFindObjectFile"></a>
-
-```typescript
-public tryFindObjectFile(filePath: string): ObjectFile
-```
-
-Finds an object file (like JsonFile, YamlFile, etc.) by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindObjectFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
-##### `tryRemoveFile` <a name="tryRemoveFile" id="mrpj.TypeScriptProject.tryRemoveFile"></a>
-
-```typescript
-public tryRemoveFile(filePath: string): FileBase
-```
-
-Finds a file at the specified relative path within this project and removes it.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryRemoveFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
-If this path is relative, it will be
-resolved from the root of _this_ project.
-
----
-
-##### `addBins` <a name="addBins" id="mrpj.TypeScriptProject.addBins"></a>
-
-```typescript
-public addBins(bins: {[ key: string ]: string}): void
-```
-
-###### `bins`<sup>Required</sup> <a name="bins" id="mrpj.TypeScriptProject.addBins.parameter.bins"></a>
-
-- *Type:* {[ key: string ]: string}
-
----
-
-##### `addBundledDeps` <a name="addBundledDeps" id="mrpj.TypeScriptProject.addBundledDeps"></a>
-
-```typescript
-public addBundledDeps(deps: string): void
-```
-
-Defines bundled dependencies.
-
-Bundled dependencies will be added as normal dependencies as well as to the
-`bundledDependencies` section of your `package.json`.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addBundledDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.TypeScriptProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### `addDeps` <a name="addDeps" id="mrpj.TypeScriptProject.addDeps"></a>
-
-```typescript
-public addDeps(deps: string): void
-```
-
-Defines normal dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addDevDeps` <a name="addDevDeps" id="mrpj.TypeScriptProject.addDevDeps"></a>
-
-```typescript
-public addDevDeps(deps: string): void
-```
-
-Defines development/test dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addDevDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addFields` <a name="addFields" id="mrpj.TypeScriptProject.addFields"></a>
-
-```typescript
-public addFields(fields: {[ key: string ]: any}): void
-```
-
-Directly set fields in `package.json`.
-
-###### `fields`<sup>Required</sup> <a name="fields" id="mrpj.TypeScriptProject.addFields.parameter.fields"></a>
-
-- *Type:* {[ key: string ]: any}
-
-The fields to set.
-
----
-
-##### `addKeywords` <a name="addKeywords" id="mrpj.TypeScriptProject.addKeywords"></a>
-
-```typescript
-public addKeywords(keywords: string): void
-```
-
-Adds keywords to package.json (deduplicated).
-
-###### `keywords`<sup>Required</sup> <a name="keywords" id="mrpj.TypeScriptProject.addKeywords.parameter.keywords"></a>
-
-- *Type:* string
-
-The keywords to add.
-
----
-
-##### `addPeerDeps` <a name="addPeerDeps" id="mrpj.TypeScriptProject.addPeerDeps"></a>
-
-```typescript
-public addPeerDeps(deps: string): void
-```
-
-Defines peer dependencies.
-
-When adding peer dependencies, a devDependency will also be added on the
-pinned version of the declared peer. This will ensure that you are testing
-your code against the minimum version required from your consumers.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.addPeerDeps.parameter.deps"></a>
-
-- *Type:* string
-
-Names modules to install.
-
-By default, the the dependency will
-be installed in the next `npx projen` run and the version will be recorded
-in your `package.json` file. You can upgrade manually or using `yarn
-add/upgrade`. If you wish to specify a version range use this syntax:
-`module@^7`.
-
----
-
-##### `addScripts` <a name="addScripts" id="mrpj.TypeScriptProject.addScripts"></a>
-
-```typescript
-public addScripts(scripts: {[ key: string ]: string}): void
-```
-
-Replaces the contents of multiple npm package.json scripts.
-
-###### `scripts`<sup>Required</sup> <a name="scripts" id="mrpj.TypeScriptProject.addScripts.parameter.scripts"></a>
-
-- *Type:* {[ key: string ]: string}
-
-The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.TypeScriptProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: string): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* string
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.TypeScriptProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `removeScript` <a name="removeScript" id="mrpj.TypeScriptProject.removeScript"></a>
-
-```typescript
-public removeScript(name: string): void
-```
-
-Removes the npm script (always successful).
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.removeScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="mrpj.TypeScriptProject.renderWorkflowSetup"></a>
-
-```typescript
-public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
-```
-
-Returns the set of workflow steps which should be executed to bootstrap a workflow.
-
-###### `options`<sup>Optional</sup> <a name="options" id="mrpj.TypeScriptProject.renderWorkflowSetup.parameter.options"></a>
-
-- *Type:* projen.javascript.RenderWorkflowSetupOptions
-
-Options.
-
----
-
-##### `setScript` <a name="setScript" id="mrpj.TypeScriptProject.setScript"></a>
-
-```typescript
-public setScript(name: string, command: string): void
-```
-
-Replaces the contents of an npm package.json script.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.setScript.parameter.name"></a>
-
-- *Type:* string
-
-The script name.
-
----
-
-###### `command`<sup>Required</sup> <a name="command" id="mrpj.TypeScriptProject.setScript.parameter.command"></a>
-
-- *Type:* string
-
-The command to execute.
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.TypeScriptProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#mrpj.TypeScriptProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#mrpj.TypeScriptProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#mrpj.TypeScriptProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#mrpj.TypeScriptProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#mrpj.TypeScriptProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#mrpj.TypeScriptProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#mrpj.TypeScriptProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#mrpj.TypeScriptProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#mrpj.TypeScriptProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#mrpj.TypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#mrpj.TypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#mrpj.TypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#mrpj.TypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#mrpj.TypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#mrpj.TypeScriptProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#mrpj.TypeScriptProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.TypeScriptProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#mrpj.TypeScriptProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#mrpj.TypeScriptProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#mrpj.TypeScriptProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#mrpj.TypeScriptProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.TypeScriptProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#mrpj.TypeScriptProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#mrpj.TypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#mrpj.TypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.TypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#mrpj.TypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#mrpj.TypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#mrpj.TypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#mrpj.TypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#mrpj.TypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#mrpj.TypeScriptProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version required by this package. |
-| <code><a href="#mrpj.TypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum node.js version required by this package. |
-| <code><a href="#mrpj.TypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#mrpj.TypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#mrpj.TypeScriptProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#mrpj.TypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#mrpj.TypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#mrpj.TypeScriptProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#mrpj.TypeScriptProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#mrpj.TypeScriptProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#mrpj.TypeScriptProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#mrpj.TypeScriptProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.logo">logo</a></code> | <code>mrpj.logo.SvgFile</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.wordmark">wordmark</a></code> | <code>mrpj.logo.Wordmark</code> | *No description.* |
-
----
-
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="mrpj.TypeScriptProject.property.buildTask"></a>
-
-```typescript
-public readonly buildTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="mrpj.TypeScriptProject.property.commitGenerated"></a>
-
-```typescript
-public readonly commitGenerated: boolean;
-```
-
-- *Type:* boolean
-
-Whether to commit the managed files by default.
-
----
-
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="mrpj.TypeScriptProject.property.compileTask"></a>
-
-```typescript
-public readonly compileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `components`<sup>Required</sup> <a name="components" id="mrpj.TypeScriptProject.property.components"></a>
-
-```typescript
-public readonly components: Component[];
-```
-
-- *Type:* projen.Component[]
-
-Returns all the components within this project.
-
----
-
-##### `deps`<sup>Required</sup> <a name="deps" id="mrpj.TypeScriptProject.property.deps"></a>
-
-```typescript
-public readonly deps: Dependencies;
-```
-
-- *Type:* projen.Dependencies
-
-Project dependencies.
-
----
-
-##### `ejected`<sup>Required</sup> <a name="ejected" id="mrpj.TypeScriptProject.property.ejected"></a>
-
-```typescript
-public readonly ejected: boolean;
-```
-
-- *Type:* boolean
-
-Whether or not the project is being ejected.
-
----
-
-##### `files`<sup>Required</sup> <a name="files" id="mrpj.TypeScriptProject.property.files"></a>
-
-```typescript
-public readonly files: FileBase[];
-```
-
-- *Type:* projen.FileBase[]
-
-All files in this project.
-
----
-
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="mrpj.TypeScriptProject.property.gitattributes"></a>
-
-```typescript
-public readonly gitattributes: GitAttributesFile;
-```
-
-- *Type:* projen.GitAttributesFile
-
-The .gitattributes file for this repository.
-
----
-
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="mrpj.TypeScriptProject.property.gitignore"></a>
-
-```typescript
-public readonly gitignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-.gitignore.
-
----
-
-##### `logger`<sup>Required</sup> <a name="logger" id="mrpj.TypeScriptProject.property.logger"></a>
-
-```typescript
-public readonly logger: Logger;
-```
-
-- *Type:* projen.Logger
-
-Logging utilities.
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Project name.
-
----
-
-##### `outdir`<sup>Required</sup> <a name="outdir" id="mrpj.TypeScriptProject.property.outdir"></a>
-
-```typescript
-public readonly outdir: string;
-```
-
-- *Type:* string
-
-Absolute output directory of this project.
-
----
-
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="mrpj.TypeScriptProject.property.packageTask"></a>
-
-```typescript
-public readonly packageTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="mrpj.TypeScriptProject.property.postCompileTask"></a>
-
-```typescript
-public readonly postCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="mrpj.TypeScriptProject.property.preCompileTask"></a>
-
-```typescript
-public readonly preCompileTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="mrpj.TypeScriptProject.property.projectBuild"></a>
-
-```typescript
-public readonly projectBuild: ProjectBuild;
-```
-
-- *Type:* projen.ProjectBuild
-
-Manages the build process of the project.
-
----
-
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="mrpj.TypeScriptProject.property.projenCommand"></a>
-
-```typescript
-public readonly projenCommand: string;
-```
-
-- *Type:* string
-
-The command to use in order to run the projen CLI.
-
----
-
-##### `root`<sup>Required</sup> <a name="root" id="mrpj.TypeScriptProject.property.root"></a>
-
-```typescript
-public readonly root: Project;
-```
-
-- *Type:* projen.Project
-
-The root project.
-
----
-
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="mrpj.TypeScriptProject.property.subprojects"></a>
-
-```typescript
-public readonly subprojects: Project[];
-```
-
-- *Type:* projen.Project[]
-
-Returns all the subprojects within this project.
-
----
-
-##### `tasks`<sup>Required</sup> <a name="tasks" id="mrpj.TypeScriptProject.property.tasks"></a>
-
-```typescript
-public readonly tasks: Tasks;
-```
-
-- *Type:* projen.Tasks
-
-Project tasks.
-
----
-
-##### `testTask`<sup>Required</sup> <a name="testTask" id="mrpj.TypeScriptProject.property.testTask"></a>
-
-```typescript
-public readonly testTask: Task;
-```
-
-- *Type:* projen.Task
-
----
-
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="mrpj.TypeScriptProject.property.defaultTask"></a>
-
-```typescript
-public readonly defaultTask: Task;
-```
-
-- *Type:* projen.Task
-
-This is the "default" task, the one that executes "projen".
-
-Undefined if
-the project is being ejected.
-
----
-
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="mrpj.TypeScriptProject.property.initProject"></a>
-
-```typescript
-public readonly initProject: InitProject;
-```
-
-- *Type:* projen.InitProject
-
-The options used when this project is bootstrapped via `projen new`.
-
-It
-includes the original set of options passed to the CLI and also the JSII
-FQN of the project type.
-
----
-
-##### `parent`<sup>Optional</sup> <a name="parent" id="mrpj.TypeScriptProject.property.parent"></a>
-
-```typescript
-public readonly parent: Project;
-```
-
-- *Type:* projen.Project
-
-A parent project.
-
-If undefined, this is the root project.
-
----
-
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.TypeScriptProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.TypeScriptProject.property.autoApprove"></a>
-
-```typescript
-public readonly autoApprove: AutoApprove;
-```
-
-- *Type:* projen.github.AutoApprove
-
-Auto approve set up for this project.
-
----
-
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="mrpj.TypeScriptProject.property.devContainer"></a>
-
-```typescript
-public readonly devContainer: DevContainer;
-```
-
-- *Type:* projen.vscode.DevContainer
-
-Access for .devcontainer.json (used for GitHub Codespaces).
-
-This will be `undefined` if devContainer boolean is false
-
----
-
-##### `github`<sup>Optional</sup> <a name="github" id="mrpj.TypeScriptProject.property.github"></a>
-
-```typescript
-public readonly github: GitHub;
-```
-
-- *Type:* projen.github.GitHub
-
-Access all github components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="mrpj.TypeScriptProject.property.gitpod"></a>
-
-```typescript
-public readonly gitpod: Gitpod;
-```
-
-- *Type:* projen.Gitpod
-
-Access for Gitpod.
-
-This will be `undefined` if gitpod boolean is false
-
----
-
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="mrpj.TypeScriptProject.property.vscode"></a>
-
-```typescript
-public readonly vscode: VsCode;
-```
-
-- *Type:* projen.vscode.VsCode
-
-Access all VSCode components.
-
-This will be `undefined` for subprojects.
-
----
-
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.TypeScriptProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.TypeScriptProject.property.artifactsDirectory"></a>
-
-```typescript
-public readonly artifactsDirectory: string;
-```
-
-- *Type:* string
-
-The build output directory.
-
-An npm tarball will be created under the `js`
-subdirectory. For example, if this is set to `dist` (the default), the npm
-tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
-
----
-
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="mrpj.TypeScriptProject.property.artifactsJavascriptDirectory"></a>
-
-```typescript
-public readonly artifactsJavascriptDirectory: string;
-```
-
-- *Type:* string
-
-The location of the npm tarball after build (`${artifactsDirectory}/js`).
-
----
-
-##### `bundler`<sup>Required</sup> <a name="bundler" id="mrpj.TypeScriptProject.property.bundler"></a>
-
-```typescript
-public readonly bundler: Bundler;
-```
-
-- *Type:* projen.javascript.Bundler
-
----
-
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.TypeScriptProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.TypeScriptProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.TypeScriptProject.property.npmrc"></a>
-
-```typescript
-public readonly npmrc: NpmConfig;
-```
-
-- *Type:* projen.javascript.NpmConfig
-
-The .npmrc file.
-
----
-
-##### `package`<sup>Required</sup> <a name="package" id="mrpj.TypeScriptProject.property.package"></a>
-
-```typescript
-public readonly package: NodePackage;
-```
-
-- *Type:* projen.javascript.NodePackage
-
-API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.TypeScriptProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
-
----
-
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="mrpj.TypeScriptProject.property.runScriptCommand"></a>
-
-```typescript
-public readonly runScriptCommand: string;
-```
-
-- *Type:* string
-
-The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager).
-
----
-
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="mrpj.TypeScriptProject.property.autoMerge"></a>
-
-```typescript
-public readonly autoMerge: AutoMerge;
-```
-
-- *Type:* projen.github.AutoMerge
-
-Component that sets up mergify for merging approved pull requests.
-
----
-
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.TypeScriptProject.property.buildWorkflow"></a>
-
-```typescript
-public readonly buildWorkflow: BuildWorkflow;
-```
-
-- *Type:* projen.build.BuildWorkflow
-
-The PR build GitHub workflow.
-
-`undefined` if `buildWorkflow` is disabled.
-
----
-
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="mrpj.TypeScriptProject.property.buildWorkflowJobId"></a>
-
-```typescript
-public readonly buildWorkflowJobId: string;
-```
-
-- *Type:* string
-
-The job ID of the build workflow.
-
----
-
-##### `jest`<sup>Optional</sup> <a name="jest" id="mrpj.TypeScriptProject.property.jest"></a>
-
-```typescript
-public readonly jest: Jest;
-```
-
-- *Type:* projen.javascript.Jest
-
-The Jest configuration (if enabled).
-
----
-
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="mrpj.TypeScriptProject.property.maxNodeVersion"></a>
-
-```typescript
-public readonly maxNodeVersion: string;
-```
-
-- *Type:* string
-
-Maximum node version required by this package.
-
----
-
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="mrpj.TypeScriptProject.property.minNodeVersion"></a>
-
-```typescript
-public readonly minNodeVersion: string;
-```
-
-- *Type:* string
-
-Minimum node.js version required by this package.
-
----
-
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="mrpj.TypeScriptProject.property.npmignore"></a>
-
-```typescript
-public readonly npmignore: IgnoreFile;
-```
-
-- *Type:* projen.IgnoreFile
-
-The .npmignore file.
-
----
-
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="mrpj.TypeScriptProject.property.prettier"></a>
-
-```typescript
-public readonly prettier: Prettier;
-```
-
-- *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.TypeScriptProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
-
----
-
-##### `release`<sup>Optional</sup> <a name="release" id="mrpj.TypeScriptProject.property.release"></a>
-
-```typescript
-public readonly release: Release;
-```
-
-- *Type:* projen.release.Release
-
-Release management.
-
----
-
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="mrpj.TypeScriptProject.property.upgradeWorkflow"></a>
-
-```typescript
-public readonly upgradeWorkflow: UpgradeDependencies;
-```
-
-- *Type:* projen.javascript.UpgradeDependencies
-
-The upgrade workflow.
-
----
-
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="mrpj.TypeScriptProject.property.docsDirectory"></a>
-
-```typescript
-public readonly docsDirectory: string;
-```
-
-- *Type:* string
-
----
-
-##### `libdir`<sup>Required</sup> <a name="libdir" id="mrpj.TypeScriptProject.property.libdir"></a>
-
-```typescript
-public readonly libdir: string;
-```
-
-- *Type:* string
-
-The directory in which compiled .js files reside.
-
----
-
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.TypeScriptProject.property.srcdir"></a>
-
-```typescript
-public readonly srcdir: string;
-```
-
-- *Type:* string
-
-The directory in which the .ts sources reside.
-
----
-
-##### `testdir`<sup>Required</sup> <a name="testdir" id="mrpj.TypeScriptProject.property.testdir"></a>
-
-```typescript
-public readonly testdir: string;
-```
-
-- *Type:* string
-
-The directory in which tests reside.
-
----
-
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="mrpj.TypeScriptProject.property.tsconfigDev"></a>
-
-```typescript
-public readonly tsconfigDev: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
-A typescript configuration file which covers all files (sources, tests, projen).
-
----
-
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="mrpj.TypeScriptProject.property.watchTask"></a>
-
-```typescript
-public readonly watchTask: Task;
-```
-
-- *Type:* projen.Task
-
-The "watch" task.
-
----
-
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="mrpj.TypeScriptProject.property.docgen"></a>
-
-```typescript
-public readonly docgen: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="mrpj.TypeScriptProject.property.eslint"></a>
-
-```typescript
-public readonly eslint: Eslint;
-```
-
-- *Type:* projen.javascript.Eslint
-
----
-
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="mrpj.TypeScriptProject.property.tsconfig"></a>
-
-```typescript
-public readonly tsconfig: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="mrpj.TypeScriptProject.property.tsconfigEslint"></a>
-
-```typescript
-public readonly tsconfigEslint: TypescriptConfig;
-```
-
-- *Type:* projen.javascript.TypescriptConfig
-
----
-
-##### `logo`<sup>Optional</sup> <a name="logo" id="mrpj.TypeScriptProject.property.logo"></a>
-
-```typescript
-public readonly logo: SvgFile;
-```
-
-- *Type:* mrpj.logo.SvgFile
-
----
-
-##### `wordmark`<sup>Optional</sup> <a name="wordmark" id="mrpj.TypeScriptProject.property.wordmark"></a>
-
-```typescript
-public readonly wordmark: Wordmark;
-```
-
-- *Type:* mrpj.logo.Wordmark
-
----
-
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.TypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-
----
-
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="mrpj.TypeScriptProject.property.DEFAULT_TASK"></a>
-
-```typescript
-public readonly DEFAULT_TASK: string;
-```
-
-- *Type:* string
-
-The name of the default task (the task executed when `projen` is run without arguments).
-
-Normally
-this task should synthesize the project files.
-
----
-
-### Wordmark <a name="Wordmark" id="mrpj.logo.Wordmark"></a>
-
-#### Initializers <a name="Initializers" id="mrpj.logo.Wordmark.Initializer"></a>
-
-```typescript
-import { logo } from 'mrpj'
-
-new logo.Wordmark(project: Project, options?: WordmarkOptions)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#mrpj.logo.Wordmark.Initializer.parameter.options">options</a></code> | <code>mrpj.logo.WordmarkOptions</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.Initializer.parameter.project"></a>
-
-- *Type:* projen.Project
-
----
-
-##### `options`<sup>Optional</sup> <a name="options" id="mrpj.logo.Wordmark.Initializer.parameter.options"></a>
-
-- *Type:* mrpj.logo.WordmarkOptions
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#mrpj.logo.Wordmark.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
-| <code><a href="#mrpj.logo.Wordmark.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
-| <code><a href="#mrpj.logo.Wordmark.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-
----
-
-##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.Wordmark.postSynthesize"></a>
-
-```typescript
-public postSynthesize(): void
-```
-
-Called after synthesis.
-
-Order is *not* guaranteed.
-
-##### `preSynthesize` <a name="preSynthesize" id="mrpj.logo.Wordmark.preSynthesize"></a>
-
-```typescript
-public preSynthesize(): void
-```
-
-Called before synthesis.
-
-##### `synthesize` <a name="synthesize" id="mrpj.logo.Wordmark.synthesize"></a>
-
-```typescript
-public synthesize(): void
-```
-
-Synthesizes files to the project output directory.
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#mrpj.logo.Wordmark.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-
----
-
-##### `project`<sup>Required</sup> <a name="project" id="mrpj.logo.Wordmark.property.project"></a>
-
-```typescript
-public readonly project: Project;
-```
-
-- *Type:* projen.Project
 
 ---
 
