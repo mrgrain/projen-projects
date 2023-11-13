@@ -711,7 +711,7 @@ tsconfig.tsbuildinfo
       {
         "name": "@types/node",
         "type": "build",
-        "version": "^16",
+        "version": "^18",
       },
       {
         "name": "@typescript-eslint/eslint-plugin",
@@ -727,10 +727,6 @@ tsconfig.tsbuildinfo
         "name": "constructs",
         "type": "build",
         "version": "^10.0.0",
-      },
-      {
-        "name": "eslint-import-resolver-node",
-        "type": "build",
       },
       {
         "name": "eslint-import-resolver-typescript",
@@ -1049,13 +1045,13 @@ tsconfig.tsbuildinfo
             "exec": "yarn upgrade npm-check-updates",
           },
           {
-            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
+            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript",
           },
           {
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit mrpj npm-check-updates projen standard-version ts-jest ts-node typescript",
+            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit mrpj npm-check-updates projen standard-version ts-jest ts-node typescript",
           },
           {
             "exec": "npx projen",
@@ -1108,12 +1104,11 @@ SOFTWARE.
       "@jsii/spec": "*",
       "@mrgrain/jsii-struct-builder": "*",
       "@types/jest": "*",
-      "@types/node": "^16",
+      "@types/node": "^18",
       "@typescript-eslint/eslint-plugin": "^6",
       "@typescript-eslint/parser": "^6",
       "constructs": "^10.0.0",
       "eslint": "^8",
-      "eslint-import-resolver-node": "*",
       "eslint-import-resolver-typescript": "*",
       "eslint-plugin-import": "*",
       "jest": "*",

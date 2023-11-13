@@ -5233,6 +5233,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
 
@@ -7386,6 +7387,19 @@ Github Runner Group selection options.
 
 ---
 
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ConstructProjectOptions.property.yarnBerryOptions"></a>
+
+```typescript
+public readonly yarnBerryOptions: YarnBerryOptions;
+```
+
+- *Type:* projen.javascript.YarnBerryOptions
+- *Default:* Yarn Berry v4 with all default options
+
+Options for Yarn Berry.
+
+---
+
 ### FontOptions <a name="FontOptions" id="mrpj.logo.FontOptions"></a>
 
 #### Initializer <a name="Initializer" id="mrpj.logo.FontOptions.Initializer"></a>
@@ -7928,6 +7942,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
 
@@ -9927,6 +9942,19 @@ Github Runner Group selection options.
 
 ---
 
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ProjenProjectOptions.property.yarnBerryOptions"></a>
+
+```typescript
+public readonly yarnBerryOptions: YarnBerryOptions;
+```
+
+- *Type:* projen.javascript.YarnBerryOptions
+- *Default:* Yarn Berry v4 with all default options
+
+Options for Yarn Berry.
+
+---
+
 ### SizeOptions <a name="SizeOptions" id="mrpj.logo.SizeOptions"></a>
 
 #### Initializer <a name="Initializer" id="mrpj.logo.SizeOptions.Initializer"></a>
@@ -10269,6 +10297,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
 
@@ -12134,6 +12163,19 @@ public readonly workflowRunsOnGroup: GroupRunnerOptions;
 - *Type:* projen.GroupRunnerOptions
 
 Github Runner Group selection options.
+
+---
+
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.TypeScriptProjectOptions.property.yarnBerryOptions"></a>
+
+```typescript
+public readonly yarnBerryOptions: YarnBerryOptions;
+```
+
+- *Type:* projen.javascript.YarnBerryOptions
+- *Default:* Yarn Berry v4 with all default options
+
+Options for Yarn Berry.
 
 ---
 
