@@ -648,6 +648,12 @@ export interface ConstructProjectOptions {
    */
   readonly jsiiReleaseVersion?: string;
   /**
+   * Options for Yarn Berry.
+   * @default - Yarn Berry v4 with all default options
+   * @stability stable
+   */
+  readonly yarnBerryOptions?: javascript.YarnBerryOptions;
+  /**
    * Package's Stability.
    * @stability stable
    */
