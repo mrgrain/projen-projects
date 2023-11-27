@@ -827,11 +827,6 @@ tsconfig.tsbuildinfo
         "type": "build",
       },
       {
-        "name": "npm-check-updates",
-        "type": "build",
-        "version": "^16",
-      },
-      {
         "name": "projen",
         "type": "build",
       },
@@ -1153,16 +1148,13 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "name": "upgrade",
         "steps": [
           {
-            "exec": "yarn upgrade npm-check-updates",
-          },
-          {
-            "exec": "npm-check-updates --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,mrpj,npm-check-updates,projen,standard-version,ts-jest,ts-node",
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,jsii-diff,jsii-docgen,jsii-pacmak,mrpj,projen,standard-version,ts-jest,ts-node",
           },
           {
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak mrpj npm-check-updates projen standard-version ts-jest ts-node",
+            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak mrpj projen standard-version ts-jest ts-node",
           },
           {
             "exec": "npx projen",
@@ -1230,7 +1222,6 @@ SOFTWARE.
       "jsii-pacmak": "*",
       "jsii-rosetta": "5.1.x",
       "mrpj": "*",
-      "npm-check-updates": "^16",
       "projen": "*",
       "standard-version": "^9",
       "ts-jest": "*",
