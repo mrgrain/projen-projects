@@ -281,6 +281,13 @@ export interface TypeScriptProjectOptions {
    */
   readonly codeCov?: boolean;
   /**
+   * Configure which licenses should be deemed acceptable for use by dependencies.
+   * This setting will cause the build to fail, if any prohibited or not allowed licenses ares encountered.
+   * @default - no license checks are run during the build and all licenses will be accepted
+   * @stability stable
+   */
+  readonly checkLicenses?: javascript.LicenseCheckerOptions;
+  /**
    * Options for `Bundler`.
    * @stability stable
    */
