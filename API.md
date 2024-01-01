@@ -1567,6 +1567,7 @@ public readonly version: string;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#mrpj.ConstructProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#mrpj.ConstructProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1582,6 +1583,16 @@ The name of the default task (the task executed when `projen` is run without arg
 
 Normally
 this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="mrpj.ConstructProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -3082,6 +3093,7 @@ public readonly wordmark: Wordmark;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#mrpj.ProjenProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#mrpj.ProjenProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -3097,6 +3109,16 @@ The name of the default task (the task executed when `projen` is run without arg
 
 Normally
 this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="mrpj.ProjenProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -4840,6 +4862,7 @@ public readonly wordmark: Wordmark;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#mrpj.TypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#mrpj.TypeScriptProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -4855,6 +4878,16 @@ The name of the default task (the task executed when `projen` is run without arg
 
 Normally
 this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="mrpj.TypeScriptProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -5224,6 +5257,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
@@ -7267,6 +7301,18 @@ The name of the development tsconfig.json file.
 
 ---
 
+##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="mrpj.ConstructProjectOptions.property.tsJestOptions"></a>
+
+```typescript
+public readonly tsJestOptions: TsJestOptions;
+```
+
+- *Type:* projen.typescript.TsJestOptions
+
+Options for ts-jest.
+
+---
+
 ##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="mrpj.ConstructProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
@@ -7948,6 +7994,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.upgradesSchedule">upgradesSchedule</a></code> | <code>projen.javascript.UpgradeDependenciesSchedule</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
@@ -9828,6 +9875,18 @@ The name of the development tsconfig.json file.
 
 ---
 
+##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="mrpj.ProjenProjectOptions.property.tsJestOptions"></a>
+
+```typescript
+public readonly tsJestOptions: TsJestOptions;
+```
+
+- *Type:* projen.typescript.TsJestOptions
+
+Options for ts-jest.
+
+---
+
 ##### `upgradesSchedule`<sup>Optional</sup> <a name="upgradesSchedule" id="mrpj.ProjenProjectOptions.property.upgradesSchedule"></a>
 
 ```typescript
@@ -10318,6 +10377,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.upgradesSchedule">upgradesSchedule</a></code> | <code>projen.javascript.UpgradeDependenciesSchedule</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with standard-version package. |
@@ -12049,6 +12109,18 @@ public readonly tsconfigDevFile: string;
 - *Default:* "tsconfig.dev.json"
 
 The name of the development tsconfig.json file.
+
+---
+
+##### `tsJestOptions`<sup>Optional</sup> <a name="tsJestOptions" id="mrpj.TypeScriptProjectOptions.property.tsJestOptions"></a>
+
+```typescript
+public readonly tsJestOptions: TsJestOptions;
+```
+
+- *Type:* projen.typescript.TsJestOptions
+
+Options for ts-jest.
 
 ---
 

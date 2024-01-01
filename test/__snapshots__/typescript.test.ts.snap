@@ -1064,7 +1064,7 @@ tsconfig.tsbuildinfo
       },
     },
   },
-  "LICENSE": "Copyright (c) 2023 Test Author
+  "LICENSE": "Copyright (c) 2024 Test Author
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1127,12 +1127,6 @@ SOFTWARE.
         "cobertura",
         "text",
       ],
-      "globals": {
-        "ts-jest": {
-          "tsconfig": "tsconfig.dev.json",
-        },
-      },
-      "preset": "ts-jest",
       "reporters": [
         "default",
         [
@@ -1149,6 +1143,14 @@ SOFTWARE.
       "testPathIgnorePatterns": [
         "/node_modules/",
       ],
+      "transform": {
+        "^.+\\.[t]sx?$": [
+          "ts-jest",
+          {
+            "tsconfig": "tsconfig.dev.json",
+          },
+        ],
+      },
       "watchPathIgnorePatterns": [
         "/node_modules/",
       ],

@@ -188,6 +188,11 @@ export interface ConstructProjectOptions {
    */
   readonly typescriptVersion?: string;
   /**
+   * Options for ts-jest.
+   * @stability stable
+   */
+  readonly tsJestOptions?: typescript.TsJestOptions;
+  /**
    * The name of the development tsconfig.json file.
    * @default "tsconfig.dev.json"
    * @stability stable
