@@ -31,7 +31,6 @@ jspm_packages/
 *.tgz
 .yarn-integrity
 .cache
-!/.projenrc.js
 /test-reports/
 junit.xml
 /coverage/
@@ -58,6 +57,7 @@ tsconfig.json
 !/images/wordmark-dynamic.svg
 !/.nvmrc
 !/.node-version
+!/.projenrc.ts
 !/src/construct-project-options.ts
 !/src/projen-project-options.ts
 !/src/typescript-project-options.ts
