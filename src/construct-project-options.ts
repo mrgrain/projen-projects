@@ -549,7 +549,7 @@ export interface ConstructProjectOptions {
   readonly releaseWorkflowSetupSteps?: Array<github.workflows.JobStep>;
   /**
    * The name of the default release workflow.
-   * @default "Release"
+   * @default "release"
    * @stability stable
    */
   readonly releaseWorkflowName?: string;
