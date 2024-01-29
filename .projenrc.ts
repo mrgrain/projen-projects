@@ -38,6 +38,8 @@ const project = new ProjenProject({
   },
 });
 
+project.testTask.env('PROJEN_SELF_TEST', 'true');
+
 new builders.ConstructProjectOptionsBuilder(project);
 new builders.ProjenProjectOptionsBuilder(project);
 new builders.TypeScriptProjectOptionsBuilder(project);
