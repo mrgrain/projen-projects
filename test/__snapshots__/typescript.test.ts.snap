@@ -324,10 +324,11 @@ jobs:
           git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUTPUT
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .repo.patch
           path: .repo.patch
+          overwrite: true
       - name: Fail build on mutation
         if: steps.self_mutation.outputs.self_mutation_happened
         run: |-
@@ -348,7 +349,7 @@ jobs:
           ref: \${{ github.event.pull_request.head.ref }}
           repository: \${{ github.event.pull_request.head.repo.full_name }}
       - name: Download patch
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: .repo.patch
           path: \${{ runner.temp }}
@@ -447,10 +448,11 @@ jobs:
         continue-on-error: true
       - name: Upload artifact
         if: \${{ steps.git_remote.outputs.latest_commit == github.sha }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: dist
+          overwrite: true
   release_github:
     name: Publish to GitHub Releases
     needs: release
@@ -463,7 +465,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifact
           path: dist
@@ -488,7 +490,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifact
           path: dist
@@ -533,10 +535,11 @@ jobs:
           git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
       - name: Upload patch
         if: steps.create_patch.outputs.patch_created
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .repo.patch
           path: .repo.patch
+          overwrite: true
   pr:
     name: Create Pull Request
     needs: upgrade
@@ -550,7 +553,7 @@ jobs:
         with:
           ref: main
       - name: Download patch
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: .repo.patch
           path: \${{ runner.temp }}
@@ -1049,7 +1052,7 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,constructs,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest,jest-junit,mrpj,projen,standard-version,ts-jest,ts-node,typescript",
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=prod,dev,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node,typescript",
           },
           {
             "exec": "yarn install --check-files",
