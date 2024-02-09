@@ -1,4 +1,4 @@
-import { Project, javascript } from 'projen';
+import { DependencyType, Project, javascript } from 'projen';
 import { TypeScriptProjectOptions } from '../typescript-project-options';
 import { FeatureMiddleware, OptionsMiddleware, deepMerge } from '../utils';
 
@@ -10,6 +10,11 @@ export const optionsMiddleware: OptionsMiddleware<DependenciesOptionsTrait> = (o
   devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec', 'mrpj'],
   peerDeps: ['projen'],
   depsUpgradeOptions: {
+    types: [
+      DependencyType.RUNTIME,
+      DependencyType.BUILD,
+      DependencyType.OPTIONAL,
+    ],
     workflowOptions: {
       schedule: options.upgradesSchedule ?? javascript.UpgradeDependenciesSchedule.WEEKLY,
     },
