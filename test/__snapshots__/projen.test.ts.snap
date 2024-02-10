@@ -822,6 +822,7 @@ tsconfig.tsbuildinfo
       {
         "name": "jsii-docgen",
         "type": "build",
+        "version": "^10",
       },
       {
         "name": "jsii-pacmak",
@@ -1164,7 +1165,7 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=prod,dev,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,mrpj,projen,ts-jest,ts-node,typescript",
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=prod,dev,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,jsii-rosetta,jsii,mrpj,projen,ts-jest,ts-node,typescript",
           },
           {
             "exec": "yarn install --check-files",
@@ -1234,7 +1235,7 @@ SOFTWARE.
       "jest-junit": "^15",
       "jsii": "5.1.x",
       "jsii-diff": "*",
-      "jsii-docgen": "*",
+      "jsii-docgen": "^10",
       "jsii-pacmak": "*",
       "jsii-rosetta": "5.1.x",
       "mrpj": "*",

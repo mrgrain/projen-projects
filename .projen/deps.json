@@ -60,6 +60,7 @@
     },
     {
       "name": "jsii-docgen",
+      "version": "^10",
       "type": "build"
     },
     {

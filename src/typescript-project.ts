@@ -16,7 +16,7 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
       packageInfo(),
       release,
       automation,
-      dependencies,
+      dependencies(),
       forceDefaults({
         sampleCode: false,
         projenrcTs: true,
