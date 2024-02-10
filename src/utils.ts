@@ -84,7 +84,7 @@ export type OptionsMiddleware<T> = (options: T) => any;
 export function configureFeatures<T extends Project = Project>(...middleware: FeatureMiddleware<T>[]): FeatureMiddleware<T> {
   return (project: T, options: any) => middleware.reduce((p, mw) => mw(p, options), project);
 }
-export type FeatureMiddleware<T extends Project = Project> = (project: T, options: any) => T;
+export type FeatureMiddleware<T extends Project = Project, O = any> = (project: T, options: O) => T;
 
 
 export type Mutable<T> = {

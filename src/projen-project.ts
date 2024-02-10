@@ -1,5 +1,5 @@
 import { cdk } from 'projen';
-import { automation, dependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
+import { automation, dependencies, ensureDependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import { SvgFile, Wordmark } from './logo';
 import { ProjenProjectOptions } from './projen-project-options';
 import { configureFeatures, defaultOptions } from './utils';
@@ -17,7 +17,9 @@ export class ProjenProject extends cdk.JsiiProject {
       packageInfo(),
       release,
       automation,
-      dependencies,
+      dependencies({
+        devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec', 'jsii-docgen@^10'],
+      }),
       forceDefaults({
         author: options.authorName,
         authorUrl: undefined,
@@ -34,7 +36,10 @@ export class ProjenProject extends cdk.JsiiProject {
       eslint,
       logo,
       nodeVersion,
+      ensureDependencies,
       preventSelfDependency,
     )(this, opts);
+
+    this.addDevDeps('jsii-docgen@^10');
   }
 }
