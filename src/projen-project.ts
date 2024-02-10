@@ -39,7 +39,5 @@ export class ProjenProject extends cdk.JsiiProject {
       ensureDependencies,
       preventSelfDependency,
     )(this, opts);
-
-    this.addDevDeps('jsii-docgen@^10');
   }
 }
