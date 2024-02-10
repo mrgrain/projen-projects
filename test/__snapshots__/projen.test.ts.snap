@@ -831,12 +831,12 @@ tsconfig.tsbuildinfo
       {
         "name": "jsii-rosetta",
         "type": "build",
-        "version": "5.1.x",
+        "version": "5.3.x",
       },
       {
         "name": "jsii",
         "type": "build",
-        "version": "5.1.x",
+        "version": "5.3.x",
       },
       {
         "name": "mrpj",
@@ -862,7 +862,7 @@ tsconfig.tsbuildinfo
       {
         "name": "typescript",
         "type": "build",
-        "version": "5.1.x",
+        "version": "5.3.x",
       },
       {
         "name": "projen",
@@ -1233,17 +1233,17 @@ SOFTWARE.
       "eslint-plugin-import": "*",
       "jest": "*",
       "jest-junit": "^15",
-      "jsii": "5.1.x",
+      "jsii": "5.3.x",
       "jsii-diff": "*",
       "jsii-docgen": "^10",
       "jsii-pacmak": "*",
-      "jsii-rosetta": "5.1.x",
+      "jsii-rosetta": "5.3.x",
       "mrpj": "*",
       "projen": "*",
       "standard-version": "^9",
       "ts-jest": "*",
       "ts-node": "*",
-      "typescript": "5.1.x",
+      "typescript": "5.3.x",
     },
     "homepage": "https://github.com/mrgrain/test",
     "jest": {
