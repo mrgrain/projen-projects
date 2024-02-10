@@ -1,5 +1,1274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`can set dependency with version constraint 1`] = `
+{
+  ".eslintrc.json": {
+    "env": {
+      "jest": true,
+      "node": true,
+    },
+    "extends": [
+      "plugin:import/typescript",
+    ],
+    "ignorePatterns": [
+      "*.js",
+      "*.d.ts",
+      "node_modules/",
+      "*.generated.ts",
+      "coverage",
+      "!.projenrc.ts",
+      "!projenrc/**/*.ts",
+    ],
+    "overrides": [
+      {
+        "files": [
+          ".projenrc.ts",
+        ],
+        "rules": {
+          "@typescript-eslint/no-require-imports": "off",
+          "import/no-extraneous-dependencies": "off",
+        },
+      },
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "project": "./tsconfig.dev.json",
+      "sourceType": "module",
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "import",
+    ],
+    "root": true,
+    "rules": {
+      "@typescript-eslint/indent": [
+        "error",
+        2,
+      ],
+      "@typescript-eslint/member-delimiter-style": [
+        "error",
+      ],
+      "@typescript-eslint/member-ordering": [
+        "error",
+        {
+          "default": [
+            "public-static-field",
+            "public-static-method",
+            "protected-static-field",
+            "protected-static-method",
+            "private-static-field",
+            "private-static-method",
+            "field",
+            "constructor",
+            "method",
+          ],
+        },
+      ],
+      "@typescript-eslint/no-floating-promises": [
+        "error",
+      ],
+      "@typescript-eslint/no-require-imports": [
+        "error",
+      ],
+      "@typescript-eslint/no-shadow": [
+        "error",
+      ],
+      "@typescript-eslint/return-await": [
+        "error",
+      ],
+      "array-bracket-newline": [
+        "error",
+        "consistent",
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "never",
+      ],
+      "brace-style": [
+        "error",
+        "1tbs",
+        {
+          "allowSingleLine": true,
+        },
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline",
+      ],
+      "comma-spacing": [
+        "error",
+        {
+          "after": true,
+          "before": false,
+        },
+      ],
+      "curly": [
+        "error",
+        "multi-line",
+        "consistent",
+      ],
+      "dot-notation": [
+        "error",
+      ],
+      "eol-last": [
+        "error",
+        "always",
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/test/**",
+            "**/build-tools/**",
+            ".projenrc.ts",
+            "projenrc/**/*.ts",
+          ],
+          "optionalDependencies": false,
+          "peerDependencies": true,
+        },
+      ],
+      "import/no-unresolved": [
+        "error",
+      ],
+      "import/order": [
+        "warn",
+        {
+          "alphabetize": {
+            "caseInsensitive": true,
+            "order": "asc",
+          },
+          "groups": [
+            "builtin",
+            "external",
+          ],
+        },
+      ],
+      "indent": [
+        "off",
+      ],
+      "key-spacing": [
+        "error",
+      ],
+      "keyword-spacing": [
+        "error",
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 150,
+          "ignoreComments": true,
+          "ignoreRegExpLiterals": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreUrls": true,
+        },
+      ],
+      "no-bitwise": [
+        "error",
+      ],
+      "no-duplicate-imports": [
+        "error",
+      ],
+      "no-multi-spaces": [
+        "error",
+        {
+          "ignoreEOLComments": false,
+        },
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+      ],
+      "no-return-await": [
+        "off",
+      ],
+      "no-shadow": [
+        "off",
+      ],
+      "no-trailing-spaces": [
+        "error",
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "consistent": true,
+          "multiline": true,
+        },
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always",
+      ],
+      "object-property-newline": [
+        "error",
+        {
+          "allowAllPropertiesOnSameLine": true,
+        },
+      ],
+      "quote-props": [
+        "error",
+        "consistent-as-needed",
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true,
+        },
+      ],
+      "semi": [
+        "error",
+        "always",
+      ],
+      "space-before-blocks": [
+        "error",
+      ],
+      "space-in-parens": [
+        "error",
+        "never",
+      ],
+    },
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [
+          ".ts",
+          ".tsx",
+        ],
+      },
+      "import/resolver": {
+        "node": {},
+        "typescript": {
+          "alwaysTryTypes": true,
+          "project": "./tsconfig.dev.json",
+        },
+      },
+    },
+  },
+  ".gitattributes": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+*.snap linguist-generated
+/.eslintrc.json linguist-generated
+/.gitattributes linguist-generated
+/.github/pull_request_template.md linguist-generated
+/.github/workflows/auto-approve.yml linguist-generated
+/.github/workflows/build.yml linguist-generated
+/.github/workflows/pull-request-lint.yml linguist-generated
+/.github/workflows/release.yml linguist-generated
+/.github/workflows/upgrade-main.yml linguist-generated
+/.gitignore linguist-generated
+/.mergify.yml linguist-generated
+/.node-version linguist-generated
+/.npmignore linguist-generated
+/.nvmrc linguist-generated
+/.projen/** linguist-generated
+/.projen/deps.json linguist-generated
+/.projen/files.json linguist-generated
+/.projen/tasks.json linguist-generated
+/LICENSE linguist-generated
+/package.json linguist-generated
+/tsconfig.dev.json linguist-generated
+/tsconfig.json linguist-generated
+/yarn.lock linguist-generated",
+  ".github/pull_request_template.md": "Fixes #",
+  ".github/workflows/auto-approve.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+name: auto-approve
+on:
+  pull_request_target:
+    types:
+      - labeled
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    if: contains(github.event.pull_request.labels.*.name, 'auto-approve') && (github.event.pull_request.user.login == 'mrgrain')
+    steps:
+      - uses: hmarr/auto-approve-action@v2.2.1
+        with:
+          github-token: \${{ secrets.GITHUB_TOKEN }}
+",
+  ".github/workflows/build.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+name: build
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      self_mutation_happened: \${{ steps.self_mutation.outputs.self_mutation_happened }}
+    env:
+      CI: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: \${{ github.event.pull_request.head.ref }}
+          repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Install dependencies
+        run: yarn install --check-files
+      - name: build
+        run: npx projen build
+      - name: Find mutations
+        id: self_mutation
+        run: |-
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUTPUT
+      - name: Upload patch
+        if: steps.self_mutation.outputs.self_mutation_happened
+        uses: actions/upload-artifact@v4
+        with:
+          name: .repo.patch
+          path: .repo.patch
+          overwrite: true
+      - name: Fail build on mutation
+        if: steps.self_mutation.outputs.self_mutation_happened
+        run: |-
+          echo "::error::Files were changed during build (see build log). If this was triggered from a fork, you will need to update your branch."
+          cat .repo.patch
+          exit 1
+  self-mutation:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: always() && needs.build.outputs.self_mutation_happened && !(github.event.pull_request.head.repo.full_name != github.repository)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: \${{ secrets.PROJEN_GITHUB_TOKEN }}
+          ref: \${{ github.event.pull_request.head.ref }}
+          repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Download patch
+        uses: actions/download-artifact@v4
+        with:
+          name: .repo.patch
+          path: \${{ runner.temp }}
+      - name: Apply patch
+        run: '[ -s \${{ runner.temp }}/.repo.patch ] && git apply \${{ runner.temp }}/.repo.patch || echo "Empty patch. Skipping."'
+      - name: Set git identity
+        run: |-
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Push changes
+        env:
+          PULL_REQUEST_REF: \${{ github.event.pull_request.head.ref }}
+        run: |-
+          git add .
+          git commit -s -m "chore: self mutation"
+          git push origin HEAD:$PULL_REQUEST_REF
+",
+  ".github/workflows/pull-request-lint.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+name: pull-request-lint
+on:
+  pull_request_target:
+    types:
+      - labeled
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - edited
+jobs:
+  validate:
+    name: Validate PR title
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5.0.2
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |-
+            chore
+            ci
+            docs
+            feat
+            fix
+            revert
+          requireScope: false
+          githubBaseUrl: \${{ github.api_url }}
+",
+  ".github/workflows/release.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+name: release
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      latest_commit: \${{ steps.git_remote.outputs.latest_commit }}
+      tag_exists: \${{ steps.check_tag_exists.outputs.exists }}
+    env:
+      CI: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set git identity
+        run: |-
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Install dependencies
+        run: yarn install --check-files --frozen-lockfile
+      - name: release
+        run: npx projen release
+      - name: Check if version has already been tagged
+        id: check_tag_exists
+        run: |-
+          TAG=$(cat dist/releasetag.txt)
+          ([ ! -z "$TAG" ] && git ls-remote -q --exit-code --tags origin $TAG && (echo "exists=true" >> $GITHUB_OUTPUT)) || (echo "exists=false" >> $GITHUB_OUTPUT)
+          cat $GITHUB_OUTPUT
+      - name: Check for new commits
+        id: git_remote
+        run: |-
+          echo "latest_commit=$(git ls-remote origin -h \${{ github.ref }} | cut -f1)" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+      - name: Backup artifact permissions
+        if: \${{ steps.git_remote.outputs.latest_commit == github.sha }}
+        run: cd dist && getfacl -R . > permissions-backup.acl
+        continue-on-error: true
+      - name: Upload artifact
+        if: \${{ steps.git_remote.outputs.latest_commit == github.sha }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: dist
+          overwrite: true
+  release_github:
+    name: Publish to GitHub Releases
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: needs.release.outputs.tag_exists != 'true' && needs.release.outputs.latest_commit == github.sha
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
+        continue-on-error: true
+      - name: Release
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: \${{ github.repository }}
+          GITHUB_REF: \${{ github.ref }}
+        run: errout=$(mktemp); gh release create $(cat dist/releasetag.txt) -R $GITHUB_REPOSITORY -F dist/changelog.md -t $(cat dist/releasetag.txt) --target $GITHUB_REF 2> $errout && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" $errout; then cat $errout; exit $exitcode; fi
+  release_npm:
+    name: Publish to npm
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    if: needs.release.outputs.tag_exists != 'true' && needs.release.outputs.latest_commit == github.sha
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
+        continue-on-error: true
+      - name: Release
+        env:
+          NPM_DIST_TAG: latest
+          NPM_REGISTRY: registry.npmjs.org
+          NPM_TOKEN: \${{ secrets.NPM_TOKEN }}
+        run: npx -p publib@latest publib-npm
+",
+  ".github/workflows/upgrade-main.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+name: upgrade-main
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: 0 0 * * 1
+jobs:
+  upgrade:
+    name: Upgrade
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      patch_created: \${{ steps.create_patch.outputs.patch_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Install dependencies
+        run: yarn install --check-files --frozen-lockfile
+      - name: Upgrade dependencies
+        run: npx projen upgrade
+      - name: Find mutations
+        id: create_patch
+        run: |-
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
+      - name: Upload patch
+        if: steps.create_patch.outputs.patch_created
+        uses: actions/upload-artifact@v4
+        with:
+          name: .repo.patch
+          path: .repo.patch
+          overwrite: true
+  pr:
+    name: Create Pull Request
+    needs: upgrade
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    if: \${{ needs.upgrade.outputs.patch_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Download patch
+        uses: actions/download-artifact@v4
+        with:
+          name: .repo.patch
+          path: \${{ runner.temp }}
+      - name: Apply patch
+        run: '[ -s \${{ runner.temp }}/.repo.patch ] && git apply \${{ runner.temp }}/.repo.patch || echo "Empty patch. Skipping."'
+      - name: Set git identity
+        run: |-
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: \${{ secrets.PROJEN_GITHUB_TOKEN }}
+          commit-message: |-
+            chore(deps): upgrade dependencies
+
+            Upgrades project dependencies. See details in [workflow run].
+
+            [Workflow Run]: \${{ github.server_url }}/\${{ github.repository }}/actions/runs/\${{ github.run_id }}
+
+            ------
+
+            *Automatically created by projen via the "upgrade-main" workflow*
+          branch: github-actions/upgrade-main
+          title: "chore(deps): upgrade dependencies"
+          labels: auto-approve
+          body: |-
+            Upgrades project dependencies. See details in [workflow run].
+
+            [Workflow Run]: \${{ github.server_url }}/\${{ github.repository }}/actions/runs/\${{ github.run_id }}
+
+            ------
+
+            *Automatically created by projen via the "upgrade-main" workflow*
+          author: github-actions <github-actions@github.com>
+          committer: github-actions <github-actions@github.com>
+          signoff: true
+",
+  ".gitignore": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+!/.gitattributes
+!/.projen/tasks.json
+!/.projen/deps.json
+!/.projen/files.json
+!/.github/workflows/pull-request-lint.yml
+!/.github/workflows/auto-approve.yml
+!/package.json
+!/LICENSE
+!/.npmignore
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+pids
+*.pid
+*.seed
+*.pid.lock
+lib-cov
+coverage
+*.lcov
+.nyc_output
+build/Release
+node_modules/
+jspm_packages/
+*.tsbuildinfo
+.eslintcache
+*.tgz
+.yarn-integrity
+.cache
+/test-reports/
+junit.xml
+/coverage/
+!/.github/workflows/build.yml
+/dist/changelog.md
+/dist/version.txt
+!/.github/workflows/release.yml
+!/.mergify.yml
+!/.github/workflows/upgrade-main.yml
+!/.github/pull_request_template.md
+!/test/
+!/tsconfig.json
+!/tsconfig.dev.json
+!/src/
+/lib
+/dist/
+!/.eslintrc.json
+!/.nvmrc
+!/.node-version
+!/.projenrc.ts
+",
+  ".mergify.yml": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+
+queue_rules:
+  - name: default
+    update_method: merge
+    conditions:
+      - "#approved-reviews-by>=1"
+      - -label~=(do-not-merge)
+      - status-success=build
+pull_request_rules:
+  - name: Automatic merge on approval and successful build
+    actions:
+      delete_head_branch: {}
+      queue:
+        method: squash
+        name: default
+        commit_message_template: |-
+          {{ title }} (#{{ number }})
+
+          {{ body }}
+    conditions:
+      - "#approved-reviews-by>=1"
+      - -label~=(do-not-merge)
+      - status-success=build
+",
+  ".node-version": "v18
+",
+  ".npmignore": "# ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+.projenrc.ts
+projenrc
+.gitattributes
+/.projen/
+/test-reports/
+junit.xml
+/coverage/
+permissions-backup.acl
+/dist/changelog.md
+/dist/version.txt
+/.mergify.yml
+/test/
+/tsconfig.dev.json
+/src/
+!/lib/
+!/lib/**/*.js
+!/lib/**/*.d.ts
+dist
+/tsconfig.json
+/.github/
+/.vscode/
+/.idea/
+/.projenrc.js
+tsconfig.tsbuildinfo
+/.eslintrc.json
+.nvmrc
+.node-version
+/.gitattributes
+/.projenrc.ts
+",
+  ".nvmrc": "v18
+",
+  ".projen/deps.json": {
+    "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".",
+    "dependencies": [
+      {
+        "name": "@types/jest",
+        "type": "build",
+      },
+      {
+        "name": "@types/node",
+        "type": "build",
+        "version": "^18",
+      },
+      {
+        "name": "@typescript-eslint/eslint-plugin",
+        "type": "build",
+        "version": "^6",
+      },
+      {
+        "name": "@typescript-eslint/parser",
+        "type": "build",
+        "version": "^6",
+      },
+      {
+        "name": "constructs",
+        "type": "build",
+        "version": "^10.0.0",
+      },
+      {
+        "name": "eslint-import-resolver-typescript",
+        "type": "build",
+      },
+      {
+        "name": "eslint-plugin-import",
+        "type": "build",
+      },
+      {
+        "name": "eslint",
+        "type": "build",
+        "version": "^8",
+      },
+      {
+        "name": "jest-junit",
+        "type": "build",
+        "version": "^15",
+      },
+      {
+        "name": "jest",
+        "type": "build",
+        "version": "27",
+      },
+      {
+        "name": "mrpj",
+        "type": "build",
+      },
+      {
+        "name": "projen",
+        "type": "build",
+      },
+      {
+        "name": "standard-version",
+        "type": "build",
+        "version": "^9",
+      },
+      {
+        "name": "ts-jest",
+        "type": "build",
+      },
+      {
+        "name": "ts-node",
+        "type": "build",
+      },
+      {
+        "name": "typescript",
+        "type": "build",
+      },
+      {
+        "name": "projen",
+        "type": "peer",
+      },
+    ],
+  },
+  ".projen/files.json": {
+    "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".",
+    "files": [
+      ".eslintrc.json",
+      ".gitattributes",
+      ".github/pull_request_template.md",
+      ".github/workflows/auto-approve.yml",
+      ".github/workflows/build.yml",
+      ".github/workflows/pull-request-lint.yml",
+      ".github/workflows/release.yml",
+      ".github/workflows/upgrade-main.yml",
+      ".gitignore",
+      ".mergify.yml",
+      ".node-version",
+      ".npmignore",
+      ".nvmrc",
+      ".projen/deps.json",
+      ".projen/files.json",
+      ".projen/tasks.json",
+      "LICENSE",
+      "tsconfig.dev.json",
+      "tsconfig.json",
+    ],
+  },
+  ".projen/tasks.json": {
+    "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".",
+    "env": {
+      "PATH": "$(npx -c "node --print process.env.PATH")",
+    },
+    "tasks": {
+      "build": {
+        "description": "Full release build",
+        "name": "build",
+        "steps": [
+          {
+            "spawn": "default",
+          },
+          {
+            "spawn": "pre-compile",
+          },
+          {
+            "spawn": "compile",
+          },
+          {
+            "spawn": "post-compile",
+          },
+          {
+            "spawn": "test",
+          },
+          {
+            "spawn": "package",
+          },
+        ],
+      },
+      "bump": {
+        "condition": "! git log --oneline -1 | grep -q "chore(release):"",
+        "description": "Bumps version based on latest git tag and generates a changelog entry",
+        "env": {
+          "BUMPFILE": "dist/version.txt",
+          "CHANGELOG": "dist/changelog.md",
+          "OUTFILE": "package.json",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(chore|feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
+          "RELEASETAG": "dist/releasetag.txt",
+          "RELEASE_TAG_PREFIX": "",
+        },
+        "name": "bump",
+        "steps": [
+          {
+            "builtin": "release/bump-version",
+          },
+        ],
+      },
+      "clobber": {
+        "condition": "git diff --exit-code > /dev/null",
+        "description": "hard resets to HEAD of origin and cleans the local repo",
+        "env": {
+          "BRANCH": "$(git branch --show-current)",
+        },
+        "name": "clobber",
+        "steps": [
+          {
+            "exec": "git checkout -b scratch",
+            "name": "save current HEAD in "scratch" branch",
+          },
+          {
+            "exec": "git checkout $BRANCH",
+          },
+          {
+            "exec": "git fetch origin",
+            "name": "fetch latest changes from origin",
+          },
+          {
+            "exec": "git reset --hard origin/$BRANCH",
+            "name": "hard reset to origin commit",
+          },
+          {
+            "exec": "git clean -fdx",
+            "name": "clean all untracked files",
+          },
+          {
+            "say": "ready to rock! (unpushed commits are under the "scratch" branch)",
+          },
+        ],
+      },
+      "compile": {
+        "description": "Only compile",
+        "name": "compile",
+        "steps": [
+          {
+            "exec": "tsc --build",
+          },
+        ],
+      },
+      "default": {
+        "description": "Synthesize project files",
+        "name": "default",
+        "steps": [
+          {
+            "exec": "ts-node --project tsconfig.dev.json .projenrc.ts",
+          },
+        ],
+      },
+      "eject": {
+        "description": "Remove projen from the project",
+        "env": {
+          "PROJEN_EJECTING": "true",
+        },
+        "name": "eject",
+        "steps": [
+          {
+            "spawn": "default",
+          },
+        ],
+      },
+      "eslint": {
+        "description": "Runs eslint against the codebase",
+        "name": "eslint",
+        "steps": [
+          {
+            "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+            "receiveArgs": true,
+          },
+        ],
+      },
+      "install": {
+        "description": "Install project dependencies and update lockfile (non-frozen)",
+        "name": "install",
+        "steps": [
+          {
+            "exec": "yarn install --check-files",
+          },
+        ],
+      },
+      "install:ci": {
+        "description": "Install project dependencies using frozen lockfile",
+        "name": "install:ci",
+        "steps": [
+          {
+            "exec": "yarn install --check-files --frozen-lockfile",
+          },
+        ],
+      },
+      "package": {
+        "description": "Creates the distribution package",
+        "name": "package",
+        "steps": [
+          {
+            "exec": "mkdir -p dist/js",
+          },
+          {
+            "exec": "mv $(npm pack) dist/js/",
+          },
+        ],
+      },
+      "post-compile": {
+        "description": "Runs after successful compilation",
+        "name": "post-compile",
+      },
+      "post-upgrade": {
+        "description": "Runs after upgrading dependencies",
+        "name": "post-upgrade",
+      },
+      "pre-compile": {
+        "description": "Prepare the project for compilation",
+        "name": "pre-compile",
+      },
+      "release": {
+        "description": "Prepare a release from "main" branch",
+        "env": {
+          "RELEASE": "true",
+        },
+        "name": "release",
+        "steps": [
+          {
+            "exec": "rm -fr dist",
+          },
+          {
+            "spawn": "bump",
+          },
+          {
+            "spawn": "build",
+          },
+          {
+            "spawn": "unbump",
+          },
+          {
+            "exec": "git diff --ignore-space-at-eol --exit-code",
+          },
+        ],
+      },
+      "test": {
+        "description": "Run tests",
+        "name": "test",
+        "steps": [
+          {
+            "exec": "jest --passWithNoTests --updateSnapshot",
+            "receiveArgs": true,
+          },
+          {
+            "spawn": "eslint",
+          },
+        ],
+      },
+      "test:watch": {
+        "description": "Run jest in watch mode",
+        "name": "test:watch",
+        "steps": [
+          {
+            "exec": "jest --watch",
+          },
+        ],
+      },
+      "unbump": {
+        "description": "Restores version to 0.0.0",
+        "env": {
+          "BUMPFILE": "dist/version.txt",
+          "CHANGELOG": "dist/changelog.md",
+          "OUTFILE": "package.json",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(chore|feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
+          "RELEASETAG": "dist/releasetag.txt",
+          "RELEASE_TAG_PREFIX": "",
+        },
+        "name": "unbump",
+        "steps": [
+          {
+            "builtin": "release/reset-version",
+          },
+        ],
+      },
+      "upgrade": {
+        "description": "upgrade dependencies",
+        "env": {
+          "CI": "0",
+        },
+        "name": "upgrade",
+        "steps": [
+          {
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node,typescript",
+          },
+          {
+            "exec": "yarn install --check-files",
+          },
+          {
+            "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest mrpj projen standard-version ts-jest ts-node typescript",
+          },
+          {
+            "exec": "npx projen",
+          },
+          {
+            "spawn": "post-upgrade",
+          },
+        ],
+      },
+      "watch": {
+        "description": "Watch & compile in the background",
+        "name": "watch",
+        "steps": [
+          {
+            "exec": "tsc --build -w",
+          },
+        ],
+      },
+    },
+  },
+  "LICENSE": "Copyright (c) 2024 Test Author
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+",
+  "README.md": "# replace this",
+  "package.json": {
+    "//": "~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".",
+    "author": {
+      "name": "Test Author",
+      "organization": false,
+      "url": "https://github.com/mrgrain",
+    },
+    "devDependencies": {
+      "@types/jest": "*",
+      "@types/node": "^18",
+      "@typescript-eslint/eslint-plugin": "^6",
+      "@typescript-eslint/parser": "^6",
+      "constructs": "^10.0.0",
+      "eslint": "^8",
+      "eslint-import-resolver-typescript": "*",
+      "eslint-plugin-import": "*",
+      "jest": "27",
+      "jest-junit": "^15",
+      "mrpj": "*",
+      "projen": "*",
+      "standard-version": "^9",
+      "ts-jest": "*",
+      "ts-node": "*",
+      "typescript": "*",
+    },
+    "homepage": "https://github.com/mrgrain/test",
+    "jest": {
+      "clearMocks": true,
+      "collectCoverage": true,
+      "coverageDirectory": "coverage",
+      "coveragePathIgnorePatterns": [
+        "/node_modules/",
+      ],
+      "coverageReporters": [
+        "json",
+        "lcov",
+        "clover",
+        "cobertura",
+        "text",
+      ],
+      "reporters": [
+        "default",
+        [
+          "jest-junit",
+          {
+            "outputDirectory": "test-reports",
+          },
+        ],
+      ],
+      "testMatch": [
+        "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+        "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)",
+      ],
+      "testPathIgnorePatterns": [
+        "/node_modules/",
+      ],
+      "transform": {
+        "^.+\\.[t]sx?$": [
+          "ts-jest",
+          {
+            "tsconfig": "tsconfig.dev.json",
+          },
+        ],
+      },
+      "watchPathIgnorePatterns": [
+        "/node_modules/",
+      ],
+    },
+    "license": "MIT",
+    "main": "lib/index.js",
+    "name": "@mrgrain/test",
+    "peerDependencies": {
+      "projen": "*",
+    },
+    "publishConfig": {
+      "access": "public",
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:mrgrain/test.git",
+    },
+    "scripts": {
+      "build": "npx projen build",
+      "bump": "npx projen bump",
+      "clobber": "npx projen clobber",
+      "compile": "npx projen compile",
+      "default": "npx projen default",
+      "eject": "npx projen eject",
+      "eslint": "npx projen eslint",
+      "package": "npx projen package",
+      "post-compile": "npx projen post-compile",
+      "post-upgrade": "npx projen post-upgrade",
+      "pre-compile": "npx projen pre-compile",
+      "projen": "npx projen",
+      "release": "npx projen release",
+      "test": "npx projen test",
+      "test:watch": "npx projen test:watch",
+      "unbump": "npx projen unbump",
+      "upgrade": "npx projen upgrade",
+      "watch": "npx projen watch",
+    },
+    "types": "lib/index.d.ts",
+    "version": "0.0.0",
+  },
+  "tsconfig.dev.json": {
+    "compilerOptions": {
+      "alwaysStrict": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "inlineSourceMap": true,
+      "inlineSources": true,
+      "lib": [
+        "es2019",
+      ],
+      "module": "CommonJS",
+      "noEmitOnError": false,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "resolveJsonModule": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+      "stripInternal": true,
+      "target": "ES2019",
+    },
+    "exclude": [
+      "node_modules",
+    ],
+    "include": [
+      "src/**/*.ts",
+      "test/**/*.ts",
+      ".projenrc.ts",
+      "projenrc/**/*.ts",
+    ],
+  },
+  "tsconfig.json": {
+    "compilerOptions": {
+      "alwaysStrict": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "inlineSourceMap": true,
+      "inlineSources": true,
+      "lib": [
+        "es2019",
+      ],
+      "module": "CommonJS",
+      "noEmitOnError": false,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "outDir": "lib",
+      "resolveJsonModule": true,
+      "rootDir": "src",
+      "strict": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": true,
+      "stripInternal": true,
+      "target": "ES2019",
+    },
+    "exclude": [],
+    "include": [
+      "src/**/*.ts",
+    ],
+  },
+}
+`;
+
 exports[`default snapshot 1`] = `
 {
   ".eslintrc.json": {

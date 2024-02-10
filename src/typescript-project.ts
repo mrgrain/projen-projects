@@ -1,5 +1,5 @@
 import { typescript } from 'projen';
-import { automation, dependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
+import { automation, dependencies, ensureDependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import { SvgFile, Wordmark } from './logo';
 import { TypeScriptProjectOptions } from './typescript-project-options';
 import { configureFeatures, defaultOptions } from './utils';
@@ -29,6 +29,7 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
       eslint,
       logo,
       nodeVersion,
+      ensureDependencies,
       preventSelfDependency,
     )(this, opts);
   }
