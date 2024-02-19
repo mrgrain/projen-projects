@@ -5177,6 +5177,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -6479,6 +6480,25 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
+
+---
+
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="mrpj.ConstructProjectOptions.property.npmProvenance"></a>
+
+```typescript
+public readonly npmProvenance: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true for public packages, false otherwise
+
+Should provenance statements be generated when the package is published.
+
+A supported package manager is required to publish a package with npm provenance statements and
+you will need to use a supported CI/CD provider.
+
+Note that the projen `Release` and `Publisher` components are using `publib` to publish packages,
+which is using npm internally and supports provenance statements independently of the package manager used.
 
 ---
 
@@ -7915,6 +7935,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -9066,6 +9087,25 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
+
+---
+
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="mrpj.ProjenProjectOptions.property.npmProvenance"></a>
+
+```typescript
+public readonly npmProvenance: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true for public packages, false otherwise
+
+Should provenance statements be generated when the package is published.
+
+A supported package manager is required to publish a package with npm provenance statements and
+you will need to use a supported CI/CD provider.
+
+Note that the projen `Release` and `Publisher` components are using `publib` to publish packages,
+which is using npm internally and supports provenance statements independently of the package manager used.
 
 ---
 
@@ -10303,6 +10343,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
@@ -11366,6 +11407,25 @@ public readonly npmIgnoreOptions: IgnoreFileOptions;
 - *Type:* projen.IgnoreFileOptions
 
 Configuration options for .npmignore file.
+
+---
+
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="mrpj.TypeScriptProjectOptions.property.npmProvenance"></a>
+
+```typescript
+public readonly npmProvenance: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true for public packages, false otherwise
+
+Should provenance statements be generated when the package is published.
+
+A supported package manager is required to publish a package with npm provenance statements and
+you will need to use a supported CI/CD provider.
+
+Note that the projen `Release` and `Publisher` components are using `publib` to publish packages,
+which is using npm internally and supports provenance statements independently of the package manager used.
 
 ---
 
