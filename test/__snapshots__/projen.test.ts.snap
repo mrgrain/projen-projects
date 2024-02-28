@@ -868,6 +868,7 @@ tsconfig.tsbuildinfo
       {
         "name": "projen",
         "type": "peer",
+        "version": "0.x >=0.75.0",
       },
     ],
   },
@@ -1301,7 +1302,7 @@ SOFTWARE.
     "main": "lib/index.js",
     "name": "@mrgrain/test",
     "peerDependencies": {
-      "projen": "*",
+      "projen": "0.x >=0.75.0",
     },
     "publishConfig": {
       "access": "public",

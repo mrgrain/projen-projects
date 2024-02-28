@@ -18,7 +18,11 @@ export class ProjenProject extends cdk.JsiiProject {
       release,
       automation,
       dependencies({
+        projenVersion: options.projenVersion ?? '0.x >=0.75.0',
         devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec', 'jsii-docgen@^10'],
+        peerDependencyOptions: {
+          pinnedDevDependency: false,
+        },
       }),
       forceDefaults({
         author: options.authorName,
@@ -27,6 +31,7 @@ export class ProjenProject extends cdk.JsiiProject {
         projenrcTs: true,
         jsiiVersion: '5.3.x',
         typescriptVersion: '5.3.x',
+        projenVersion: undefined,
       }),
     )(options);
 

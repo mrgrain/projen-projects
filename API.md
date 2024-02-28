@@ -7959,7 +7959,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | The projen version constraint that is supported by this project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.publishToGo">publishToGo</a></code> | <code>projen.cdk.JsiiGoTarget</code> | Publish Go bindings to a git repository. |
@@ -9434,9 +9434,9 @@ public readonly projenVersion: string;
 ```
 
 - *Type:* string
-- *Default:* Defaults to the latest version.
+- *Default:* "0.x >=0.75.0"
 
-Version of projen to install.
+The projen version constraint that is supported by this project.
 
 ---
 

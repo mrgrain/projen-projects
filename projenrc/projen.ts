@@ -1,5 +1,5 @@
 import path from 'path';
-import { Stability } from '@jsii/spec';
+import { PrimitiveType, Stability } from '@jsii/spec';
 import { Struct } from '@mrgrain/jsii-struct-builder';
 import { Component, typescript } from 'projen';
 import { ExtendedStruct } from './extended-struct';
@@ -24,6 +24,16 @@ export class ProjenProjectOptionsBuilder extends Component {
       .automationConfig()
       .logoSystem()
       .withoutDeprecated()
-      .withStability(Stability.Stable);
+      .withStability(Stability.Stable)
+      .omit('projenVersion')
+      .add({
+        name: 'projenVersion',
+        type: { primitive: PrimitiveType.String },
+        optional: true,
+        docs: {
+          default: '"0.x >=0.75.0"',
+          summary: 'The projen version constraint that is supported by this project',
+        },
+      });
   }
 }
