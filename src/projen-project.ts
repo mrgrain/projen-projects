@@ -20,6 +20,7 @@ export class ProjenProject extends cdk.JsiiProject {
       dependencies({
         projenVersion: options.projenVersion ?? '0.x >=0.75.0',
         devDeps: ['@mrgrain/jsii-struct-builder', '@jsii/spec', 'jsii-docgen@^10'],
+        peerDeps: ['constructs@^10.0.0'],
         peerDependencyOptions: {
           pinnedDevDependency: false,
         },

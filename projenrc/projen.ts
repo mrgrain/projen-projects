@@ -24,7 +24,6 @@ export class ProjenProjectOptionsBuilder extends Component {
       .automationConfig()
       .logoSystem()
       .withoutDeprecated()
-      .withStability(Stability.Stable)
       .omit('projenVersion')
       .add({
         name: 'projenVersion',
@@ -34,6 +33,7 @@ export class ProjenProjectOptionsBuilder extends Component {
           default: '"0.x >=0.75.0"',
           summary: 'The projen version constraint that is supported by this project',
         },
-      });
+      })
+      .withStability(Stability.Stable);
   }
 }

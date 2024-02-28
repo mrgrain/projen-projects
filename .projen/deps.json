@@ -100,6 +100,11 @@
       "type": "build"
     },
     {
+      "name": "constructs",
+      "version": "^10.0.0",
+      "type": "peer"
+    },
+    {
       "name": "projen",
       "version": "0.x >=0.75.0",
       "type": "peer"

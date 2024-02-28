@@ -994,6 +994,7 @@ export interface ProjenProjectOptions {
   /**
    * The projen version constraint that is supported by this project
    * @default "0.x >=0.75.0"
+   * @stability stable
    */
   readonly projenVersion?: string;
 }
