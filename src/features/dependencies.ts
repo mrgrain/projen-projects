@@ -6,17 +6,23 @@ export interface UpgradeDependenciesTrait {
   readonly upgradesSchedule?: TypeScriptProjectOptions['upgradesSchedule'];
 }
 
-export type DependenciesTrait = Pick<TypeScriptProjectOptions, 'deps' | 'devDeps' | 'peerDeps'>;
+export interface DependenciesTrait extends Pick<TypeScriptProjectOptions, 'deps' | 'devDeps' | 'peerDeps' | 'peerDependencyOptions'> {
+  projenVersion?: string;
+}
 
 export function makeMiddleware({
   deps = [],
   devDeps = [],
   peerDeps = [],
+  projenVersion,
+  peerDependencyOptions = {},
 }: DependenciesTrait = {}): OptionsMiddleware<UpgradeDependenciesTrait> {
+  const projenDep = projenVersion ? `projen@${projenVersion}` : 'projen';
+
   return (options) => deepMerge({
     deps: [...deps],
     devDeps: ['mrpj', ...devDeps],
-    peerDeps: ['projen', ...peerDeps],
+    peerDeps: [projenDep, ...peerDeps],
     depsUpgradeOptions: {
       types: [
         DependencyType.RUNTIME,
@@ -26,6 +32,9 @@ export function makeMiddleware({
       workflowOptions: {
         schedule: options.upgradesSchedule ?? javascript.UpgradeDependenciesSchedule.WEEKLY,
       },
+    },
+    peerDependencyOptions: {
+      ...peerDependencyOptions,
     },
   }, options);
 };

@@ -218,12 +218,6 @@ export interface ProjenProjectOptions {
    */
   readonly pullRequestTemplate?: boolean;
   /**
-   * Version of projen to install.
-   * @default - Defaults to the latest version.
-   * @stability stable
-   */
-  readonly projenVersion?: string;
-  /**
    * Options for .projenrc.js.
    * @default - default options
    * @stability stable
@@ -997,4 +991,10 @@ export interface ProjenProjectOptions {
    * @stability stable
    */
   readonly wordmarkOptions?: logo.WordmarkOptions;
+  /**
+   * The projen version constraint that is supported by this project
+   * @default "0.x >=0.75.0"
+   * @stability stable
+   */
+  readonly projenVersion?: string;
 }

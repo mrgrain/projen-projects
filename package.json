@@ -60,7 +60,8 @@
     "typescript": "5.3.x"
   },
   "peerDependencies": {
-    "projen": "^0.79.7"
+    "constructs": "^10.0.0",
+    "projen": "0.x >=0.75.0"
   },
   "main": "lib/index.js",
   "license": "MIT",
