@@ -36,7 +36,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@jsii/spec": "^1.94.0",
+    "@jsii/spec": "^1.95.0",
     "@mrgrain/jsii-struct-builder": "^0.7.17",
     "@types/jest": "^27",
     "@types/node": "^18",
@@ -49,11 +49,11 @@
     "jest": "^29",
     "jest-junit": "^15",
     "jsii": "5.3.x",
-    "jsii-diff": "^1.94.0",
+    "jsii-diff": "^1.95.0",
     "jsii-docgen": "^10",
-    "jsii-pacmak": "^1.94.0",
+    "jsii-pacmak": "^1.95.0",
     "jsii-rosetta": "5.3.x",
-    "projen": "^0.80.5",
+    "projen": "^0.80.10",
     "standard-version": "^9",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
