@@ -24,7 +24,7 @@ export interface ConstructProjectOptions {
    */
   readonly lambdaAutoDiscover?: boolean;
   /**
-   * Automatically discovers and creates integration tests for each `.integ.ts` file in under your test directory.
+   * Automatically discovers and creates integration tests for each `.integ.ts` file under your test directory.
    * @default true
    * @stability stable
    */
