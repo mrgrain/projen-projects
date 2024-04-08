@@ -5110,7 +5110,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
@@ -5172,7 +5172,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
-| <code><a href="#mrpj.ConstructProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
@@ -5532,16 +5531,15 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowTriggers`<sup>Optional</sup> <a name="buildWorkflowTriggers" id="mrpj.ConstructProjectOptions.property.buildWorkflowTriggers"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="mrpj.ConstructProjectOptions.property.buildWorkflowOptions"></a>
 
 ```typescript
-public readonly buildWorkflowTriggers: Triggers;
+public readonly buildWorkflowOptions: BuildWorkflowOptions;
 ```
 
-- *Type:* projen.github.workflows.Triggers
-- *Default:* "{ pullRequest: {}, workflowDispatch: {} }"
+- *Type:* projen.javascript.BuildWorkflowOptions
 
-Build workflow triggers.
+Options for PR build workflow.
 
 ---
 
@@ -6407,25 +6405,6 @@ public readonly minNodeVersion: string;
 - *Default:* no "engines" specified
 
 Minimum Node.js version to require via package.json `engines` (inclusive).
-
----
-
-##### `mutableBuild`<sup>Optional</sup> <a name="mutableBuild" id="mrpj.ConstructProjectOptions.property.mutableBuild"></a>
-
-```typescript
-public readonly mutableBuild: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically update files modified during builds to pull-request branches.
-
-This means
-that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-before a PR is merged.
-
-Implies that PR builds do not have anti-tamper checks.
 
 ---
 
@@ -7876,7 +7855,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
@@ -7929,7 +7908,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
-| <code><a href="#mrpj.ProjenProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -8263,16 +8241,15 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowTriggers`<sup>Optional</sup> <a name="buildWorkflowTriggers" id="mrpj.ProjenProjectOptions.property.buildWorkflowTriggers"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="mrpj.ProjenProjectOptions.property.buildWorkflowOptions"></a>
 
 ```typescript
-public readonly buildWorkflowTriggers: Triggers;
+public readonly buildWorkflowOptions: BuildWorkflowOptions;
 ```
 
-- *Type:* projen.github.workflows.Triggers
-- *Default:* "{ pullRequest: {}, workflowDispatch: {} }"
+- *Type:* projen.javascript.BuildWorkflowOptions
 
-Build workflow triggers.
+Options for PR build workflow.
 
 ---
 
@@ -9001,25 +8978,6 @@ public readonly minNodeVersion: string;
 - *Default:* no "engines" specified
 
 Minimum Node.js version to require via package.json `engines` (inclusive).
-
----
-
-##### `mutableBuild`<sup>Optional</sup> <a name="mutableBuild" id="mrpj.ProjenProjectOptions.property.mutableBuild"></a>
-
-```typescript
-public readonly mutableBuild: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically update files modified during builds to pull-request branches.
-
-This means
-that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-before a PR is merged.
-
-Implies that PR builds do not have anti-tamper checks.
 
 ---
 
@@ -10289,7 +10247,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.buildWorkflowTriggers">buildWorkflowTriggers</a></code> | <code>projen.github.workflows.Triggers</code> | Build workflow triggers. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
@@ -10337,7 +10295,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Minimum node.js version to require via `engines` (inclusive). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | Minimum Node.js version to require via package.json `engines` (inclusive). |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.mutableBuild">mutableBuild</a></code> | <code>boolean</code> | Automatically update files modified during builds to pull-request branches. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -10654,16 +10611,15 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowTriggers`<sup>Optional</sup> <a name="buildWorkflowTriggers" id="mrpj.TypeScriptProjectOptions.property.buildWorkflowTriggers"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="mrpj.TypeScriptProjectOptions.property.buildWorkflowOptions"></a>
 
 ```typescript
-public readonly buildWorkflowTriggers: Triggers;
+public readonly buildWorkflowOptions: BuildWorkflowOptions;
 ```
 
-- *Type:* projen.github.workflows.Triggers
-- *Default:* "{ pullRequest: {}, workflowDispatch: {} }"
+- *Type:* projen.javascript.BuildWorkflowOptions
 
-Build workflow triggers.
+Options for PR build workflow.
 
 ---
 
@@ -11321,25 +11277,6 @@ public readonly minNodeVersion: string;
 - *Default:* no "engines" specified
 
 Minimum Node.js version to require via package.json `engines` (inclusive).
-
----
-
-##### `mutableBuild`<sup>Optional</sup> <a name="mutableBuild" id="mrpj.TypeScriptProjectOptions.property.mutableBuild"></a>
-
-```typescript
-public readonly mutableBuild: boolean;
-```
-
-- *Type:* boolean
-- *Default:* true
-
-Automatically update files modified during builds to pull-request branches.
-
-This means
-that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-before a PR is merged.
-
-Implies that PR builds do not have anti-tamper checks.
 
 ---
 
