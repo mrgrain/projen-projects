@@ -265,17 +265,6 @@ export interface ProjenProjectOptions {
    */
   readonly npmignoreEnabled?: boolean;
   /**
-   * Automatically update files modified during builds to pull-request branches.
-   * This means
-   * that any files synthesized by projen or e.g. test snapshots will always be up-to-date
-   * before a PR is merged.
-   *
-   * Implies that PR builds do not have anti-tamper checks.
-   * @default true
-   * @stability stable
-   */
-  readonly mutableBuild?: boolean;
-  /**
    * Jest options.
    * @default - default options
    * @stability stable
@@ -355,11 +344,10 @@ export interface ProjenProjectOptions {
    */
   readonly bundlerOptions?: javascript.BundlerOptions;
   /**
-   * Build workflow triggers.
-   * @default "{ pullRequest: {}, workflowDispatch: {} }"
+   * Options for PR build workflow.
    * @stability stable
    */
-  readonly buildWorkflowTriggers?: github.workflows.Triggers;
+  readonly buildWorkflowOptions?: javascript.BuildWorkflowOptions;
   /**
    * Define a GitHub workflow for building PRs.
    * @default - true if not a subproject
