@@ -360,7 +360,7 @@ export interface ConstructProjectOptions {
   readonly projenrcJs?: boolean;
   /**
    * Indicates of "projen" should be installed as a devDependency.
-   * @default true
+   * @default - true if not a subproject
    * @stability stable
    */
   readonly projenDevDependency?: boolean;
