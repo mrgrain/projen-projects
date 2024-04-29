@@ -455,7 +455,9 @@ jobs:
           overwrite: true
   release_github:
     name: Publish to GitHub Releases
-    needs: release
+    needs:
+      - release
+      - release_npm
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -707,6 +709,7 @@ tsconfig.tsbuildinfo
 .node-version
 /.gitattributes
 /.projenrc.ts
+/projenrc
 ",
   ".nvmrc": "v18
 ",
@@ -1727,7 +1730,9 @@ jobs:
           overwrite: true
   release_github:
     name: Publish to GitHub Releases
-    needs: release
+    needs:
+      - release
+      - release_npm
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -1979,6 +1984,7 @@ tsconfig.tsbuildinfo
 .node-version
 /.gitattributes
 /.projenrc.ts
+/projenrc
 ",
   ".nvmrc": "v18
 ",
