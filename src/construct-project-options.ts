@@ -122,7 +122,7 @@ export interface ConstructProjectOptions {
    * (e.g. `~5.0.0`).
    * @default "1.x"
    * @stability stable
-   * @pjnew "~5.0.0"
+   * @pjnew "~5.4.0"
    */
   readonly jsiiVersion?: string;
   /**
