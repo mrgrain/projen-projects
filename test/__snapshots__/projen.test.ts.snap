@@ -115,6 +115,9 @@ exports[`default snapshot 1`] = `
         "error",
         "always",
       ],
+      "import/no-duplicates": [
+        "error",
+      ],
       "import/no-extraneous-dependencies": [
         "error",
         {
@@ -165,9 +168,6 @@ exports[`default snapshot 1`] = `
         },
       ],
       "no-bitwise": [
-        "error",
-      ],
-      "no-duplicate-imports": [
         "error",
       ],
       "no-multi-spaces": [
@@ -787,12 +787,12 @@ tsconfig.tsbuildinfo
       {
         "name": "@typescript-eslint/eslint-plugin",
         "type": "build",
-        "version": "^6",
+        "version": "^7",
       },
       {
         "name": "@typescript-eslint/parser",
         "type": "build",
-        "version": "^6",
+        "version": "^7",
       },
       {
         "name": "constructs",
@@ -1237,8 +1237,8 @@ SOFTWARE.
       "@mrgrain/jsii-struct-builder": "*",
       "@types/jest": "*",
       "@types/node": "^18",
-      "@typescript-eslint/eslint-plugin": "^6",
-      "@typescript-eslint/parser": "^6",
+      "@typescript-eslint/eslint-plugin": "^7",
+      "@typescript-eslint/parser": "^7",
       "constructs": "^10.0.0",
       "eslint": "^8",
       "eslint-import-resolver-typescript": "*",
