@@ -796,6 +796,11 @@ tsconfig.tsbuildinfo
         "version": "^7",
       },
       {
+        "name": "commit-and-tag-version",
+        "type": "build",
+        "version": "^12",
+      },
+      {
         "name": "constructs",
         "type": "build",
         "version": "^10.0.0",
@@ -852,11 +857,6 @@ tsconfig.tsbuildinfo
       {
         "name": "projen",
         "type": "build",
-      },
-      {
-        "name": "standard-version",
-        "type": "build",
-        "version": "^9",
       },
       {
         "name": "ts-jest",
@@ -940,6 +940,7 @@ tsconfig.tsbuildinfo
         "description": "Bumps version based on latest git tag and generates a changelog entry",
         "env": {
           "BUMPFILE": "dist/version.txt",
+          "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
           "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(chore|feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
@@ -1162,6 +1163,7 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "description": "Restores version to 0.0.0",
         "env": {
           "BUMPFILE": "dist/version.txt",
+          "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
           "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(chore|feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
@@ -1189,7 +1191,7 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii mrpj projen standard-version ts-jest ts-node typescript",
+            "exec": "yarn upgrade @jsii/spec @mrgrain/jsii-struct-builder @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii mrpj projen ts-jest ts-node typescript",
           },
           {
             "exec": "npx projen",
@@ -1245,6 +1247,7 @@ SOFTWARE.
       "@types/node": "^18",
       "@typescript-eslint/eslint-plugin": "^7",
       "@typescript-eslint/parser": "^7",
+      "commit-and-tag-version": "^12",
       "constructs": "^10.0.0",
       "eslint": "^8",
       "eslint-import-resolver-typescript": "*",
@@ -1258,7 +1261,6 @@ SOFTWARE.
       "jsii-rosetta": "5.3.x",
       "mrpj": "*",
       "projen": "*",
-      "standard-version": "^9",
       "ts-jest": "*",
       "ts-node": "*",
       "typescript": "5.3.x",
