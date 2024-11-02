@@ -5,7 +5,7 @@ const project = new ProjenProject({
   // Repo info
   repo: 'mrgrain/projen-projects',
   name: 'mrpj',
-  description: 'Opinionated projen project types.',
+  description: 'Opinionated projen project types for everyone.',
   authorName: 'Momo Kornher',
   authorAddress: 'https://moritzkornher.de',
 
