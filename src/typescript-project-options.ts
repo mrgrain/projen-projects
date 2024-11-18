@@ -433,6 +433,29 @@ export interface TypeScriptProjectOptions {
    */
   readonly npmDistTag?: string;
   /**
+   * A shell command to control the next version to release.
+   * If present, this shell command will be run before the bump is executed, and
+   * it determines what version to release. It will be executed in the following
+   * environment:
+   *
+   * - Working directory: the project directory.
+   * - `$VERSION`: the current version. Looks like `1.2.3`.
+   * - `$LATEST_TAG`: the most recent tag. Looks like `prefix-v1.2.3`, or may be unset.
+   *
+   * The command should print one of the following to `stdout`:
+   *
+   * - Nothing: the next version number will be determined based on commit history.
+   * - `x.y.z`: the next version number will be `x.y.z`.
+   * - `major|minor|patch`: the next version number will be the current version number
+   *   with the indicated component bumped.
+   *
+   * This setting cannot be specified together with `minMajorVersion`; the invoked
+   * script can be used to achieve the effects of `minMajorVersion`.
+   * @default - The next version will be determined based on the commit history and project settings.
+   * @stability stable
+   */
+  readonly nextVersionCommand?: string;
+  /**
    * Minimal Major version to release.
    * This can be useful to set to 1, as breaking changes before the 1.x major
    * release are not incrementing the major version number.
@@ -456,6 +479,13 @@ export interface TypeScriptProjectOptions {
    * @stability stable
    */
   readonly jsiiReleaseVersion?: string;
+  /**
+   * The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string.
+   * This can be any compatible package version, including the deprecated `standard-version@9`.
+   * @default - A recent version of "commit-and-tag-version"
+   * @stability stable
+   */
+  readonly bumpPackage?: string;
   /**
    * Options for Yarn Berry.
    * @default - Yarn Berry v4 with all default options
