@@ -573,7 +573,7 @@ export interface ProjenProjectOptions {
   readonly repository?: string;
   /**
    * The version of PNPM to use if using PNPM as a package manager.
-   * @default "7"
+   * @default "9"
    * @stability stable
    */
   readonly pnpmVersion?: string;

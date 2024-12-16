@@ -120,9 +120,9 @@ export interface ConstructProjectOptions {
    * NOTE: The jsii compiler releases since 5.0.0 are not semantically versioned
    * and should remain on the same minor, so we recommend using a `~` dependency
    * (e.g. `~5.0.0`).
-   * @default "1.x"
+   * @default "~5.6.0"
    * @stability stable
-   * @pjnew "~5.5.0"
+   * @pjnew "~5.6.0"
    */
   readonly jsiiVersion?: string;
   /**
@@ -708,7 +708,7 @@ export interface ConstructProjectOptions {
   readonly repository?: string;
   /**
    * The version of PNPM to use if using PNPM as a package manager.
-   * @default "7"
+   * @default "9"
    * @stability stable
    */
   readonly pnpmVersion?: string;
