@@ -56,6 +56,16 @@ export interface ConstructProjectOptions {
    */
   readonly cdkVersionPinning?: boolean;
   /**
+   * Version range of the AWS CDK CLI to depend on.
+   * Can be either a specific version, or an NPM version range.
+   *
+   * By default, the latest 2.x version will be installed; you can use this
+   * option to restrict it to a specific version or version range.
+   * @default "^2"
+   * @stability stable
+   */
+  readonly cdkCliVersion?: string;
+  /**
    * Install the assertions library?
    * Only needed for CDK 1.x. If using CDK 2.x then
    * assertions is already included in 'aws-cdk-lib'
@@ -883,6 +893,12 @@ export interface ConstructProjectOptions {
    * @stability stable
    */
   readonly codeArtifactOptions?: javascript.CodeArtifactOptions;
+  /**
+   * The version of Bun to use if using Bun as a package manager.
+   * @default "latest"
+   * @stability stable
+   */
+  readonly bunVersion?: string;
   /**
    * List of dependencies to bundle into this module.
    * These modules will be
