@@ -772,7 +772,7 @@ tsconfig.tsbuildinfo
       {
         "name": "jest-junit",
         "type": "build",
-        "version": "^15",
+        "version": "^16",
       },
       {
         "name": "jest",
@@ -1134,7 +1134,7 @@ SOFTWARE.
       "eslint-import-resolver-typescript": "*",
       "eslint-plugin-import": "*",
       "jest": "27",
-      "jest-junit": "^15",
+      "jest-junit": "^16",
       "mrpj": "*",
       "projen": "*",
       "ts-jest": "*",
@@ -2071,7 +2071,7 @@ tsconfig.tsbuildinfo
       {
         "name": "jest-junit",
         "type": "build",
-        "version": "^15",
+        "version": "^16",
       },
       {
         "name": "mrpj",
@@ -2428,7 +2428,7 @@ SOFTWARE.
       "eslint-import-resolver-typescript": "*",
       "eslint-plugin-import": "*",
       "jest": "*",
-      "jest-junit": "^15",
+      "jest-junit": "^16",
       "mrpj": "*",
       "projen": "*",
       "ts-jest": "*",

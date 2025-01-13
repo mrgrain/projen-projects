@@ -847,7 +847,7 @@ tsconfig.tsbuildinfo
       {
         "name": "jest-junit",
         "type": "build",
-        "version": "^15",
+        "version": "^16",
       },
       {
         "name": "jsii-diff",
@@ -1279,7 +1279,7 @@ SOFTWARE.
       "eslint-import-resolver-typescript": "*",
       "eslint-plugin-import": "*",
       "jest": "*",
-      "jest-junit": "^15",
+      "jest-junit": "^16",
       "jsii": "5.3.x",
       "jsii-diff": "*",
       "jsii-docgen": "^10",
