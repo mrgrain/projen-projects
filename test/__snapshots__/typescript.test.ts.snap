@@ -1232,7 +1232,7 @@ SOFTWARE.
       "inlineSourceMap": true,
       "inlineSources": true,
       "lib": [
-        "es2019",
+        "es2020",
       ],
       "module": "CommonJS",
       "noEmitOnError": false,
@@ -1247,7 +1247,7 @@ SOFTWARE.
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "stripInternal": true,
-      "target": "ES2019",
+      "target": "ES2020",
     },
     "exclude": [
       "node_modules",
@@ -1268,7 +1268,7 @@ SOFTWARE.
       "inlineSourceMap": true,
       "inlineSources": true,
       "lib": [
-        "es2019",
+        "es2020",
       ],
       "module": "CommonJS",
       "noEmitOnError": false,
@@ -1285,7 +1285,7 @@ SOFTWARE.
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "stripInternal": true,
-      "target": "ES2019",
+      "target": "ES2020",
     },
     "exclude": [],
     "include": [
@@ -2526,7 +2526,7 @@ SOFTWARE.
       "inlineSourceMap": true,
       "inlineSources": true,
       "lib": [
-        "es2019",
+        "es2020",
       ],
       "module": "CommonJS",
       "noEmitOnError": false,
@@ -2541,7 +2541,7 @@ SOFTWARE.
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "stripInternal": true,
-      "target": "ES2019",
+      "target": "ES2020",
     },
     "exclude": [
       "node_modules",
@@ -2562,7 +2562,7 @@ SOFTWARE.
       "inlineSourceMap": true,
       "inlineSources": true,
       "lib": [
-        "es2019",
+        "es2020",
       ],
       "module": "CommonJS",
       "noEmitOnError": false,
@@ -2579,7 +2579,7 @@ SOFTWARE.
       "strictNullChecks": true,
       "strictPropertyInitialization": true,
       "stripInternal": true,
-      "target": "ES2019",
+      "target": "ES2020",
     },
     "exclude": [],
     "include": [
