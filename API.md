@@ -736,6 +736,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.ConstructProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.ConstructProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
 | <code><a href="#mrpj.ConstructProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
 | <code><a href="#mrpj.ConstructProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
@@ -1270,6 +1271,16 @@ public readonly autoMerge: AutoMerge;
 - *Type:* projen.github.AutoMerge
 
 Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.ConstructProject.property.biome"></a>
+
+```typescript
+public readonly biome: Biome;
+```
+
+- *Type:* projen.javascript.Biome
 
 ---
 
@@ -2280,6 +2291,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ProjenProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ProjenProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.ProjenProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.ProjenProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
 | <code><a href="#mrpj.ProjenProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
 | <code><a href="#mrpj.ProjenProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
@@ -2813,6 +2825,16 @@ public readonly autoMerge: AutoMerge;
 - *Type:* projen.github.AutoMerge
 
 Component that sets up mergify for merging approved pull requests.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.ProjenProject.property.biome"></a>
+
+```typescript
+public readonly biome: Biome;
+```
+
+- *Type:* projen.javascript.Biome
 
 ---
 
@@ -4052,6 +4074,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.TypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.TypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.TypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#mrpj.TypeScriptProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
 | <code><a href="#mrpj.TypeScriptProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
 | <code><a href="#mrpj.TypeScriptProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
@@ -4588,6 +4611,16 @@ Component that sets up mergify for merging approved pull requests.
 
 ---
 
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.TypeScriptProject.property.biome"></a>
+
+```typescript
+public readonly biome: Biome;
+```
+
+- *Type:* projen.javascript.Biome
+
+---
+
 ##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="mrpj.TypeScriptProject.property.buildWorkflow"></a>
 
 ```typescript
@@ -5119,6 +5152,8 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
@@ -5507,6 +5542,32 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.ConstructProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
+
+---
+
+##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="mrpj.ConstructProjectOptions.property.biomeOptions"></a>
+
+```typescript
+public readonly biomeOptions: BiomeOptions;
+```
+
+- *Type:* projen.javascript.BiomeOptions
+- *Default:* default options
+
+Biome options.
 
 ---
 
@@ -7966,6 +8027,8 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
@@ -8318,6 +8381,32 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.ProjenProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
+
+---
+
+##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="mrpj.ProjenProjectOptions.property.biomeOptions"></a>
+
+```typescript
+public readonly biomeOptions: BiomeOptions;
+```
+
+- *Type:* projen.javascript.BiomeOptions
+- *Default:* default options
+
+Biome options.
 
 ---
 
@@ -10441,6 +10530,8 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
@@ -10771,6 +10862,32 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="mrpj.TypeScriptProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
+
+---
+
+##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="mrpj.TypeScriptProjectOptions.property.biomeOptions"></a>
+
+```typescript
+public readonly biomeOptions: BiomeOptions;
+```
+
+- *Type:* projen.javascript.BiomeOptions
+- *Default:* default options
+
+Biome options.
 
 ---
 
