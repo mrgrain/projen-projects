@@ -1,4 +1,5 @@
-import { OptionsMiddleware, deepMerge } from '../utils';
+import type { OptionsMiddleware } from '../utils';
+import { deepMerge } from '../utils';
 
 export interface RepoInfoTrait {
   readonly repo: string;

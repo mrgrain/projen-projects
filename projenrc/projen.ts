@@ -1,7 +1,8 @@
 import path from 'path';
 import { PrimitiveType, Stability } from '@jsii/spec';
 import { Struct } from '@mrgrain/jsii-struct-builder';
-import { Component, typescript } from 'projen';
+import type { typescript } from 'projen';
+import { Component } from 'projen';
 import { ExtendedStruct } from './extended-struct';
 
 export class ProjenProjectOptionsBuilder extends Component {

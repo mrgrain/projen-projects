@@ -1,7 +1,8 @@
 import path from 'path';
 import { Stability } from '@jsii/spec';
 import { Struct } from '@mrgrain/jsii-struct-builder';
-import { Component, typescript } from 'projen';
+import type { typescript } from 'projen';
+import { Component } from 'projen';
 import { ExtendedStruct } from './extended-struct';
 
 export class ConstructProjectOptionsBuilder extends Component {

@@ -1,4 +1,5 @@
-import { Project, SourceCode, SourceCodeOptions } from 'projen';
+import type { Project, SourceCodeOptions } from 'projen';
+import { SourceCode } from 'projen';
 
 /**
  * Options for SvgFile
