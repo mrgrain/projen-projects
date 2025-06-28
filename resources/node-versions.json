@@ -1,0 +1,66 @@
+[
+  {
+    "major": "6",
+    "version": "6.17.1",
+    "stable": true,
+    "lts": "Boron"
+  },
+  {
+    "major": "8",
+    "version": "8.17.0",
+    "stable": true,
+    "lts": "Carbon"
+  },
+  {
+    "major": "10",
+    "version": "10.24.1",
+    "stable": true,
+    "lts": "Dubnium"
+  },
+  {
+    "major": "12",
+    "version": "12.22.12",
+    "stable": true,
+    "lts": "Erbium"
+  },
+  {
+    "major": "13",
+    "version": "13.14.0",
+    "stable": true
+  },
+  {
+    "major": "14",
+    "version": "14.21.3",
+    "stable": true,
+    "lts": "Fermium"
+  },
+  {
+    "major": "16",
+    "version": "16.20.2",
+    "stable": true,
+    "lts": "Gallium"
+  },
+  {
+    "major": "18",
+    "version": "18.20.8",
+    "stable": true,
+    "lts": "Hydrogen"
+  },
+  {
+    "major": "20",
+    "version": "20.19.3",
+    "stable": true,
+    "lts": "Iron"
+  },
+  {
+    "major": "22",
+    "version": "22.17.0",
+    "stable": true,
+    "lts": "Jod"
+  },
+  {
+    "major": "24",
+    "version": "24.3.0",
+    "stable": true
+  }
+]

@@ -1,5 +1,5 @@
 import { typescript } from 'projen';
-import { automation, dependencies, ensureDependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
+import { automation, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import type { SvgFile, Wordmark } from './logo';
 import type { TypeScriptProjectOptions } from './typescript-project-options';
 import { configureFeatures, defaultOptions } from './utils';
@@ -17,9 +17,10 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
       release,
       automation,
       dependencies(),
-      forceDefaults({
+      forceOptions({
         sampleCode: false,
         projenrcTs: true,
+        workflowNodeVersion: 'lts/-2',
       }),
     )(options);
 

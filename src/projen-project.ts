@@ -1,5 +1,5 @@
 import { cdk } from 'projen';
-import { automation, dependencies, ensureDependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
+import { automation, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import type { SvgFile, Wordmark } from './logo';
 import type { ProjenProjectOptions } from './projen-project-options';
 import { configureFeatures, defaultOptions } from './utils';
@@ -25,14 +25,15 @@ export class ProjenProject extends cdk.JsiiProject {
           pinnedDevDependency: false,
         },
       }),
-      forceDefaults({
+      forceOptions({
         author: options.authorName,
         authorUrl: undefined,
         sampleCode: false,
         projenrcTs: true,
-        jsiiVersion: '5.3.x',
-        typescriptVersion: '5.3.x',
+        jsiiVersion: '5.8.x',
+        typescriptVersion: '5.8.x',
         projenVersion: undefined,
+        workflowNodeVersion: 'lts/-2',
       }),
     )(options);
 
