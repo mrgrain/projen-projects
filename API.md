@@ -8019,7 +8019,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
@@ -8265,18 +8264,6 @@ public readonly authorOrganization: boolean;
 - *Type:* boolean
 
 Is the author an organization.
-
----
-
-##### `authorUrl`<sup>Optional</sup> <a name="authorUrl" id="mrpj.ProjenProjectOptions.property.authorUrl"></a>
-
-```typescript
-public readonly authorUrl: string;
-```
-
-- *Type:* string
-
-Author's URL / Website.
 
 ---
 

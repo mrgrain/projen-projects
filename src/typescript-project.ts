@@ -1,8 +1,8 @@
 import { typescript } from 'projen';
-import { automation, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
+import { automation, defaultOptions, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
 import type { SvgFile, Wordmark } from './logo';
 import type { TypeScriptProjectOptions } from './typescript-project-options';
-import { configureFeatures, defaultOptions } from './utils';
+import { configureFeatures, mergeOptions } from './utils';
 
 /**
  * @pjid ts
@@ -12,15 +12,18 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
   public readonly wordmark?: Wordmark;
 
   public constructor(options: TypeScriptProjectOptions) {
-    const opts = defaultOptions<TypeScriptProjectOptions>(
+    const opts = mergeOptions<TypeScriptProjectOptions>(
       packageInfo(),
       release,
       automation,
       dependencies(),
-      forceOptions({
+      defaultOptions<typescript.TypeScriptProjectOptions>({
+        workflowNodeVersion: 'lts/-2',
+        typescriptVersion: '5.8.x',
+      }),
+      forceOptions<typescript.TypeScriptProjectOptions>({
         sampleCode: false,
         projenrcTs: true,
-        workflowNodeVersion: 'lts/-2',
       }),
     )(options);
 

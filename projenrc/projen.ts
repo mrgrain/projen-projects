@@ -17,7 +17,7 @@ export class ProjenProjectOptionsBuilder extends Component {
       },
     })
       .mixin(Struct.fromFqn('projen.cdk.JsiiProjectOptions'))
-      .forcedDefaults('projenrcTs', 'jsiiVersion', 'typescriptVersion', 'sampleCode')
+      .forcedDefaults('author', 'authorUrl', 'sampleCode', 'projenrcTs', 'jsiiVersion', 'typescriptVersion')
       .packageInfo({
         isJsii: true,
       })

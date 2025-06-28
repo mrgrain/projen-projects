@@ -71,9 +71,9 @@ export function isPlainObject(x: any): x is object {
 }
 
 /**
- * Middleware stack to set default options
+ * Middleware stack to create options
  */
-export function defaultOptions<T>(...middleware: OptionsMiddleware<T>[]): OptionsMiddleware<T> {
+export function mergeOptions<T>(...middleware: OptionsMiddleware<T>[]): OptionsMiddleware<T> {
   return (options: T) => middleware.reduce((opts, mw) => mw(opts), options);
 }
 export type OptionsMiddleware<T> = (options: T) => any;
