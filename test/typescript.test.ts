@@ -32,3 +32,12 @@ test('can set custom workflow version', () => {
   expect(synthSnapshot(project)['.github/workflows/build.yml']).toContain('lts/-1');
 });
 
+test('does not have a projen peer dep', () => {
+  const project = new TypeScriptProject({
+    authorName: 'Test Author',
+    repo: 'mrgrain/test',
+  });
+
+  expect(synthSnapshot(project)['package.json'].peerDependencies?.projen).toBeUndefined();
+});
+
