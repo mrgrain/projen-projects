@@ -1,5 +1,6 @@
-import { IConstruct } from 'constructs';
-import { Component, DependencyType, Task } from 'projen';
+import type { IConstruct } from 'constructs';
+import type { Task } from 'projen';
+import { Component, DependencyType } from 'projen';
 
 export class DownloadNodeVersions extends Component {
   public readonly task: Task;
