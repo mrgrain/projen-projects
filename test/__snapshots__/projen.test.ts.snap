@@ -69,6 +69,10 @@ exports[`default snapshot 1`] = `
           "before": false,
         },
       ],
+      "@stylistic/eol-last": [
+        "error",
+        "always",
+      ],
       "@stylistic/indent": [
         "error",
         2,
@@ -140,6 +144,11 @@ exports[`default snapshot 1`] = `
       "@stylistic/space-before-blocks": [
         "error",
       ],
+      "@stylistic/space-in-parens": [
+        "error",
+        "never",
+      ],
+      "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/member-ordering": [
         "error",
         {
@@ -167,10 +176,6 @@ exports[`default snapshot 1`] = `
       ],
       "dot-notation": [
         "error",
-      ],
-      "eol-last": [
-        "error",
-        "always",
       ],
       "import/no-duplicates": [
         "error",
@@ -212,10 +217,6 @@ exports[`default snapshot 1`] = `
       ],
       "no-shadow": [
         "off",
-      ],
-      "space-in-parens": [
-        "error",
-        "never",
       ],
     },
     "settings": {
