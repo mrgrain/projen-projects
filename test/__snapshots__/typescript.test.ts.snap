@@ -804,10 +804,6 @@ tsconfig.tsbuildinfo
         "type": "build",
         "version": "5.8.x",
       },
-      {
-        "name": "projen",
-        "type": "peer",
-      },
     ],
   },
   ".projen/files.json": {
@@ -1195,9 +1191,6 @@ SOFTWARE.
     "license": "MIT",
     "main": "lib/index.js",
     "name": "@mrgrain/test",
-    "peerDependencies": {
-      "projen": "*",
-    },
     "publishConfig": {
       "access": "public",
     },
@@ -2103,10 +2096,6 @@ tsconfig.tsbuildinfo
         "type": "build",
         "version": "5.8.x",
       },
-      {
-        "name": "projen",
-        "type": "peer",
-      },
     ],
   },
   ".projen/files.json": {
@@ -2494,9 +2483,6 @@ SOFTWARE.
     "license": "MIT",
     "main": "lib/index.js",
     "name": "@mrgrain/test",
-    "peerDependencies": {
-      "projen": "*",
-    },
     "publishConfig": {
       "access": "public",
     },

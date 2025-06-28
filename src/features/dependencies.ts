@@ -19,12 +19,12 @@ export function makeMiddleware({
   projenVersion,
   peerDependencyOptions = {},
 }: DependenciesTrait = {}): OptionsMiddleware<UpgradeDependenciesTrait> {
-  const projenDep = projenVersion ? `projen@${projenVersion}` : 'projen';
+  const projenDep = projenVersion ? [`projen@${projenVersion}`] : [];
 
   return (options) => deepMerge({
     deps: [...deps],
     devDeps: ['mrpj', ...devDeps],
-    peerDeps: [projenDep, ...peerDeps],
+    peerDeps: [...projenDep, ...peerDeps],
     depsUpgradeOptions: {
       types: [
         DependencyType.RUNTIME,
