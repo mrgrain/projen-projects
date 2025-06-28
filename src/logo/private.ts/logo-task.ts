@@ -1,4 +1,4 @@
-import { Project } from 'projen';
+import type { Project } from 'projen';
 
 function logoTask(project: Project) {
   const task = project.tasks.tryFind('logo');

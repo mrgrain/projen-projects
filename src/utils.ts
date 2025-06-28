@@ -1,4 +1,4 @@
-import { Project } from 'projen';
+import type { Project } from 'projen';
 
 /**
  * Return a value if the check value is truthy, undefined otherwise.

@@ -1,7 +1,7 @@
 import { cdk } from 'projen';
 import { automation, dependencies, ensureDependencies, eslint, forceDefaults, logo, nodeVersion, packageInfo, preventSelfDependency, release } from './features';
-import { SvgFile, Wordmark } from './logo';
-import { ProjenProjectOptions } from './projen-project-options';
+import type { SvgFile, Wordmark } from './logo';
+import type { ProjenProjectOptions } from './projen-project-options';
 import { configureFeatures, defaultOptions } from './utils';
 
 /**

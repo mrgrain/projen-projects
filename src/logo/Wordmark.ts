@@ -1,6 +1,8 @@
 import * as path from 'path';
-import { Component, Project } from 'projen';
-import { Logo, LogoInfo } from './Logo';
+import type { Project } from 'projen';
+import { Component } from 'projen';
+import type { LogoInfo } from './Logo';
+import { Logo } from './Logo';
 import { logoToPngTask } from './private.ts/logo-task';
 import { SvgFile } from './SvgFile';
 import { deepDefaults, deepMerge } from '../utils';

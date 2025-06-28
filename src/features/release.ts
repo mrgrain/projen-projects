@@ -1,6 +1,7 @@
 import { ReleasableCommits, javascript } from 'projen';
-import { TypeScriptProjectOptions } from '../typescript-project-options';
-import { OptionsMiddleware, deepMerge, noEmpties } from '../utils';
+import type { TypeScriptProjectOptions } from '../typescript-project-options';
+import type { OptionsMiddleware } from '../utils';
+import { deepMerge, noEmpties } from '../utils';
 
 export interface ReleaseOptionsTrait {
   readonly projenrcTsOptions?: TypeScriptProjectOptions['projenrcTsOptions'];

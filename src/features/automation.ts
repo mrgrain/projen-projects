@@ -1,7 +1,9 @@
 import { github } from 'projen';
-import { RepoInfoTrait, githubUser } from './package-info';
+import type { RepoInfoTrait } from './package-info';
+import { githubUser } from './package-info';
 import { RELEASABLE_COMMIT_TYPES_DEFAULT } from './release';
-import { OptionsMiddleware, deepMerge, ifSet, noEmpties } from '../utils';
+import type { OptionsMiddleware } from '../utils';
+import { deepMerge, ifSet, noEmpties } from '../utils';
 
 export interface AutomationOptionsTrait extends RepoInfoTrait {
   readonly automationAppName?: string;

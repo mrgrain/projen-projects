@@ -1,6 +1,8 @@
-import { DependencyType, Project, javascript } from 'projen';
-import { TypeScriptProjectOptions } from '../typescript-project-options';
-import { FeatureMiddleware, OptionsMiddleware, deepMerge } from '../utils';
+import type { Project } from 'projen';
+import { DependencyType, javascript } from 'projen';
+import type { TypeScriptProjectOptions } from '../typescript-project-options';
+import type { FeatureMiddleware, OptionsMiddleware } from '../utils';
+import { deepMerge } from '../utils';
 
 export interface UpgradeDependenciesTrait {
   readonly upgradesSchedule?: TypeScriptProjectOptions['upgradesSchedule'];

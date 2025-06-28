@@ -1,5 +1,6 @@
-import { Project, TextFile } from 'projen';
-import { FeatureMiddleware } from '../utils';
+import type { Project } from 'projen';
+import { TextFile } from 'projen';
+import type { FeatureMiddleware } from '../utils';
 
 export interface ProjectTrait {
   readonly minNodeVersion?: string;

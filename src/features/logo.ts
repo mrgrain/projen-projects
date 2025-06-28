@@ -1,7 +1,8 @@
-import { Project } from 'projen';
-import { SvgFile, Wordmark } from '../logo';
-import { ProjenProjectOptions } from '../projen-project-options';
-import { FeatureMiddleware, Mutable } from '../utils';
+import type { Project } from 'projen';
+import type { SvgFile } from '../logo';
+import { Wordmark } from '../logo';
+import type { ProjenProjectOptions } from '../projen-project-options';
+import type { FeatureMiddleware, Mutable } from '../utils';
 
 export interface ProjectTrait {
   readonly logo?: SvgFile;

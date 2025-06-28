@@ -1,4 +1,5 @@
-import { CollectionKind, PrimitiveType, Stability } from '@jsii/spec';
+import type { Stability } from '@jsii/spec';
+import { CollectionKind, PrimitiveType } from '@jsii/spec';
 import { ProjenStruct } from '@mrgrain/jsii-struct-builder';
 
 export interface PackageInfoOptions {
