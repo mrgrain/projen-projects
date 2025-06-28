@@ -1,4 +1,5 @@
 import * as builders from './projenrc';
+import { DownloadNodeVersions } from './projenrc/download-node-versions';
 import { ProjenProject, logo } from './src';
 
 const project = new ProjenProject({
@@ -41,5 +42,7 @@ const project = new ProjenProject({
 new builders.ConstructProjectOptionsBuilder(project);
 new builders.ProjenProjectOptionsBuilder(project);
 new builders.TypeScriptProjectOptionsBuilder(project);
+
+new DownloadNodeVersions(project);
 
 project.synth();

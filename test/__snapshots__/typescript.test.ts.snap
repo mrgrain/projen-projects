@@ -305,6 +305,10 @@ jobs:
         with:
           ref: \${{ github.event.pull_request.head.ref }}
           repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files
       - name: build
@@ -424,6 +428,10 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -462,7 +470,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -486,7 +494,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -523,6 +531,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies
@@ -1588,6 +1600,10 @@ jobs:
         with:
           ref: \${{ github.event.pull_request.head.ref }}
           repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files
       - name: build
@@ -1707,6 +1723,10 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -1745,7 +1765,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -1769,7 +1789,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -1806,6 +1826,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies

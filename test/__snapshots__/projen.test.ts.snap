@@ -305,6 +305,10 @@ jobs:
         with:
           ref: \${{ github.event.pull_request.head.ref }}
           repository: \${{ github.event.pull_request.head.repo.full_name }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files
       - name: build
@@ -377,7 +381,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -467,6 +471,10 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -505,7 +513,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -529,7 +537,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: lts/-2
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -580,6 +588,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/-2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies
@@ -793,7 +805,7 @@ tsconfig.tsbuildinfo
       {
         "name": "@types/node",
         "type": "build",
-        "version": "ts5.3",
+        "version": "ts5.8",
       },
       {
         "name": "@typescript-eslint/eslint-plugin",
@@ -853,12 +865,12 @@ tsconfig.tsbuildinfo
       {
         "name": "jsii-rosetta",
         "type": "build",
-        "version": "5.3.x",
+        "version": "5.8.x",
       },
       {
         "name": "jsii",
         "type": "build",
-        "version": "5.3.x",
+        "version": "5.8.x",
       },
       {
         "name": "mrpj",
@@ -879,7 +891,7 @@ tsconfig.tsbuildinfo
       {
         "name": "typescript",
         "type": "build",
-        "version": "5.3.x",
+        "version": "5.8.x",
       },
       {
         "name": "constructs",
@@ -1258,7 +1270,7 @@ SOFTWARE.
       "@mrgrain/jsii-struct-builder": "*",
       "@stylistic/eslint-plugin": "^2",
       "@types/jest": "*",
-      "@types/node": "ts5.3",
+      "@types/node": "ts5.8",
       "@typescript-eslint/eslint-plugin": "^8",
       "@typescript-eslint/parser": "^8",
       "commit-and-tag-version": "^12",
@@ -1268,16 +1280,16 @@ SOFTWARE.
       "eslint-plugin-import": "*",
       "jest": "*",
       "jest-junit": "^16",
-      "jsii": "5.3.x",
+      "jsii": "5.8.x",
       "jsii-diff": "*",
       "jsii-docgen": "^10",
       "jsii-pacmak": "*",
-      "jsii-rosetta": "5.3.x",
+      "jsii-rosetta": "5.8.x",
       "mrpj": "*",
       "projen": "*",
       "ts-jest": "*",
       "ts-node": "*",
-      "typescript": "5.3.x",
+      "typescript": "5.8.x",
     },
     "homepage": "https://github.com/mrgrain/test",
     "jest": {
