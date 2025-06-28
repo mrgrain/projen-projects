@@ -807,11 +807,6 @@ export interface ProjenProjectOptions {
    */
   readonly autoDetectBin?: boolean;
   /**
-   * Author's URL / Website.
-   * @stability stable
-   */
-  readonly authorUrl?: string;
-  /**
    * Is the author an organization.
    * @stability stable
    */

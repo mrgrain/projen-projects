@@ -318,6 +318,7 @@ jobs:
         run: |-
           git add .
           git diff --staged --patch --exit-code > repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUTPUT
+        shell: bash
         working-directory: ./
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
@@ -447,6 +448,7 @@ jobs:
         run: |-
           echo "latest_commit=$(git ls-remote origin -h \${{ github.ref }} | cut -f1)" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+        shell: bash
       - name: Backup artifact permissions
         if: \${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
@@ -544,6 +546,7 @@ jobs:
         run: |-
           git add .
           git diff --staged --patch --exit-code > repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
+        shell: bash
         working-directory: ./
       - name: Upload patch
         if: steps.create_patch.outputs.patch_created
@@ -735,6 +738,7 @@ tsconfig.tsbuildinfo
       {
         "name": "@types/node",
         "type": "build",
+        "version": "ts5.8",
       },
       {
         "name": "@typescript-eslint/eslint-plugin",
@@ -798,6 +802,7 @@ tsconfig.tsbuildinfo
       {
         "name": "typescript",
         "type": "build",
+        "version": "5.8.x",
       },
       {
         "name": "projen",
@@ -1067,7 +1072,7 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,@types/node,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node,typescript",
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node",
           },
           {
             "exec": "yarn install --check-files",
@@ -1125,7 +1130,7 @@ SOFTWARE.
     "devDependencies": {
       "@stylistic/eslint-plugin": "^2",
       "@types/jest": "*",
-      "@types/node": "*",
+      "@types/node": "ts5.8",
       "@typescript-eslint/eslint-plugin": "^8",
       "@typescript-eslint/parser": "^8",
       "commit-and-tag-version": "^12",
@@ -1139,7 +1144,7 @@ SOFTWARE.
       "projen": "*",
       "ts-jest": "*",
       "ts-node": "*",
-      "typescript": "*",
+      "typescript": "5.8.x",
     },
     "homepage": "https://github.com/mrgrain/test",
     "jest": {
@@ -1613,6 +1618,7 @@ jobs:
         run: |-
           git add .
           git diff --staged --patch --exit-code > repo.patch || echo "self_mutation_happened=true" >> $GITHUB_OUTPUT
+        shell: bash
         working-directory: ./
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
@@ -1742,6 +1748,7 @@ jobs:
         run: |-
           echo "latest_commit=$(git ls-remote origin -h \${{ github.ref }} | cut -f1)" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+        shell: bash
       - name: Backup artifact permissions
         if: \${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
@@ -1839,6 +1846,7 @@ jobs:
         run: |-
           git add .
           git diff --staged --patch --exit-code > repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
+        shell: bash
         working-directory: ./
       - name: Upload patch
         if: steps.create_patch.outputs.patch_created
@@ -2030,6 +2038,7 @@ tsconfig.tsbuildinfo
       {
         "name": "@types/node",
         "type": "build",
+        "version": "ts5.8",
       },
       {
         "name": "@typescript-eslint/eslint-plugin",
@@ -2092,6 +2101,7 @@ tsconfig.tsbuildinfo
       {
         "name": "typescript",
         "type": "build",
+        "version": "5.8.x",
       },
       {
         "name": "projen",
@@ -2361,7 +2371,7 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,@types/node,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node,typescript",
+            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node",
           },
           {
             "exec": "yarn install --check-files",
@@ -2419,7 +2429,7 @@ SOFTWARE.
     "devDependencies": {
       "@stylistic/eslint-plugin": "^2",
       "@types/jest": "*",
-      "@types/node": "*",
+      "@types/node": "ts5.8",
       "@typescript-eslint/eslint-plugin": "^8",
       "@typescript-eslint/parser": "^8",
       "commit-and-tag-version": "^12",
@@ -2433,7 +2443,7 @@ SOFTWARE.
       "projen": "*",
       "ts-jest": "*",
       "ts-node": "*",
-      "typescript": "*",
+      "typescript": "5.8.x",
     },
     "homepage": "https://github.com/mrgrain/test",
     "jest": {

@@ -21,3 +21,14 @@ test('can set dependency with version constraint', () => {
 
   expect(synthSnapshot(project)).toMatchSnapshot();
 });
+
+test('can set custom workflow version', () => {
+  const project = new TypeScriptProject({
+    authorName: 'Test Author',
+    repo: 'mrgrain/test',
+    workflowNodeVersion: 'lts/-1',
+  });
+
+  expect(synthSnapshot(project)['.github/workflows/build.yml']).toContain('lts/-1');
+});
+
