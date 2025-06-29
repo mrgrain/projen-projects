@@ -22,4 +22,4 @@ export const optionsMiddleware: OptionsMiddleware<ReleaseOptionsTrait> = (option
   releasableCommits: ReleasableCommits.ofType((options.releasableCommitTypes ?? RELEASABLE_COMMIT_TYPES_DEFAULT).sort(), '.'),
 }, options);
 
-export const RELEASABLE_COMMIT_TYPES_DEFAULT = ['feat', 'fix', 'chore', 'revert'];
+export const RELEASABLE_COMMIT_TYPES_DEFAULT = ['feat', 'fix', 'revert'];
