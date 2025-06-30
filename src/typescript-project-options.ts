@@ -72,7 +72,7 @@ export interface TypeScriptProjectOptions {
   readonly eslintOptions?: javascript.EslintOptions;
   /**
    * Setup eslint.
-   * @default true
+   * @default - true, unless biome is enabled
    * @stability stable
    */
   readonly eslint?: boolean;
