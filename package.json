@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@jsii/spec": "^1.112.0",
-    "@mrgrain/jsii-struct-builder": "^0.7.62",
+    "@mrgrain/jsii-struct-builder": "^0.7.63",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^27",
     "@types/node": "ts5.8",
@@ -56,7 +56,7 @@
     "jsii-docgen": "^10",
     "jsii-pacmak": "^1.112.0",
     "jsii-rosetta": "5.8.x",
-    "projen": "^0.93.0",
+    "projen": "^0.94.0",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
