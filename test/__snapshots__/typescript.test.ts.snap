@@ -667,7 +667,7 @@ junit.xml
 queue_rules:
   - name: default
     update_method: merge
-    conditions:
+    queue_conditions:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
@@ -686,6 +686,8 @@ pull_request_rules:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
+merge_queue:
+  max_parallel_checks: 1
 ",
   ".node-version": "v18
 ",
@@ -1960,7 +1962,7 @@ junit.xml
 queue_rules:
   - name: default
     update_method: merge
-    conditions:
+    queue_conditions:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
@@ -1979,6 +1981,8 @@ pull_request_rules:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
+merge_queue:
+  max_parallel_checks: 1
 ",
   ".node-version": "v18
 ",
