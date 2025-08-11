@@ -5264,6 +5264,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
@@ -7151,6 +7152,25 @@ be provided for the default branch.
 
 ---
 
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="mrpj.ConstructProjectOptions.property.releaseEnvironment"></a>
+
+```typescript
+public readonly releaseEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* no environment used, unless set at the artifact level
+
+The GitHub Actions environment used for the release.
+
+This can be used to add an explicit approval step to the release
+or limit who can initiate a release through environment protection rules.
+
+When multiple artifacts are released, the environment can be overwritten
+on a per artifact basis.
+
+---
+
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mrpj.ConstructProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -8129,6 +8149,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.releasableCommitTypes">releasableCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types should be released. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
@@ -9835,6 +9856,25 @@ be provided for the default branch.
 
 ---
 
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="mrpj.ProjenProjectOptions.property.releaseEnvironment"></a>
+
+```typescript
+public readonly releaseEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* no environment used, unless set at the artifact level
+
+The GitHub Actions environment used for the release.
+
+This can be used to add an explicit approval step to the release
+or limit who can initiate a release through environment protection rules.
+
+When multiple artifacts are released, the environment can be overwritten
+on a per artifact basis.
+
+---
+
 ##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="mrpj.ProjenProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
@@ -10611,6 +10651,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releasableCommitTypes">releasableCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types should be released. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
@@ -12190,6 +12231,25 @@ Each release branch _must_ be assigned a major version number which is used
 to enforce that versions published from that branch always use that major
 version. If multiple branches are used, the `majorVersion` field must also
 be provided for the default branch.
+
+---
+
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="mrpj.TypeScriptProjectOptions.property.releaseEnvironment"></a>
+
+```typescript
+public readonly releaseEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* no environment used, unless set at the artifact level
+
+The GitHub Actions environment used for the release.
+
+This can be used to add an explicit approval step to the release
+or limit who can initiate a release through environment protection rules.
+
+When multiple artifacts are released, the environment can be overwritten
+on a per artifact basis.
 
 ---
 

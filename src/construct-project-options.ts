@@ -594,6 +594,17 @@ export interface ConstructProjectOptions {
    */
   readonly releaseFailureIssue?: boolean;
   /**
+   * The GitHub Actions environment used for the release.
+   * This can be used to add an explicit approval step to the release
+   * or limit who can initiate a release through environment protection rules.
+   *
+   * When multiple artifacts are released, the environment can be overwritten
+   * on a per artifact basis.
+   * @default - no environment used, unless set at the artifact level
+   * @stability stable
+   */
+  readonly releaseEnvironment?: string;
+  /**
    * Defines additional release branches.
    * A workflow will be created for each
    * release branch which will publish releases from commits in this branch.
