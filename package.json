@@ -59,7 +59,7 @@
     "projen": "^0.95.2",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
-    "tsx": "^4.20.4",
+    "tsx": "^4.20.5",
     "typescript": "5.8.x"
   },
   "peerDependencies": {
