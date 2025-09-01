@@ -5230,6 +5230,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
@@ -6683,6 +6684,19 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="mrpj.ConstructProjectOptions.property.npmTrustedPublishing"></a>
+
+```typescript
+public readonly npmTrustedPublishing: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
 ##### `outdir`<sup>Optional</sup> <a name="outdir" id="mrpj.ConstructProjectOptions.property.outdir"></a>
 
 ```typescript
@@ -8115,6 +8129,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.ownerCanSelfApprovePRs">ownerCanSelfApprovePRs</a></code> | <code>boolean</code> | Allow the repo owner to self approve PRs by putting a label on it. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -9387,6 +9402,19 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="mrpj.ProjenProjectOptions.property.npmTrustedPublishing"></a>
+
+```typescript
+public readonly npmTrustedPublishing: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
 ##### `outdir`<sup>Optional</sup> <a name="outdir" id="mrpj.ProjenProjectOptions.property.outdir"></a>
 
 ```typescript
@@ -10621,6 +10649,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.ownerCanSelfApprovePRs">ownerCanSelfApprovePRs</a></code> | <code>boolean</code> | Allow the repo owner to self approve PRs by putting a label on it. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -11814,6 +11843,19 @@ public readonly npmTokenSecret: string;
 - *Default:* "NPM_TOKEN"
 
 GitHub secret which contains the NPM token to use when publishing packages.
+
+---
+
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="mrpj.TypeScriptProjectOptions.property.npmTrustedPublishing"></a>
+
+```typescript
+public readonly npmTrustedPublishing: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
 
 ---
 
