@@ -784,6 +784,12 @@ export interface ConstructProjectOptions {
    */
   readonly packageManager?: javascript.NodePackageManager;
   /**
+   * Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+   * @default - false
+   * @stability stable
+   */
+  readonly npmTrustedPublishing?: boolean;
+  /**
    * GitHub secret which contains the NPM token to use when publishing packages.
    * @default "NPM_TOKEN"
    * @stability stable
