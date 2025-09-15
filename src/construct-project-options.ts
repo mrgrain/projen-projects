@@ -130,9 +130,9 @@ export interface ConstructProjectOptions {
    * NOTE: The jsii compiler releases since 5.0.0 are not semantically versioned
    * and should remain on the same minor, so we recommend using a `~` dependency
    * (e.g. `~5.0.0`).
-   * @default "~5.6.0"
+   * @default "~5.8.0"
    * @stability stable
-   * @pjnew "~5.8.0"
+   * @pjnew "~5.9.0"
    */
   readonly jsiiVersion?: string;
   /**
