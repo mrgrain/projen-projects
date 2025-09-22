@@ -565,6 +565,12 @@ export interface ConstructProjectOptions {
    */
   readonly releaseWorkflowName?: string;
   /**
+   * Build environment variables for release workflows.
+   * @default {}
+   * @stability stable
+   */
+  readonly releaseWorkflowEnv?: Record<string, string>;
+  /**
    * The release trigger to use.
    * @default - Continuous releases (`ReleaseTrigger.continuous()`)
    * @stability stable
