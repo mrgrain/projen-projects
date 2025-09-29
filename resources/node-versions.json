@@ -54,13 +54,13 @@
   },
   {
     "major": "22",
-    "version": "22.19.0",
+    "version": "22.20.0",
     "stable": true,
     "lts": "Jod"
   },
   {
     "major": "24",
-    "version": "24.8.0",
+    "version": "24.9.0",
     "stable": true
   }
 ]
