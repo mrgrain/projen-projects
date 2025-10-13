@@ -317,7 +317,7 @@ export interface ConstructProjectOptions {
   readonly workflowNodeVersion?: string;
   /**
    * The git identity to use in workflows.
-   * @default - GitHub Actions
+   * @default - default GitHub Actions user
    * @stability stable
    */
   readonly workflowGitIdentity?: github.GitIdentity;
