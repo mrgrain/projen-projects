@@ -8071,6 +8071,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.automationAppName">automationAppName</a></code> | <code>string</code> | Use this app for workflow automation. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.automationEnvironment">automationEnvironment</a></code> | <code>string</code> | Protect any automation with this environment. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
@@ -8366,11 +8367,26 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* tokens will be used
+- *Default:* "automation"
 
 Use this app for workflow automation.
 
 Remember to install the app and to configure credentials.
+
+---
+
+##### `automationEnvironment`<sup>Optional</sup> <a name="automationEnvironment" id="mrpj.ProjenProjectOptions.property.automationEnvironment"></a>
+
+```typescript
+public readonly automationEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+Protect any automation with this environment.
+
+You will need to set the environment up in GitHub. Credentials can only be used within this environment.
 
 ---
 
@@ -10391,6 +10407,39 @@ Options for Yarn Berry.
 
 ---
 
+### SelfMutationOnForksOptions <a name="SelfMutationOnForksOptions" id="mrpj.components.SelfMutationOnForksOptions"></a>
+
+Options for configuring self-mutation behavior on forks.
+
+#### Initializer <a name="Initializer" id="mrpj.components.SelfMutationOnForksOptions.Initializer"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+const selfMutationOnForksOptions: components.SelfMutationOnForksOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.components.SelfMutationOnForksOptions.property.environment">environment</a></code> | <code>string</code> | Environment name to use for the workflow. |
+
+---
+
+##### `environment`<sup>Optional</sup> <a name="environment" id="mrpj.components.SelfMutationOnForksOptions.property.environment"></a>
+
+```typescript
+public readonly environment: string;
+```
+
+- *Type:* string
+- *Default:* no environment specified
+
+Environment name to use for the workflow.
+
+---
+
 ### SizeOptions <a name="SizeOptions" id="mrpj.logo.SizeOptions"></a>
 
 #### Initializer <a name="Initializer" id="mrpj.logo.SizeOptions.Initializer"></a>
@@ -10610,6 +10659,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.automationAppName">automationAppName</a></code> | <code>string</code> | Use this app for workflow automation. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.automationEnvironment">automationEnvironment</a></code> | <code>string</code> | Protect any automation with this environment. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
@@ -10895,11 +10945,26 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* tokens will be used
+- *Default:* "automation"
 
 Use this app for workflow automation.
 
 Remember to install the app and to configure credentials.
+
+---
+
+##### `automationEnvironment`<sup>Optional</sup> <a name="automationEnvironment" id="mrpj.TypeScriptProjectOptions.property.automationEnvironment"></a>
+
+```typescript
+public readonly automationEnvironment: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+Protect any automation with this environment.
+
+You will need to set the environment up in GitHub. Credentials can only be used within this environment.
 
 ---
 
@@ -13125,6 +13190,53 @@ public readonly scale: number;
 Scale the logo by a factor.
 
 ---
+
+
+### SelfMutationOnForks <a name="SelfMutationOnForks" id="mrpj.components.SelfMutationOnForks"></a>
+
+Configures GitHub workflows to enable self-mutation on fork pull requests.
+
+This class sets up a workflow that will automatically apply projen-generated changes
+when a build fails due to outdated generated files. The workflow:
+
+1. Runs when the build workflow fails on a PR
+2. Downloads any patch file generated during the failed build
+3. Authenticates using GitHub App credentials
+4. Checks out the PR branch
+5. Applies the patch if it exists and can be applied cleanly
+6. Commits and pushes the changes back to the PR
+
+This enables automated fixes for common projen-related issues on fork PRs.
+
+#### Initializers <a name="Initializers" id="mrpj.components.SelfMutationOnForks.Initializer"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+new components.SelfMutationOnForks(project: Project, options?: SelfMutationOnForksOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.components.SelfMutationOnForks.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.components.SelfMutationOnForks.Initializer.parameter.options">options</a></code> | <code>mrpj.components.SelfMutationOnForksOptions</code> | *No description.* |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.components.SelfMutationOnForks.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="mrpj.components.SelfMutationOnForks.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.components.SelfMutationOnForksOptions
+
+---
+
+
+
 
 
 ## Protocols <a name="Protocols" id="Protocols"></a>

@@ -57,6 +57,7 @@ tsconfig.json
 !/images/wordmark-dynamic.svg
 !/.nvmrc
 !/.node-version
+!/.github/workflows/self-mutation.yml
 !/.projenrc.ts
 !/src/construct-project-options.ts
 !/src/projen-project-options.ts

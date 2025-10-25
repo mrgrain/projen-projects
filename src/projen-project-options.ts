@@ -1033,10 +1033,16 @@ export interface ProjenProjectOptions {
   readonly allowedCommitTypes?: Array<string>;
   /**
    * Use this app for workflow automation. Remember to install the app and to configure credentials.
-   * @default - tokens will be used
+   * @default "automation"
    * @stability stable
    */
   readonly automationAppName?: string;
+  /**
+   * Protect any automation with this environment. You will need to set the environment up in GitHub. Credentials can only be used within this environment.
+   * @default - none
+   * @stability stable
+   */
+  readonly automationEnvironment?: string;
   /**
    * Allow the repo owner to self approve PRs by putting a label on it.
    * @default true
