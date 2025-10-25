@@ -1,6 +1,7 @@
-import { ReleasableCommits, javascript } from 'projen';
+import type { Project } from 'projen';
+import { JsonPatch, ReleasableCommits, javascript, github } from 'projen';
 import type { TypeScriptProjectOptions } from '../typescript-project-options';
-import type { OptionsMiddleware } from '../utils';
+import type { FeatureMiddleware, OptionsMiddleware } from '../utils';
 import { deepMerge, noEmpties } from '../utils';
 
 export interface ReleaseOptionsTrait {
@@ -27,3 +28,12 @@ export const optionsMiddleware: OptionsMiddleware<ReleaseOptionsTrait> = (option
 }, options);
 
 export const RELEASABLE_COMMIT_TYPES_DEFAULT = ['feat', 'fix', 'revert'];
+
+export const trustedPublisherFix: FeatureMiddleware<Project, ReleaseOptionsTrait> = (project, options) => {
+  if (options.release && options.npmTrustedPublishing) {
+    github.GitHub.of(project)?.tryFindWorkflow('release')?.file?.patch(
+      JsonPatch.replace('/jobs/release_npm/steps/0/with/node-version', '24.x'),
+    );
+  }
+  return project;
+};
