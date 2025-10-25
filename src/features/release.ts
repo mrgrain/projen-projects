@@ -5,6 +5,8 @@ import { deepMerge, noEmpties } from '../utils';
 
 export interface ReleaseOptionsTrait {
   readonly release?: TypeScriptProjectOptions['release'];
+  readonly npmTrustedPublishing?: TypeScriptProjectOptions['npmTrustedPublishing'];
+  readonly releaseEnvironment?: TypeScriptProjectOptions['releaseEnvironment'];
   readonly projenrcTsOptions?: TypeScriptProjectOptions['projenrcTsOptions'];
   readonly releasableCommitTypes?: string[];
 }
@@ -13,6 +15,8 @@ export const optionsMiddleware: OptionsMiddleware<ReleaseOptionsTrait> = (option
   release: options.release ?? false,
   defaultReleaseBranch: 'main',
   releaseToNpm: options.release ?? false,
+  npmTrustedPublishing: options.npmTrustedPublishing ?? true,
+  releaseEnvironment: options.releaseEnvironment ?? 'release',
   npmAccess: javascript.NpmAccess.PUBLIC,
   npmignore: noEmpties([
     options.projenrcTsOptions?.filename ?? '.projenrc.ts',
