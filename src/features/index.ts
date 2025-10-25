@@ -7,3 +7,4 @@ export { featureMiddleware as logo } from './logo';
 export { featureMiddleware as nodeVersion } from './node-version';
 export { makeMiddleware as packageInfo } from './package-info';
 export { optionsMiddleware as release } from './release';
+export { trustedPublisherFix as trustedPublisherFix } from './release';
