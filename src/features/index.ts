@@ -8,3 +8,4 @@ export { featureMiddleware as nodeVersion } from './node-version';
 export { makeMiddleware as packageInfo } from './package-info';
 export { optionsMiddleware as release } from './release';
 export { trustedPublisherFix as trustedPublisherFix } from './release';
+export { featureMiddleware as selfMutationOnForks } from './self-mutation';

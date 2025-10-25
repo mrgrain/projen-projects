@@ -1,5 +1,6 @@
 import { typescript } from 'projen';
-import { automation, defaultOptions, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release, trustedPublisherFix } from './features';
+import { automation, defaultOptions, dependencies, ensureDependencies, eslint, forceOptions, logo, nodeVersion, packageInfo, preventSelfDependency, release, selfMutationOnForks, trustedPublisherFix } from './features';
+import { protectAutomationCredentials } from './features/automation';
 import type { SvgFile, Wordmark } from './logo';
 import type { TypeScriptProjectOptions } from './typescript-project-options';
 import { configureFeatures, mergeOptions } from './utils';
@@ -36,6 +37,8 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
       ensureDependencies,
       preventSelfDependency,
       trustedPublisherFix,
+      selfMutationOnForks,
+      protectAutomationCredentials,
     )(this, opts);
   }
 }
