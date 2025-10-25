@@ -37,11 +37,11 @@
     "organization": false
   },
   "devDependencies": {
-    "@jsii/spec": "^1.116.0",
-    "@mrgrain/jsii-struct-builder": "^0.7.63",
+    "@jsii/spec": "^1.117.0",
+    "@mrgrain/jsii-struct-builder": "^0.7.64",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^27",
-    "@types/node": "ts5.8",
+    "@types/node": "ts5.9",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "commit-and-tag-version": "^12",
@@ -51,16 +51,16 @@
     "eslint-plugin-import": "^2.32.0",
     "jest": "^29",
     "jest-junit": "^16",
-    "jsii": "5.8.x",
-    "jsii-diff": "^1.116.0",
+    "jsii": "5.9.x",
+    "jsii-diff": "^1.117.0",
     "jsii-docgen": "^10",
-    "jsii-pacmak": "^1.116.0",
-    "jsii-rosetta": "5.8.x",
-    "projen": "^0.98.2",
+    "jsii-pacmak": "^1.117.0",
+    "jsii-rosetta": "5.9.x",
+    "projen": "^0.98.4",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
-    "typescript": "5.8.x"
+    "typescript": "5.9.x"
   },
   "peerDependencies": {
     "constructs": "^10.0.0",

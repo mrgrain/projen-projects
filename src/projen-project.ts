@@ -31,8 +31,8 @@ export class ProjenProject extends cdk.JsiiProject {
         authorUrl: undefined,
         sampleCode: false,
         projenrcTs: true,
-        jsiiVersion: '5.8.x',
-        typescriptVersion: '5.8.x',
+        jsiiVersion: '5.9.x',
+        typescriptVersion: '5.9.x',
       }),
     )(options);
 

@@ -19,7 +19,7 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
       dependencies(),
       defaultOptions<typescript.TypeScriptProjectOptions>({
         workflowNodeVersion: 'lts/-2',
-        typescriptVersion: '5.8.x',
+        typescriptVersion: '5.9.x',
       }),
       forceOptions<typescript.TypeScriptProjectOptions>({
         sampleCode: false,
