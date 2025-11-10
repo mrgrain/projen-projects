@@ -1101,7 +1101,7 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node",
+            "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node",
           },
           {
             "exec": "yarn install --check-files",
@@ -2426,7 +2426,7 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node",
+            "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node",
           },
           {
             "exec": "yarn install --check-files",
