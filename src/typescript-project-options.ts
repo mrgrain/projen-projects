@@ -318,6 +318,21 @@ export interface TypeScriptProjectOptions {
    */
   readonly autoApproveUpgrades?: boolean;
   /**
+   * Security audit options.
+   * @default - default options
+   * @stability stable
+   */
+  readonly auditDepsOptions?: javascript.AuditOptions;
+  /**
+   * Run security audit on dependencies.
+   * When enabled, creates an "audit" task that checks for known security vulnerabilities
+   * in dependencies. By default, runs during every build and checks for "high" severity
+   * vulnerabilities or above in all dependencies (including dev dependencies).
+   * @default false
+   * @stability stable
+   */
+  readonly auditDeps?: boolean;
+  /**
    * A directory which will contain build artifacts.
    * @default "dist"
    * @stability stable
