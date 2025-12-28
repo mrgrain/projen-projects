@@ -5142,6 +5142,8 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
@@ -5408,6 +5410,36 @@ public readonly artifactsDirectory: string;
 - *Default:* "dist"
 
 A directory which will contain build artifacts.
+
+---
+
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="mrpj.ConstructProjectOptions.property.auditDeps"></a>
+
+```typescript
+public readonly auditDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Run security audit on dependencies.
+
+When enabled, creates an "audit" task that checks for known security vulnerabilities
+in dependencies. By default, runs during every build and checks for "high" severity
+vulnerabilities or above in all dependencies (including dev dependencies).
+
+---
+
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="mrpj.ConstructProjectOptions.property.auditDepsOptions"></a>
+
+```typescript
+public readonly auditDepsOptions: AuditOptions;
+```
+
+- *Type:* projen.javascript.AuditOptions
+- *Default:* default options
+
+Security audit options.
 
 ---
 
@@ -8064,6 +8096,8 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.allowedCommitTypes">allowedCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
@@ -8282,6 +8316,36 @@ A directory which will contain build artifacts.
 
 ---
 
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="mrpj.ProjenProjectOptions.property.auditDeps"></a>
+
+```typescript
+public readonly auditDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Run security audit on dependencies.
+
+When enabled, creates an "audit" task that checks for known security vulnerabilities
+in dependencies. By default, runs during every build and checks for "high" severity
+vulnerabilities or above in all dependencies (including dev dependencies).
+
+---
+
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="mrpj.ProjenProjectOptions.property.auditDepsOptions"></a>
+
+```typescript
+public readonly auditDepsOptions: AuditOptions;
+```
+
+- *Type:* projen.javascript.AuditOptions
+- *Default:* default options
+
+Security audit options.
+
+---
+
 ##### `authorAddress`<sup>Optional</sup> <a name="authorAddress" id="mrpj.ProjenProjectOptions.property.authorAddress"></a>
 
 ```typescript
@@ -8367,7 +8431,7 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* "automation"
+- *Default:* none
 
 Use this app for workflow automation.
 
@@ -8382,7 +8446,7 @@ public readonly automationEnvironment: string;
 ```
 
 - *Type:* string
-- *Default:* none
+- *Default:* "automation"
 
 Protect any automation with this environment.
 
@@ -10652,6 +10716,8 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.allowedCommitTypes">allowedCommitTypes</a></code> | <code>string[]</code> | Which conventional commit types are allowed to be used Types listed in `releasableCommitTypes` are always allowed. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
@@ -10861,6 +10927,36 @@ A directory which will contain build artifacts.
 
 ---
 
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="mrpj.TypeScriptProjectOptions.property.auditDeps"></a>
+
+```typescript
+public readonly auditDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Run security audit on dependencies.
+
+When enabled, creates an "audit" task that checks for known security vulnerabilities
+in dependencies. By default, runs during every build and checks for "high" severity
+vulnerabilities or above in all dependencies (including dev dependencies).
+
+---
+
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="mrpj.TypeScriptProjectOptions.property.auditDepsOptions"></a>
+
+```typescript
+public readonly auditDepsOptions: AuditOptions;
+```
+
+- *Type:* projen.javascript.AuditOptions
+- *Default:* default options
+
+Security audit options.
+
+---
+
 ##### `authorEmail`<sup>Optional</sup> <a name="authorEmail" id="mrpj.TypeScriptProjectOptions.property.authorEmail"></a>
 
 ```typescript
@@ -10945,7 +11041,7 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* "automation"
+- *Default:* none
 
 Use this app for workflow automation.
 
@@ -10960,7 +11056,7 @@ public readonly automationEnvironment: string;
 ```
 
 - *Type:* string
-- *Default:* none
+- *Default:* "automation"
 
 Protect any automation with this environment.
 

@@ -309,7 +309,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,tsx"
+          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@jsii/spec,@mrgrain/jsii-struct-builder,@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-pacmak,projen,ts-jest,ts-node,tsx"
         },
         {
           "exec": "yarn install --check-files"

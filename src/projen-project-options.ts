@@ -375,6 +375,21 @@ export interface ProjenProjectOptions {
    */
   readonly autoApproveUpgrades?: boolean;
   /**
+   * Security audit options.
+   * @default - default options
+   * @stability stable
+   */
+  readonly auditDepsOptions?: javascript.AuditOptions;
+  /**
+   * Run security audit on dependencies.
+   * When enabled, creates an "audit" task that checks for known security vulnerabilities
+   * in dependencies. By default, runs during every build and checks for "high" severity
+   * vulnerabilities or above in all dependencies (including dev dependencies).
+   * @default false
+   * @stability stable
+   */
+  readonly auditDeps?: boolean;
+  /**
    * A directory which will contain build artifacts.
    * @default "dist"
    * @stability stable
@@ -1033,13 +1048,13 @@ export interface ProjenProjectOptions {
   readonly allowedCommitTypes?: Array<string>;
   /**
    * Use this app for workflow automation. Remember to install the app and to configure credentials.
-   * @default "automation"
+   * @default - none
    * @stability stable
    */
   readonly automationAppName?: string;
   /**
    * Protect any automation with this environment. You will need to set the environment up in GitHub. Credentials can only be used within this environment.
-   * @default - none
+   * @default "automation"
    * @stability stable
    */
   readonly automationEnvironment?: string;
