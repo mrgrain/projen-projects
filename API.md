@@ -8431,7 +8431,7 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* "automation"
+- *Default:* none
 
 Use this app for workflow automation.
 
@@ -8446,7 +8446,7 @@ public readonly automationEnvironment: string;
 ```
 
 - *Type:* string
-- *Default:* none
+- *Default:* "automation"
 
 Protect any automation with this environment.
 
@@ -11041,7 +11041,7 @@ public readonly automationAppName: string;
 ```
 
 - *Type:* string
-- *Default:* "automation"
+- *Default:* none
 
 Use this app for workflow automation.
 
@@ -11056,7 +11056,7 @@ public readonly automationEnvironment: string;
 ```
 
 - *Type:* string
-- *Default:* none
+- *Default:* "automation"
 
 Protect any automation with this environment.
 

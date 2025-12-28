@@ -103,7 +103,7 @@ export class ExtendedStruct extends ProjenStruct {
         type: { primitive: PrimitiveType.String },
         docs: {
           summary: 'Use this app for workflow automation. Remember to install the app and to configure credentials.',
-          default: '"automation"',
+          default: '- none',
         },
       })
       .add({
@@ -112,7 +112,7 @@ export class ExtendedStruct extends ProjenStruct {
         type: { primitive: PrimitiveType.String },
         docs: {
           summary: 'Protect any automation with this environment. You will need to set the environment up in GitHub. Credentials can only be used within this environment.',
-          default: '- none',
+          default: '"automation"',
         },
       })
       .add({
