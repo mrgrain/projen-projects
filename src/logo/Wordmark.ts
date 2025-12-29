@@ -3,9 +3,9 @@ import type { Project } from 'projen';
 import { Component } from 'projen';
 import type { LogoInfo } from './Logo';
 import { Logo } from './Logo';
-import { logoToPngTask } from './private.ts/logo-task';
-import { SvgFile } from './SvgFile';
 import { deepDefaults, deepMerge } from '../utils';
+import { logoToPngTask } from './private/logo-task';
+import { SvgFile } from './SvgFile';
 
 export interface WordmarkOptions {
   readonly fileBaseName?: string;

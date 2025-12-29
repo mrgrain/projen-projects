@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import type { Project } from 'projen';
-import { logoToPngTask } from './private.ts/logo-task';
+import { logoToPngTask } from './private/logo-task';
 import { SvgFile } from './SvgFile';
 
 /**
