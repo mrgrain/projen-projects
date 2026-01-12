@@ -291,7 +291,7 @@ export interface ProjenProjectOptions {
   /**
    * Use tasks and github workflows to handle dependency upgrades.
    * Cannot be used in conjunction with `dependabot`.
-   * @default true
+   * @default - `true` for root projects, `false` for subprojects
    * @stability stable
    */
   readonly depsUpgrade?: boolean;
@@ -368,7 +368,7 @@ export interface ProjenProjectOptions {
    */
   readonly biome?: boolean;
   /**
-   * Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+   * Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
    * Throw if set to true but `autoApproveOptions` are not defined.
    * @default - true
    * @stability stable
