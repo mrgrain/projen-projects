@@ -5149,7 +5149,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#mrpj.ConstructProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
@@ -5513,7 +5513,7 @@ public readonly autoApproveUpgrades: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 
 Throw if set to true but `autoApproveOptions` are not defined.
 
@@ -6007,7 +6007,7 @@ public readonly depsUpgrade: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* `true` for root projects, `false` for subprojects
 
 Use tasks and github workflows to handle dependency upgrades.
 
@@ -8102,7 +8102,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#mrpj.ProjenProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured). |
 | <code><a href="#mrpj.ProjenProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.automationAppName">automationAppName</a></code> | <code>string</code> | Use this app for workflow automation. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.automationEnvironment">automationEnvironment</a></code> | <code>string</code> | Protect any automation with this environment. |
@@ -8405,7 +8405,7 @@ public readonly autoApproveUpgrades: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 
 Throw if set to true but `autoApproveOptions` are not defined.
 
@@ -8858,7 +8858,7 @@ public readonly depsUpgrade: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* `true` for root projects, `false` for subprojects
 
 Use tasks and github workflows to handle dependency upgrades.
 
@@ -10722,7 +10722,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured). |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.automationAppName">automationAppName</a></code> | <code>string</code> | Use this app for workflow automation. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.automationEnvironment">automationEnvironment</a></code> | <code>string</code> | Protect any automation with this environment. |
@@ -11015,7 +11015,7 @@ public readonly autoApproveUpgrades: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued).
+Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured).
 
 Throw if set to true but `autoApproveOptions` are not defined.
 
@@ -11426,7 +11426,7 @@ public readonly depsUpgrade: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
+- *Default:* `true` for root projects, `false` for subprojects
 
 Use tasks and github workflows to handle dependency upgrades.
 
