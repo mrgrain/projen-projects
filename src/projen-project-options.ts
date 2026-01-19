@@ -985,6 +985,12 @@ export interface ProjenProjectOptions {
    */
   readonly projenCommand?: string;
   /**
+   * Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging.
+   * @default false
+   * @stability stable
+   */
+  readonly projectTree?: boolean;
+  /**
    * The parent project, if this project is part of a bigger project.
    * @stability stable
    */
