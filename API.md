@@ -1591,6 +1591,205 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ---
 
+### NodeVersion <a name="NodeVersion" id="mrpj.components.NodeVersion"></a>
+
+A component that manages Node.js version files (.nvmrc, .node-version).
+
+#### Initializers <a name="Initializers" id="mrpj.components.NodeVersion.Initializer"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+new components.NodeVersion(scope: IConstruct, options?: NodeVersionOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.components.NodeVersion.Initializer.parameter.scope">scope</a></code> | <code>constructs.IConstruct</code> | *No description.* |
+| <code><a href="#mrpj.components.NodeVersion.Initializer.parameter.options">options</a></code> | <code>mrpj.components.NodeVersionOptions</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="mrpj.components.NodeVersion.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="mrpj.components.NodeVersion.Initializer.parameter.options"></a>
+
+- *Type:* mrpj.components.NodeVersionOptions
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.components.NodeVersion.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.components.NodeVersion.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#mrpj.components.NodeVersion.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#mrpj.components.NodeVersion.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="mrpj.components.NodeVersion.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="mrpj.components.NodeVersion.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="mrpj.components.NodeVersion.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `synthesize` <a name="synthesize" id="mrpj.components.NodeVersion.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#mrpj.components.NodeVersion.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#mrpj.components.NodeVersion.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+| <code><a href="#mrpj.components.NodeVersion.specToVersion">specToVersion</a></code> | Converts a version spec to a concrete version number. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="mrpj.components.NodeVersion.isConstruct"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+components.NodeVersion.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.components.NodeVersion.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="mrpj.components.NodeVersion.isComponent"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+components.NodeVersion.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="mrpj.components.NodeVersion.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `specToVersion` <a name="specToVersion" id="mrpj.components.NodeVersion.specToVersion"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+components.NodeVersion.specToVersion(versionSpec: string)
+```
+
+Converts a version spec to a concrete version number.
+
+Supports aliases like `lts/*`, `lts/-1`, `lts/iron`, `current`, `latest`, `node`.
+
+###### `versionSpec`<sup>Required</sup> <a name="versionSpec" id="mrpj.components.NodeVersion.specToVersion.parameter.versionSpec"></a>
+
+- *Type:* string
+
+The version spec or alias to convert.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.components.NodeVersion.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#mrpj.components.NodeVersion.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#mrpj.components.NodeVersion.property.version">version</a></code> | <code>string</code> | The resolved Node.js major version. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="mrpj.components.NodeVersion.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="mrpj.components.NodeVersion.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="mrpj.components.NodeVersion.property.version"></a>
+
+```typescript
+public readonly version: string;
+```
+
+- *Type:* string
+
+The resolved Node.js major version.
+
+---
+
+
 ### ProjenProject <a name="ProjenProject" id="mrpj.ProjenProject"></a>
 
 A project to create new projen projects & components.
@@ -8086,6 +8285,67 @@ public readonly content: string;
 - *Type:* string
 
 The SVG content of the logo as a string.
+
+---
+
+### NodeVersionOptions <a name="NodeVersionOptions" id="mrpj.components.NodeVersionOptions"></a>
+
+#### Initializer <a name="Initializer" id="mrpj.components.NodeVersionOptions.Initializer"></a>
+
+```typescript
+import { components } from 'mrpj'
+
+const nodeVersionOptions: components.NodeVersionOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#mrpj.components.NodeVersionOptions.property.dotNodeVersion">dotNodeVersion</a></code> | <code>boolean</code> | Create a .node-version file. |
+| <code><a href="#mrpj.components.NodeVersionOptions.property.dotNvmrc">dotNvmrc</a></code> | <code>boolean</code> | Create a .nvmrc file. |
+| <code><a href="#mrpj.components.NodeVersionOptions.property.versionSpec">versionSpec</a></code> | <code>string</code> | The node version to use. |
+
+---
+
+##### `dotNodeVersion`<sup>Optional</sup> <a name="dotNodeVersion" id="mrpj.components.NodeVersionOptions.property.dotNodeVersion"></a>
+
+```typescript
+public readonly dotNodeVersion: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Create a .node-version file.
+
+---
+
+##### `dotNvmrc`<sup>Optional</sup> <a name="dotNvmrc" id="mrpj.components.NodeVersionOptions.property.dotNvmrc"></a>
+
+```typescript
+public readonly dotNvmrc: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Create a .nvmrc file.
+
+---
+
+##### `versionSpec`<sup>Optional</sup> <a name="versionSpec" id="mrpj.components.NodeVersionOptions.property.versionSpec"></a>
+
+```typescript
+public readonly versionSpec: string;
+```
+
+- *Type:* string
+- *Default:* 'lts/*'
+
+The node version to use.
+
+Supports aliases like `lts/*`, `lts/-1`, `current`, `latest`.
 
 ---
 
