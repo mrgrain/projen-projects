@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import type { NodeVersionSpec } from '../../src/features/node-version';
+import type { NodeVersionSpec } from '../../src/components/private';
 
 async function downloadNodeVersions() {
   try {
@@ -32,7 +32,7 @@ async function downloadNodeVersions() {
 
 function cleanData(data: object[]): NodeVersionSpec[] {
   const all = data.map((item) => {
-    const { version, stable, lts } = item as any;
+    const { version, stable, lts }: { version: string; stable: boolean; lts: string | undefined } = item as any;
     return { version, stable, lts };
   }).sort((a, b) => {
     const aVersion = a.version.split('.').map(Number);
@@ -44,9 +44,9 @@ function cleanData(data: object[]): NodeVersionSpec[] {
     return 0;
   })
     .reverse()
-    .reduce((allSpecs, current) => {
+    .reduce<Record<string, NodeVersionSpec>>((allSpecs, current) => {
       const major = current.version.split('.')[0];
-      if (allSpecs[major]) {
+      if (major && allSpecs[major]) {
         return allSpecs;
       }
       allSpecs[major] = {
