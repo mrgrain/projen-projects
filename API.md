@@ -10858,6 +10858,7 @@ const svgFileOptions: logo.SvgFileOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#mrpj.logo.SvgFileOptions.property.executable">executable</a></code> | <code>boolean</code> | Whether the generated file should be marked as executable. |
 | <code><a href="#mrpj.logo.SvgFileOptions.property.indent">indent</a></code> | <code>number</code> | Indentation size. |
 | <code><a href="#mrpj.logo.SvgFileOptions.property.readonly">readonly</a></code> | <code>boolean</code> | Whether the generated file should be readonly. |
 | <code><a href="#mrpj.logo.SvgFileOptions.property.height">height</a></code> | <code>number</code> | *No description.* |
@@ -10865,6 +10866,19 @@ const svgFileOptions: logo.SvgFileOptions = { ... }
 | <code><a href="#mrpj.logo.SvgFileOptions.property.content">content</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.logo.SvgFileOptions.property.scale">scale</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#mrpj.logo.SvgFileOptions.property.style">style</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `executable`<sup>Optional</sup> <a name="executable" id="mrpj.logo.SvgFileOptions.property.executable"></a>
+
+```typescript
+public readonly executable: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether the generated file should be marked as executable.
 
 ---
 
