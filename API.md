@@ -29,6 +29,7 @@ new ConstructProject(options: AwsCdkConstructLibraryOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.ConstructProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.ConstructProject.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.ConstructProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#mrpj.ConstructProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.ConstructProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
@@ -70,6 +71,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.ConstructProject.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.ConstructProject.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ConstructProject.addExcludeFromCleanup"></a>
 
@@ -1627,6 +1649,7 @@ new components.NodeVersion(scope: IConstruct, options?: NodeVersionOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.components.NodeVersion.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.components.NodeVersion.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.components.NodeVersion.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#mrpj.components.NodeVersion.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#mrpj.components.NodeVersion.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -1640,6 +1663,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.components.NodeVersion.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.components.NodeVersion.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="mrpj.components.NodeVersion.postSynthesize"></a>
 
@@ -1819,6 +1863,7 @@ new ProjenProject(options: ProjenProjectOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.ProjenProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.ProjenProject.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.ProjenProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#mrpj.ProjenProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.ProjenProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
@@ -1858,6 +1903,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.ProjenProject.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.ProjenProject.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.ProjenProject.addExcludeFromCleanup"></a>
 
@@ -3373,6 +3439,7 @@ new logo.SvgFile(project: Project, filePath: string, options: SvgFileOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.logo.SvgFile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.logo.SvgFile.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.logo.SvgFile.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#mrpj.logo.SvgFile.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#mrpj.logo.SvgFile.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -3389,6 +3456,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.logo.SvgFile.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.logo.SvgFile.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.SvgFile.postSynthesize"></a>
 
@@ -3602,6 +3690,7 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.TypeScriptProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.TypeScriptProject.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.TypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#mrpj.TypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.TypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
@@ -3641,6 +3730,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.TypeScriptProject.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.TypeScriptProject.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="mrpj.TypeScriptProject.addExcludeFromCleanup"></a>
 
@@ -5147,6 +5257,7 @@ new logo.Wordmark(project: Project, options?: WordmarkOptions)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#mrpj.logo.Wordmark.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#mrpj.logo.Wordmark.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#mrpj.logo.Wordmark.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#mrpj.logo.Wordmark.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#mrpj.logo.Wordmark.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
@@ -5160,6 +5271,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="mrpj.logo.Wordmark.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="mrpj.logo.Wordmark.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `postSynthesize` <a name="postSynthesize" id="mrpj.logo.Wordmark.postSynthesize"></a>
 
@@ -5539,7 +5671,7 @@ public readonly cdkVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "2.1.0"
+- *Default:* "2.189.1"
 
 Minimum version of the AWS CDK to depend on.
 
@@ -6120,7 +6252,7 @@ public readonly constructsVersion: string;
 ```
 
 - *Type:* string
-- *Default:* for CDK 1.x the default is "3.2.27", for CDK 2.x the default is "10.0.5".
+- *Default:* for CDK 1.x the default is "3.2.27", for CDK 2.x the default is "10.5.1".
 
 Minimum version of the `constructs` library to depend on.
 
@@ -6587,7 +6719,7 @@ public readonly jsiiVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "~5.8.0"
+- *Default:* "~5.9.0"
 
 Version of the jsii compiler to use.
 
