@@ -48,13 +48,13 @@
   },
   {
     "major": "20",
-    "version": "20.20.0",
+    "version": "20.20.1",
     "stable": true,
     "lts": "Iron"
   },
   {
     "major": "22",
-    "version": "22.22.0",
+    "version": "22.22.1",
     "stable": true,
     "lts": "Jod"
   },
