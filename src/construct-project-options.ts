@@ -6,6 +6,12 @@ import type { awscdk, cdk, github, GitOptions, GroupRunnerOptions, IgnoreFileOpt
  */
 export interface ConstructProjectOptions {
   /**
+   * Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project.
+   * @default true
+   * @stability stable
+   */
+  readonly singletonLambdaAutoDiscover?: boolean;
+  /**
    * Common options for all AWS Lambda functions.
    * @default - default options
    * @stability stable
