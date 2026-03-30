@@ -48,19 +48,19 @@
   },
   {
     "major": "20",
-    "version": "20.20.1",
+    "version": "20.20.2",
     "stable": true,
     "lts": "Iron"
   },
   {
     "major": "22",
-    "version": "22.22.1",
+    "version": "22.22.2",
     "stable": true,
     "lts": "Jod"
   },
   {
     "major": "24",
-    "version": "24.14.0",
+    "version": "24.14.1",
     "stable": true,
     "lts": "Krypton"
   }
