@@ -806,8 +806,9 @@ export interface ConstructProjectOptions {
   readonly packageName?: string;
   /**
    * The Node Package Manager used to execute scripts.
-   * @default NodePackageManager.YARN_CLASSIC
+   * @default - Detected from the calling process or `YARN_CLASSIC` if detection fails.
    * @stability stable
+   * @pjnew $PACKAGE_MANAGER
    */
   readonly packageManager?: javascript.NodePackageManager;
   /**
@@ -906,6 +907,14 @@ export interface ConstructProjectOptions {
    */
   readonly entrypoint?: string;
   /**
+   * Configure the `devEngines` field in `package.json`.
+   * The `devEngines.packageManager` field is automatically populated based on
+   * the resolved `packageManager` value. Any fields provided here are merged
+   * with the auto-populated `packageManager` entry.
+   * @stability stable
+   */
+  readonly devEngines?: javascript.DevEngines;
+  /**
    * Build dependencies for this module.
    * These dependencies will only be
    * available in your build environment but will not be fetched when this
@@ -943,6 +952,16 @@ export interface ConstructProjectOptions {
    * @featured true
    */
   readonly deps?: Array<string>;
+  /**
+   * Automatically delete lockfiles from package managers that are not the active one.
+   * Only triggered when the lockfile for the configured package
+   * manager already exists.
+   *
+   * This is useful when migrating between package managers to avoid conflicts.
+   * @default true
+   * @stability stable
+   */
+  readonly deleteOrphanedLockFiles?: boolean;
   /**
    * Options for npm packages using AWS CodeArtifact.
    * This is required if publishing packages to, or installing scoped packages from AWS CodeArtifact
@@ -1023,6 +1042,12 @@ export interface ConstructProjectOptions {
    * @stability stable
    */
   readonly allowLibraryDependencies?: boolean;
+  /**
+   * Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`.
+   * @default true
+   * @stability stable
+   */
+  readonly addPackageManagerToDevEngines?: boolean;
   /**
    * Enable VSCode integration.
    * Enabled by default for root projects. Disabled for non-root projects.
