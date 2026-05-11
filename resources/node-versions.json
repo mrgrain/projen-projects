@@ -63,5 +63,10 @@
     "version": "24.15.0",
     "stable": true,
     "lts": "Krypton"
+  },
+  {
+    "major": "26",
+    "version": "26.1.0",
+    "stable": true
   }
 ]
