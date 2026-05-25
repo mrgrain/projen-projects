@@ -60,13 +60,13 @@
   },
   {
     "major": "24",
-    "version": "24.15.0",
+    "version": "24.16.0",
     "stable": true,
     "lts": "Krypton"
   },
   {
     "major": "26",
-    "version": "26.1.0",
+    "version": "26.2.0",
     "stable": true
   }
 ]
