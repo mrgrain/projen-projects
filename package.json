@@ -56,10 +56,10 @@
     "jsii-docgen": "^10",
     "jsii-pacmak": "^1.132.0",
     "jsii-rosetta": "5.9.x",
-    "projen": "^0.99.65",
+    "projen": "^0.99.70",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
-    "tsx": "^4.22.3",
+    "tsx": "^4.22.4",
     "typescript": "5.9.x"
   },
   "peerDependencies": {
