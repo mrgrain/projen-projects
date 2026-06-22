@@ -27,10 +27,10 @@
 /images/wordmark-light.svg linguist-generated
 /images/wordmark.svg linguist-generated
 /LICENSE linguist-generated
+/package-lock.json linguist-generated
 /package.json linguist-generated
 /src/construct-project-options.ts linguist-generated
 /src/projen-project-options.ts linguist-generated
 /src/typescript-project-options.ts linguist-generated
 /tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
 /tsconfig.json linguist-generated
-/yarn.lock linguist-generated
