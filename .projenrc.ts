@@ -1,3 +1,4 @@
+import { javascript } from 'projen';
 import * as builders from './projenrc';
 import { DownloadNodeVersions } from './projenrc/download-node-versions';
 import { ProjenProject, logo } from './src';
@@ -9,6 +10,7 @@ const project = new ProjenProject({
   description: 'Opinionated projen project types for everyone.',
   authorName: 'Momo Kornher',
   authorAddress: 'https://moritzkornher.de',
+  packageManager: javascript.NodePackageManager.NPM,
 
   // Release & Automation
   release: true,

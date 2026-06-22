@@ -63,8 +63,14 @@
     "typescript": "5.9.x"
   },
   "peerDependencies": {
-    "constructs": "^10.0.0",
+    "constructs": "^10.5.0",
     "projen": "0.x >=0.75.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "onFail": "ignore"
+    }
   },
   "main": "lib/index.js",
   "license": "MIT",
