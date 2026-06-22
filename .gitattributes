@@ -32,4 +32,5 @@
 /src/projen-project-options.ts linguist-generated
 /src/typescript-project-options.ts linguist-generated
 /tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
+/tsconfig.json linguist-generated
 /yarn.lock linguist-generated

@@ -72,14 +72,6 @@ export interface ConstructProjectOptions {
    */
   readonly cdkCliVersion?: string;
   /**
-   * Install the assertions library?
-   * Only needed for CDK 1.x. If using CDK 2.x then
-   * assertions is already included in 'aws-cdk-lib'
-   * @default - will be included by default for AWS CDK >= 1.111.0 < 2.0.0
-   * @stability stable
-   */
-  readonly cdkAssertions?: boolean;
-  /**
    * Minimum version of the AWS CDK to depend on.
    * @default "2.189.1"
    * @stability stable
@@ -99,6 +91,14 @@ export interface ConstructProjectOptions {
    * @stability stable
    */
   readonly catalog?: cdk.Catalog;
+  /**
+   * Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+   * Only relevant when the project synthesizes its own tsconfig
+   * (i.e. `disableTsconfig` is not set on the TypeScriptProject).
+   * @default ValidateTsconfig.STRICT
+   * @stability stable
+   */
+  readonly validateTsconfig?: cdk.ValidateTsconfig;
   /**
    * @default "."
    * @stability stable
@@ -138,7 +138,7 @@ export interface ConstructProjectOptions {
    * (e.g. `~5.0.0`).
    * @default "~5.9.0"
    * @stability stable
-   * @pjnew "~5.9.0"
+   * @pjnew "~6.0.0"
    */
   readonly jsiiVersion?: string;
   /**
@@ -454,6 +454,13 @@ export interface ConstructProjectOptions {
    */
   readonly dependabot?: boolean;
   /**
+   * The name of the main release branch.
+   * @default "main"
+   * @stability stable
+   * @featured true
+   */
+  readonly defaultReleaseBranch?: string;
+  /**
    * The copyright years to put in the LICENSE file.
    * @default - current year
    * @stability stable
@@ -540,12 +547,6 @@ export interface ConstructProjectOptions {
    * @stability stable
    */
   readonly artifactsDirectory?: string;
-  /**
-   * The name of the main release branch.
-   * @default "main"
-   * @stability stable
-   */
-  readonly defaultReleaseBranch: string;
   /**
    * Github Runner Group selection options.
    * @stability stable

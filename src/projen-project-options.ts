@@ -7,6 +7,14 @@ import type { logo } from './';
  */
 export interface ProjenProjectOptions {
   /**
+   * Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+   * Only relevant when the project synthesizes its own tsconfig
+   * (i.e. `disableTsconfig` is not set on the TypeScriptProject).
+   * @default ValidateTsconfig.STRICT
+   * @stability stable
+   */
+  readonly validateTsconfig?: cdk.ValidateTsconfig;
+  /**
    * @default "."
    * @stability stable
    */
@@ -309,6 +317,13 @@ export interface ProjenProjectOptions {
    */
   readonly dependabot?: boolean;
   /**
+   * The name of the main release branch.
+   * @default "main"
+   * @stability stable
+   * @featured true
+   */
+  readonly defaultReleaseBranch?: string;
+  /**
    * The copyright years to put in the LICENSE file.
    * @default - current year
    * @stability stable
@@ -395,12 +410,6 @@ export interface ProjenProjectOptions {
    * @stability stable
    */
   readonly artifactsDirectory?: string;
-  /**
-   * The name of the main release branch.
-   * @default "main"
-   * @stability stable
-   */
-  readonly defaultReleaseBranch?: string;
   /**
    * Github Runner Group selection options.
    * @stability stable

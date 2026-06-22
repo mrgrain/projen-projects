@@ -252,6 +252,13 @@ export interface TypeScriptProjectOptions {
    */
   readonly dependabot?: boolean;
   /**
+   * The name of the main release branch.
+   * @default "main"
+   * @stability stable
+   * @featured true
+   */
+  readonly defaultReleaseBranch?: string;
+  /**
    * The copyright years to put in the LICENSE file.
    * @default - current year
    * @stability stable
@@ -338,12 +345,6 @@ export interface TypeScriptProjectOptions {
    * @stability stable
    */
   readonly artifactsDirectory?: string;
-  /**
-   * The name of the main release branch.
-   * @default "main"
-   * @stability stable
-   */
-  readonly defaultReleaseBranch?: string;
   /**
    * Github Runner Group selection options.
    * @stability stable
