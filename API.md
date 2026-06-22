@@ -34,7 +34,6 @@ new ConstructProject(options: AwsCdkConstructLibraryOptions)
 | <code><a href="#mrpj.ConstructProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.ConstructProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#mrpj.ConstructProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.ConstructProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#mrpj.ConstructProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
 | <code><a href="#mrpj.ConstructProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
 | <code><a href="#mrpj.ConstructProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
@@ -42,25 +41,19 @@ new ConstructProject(options: AwsCdkConstructLibraryOptions)
 | <code><a href="#mrpj.ConstructProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
 | <code><a href="#mrpj.ConstructProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
 | <code><a href="#mrpj.ConstructProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.ConstructProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
 | <code><a href="#mrpj.ConstructProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
 | <code><a href="#mrpj.ConstructProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
 | <code><a href="#mrpj.ConstructProject.addBins">addBins</a></code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.ConstructProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.ConstructProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
 | <code><a href="#mrpj.ConstructProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
 | <code><a href="#mrpj.ConstructProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.ConstructProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.ConstructProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#mrpj.ConstructProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.ConstructProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ConstructProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.ConstructProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#mrpj.ConstructProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
 | <code><a href="#mrpj.ConstructProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-| <code><a href="#mrpj.ConstructProject.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
-| <code><a href="#mrpj.ConstructProject.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
 
 ---
 
@@ -168,22 +161,6 @@ The task name to add.
 - *Type:* projen.TaskOptions
 
 Task properties.
-
----
-
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.ConstructProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.ConstructProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
 
 ---
 
@@ -296,22 +273,6 @@ from the root of _this_ project.
 
 ---
 
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ConstructProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ConstructProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
 ##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ConstructProject.tryFindObjectFile"></a>
 
 ```typescript
@@ -381,20 +342,6 @@ be installed in the next `pnpm projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `pnpm
 add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ConstructProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
 
 ---
 
@@ -516,36 +463,6 @@ The scripts to set.
 
 ---
 
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ConstructProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ConstructProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ConstructProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ConstructProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
-
----
-
 ##### `removeScript` <a name="removeScript" id="mrpj.ConstructProject.removeScript"></a>
 
 ```typescript
@@ -599,40 +516,6 @@ The script name.
 - *Type:* string
 
 The command to execute.
-
----
-
-##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="mrpj.ConstructProject.addCdkDependencies"></a>
-
-```typescript
-public addCdkDependencies(deps: ...string[]): void
-```
-
-Adds dependencies to AWS CDK modules.
-
-Since this is a library project, dependencies will be added as peer dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkDependencies.parameter.deps"></a>
-
-- *Type:* ...string[]
-
-names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
-
----
-
-##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="mrpj.ConstructProject.addCdkTestDependencies"></a>
-
-```typescript
-public addCdkTestDependencies(deps: ...string[]): void
-```
-
-Adds AWS CDK modules as dev dependencies.
-
-###### `deps`<sup>Required</sup> <a name="deps" id="mrpj.ConstructProject.addCdkTestDependencies.parameter.deps"></a>
-
-- *Type:* ...string[]
-
-names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
 ---
 
@@ -741,21 +624,16 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ConstructProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
 | <code><a href="#mrpj.ConstructProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
 | <code><a href="#mrpj.ConstructProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.ConstructProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
 | <code><a href="#mrpj.ConstructProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
 | <code><a href="#mrpj.ConstructProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
 | <code><a href="#mrpj.ConstructProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
 | <code><a href="#mrpj.ConstructProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.ConstructProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
 | <code><a href="#mrpj.ConstructProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
 | <code><a href="#mrpj.ConstructProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.ConstructProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.ConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.ConstructProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
 | <code><a href="#mrpj.ConstructProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
@@ -766,7 +644,6 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ConstructProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
 | <code><a href="#mrpj.ConstructProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#mrpj.ConstructProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.ConstructProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
 | <code><a href="#mrpj.ConstructProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
 | <code><a href="#mrpj.ConstructProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.ConstructProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
@@ -781,7 +658,6 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ConstructProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
-| <code><a href="#mrpj.ConstructProject.property.version">version</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1082,16 +958,6 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ConstructProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
 ##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ConstructProject.property.autoApprove"></a>
 
 ```typescript
@@ -1160,18 +1026,6 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ConstructProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ConstructProject.property.artifactsDirectory"></a>
 
 ```typescript
@@ -1210,30 +1064,6 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ConstructProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ConstructProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
 ##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ConstructProject.property.npmrc"></a>
 
 ```typescript
@@ -1255,20 +1085,6 @@ public readonly package: NodePackage;
 - *Type:* projen.javascript.NodePackage
 
 API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ConstructProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
 
 ---
 
@@ -1391,23 +1207,6 @@ public readonly prettier: Prettier;
 ```
 
 - *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ConstructProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
 
 ---
 
@@ -1564,18 +1363,6 @@ public readonly cdkVersion: string;
 - *Type:* string
 
 The target CDK version for this library.
-
----
-
-##### ~~`version`~~<sup>Required</sup> <a name="version" id="mrpj.ConstructProject.property.version"></a>
-
-- *Deprecated:* use `cdkVersion`
-
-```typescript
-public readonly version: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -1868,7 +1655,6 @@ new ProjenProject(options: ProjenProjectOptions)
 | <code><a href="#mrpj.ProjenProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.ProjenProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#mrpj.ProjenProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.ProjenProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#mrpj.ProjenProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
 | <code><a href="#mrpj.ProjenProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
 | <code><a href="#mrpj.ProjenProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
@@ -1876,20 +1662,16 @@ new ProjenProject(options: ProjenProjectOptions)
 | <code><a href="#mrpj.ProjenProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
 | <code><a href="#mrpj.ProjenProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
 | <code><a href="#mrpj.ProjenProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.ProjenProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
 | <code><a href="#mrpj.ProjenProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
 | <code><a href="#mrpj.ProjenProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
 | <code><a href="#mrpj.ProjenProject.addBins">addBins</a></code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.ProjenProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.ProjenProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
 | <code><a href="#mrpj.ProjenProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
 | <code><a href="#mrpj.ProjenProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.ProjenProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.ProjenProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#mrpj.ProjenProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.ProjenProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.ProjenProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.ProjenProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#mrpj.ProjenProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
 | <code><a href="#mrpj.ProjenProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
@@ -2003,22 +1785,6 @@ Task properties.
 
 ---
 
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.ProjenProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.ProjenProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
 ##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.ProjenProject.annotateGenerated"></a>
 
 ```typescript
@@ -2128,22 +1894,6 @@ from the root of _this_ project.
 
 ---
 
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.ProjenProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.ProjenProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
 ##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.ProjenProject.tryFindObjectFile"></a>
 
 ```typescript
@@ -2213,20 +1963,6 @@ be installed in the next `pnpm projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `pnpm
 add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.ProjenProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
 
 ---
 
@@ -2345,36 +2081,6 @@ Replaces the contents of multiple npm package.json scripts.
 - *Type:* {[ key: string ]: string}
 
 The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.ProjenProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.ProjenProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.ProjenProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.ProjenProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
 
 ---
 
@@ -2539,21 +2245,16 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ProjenProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
 | <code><a href="#mrpj.ProjenProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
 | <code><a href="#mrpj.ProjenProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.ProjenProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
 | <code><a href="#mrpj.ProjenProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
 | <code><a href="#mrpj.ProjenProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
 | <code><a href="#mrpj.ProjenProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
 | <code><a href="#mrpj.ProjenProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.ProjenProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
 | <code><a href="#mrpj.ProjenProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
 | <code><a href="#mrpj.ProjenProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.ProjenProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.ProjenProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.ProjenProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.ProjenProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
 | <code><a href="#mrpj.ProjenProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
@@ -2564,7 +2265,6 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ProjenProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
 | <code><a href="#mrpj.ProjenProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#mrpj.ProjenProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.ProjenProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
 | <code><a href="#mrpj.ProjenProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
 | <code><a href="#mrpj.ProjenProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.ProjenProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
@@ -2879,16 +2579,6 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.ProjenProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
 ##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.ProjenProject.property.autoApprove"></a>
 
 ```typescript
@@ -2957,18 +2647,6 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.ProjenProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.ProjenProject.property.artifactsDirectory"></a>
 
 ```typescript
@@ -3007,30 +2685,6 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.ProjenProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.ProjenProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
 ##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.ProjenProject.property.npmrc"></a>
 
 ```typescript
@@ -3052,20 +2706,6 @@ public readonly package: NodePackage;
 - *Type:* projen.javascript.NodePackage
 
 API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.ProjenProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
 
 ---
 
@@ -3188,23 +2828,6 @@ public readonly prettier: Prettier;
 ```
 
 - *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.ProjenProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
 
 ---
 
@@ -3695,7 +3318,6 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 | <code><a href="#mrpj.TypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#mrpj.TypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#mrpj.TypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#mrpj.TypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#mrpj.TypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
 | <code><a href="#mrpj.TypeScriptProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
 | <code><a href="#mrpj.TypeScriptProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
@@ -3703,20 +3325,16 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 | <code><a href="#mrpj.TypeScriptProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
 | <code><a href="#mrpj.TypeScriptProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
 | <code><a href="#mrpj.TypeScriptProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#mrpj.TypeScriptProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
 | <code><a href="#mrpj.TypeScriptProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
 | <code><a href="#mrpj.TypeScriptProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
 | <code><a href="#mrpj.TypeScriptProject.addBins">addBins</a></code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#mrpj.TypeScriptProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
 | <code><a href="#mrpj.TypeScriptProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
 | <code><a href="#mrpj.TypeScriptProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
 | <code><a href="#mrpj.TypeScriptProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
 | <code><a href="#mrpj.TypeScriptProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
 | <code><a href="#mrpj.TypeScriptProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
 | <code><a href="#mrpj.TypeScriptProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#mrpj.TypeScriptProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#mrpj.TypeScriptProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
 | <code><a href="#mrpj.TypeScriptProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
 | <code><a href="#mrpj.TypeScriptProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
 | <code><a href="#mrpj.TypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
@@ -3830,22 +3448,6 @@ Task properties.
 
 ---
 
-##### ~~`addTip`~~ <a name="addTip" id="mrpj.TypeScriptProject.addTip"></a>
-
-```typescript
-public addTip(message: string): void
-```
-
-Prints a "tip" message during synthesis.
-
-###### `message`<sup>Required</sup> <a name="message" id="mrpj.TypeScriptProject.addTip.parameter.message"></a>
-
-- *Type:* string
-
-The message.
-
----
-
 ##### `annotateGenerated` <a name="annotateGenerated" id="mrpj.TypeScriptProject.annotateGenerated"></a>
 
 ```typescript
@@ -3955,22 +3557,6 @@ from the root of _this_ project.
 
 ---
 
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="mrpj.TypeScriptProject.tryFindJsonFile"></a>
-
-```typescript
-public tryFindJsonFile(filePath: string): JsonFile
-```
-
-Finds a json file by name.
-
-###### `filePath`<sup>Required</sup> <a name="filePath" id="mrpj.TypeScriptProject.tryFindJsonFile.parameter.filePath"></a>
-
-- *Type:* string
-
-The file path.
-
----
-
 ##### `tryFindObjectFile` <a name="tryFindObjectFile" id="mrpj.TypeScriptProject.tryFindObjectFile"></a>
 
 ```typescript
@@ -4040,20 +3626,6 @@ be installed in the next `pnpm projen` run and the version will be recorded
 in your `package.json` file. You can upgrade manually or using `pnpm
 add/update`. If you wish to specify a version range use this syntax:
 `module@^7`.
-
----
-
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="mrpj.TypeScriptProject.addCompileCommand"></a>
-
-```typescript
-public addCompileCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addCompileCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
 
 ---
 
@@ -4172,36 +3744,6 @@ Replaces the contents of multiple npm package.json scripts.
 - *Type:* {[ key: string ]: string}
 
 The scripts to set.
-
----
-
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="mrpj.TypeScriptProject.addTestCommand"></a>
-
-```typescript
-public addTestCommand(commands: ...string[]): void
-```
-
-DEPRECATED.
-
-###### `commands`<sup>Required</sup> <a name="commands" id="mrpj.TypeScriptProject.addTestCommand.parameter.commands"></a>
-
-- *Type:* ...string[]
-
----
-
-##### ~~`hasScript`~~ <a name="hasScript" id="mrpj.TypeScriptProject.hasScript"></a>
-
-```typescript
-public hasScript(name: string): boolean
-```
-
-Indicates if a script by the name name is defined.
-
-###### `name`<sup>Required</sup> <a name="name" id="mrpj.TypeScriptProject.hasScript.parameter.name"></a>
-
-- *Type:* string
-
-The name of the script.
 
 ---
 
@@ -4366,21 +3908,16 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.TypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
 | <code><a href="#mrpj.TypeScriptProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
 | <code><a href="#mrpj.TypeScriptProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#mrpj.TypeScriptProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
 | <code><a href="#mrpj.TypeScriptProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
 | <code><a href="#mrpj.TypeScriptProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
 | <code><a href="#mrpj.TypeScriptProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
 | <code><a href="#mrpj.TypeScriptProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#mrpj.TypeScriptProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
 | <code><a href="#mrpj.TypeScriptProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
 | <code><a href="#mrpj.TypeScriptProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
 | <code><a href="#mrpj.TypeScriptProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#mrpj.TypeScriptProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
 | <code><a href="#mrpj.TypeScriptProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
 | <code><a href="#mrpj.TypeScriptProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
 | <code><a href="#mrpj.TypeScriptProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
@@ -4391,7 +3928,6 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.TypeScriptProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
 | <code><a href="#mrpj.TypeScriptProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
 | <code><a href="#mrpj.TypeScriptProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#mrpj.TypeScriptProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
 | <code><a href="#mrpj.TypeScriptProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
 | <code><a href="#mrpj.TypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.TypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
@@ -4706,16 +4242,6 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="mrpj.TypeScriptProject.property.projectType"></a>
-
-```typescript
-public readonly projectType: ProjectType;
-```
-
-- *Type:* projen.ProjectType
-
----
-
 ##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="mrpj.TypeScriptProject.property.autoApprove"></a>
 
 ```typescript
@@ -4784,18 +4310,6 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="mrpj.TypeScriptProject.property.allowLibraryDependencies"></a>
-
-- *Deprecated:* use `package.allowLibraryDependencies`
-
-```typescript
-public readonly allowLibraryDependencies: boolean;
-```
-
-- *Type:* boolean
-
----
-
 ##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="mrpj.TypeScriptProject.property.artifactsDirectory"></a>
 
 ```typescript
@@ -4834,30 +4348,6 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="mrpj.TypeScriptProject.property.entrypoint"></a>
-
-- *Deprecated:* use `package.entrypoint`
-
-```typescript
-public readonly entrypoint: string;
-```
-
-- *Type:* string
-
----
-
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="mrpj.TypeScriptProject.property.manifest"></a>
-
-- *Deprecated:* use `package.addField(x, y)`
-
-```typescript
-public readonly manifest: any;
-```
-
-- *Type:* any
-
----
-
 ##### `npmrc`<sup>Required</sup> <a name="npmrc" id="mrpj.TypeScriptProject.property.npmrc"></a>
 
 ```typescript
@@ -4879,20 +4369,6 @@ public readonly package: NodePackage;
 - *Type:* projen.javascript.NodePackage
 
 API for managing the node package.
-
----
-
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="mrpj.TypeScriptProject.property.packageManager"></a>
-
-- *Deprecated:* use `package.packageManager`
-
-```typescript
-public readonly packageManager: NodePackageManager;
-```
-
-- *Type:* projen.javascript.NodePackageManager
-
-The package manager to use.
 
 ---
 
@@ -5015,23 +4491,6 @@ public readonly prettier: Prettier;
 ```
 
 - *Type:* projen.javascript.Prettier
-
----
-
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="mrpj.TypeScriptProject.property.publisher"></a>
-
-- *Deprecated:* use `release.publisher`.
-
-```typescript
-public readonly publisher: Publisher;
-```
-
-- *Type:* projen.release.Publisher
-
-Package publisher.
-
-This will be `undefined` if the project does not have a
-release workflow.
 
 ---
 
@@ -5468,7 +4927,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | Minimum version of the AWS CDK to depend on. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.addPackageManagerToDevEngines">addPackageManagerToDevEngines</a></code> | <code>boolean</code> | Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`. |
@@ -5497,7 +4955,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
 | <code><a href="#mrpj.ConstructProjectOptions.property.cdkCliVersion">cdkCliVersion</a></code> | <code>string</code> | Version range of the AWS CDK CLI to depend on. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
@@ -5512,6 +4969,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
@@ -5629,6 +5087,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.validateTsconfig">validateTsconfig</a></code> | <code>projen.cdk.ValidateTsconfig</code> | Level of tsconfig validation jsii should perform on the user-provided tsconfig. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
@@ -5678,19 +5137,6 @@ public readonly cdkVersion: string;
 - *Default:* "2.189.1"
 
 Minimum version of the AWS CDK to depend on.
-
----
-
-##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="mrpj.ConstructProjectOptions.property.defaultReleaseBranch"></a>
-
-```typescript
-public readonly defaultReleaseBranch: string;
-```
-
-- *Type:* string
-- *Default:* "main"
-
-The name of the main release branch.
 
 ---
 
@@ -6089,22 +5535,6 @@ mentioned in the tweet.
 
 ---
 
-##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="mrpj.ConstructProjectOptions.property.cdkAssertions"></a>
-
-```typescript
-public readonly cdkAssertions: boolean;
-```
-
-- *Type:* boolean
-- *Default:* will be included by default for AWS CDK >= 1.111.0 < 2.0.0
-
-Install the assertions library?
-
-Only needed for CDK 1.x. If using CDK 2.x then
-assertions is already included in 'aws-cdk-lib'
-
----
-
 ##### `cdkCliVersion`<sup>Optional</sup> <a name="cdkCliVersion" id="mrpj.ConstructProjectOptions.property.cdkCliVersion"></a>
 
 ```typescript
@@ -6298,6 +5728,19 @@ public readonly copyrightPeriod: string;
 - *Default:* current year
 
 The copyright years to put in the LICENSE file.
+
+---
+
+##### `defaultReleaseBranch`<sup>Optional</sup> <a name="defaultReleaseBranch" id="mrpj.ConstructProjectOptions.property.defaultReleaseBranch"></a>
+
+```typescript
+public readonly defaultReleaseBranch: string;
+```
+
+- *Type:* string
+- *Default:* "main"
+
+The name of the main release branch.
 
 ---
 
@@ -7964,6 +7407,22 @@ same minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).
 
 ---
 
+##### `validateTsconfig`<sup>Optional</sup> <a name="validateTsconfig" id="mrpj.ConstructProjectOptions.property.validateTsconfig"></a>
+
+```typescript
+public readonly validateTsconfig: ValidateTsconfig;
+```
+
+- *Type:* projen.cdk.ValidateTsconfig
+- *Default:* ValidateTsconfig.STRICT
+
+Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+
+Only relevant when the project synthesizes its own tsconfig
+(i.e. `disableTsconfig` is not set on the TypeScriptProject).
+
+---
+
 ##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="mrpj.ConstructProjectOptions.property.versionrcOptions"></a>
 
 ```typescript
@@ -8708,6 +8167,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.tsJestOptions">tsJestOptions</a></code> | <code>projen.typescript.TsJestOptions</code> | Options for ts-jest. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.upgradesSchedule">upgradesSchedule</a></code> | <code>projen.javascript.UpgradeDependenciesSchedule</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProjectOptions.property.validateTsconfig">validateTsconfig</a></code> | <code>projen.cdk.ValidateTsconfig</code> | Level of tsconfig validation jsii should perform on the user-provided tsconfig. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.wordmarkOptions">wordmarkOptions</a></code> | <code>mrpj.logo.WordmarkOptions</code> | Configure how the wordmark is created from a logo. |
@@ -10844,6 +10304,22 @@ public readonly upgradesSchedule: UpgradeDependenciesSchedule;
 
 - *Type:* projen.javascript.UpgradeDependenciesSchedule
 - *Default:* UpgradeDependenciesSchedule.WEEKLY
+
+---
+
+##### `validateTsconfig`<sup>Optional</sup> <a name="validateTsconfig" id="mrpj.ProjenProjectOptions.property.validateTsconfig"></a>
+
+```typescript
+public readonly validateTsconfig: ValidateTsconfig;
+```
+
+- *Type:* projen.cdk.ValidateTsconfig
+- *Default:* ValidateTsconfig.STRICT
+
+Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+
+Only relevant when the project synthesizes its own tsconfig
+(i.e. `disableTsconfig` is not set on the TypeScriptProject).
 
 ---
 
