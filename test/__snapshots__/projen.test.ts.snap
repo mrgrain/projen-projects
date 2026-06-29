@@ -33,7 +33,12 @@ exports[`default snapshot 1`] = `
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": 2018,
-      "project": "./tsconfig.dev.json",
+      "projectService": {
+        "allowDefaultProject": [
+          ".projenrc.ts",
+        ],
+        "defaultProject": "./tsconfig.json",
+      },
       "sourceType": "module",
     },
     "plugins": [
@@ -230,7 +235,7 @@ exports[`default snapshot 1`] = `
         "node": {},
         "typescript": {
           "alwaysTryTypes": true,
-          "project": "./tsconfig.dev.json",
+          "project": "./tsconfig.json",
         },
       },
     },
@@ -260,7 +265,8 @@ exports[`default snapshot 1`] = `
 /API.md linguist-generated
 /LICENSE linguist-generated
 /package.json linguist-generated
-/tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
+/projenrc/tsconfig.json linguist-generated linguist-language=JSON-with-Comments
+/test/tsconfig.json linguist-generated linguist-language=JSON-with-Comments
 /tsconfig.json linguist-generated
 /yarn.lock linguist-generated",
   ".github/pull_request_template.md": "Fixes #",
@@ -759,11 +765,12 @@ junit.xml
 !/.github/pull_request_template.md
 !/test/
 !/tsconfig.json
-!/tsconfig.dev.json
+!/test/tsconfig.json
 !/src/
 /lib
 /dist/
 !/.eslintrc.json
+!/projenrc/tsconfig.json
 .jsii
 !/API.md
 !/.nvmrc
@@ -811,7 +818,7 @@ permissions-backup.acl
 /dist/version.txt
 /.mergify.yml
 /test/
-/tsconfig.dev.json
+/test/tsconfig.json
 /src/
 !/lib/
 !/lib/**/*.js
@@ -824,6 +831,7 @@ dist
 /.projenrc.js
 tsconfig.tsbuildinfo
 /.eslintrc.json
+/projenrc/tsconfig.json
 !.jsii
 .nvmrc
 .node-version
@@ -976,7 +984,8 @@ tsconfig.tsbuildinfo
       ".projen/files.json",
       ".projen/tasks.json",
       "LICENSE",
-      "tsconfig.dev.json",
+      "projenrc/tsconfig.json",
+      "test/tsconfig.json",
       "tsconfig.json",
     ],
   },
@@ -985,7 +994,7 @@ tsconfig.tsbuildinfo
     "env": {
       "PATH": "$(npx -c "node --print process.env.PATH")",
     },
-    "manifestVersion": 1,
+    "manifestVersion": 2,
     "tasks": {
       "build": {
         "description": "Full release build",
@@ -1087,7 +1096,7 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "name": "default",
         "steps": [
           {
-            "exec": "ts-node --project tsconfig.dev.json .projenrc.ts",
+            "exec": "ts-node --project test/tsconfig.json .projenrc.ts",
           },
         ],
       },
@@ -1096,7 +1105,11 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "name": "docgen",
         "steps": [
           {
-            "exec": "jsii-docgen -o API.md",
+            "execArgs": [
+              "jsii-docgen",
+              "-o",
+              "API.md",
+            ],
           },
         ],
       },
@@ -1172,7 +1185,12 @@ UNEXPECTED BREAKING CHANGES: add keys such as 'removed:constructs.Node.of' to .c
         "name": "package:js",
         "steps": [
           {
-            "exec": "jsii-pacmak -v --target js",
+            "execArgs": [
+              "jsii-pacmak",
+              "-v",
+              "--target",
+              "js",
+            ],
           },
         ],
       },
@@ -1384,7 +1402,7 @@ SOFTWARE.
         "^.+\\.[t]sx?$": [
           "ts-jest",
           {
-            "tsconfig": "tsconfig.dev.json",
+            "tsconfig": "test/tsconfig.json",
           },
         ],
       },
@@ -1440,45 +1458,31 @@ SOFTWARE.
     "types": "lib/index.d.ts",
     "version": "0.0.0",
   },
-  "tsconfig.dev.json": {
+  "projenrc/tsconfig.json": {
     "compilerOptions": {
-      "alwaysStrict": true,
-      "declaration": true,
-      "esModuleInterop": true,
-      "experimentalDecorators": true,
-      "inlineSourceMap": true,
-      "inlineSources": true,
-      "lib": [
-        "es2022",
-      ],
-      "module": "node16",
-      "noEmitOnError": true,
-      "noFallthroughCasesInSwitch": true,
-      "noImplicitAny": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "resolveJsonModule": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "strictNullChecks": true,
-      "strictPropertyInitialization": true,
-      "stripInternal": true,
-      "target": "ES2022",
-      "types": [
-        "jest",
-        "node",
-      ],
+      "noEmit": true,
+      "rootDir": "..",
     },
     "exclude": [
       "node_modules",
     ],
+    "extends": "../tsconfig.json",
     "include": [
-      "src/**/*.ts",
-      "test/**/*.ts",
-      ".projenrc.ts",
-      "projenrc/**/*.ts",
+      "**/*.ts",
+    ],
+  },
+  "test/tsconfig.json": {
+    "compilerOptions": {
+      "noEmit": true,
+      "rootDir": "..",
+      "stripInternal": true,
+    },
+    "exclude": [
+      "node_modules",
+    ],
+    "extends": "../tsconfig.json",
+    "include": [
+      "**/*.ts",
     ],
   },
   "tsconfig.json": {
