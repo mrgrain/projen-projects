@@ -29,8 +29,9 @@
 /LICENSE linguist-generated
 /package-lock.json linguist-generated
 /package.json linguist-generated
+/projenrc/tsconfig.json linguist-generated linguist-language=JSON-with-Comments
 /src/construct-project-options.ts linguist-generated
 /src/projen-project-options.ts linguist-generated
 /src/typescript-project-options.ts linguist-generated
-/tsconfig.dev.json linguist-generated linguist-language=JSON-with-Comments
+/test/tsconfig.json linguist-generated linguist-language=JSON-with-Comments
 /tsconfig.json linguist-generated

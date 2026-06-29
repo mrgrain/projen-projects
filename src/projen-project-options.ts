@@ -91,8 +91,11 @@ export interface ProjenProjectOptions {
    */
   readonly tsJestOptions?: typescript.TsJestOptions;
   /**
-   * The name of the development tsconfig.json file.
-   * @default "tsconfig.dev.json"
+   * The name (and path) of the development tsconfig file.
+   * By default this lives inside the test directory (e.g. `test/tsconfig.json`)
+   * so that the TypeScript language service resolves it as the nearest config
+   * for test files.
+   * @default - "{testdir}/tsconfig.json"
    * @stability stable
    */
   readonly tsconfigDevFile?: string;
@@ -166,7 +169,7 @@ export interface ProjenProjectOptions {
    */
   readonly docgen?: boolean;
   /**
-   * Do not generate a `tsconfig.dev.json` file.
+   * Do not generate a development tsconfig file.
    * @default false
    * @stability stable
    */
