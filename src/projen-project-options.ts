@@ -128,6 +128,14 @@ export interface ProjenProjectOptions {
    */
   readonly srcdir?: string;
   /**
+   * The TypeScript runner to use for executing TypeScript files.
+   * This is a project-level setting that components (e.g. projenrc) will
+   * use as their default runner.
+   * @default TypeScriptRunner.tsNode()
+   * @stability stable
+   */
+  readonly runner?: typescript.TypeScriptRunner;
+  /**
    * Options for .projenrc.ts.
    * @stability stable
    */
