@@ -889,7 +889,7 @@ tsconfig.tsbuildinfo
     "env": {
       "PATH": "$(npx -c "node --print process.env.PATH")",
     },
-    "manifestVersion": 2,
+    "manifestVersion": 3,
     "tasks": {
       "build": {
         "description": "Full release build",
@@ -923,7 +923,7 @@ tsconfig.tsbuildinfo
           "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
-          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
           "RELEASETAG": "dist/releasetag.txt",
           "RELEASE_TAG_PREFIX": "",
         },
@@ -983,7 +983,12 @@ tsconfig.tsbuildinfo
         "name": "default",
         "steps": [
           {
-            "exec": "ts-node --project test/tsconfig.json .projenrc.ts",
+            "execArgs": [
+              "ts-node",
+              "--project",
+              "projenrc/tsconfig.json",
+              ".projenrc.ts",
+            ],
           },
         ],
       },
@@ -1117,7 +1122,7 @@ tsconfig.tsbuildinfo
           "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
-          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
           "RELEASETAG": "dist/releasetag.txt",
           "RELEASE_TAG_PREFIX": "",
         },
@@ -1304,6 +1309,7 @@ SOFTWARE.
     "extends": "../tsconfig.json",
     "include": [
       "**/*.ts",
+      "../.projenrc.ts",
     ],
   },
   "test/tsconfig.json": {
@@ -2249,7 +2255,7 @@ tsconfig.tsbuildinfo
     "env": {
       "PATH": "$(npx -c "node --print process.env.PATH")",
     },
-    "manifestVersion": 2,
+    "manifestVersion": 3,
     "tasks": {
       "build": {
         "description": "Full release build",
@@ -2283,7 +2289,7 @@ tsconfig.tsbuildinfo
           "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
-          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
           "RELEASETAG": "dist/releasetag.txt",
           "RELEASE_TAG_PREFIX": "",
         },
@@ -2343,7 +2349,12 @@ tsconfig.tsbuildinfo
         "name": "default",
         "steps": [
           {
-            "exec": "ts-node --project test/tsconfig.json .projenrc.ts",
+            "execArgs": [
+              "ts-node",
+              "--project",
+              "projenrc/tsconfig.json",
+              ".projenrc.ts",
+            ],
           },
         ],
       },
@@ -2477,7 +2488,7 @@ tsconfig.tsbuildinfo
           "BUMP_PACKAGE": "commit-and-tag-version@^12",
           "CHANGELOG": "dist/changelog.md",
           "OUTFILE": "package.json",
-          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep "^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+" -- .",
+          "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep '^(feat|fix|revert){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+' -- .",
           "RELEASETAG": "dist/releasetag.txt",
           "RELEASE_TAG_PREFIX": "",
         },
@@ -2664,6 +2675,7 @@ SOFTWARE.
     "extends": "../tsconfig.json",
     "include": [
       "**/*.ts",
+      "../.projenrc.ts",
     ],
   },
   "test/tsconfig.json": {

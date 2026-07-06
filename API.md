@@ -648,6 +648,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ConstructProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.ConstructProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ConstructProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.ConstructProject.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner used for executing TypeScript files. |
 | <code><a href="#mrpj.ConstructProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
 | <code><a href="#mrpj.ConstructProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
 | <code><a href="#mrpj.ConstructProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
@@ -1253,6 +1254,18 @@ public readonly libdir: string;
 - *Type:* string
 
 The directory in which compiled .js files reside.
+
+---
+
+##### `runner`<sup>Required</sup> <a name="runner" id="mrpj.ConstructProject.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+
+The TypeScript runner used for executing TypeScript files.
 
 ---
 
@@ -2269,6 +2282,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.ProjenProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.ProjenProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.ProjenProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.ProjenProject.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner used for executing TypeScript files. |
 | <code><a href="#mrpj.ProjenProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
 | <code><a href="#mrpj.ProjenProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
 | <code><a href="#mrpj.ProjenProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
@@ -2874,6 +2888,18 @@ public readonly libdir: string;
 - *Type:* string
 
 The directory in which compiled .js files reside.
+
+---
+
+##### `runner`<sup>Required</sup> <a name="runner" id="mrpj.ProjenProject.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+
+The TypeScript runner used for executing TypeScript files.
 
 ---
 
@@ -3932,6 +3958,7 @@ When given a project, this it the project itself.
 | <code><a href="#mrpj.TypeScriptProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
 | <code><a href="#mrpj.TypeScriptProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#mrpj.TypeScriptProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#mrpj.TypeScriptProject.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner used for executing TypeScript files. |
 | <code><a href="#mrpj.TypeScriptProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
 | <code><a href="#mrpj.TypeScriptProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
 | <code><a href="#mrpj.TypeScriptProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
@@ -4540,6 +4567,18 @@ The directory in which compiled .js files reside.
 
 ---
 
+##### `runner`<sup>Required</sup> <a name="runner" id="mrpj.TypeScriptProject.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+
+The TypeScript runner used for executing TypeScript files.
+
+---
+
 ##### `srcdir`<sup>Required</sup> <a name="srcdir" id="mrpj.TypeScriptProject.property.srcdir"></a>
 
 ```typescript
@@ -5074,6 +5113,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ConstructProjectOptions.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner to use for executing TypeScript files. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.sampleCode">sampleCode</a></code> | <code>boolean</code> | Generate one-time sample in `src/` and `test/` if there are no files there. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.singletonLambdaAutoDiscover">singletonLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
@@ -7227,6 +7267,22 @@ public readonly rootdir: string;
 
 ---
 
+##### `runner`<sup>Optional</sup> <a name="runner" id="mrpj.ConstructProjectOptions.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+- *Default:* TypeScriptRunner.tsNode()
+
+The TypeScript runner to use for executing TypeScript files.
+
+This is a project-level setting that components (e.g. projenrc) will
+use as their default runner.
+
+---
+
 ##### `sampleCode`<sup>Optional</sup> <a name="sampleCode" id="mrpj.ConstructProjectOptions.property.sampleCode"></a>
 
 ```typescript
@@ -8160,6 +8216,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#mrpj.ProjenProjectOptions.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner to use for executing TypeScript files. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
@@ -10162,6 +10219,22 @@ public readonly rootdir: string;
 
 ---
 
+##### `runner`<sup>Optional</sup> <a name="runner" id="mrpj.ProjenProjectOptions.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+- *Default:* TypeScriptRunner.tsNode()
+
+The TypeScript runner to use for executing TypeScript files.
+
+This is a project-level setting that components (e.g. projenrc) will
+use as their default runner.
+
+---
+
 ##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="mrpj.ProjenProjectOptions.property.scopedPackagesOptions"></a>
 
 ```typescript
@@ -10865,6 +10938,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.runner">runner</a></code> | <code>projen.typescript.TypeScriptRunner</code> | The TypeScript runner to use for executing TypeScript files. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
@@ -12729,6 +12803,22 @@ public readonly repositoryDirectory: string;
 - *Type:* string
 
 If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives.
+
+---
+
+##### `runner`<sup>Optional</sup> <a name="runner" id="mrpj.TypeScriptProjectOptions.property.runner"></a>
+
+```typescript
+public readonly runner: TypeScriptRunner;
+```
+
+- *Type:* projen.typescript.TypeScriptRunner
+- *Default:* TypeScriptRunner.tsNode()
+
+The TypeScript runner to use for executing TypeScript files.
+
+This is a project-level setting that components (e.g. projenrc) will
+use as their default runner.
 
 ---
 
