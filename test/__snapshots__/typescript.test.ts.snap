@@ -725,10 +725,9 @@ queue_rules:
       - -label~=(do-not-merge)
       - status-success=build
     merge_method: squash
-    commit_message_template: |-
-      {{ title }} (#{{ number }})
-
-      {{ body }}
+    commit_message_format:
+      title: pr-title
+      body: pr-body
 pull_request_rules:
   - name: Automatic merge on approval and successful build
     actions:
@@ -1141,13 +1140,42 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node",
+            "execArgs": [
+              "npx",
+              "npm-check-updates@20",
+              "--upgrade",
+              "--target=minor",
+              "--peer",
+              "--no-deprecated",
+              "--dep=prod,dev,optional",
+              "--filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,mrpj,projen,ts-jest,ts-node",
+            ],
           },
           {
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest mrpj projen ts-jest ts-node typescript",
+            "execArgs": [
+              "yarn",
+              "upgrade",
+              "@stylistic/eslint-plugin",
+              "@types/jest",
+              "@types/node",
+              "@typescript-eslint/eslint-plugin",
+              "@typescript-eslint/parser",
+              "commit-and-tag-version",
+              "constructs",
+              "eslint-import-resolver-typescript",
+              "eslint-plugin-import",
+              "eslint",
+              "jest-junit",
+              "jest",
+              "mrpj",
+              "projen",
+              "ts-jest",
+              "ts-node",
+              "typescript",
+            ],
           },
           {
             "exec": "npx projen",
@@ -2092,10 +2120,9 @@ queue_rules:
       - -label~=(do-not-merge)
       - status-success=build
     merge_method: squash
-    commit_message_template: |-
-      {{ title }} (#{{ number }})
-
-      {{ body }}
+    commit_message_format:
+      title: pr-title
+      body: pr-body
 pull_request_rules:
   - name: Automatic merge on approval and successful build
     actions:
@@ -2507,13 +2534,42 @@ tsconfig.tsbuildinfo
         "name": "upgrade",
         "steps": [
           {
-            "exec": "npx npm-check-updates@20 --upgrade --target=minor --peer --no-deprecated --dep=prod,dev,optional --filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node",
+            "execArgs": [
+              "npx",
+              "npm-check-updates@20",
+              "--upgrade",
+              "--target=minor",
+              "--peer",
+              "--no-deprecated",
+              "--dep=prod,dev,optional",
+              "--filter=@types/jest,eslint-import-resolver-typescript,eslint-plugin-import,jest,mrpj,projen,ts-jest,ts-node",
+            ],
           },
           {
             "exec": "yarn install --check-files",
           },
           {
-            "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version constructs eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit mrpj projen ts-jest ts-node typescript",
+            "execArgs": [
+              "yarn",
+              "upgrade",
+              "@stylistic/eslint-plugin",
+              "@types/jest",
+              "@types/node",
+              "@typescript-eslint/eslint-plugin",
+              "@typescript-eslint/parser",
+              "commit-and-tag-version",
+              "constructs",
+              "eslint-import-resolver-typescript",
+              "eslint-plugin-import",
+              "eslint",
+              "jest",
+              "jest-junit",
+              "mrpj",
+              "projen",
+              "ts-jest",
+              "ts-node",
+              "typescript",
+            ],
           },
           {
             "exec": "npx projen",
