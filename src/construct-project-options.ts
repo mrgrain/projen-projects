@@ -473,12 +473,18 @@ export interface ConstructProjectOptions {
   readonly defaultReleaseBranch?: string;
   /**
    * The copyright years to put in the LICENSE file.
+   * This value is only used if the selected license text contains the
+   * `$copyright_period` placeholder. For example, it has no effect on the
+   * MPL-2.0 license text.
    * @default - current year
    * @stability stable
    */
   readonly copyrightPeriod?: string;
   /**
    * License copyright owner.
+   * This value is only used if the selected license text contains the
+   * `$copyright_owner` placeholder. For example, it has no effect on the
+   * MPL-2.0 license text.
    * @default - defaults to the value of authorName or "" if `authorName` is undefined.
    * @stability stable
    */
