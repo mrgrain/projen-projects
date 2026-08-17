@@ -60,7 +60,7 @@
     "projen": "^0.101.31",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
-    "tsx": "^4.23.11",
+    "tsx": "^4.23.12",
     "typescript": "5.9.x"
   },
   "peerDependencies": {
