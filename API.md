@@ -5138,7 +5138,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
@@ -5276,8 +5276,6 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#mrpj.ConstructProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -5839,7 +5837,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -7016,6 +7014,10 @@ public readonly projenCommand: string;
 
 The shell command to use in order to run the projen CLI.
 
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
+
 Can be used to customize in special environments.
 
 ---
@@ -7808,31 +7810,6 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="mrpj.ConstructProjectOptions.property.workflowRunsOn"></a>
-
-```typescript
-public readonly workflowRunsOn: string[];
-```
-
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
-
-Github Runner selection labels.
-
----
-
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="mrpj.ConstructProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
-
----
-
 ##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ConstructProjectOptions.property.yarnBerryOptions"></a>
 
 ```typescript
@@ -8337,7 +8314,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
@@ -8468,8 +8445,6 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#mrpj.ProjenProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -8965,7 +8940,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -10071,6 +10046,10 @@ public readonly projenCommand: string;
 
 The shell command to use in order to run the projen CLI.
 
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
+
 Can be used to customize in special environments.
 
 ---
@@ -10834,31 +10813,6 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="mrpj.ProjenProjectOptions.property.workflowRunsOn"></a>
-
-```typescript
-public readonly workflowRunsOn: string[];
-```
-
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
-
-Github Runner selection labels.
-
----
-
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="mrpj.ProjenProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
-
----
-
 ##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ProjenProjectOptions.property.yarnBerryOptions"></a>
 
 ```typescript
@@ -11159,7 +11113,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
@@ -11280,8 +11234,6 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -11776,7 +11728,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -12811,6 +12763,10 @@ public readonly projenCommand: string;
 
 The shell command to use in order to run the projen CLI.
 
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
+
 Can be used to customize in special environments.
 
 ---
@@ -13508,31 +13464,6 @@ public readonly workflowPackageCache: boolean;
 - *Default:* false
 
 Enable Node.js package cache in GitHub workflows.
-
----
-
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="mrpj.TypeScriptProjectOptions.property.workflowRunsOn"></a>
-
-```typescript
-public readonly workflowRunsOn: string[];
-```
-
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
-
-Github Runner selection labels.
-
----
-
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="mrpj.TypeScriptProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
 
 ---
 
