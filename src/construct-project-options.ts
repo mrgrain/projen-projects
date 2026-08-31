@@ -204,6 +204,13 @@ export interface ConstructProjectOptions {
    */
   readonly typescriptVersion?: string;
   /**
+   * Type-check the test suite as part of the `test` task.
+   * Adds a `tsc --noEmit` step against the development tsconfig.
+   * @default false
+   * @stability stable
+   */
+  readonly typecheckTests?: boolean;
+  /**
    * Options for ts-jest.
    * @stability stable
    */
