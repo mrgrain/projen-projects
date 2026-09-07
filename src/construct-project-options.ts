@@ -745,6 +745,14 @@ export interface ConstructProjectOptions {
    */
   readonly jsiiReleaseVersion?: string;
   /**
+   * Whether GitHub should explicitly mark the release from the default branch as the latest release.
+   * Set to `true` to mark the release as latest, or `false` to explicitly not
+   * mark it as latest.
+   * @default - GitHub determines the latest release based on date and semantic version.
+   * @stability stable
+   */
+  readonly githubReleaseLatest?: boolean;
+  /**
    * The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string.
    * This can be any compatible package version, including the deprecated `standard-version@9`.
    * @default - A recent version of "commit-and-tag-version"
@@ -1000,6 +1008,13 @@ export interface ConstructProjectOptions {
    * @stability stable
    */
   readonly dedupeDeps?: boolean;
+  /**
+   * Configuration values available to package scripts at runtime.
+   * Values should be JSON-serializable.
+   * @default - no package configuration
+   * @stability stable
+   */
+  readonly config?: Record<string, any>;
   /**
    * Options for npm packages using AWS CodeArtifact.
    * This is required if publishing packages to, or installing scoped packages from AWS CodeArtifact
