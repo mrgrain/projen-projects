@@ -45,7 +45,7 @@
     "@types/node": "ts5.9",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "commit-and-tag-version": "^12",
+    "commit-and-tag-version": "^13",
     "constructs": "^10.0.0",
     "eslint": "^9",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -57,10 +57,10 @@
     "jsii-docgen": "^10",
     "jsii-pacmak": "^1.140.0",
     "jsii-rosetta": "5.9.x",
-    "projen": "^0.103.23",
+    "projen": "^0.103.25",
     "ts-jest": "^29",
     "ts-node": "^10.9.2",
-    "tsx": "^4.23.13",
+    "tsx": "^4.23.15",
     "typescript": "5.9.x"
   },
   "peerDependencies": {
