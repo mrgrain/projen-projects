@@ -78,6 +78,10 @@ export interface TypeScriptProjectOptions {
   readonly projenrcTsOptions?: typescript.ProjenrcOptions;
   /**
    * Typescript  artifacts output directory.
+   * When `libdir` is changed, set `entrypoint` to match it (for example
+   * `libdir: "dist"` with `entrypoint: "dist/index.js"`). `types` follows the
+   * entrypoint rather than `libdir`, and `main` still defaults to
+   * `lib/index.js`.
    * @default "lib"
    * @stability stable
    */
