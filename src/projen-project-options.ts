@@ -200,6 +200,20 @@ export interface ProjenProjectOptions {
    */
   readonly disableTsconfig?: boolean;
   /**
+   * Permissions for the main build, release and dependency upgrade jobs.
+   * Defined scopes override the job defaults and automatically inferred permissions,
+   * including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+   * Use `JobPermission.NONE` to explicitly remove a permission.
+   *
+   * `buildWorkflowOptions.permissions` replaces this entire set, including automatic
+   * permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+   * scopes. Applies to all release branches, but not to separate package, publishing,
+   * self-mutation or pull request creation jobs, or unrelated workflows.
+   * @default - Use the job defaults and automatically inferred permissions.
+   * @stability stable
+   */
+  readonly workflowPermissions?: github.workflows.JobPermissions;
+  /**
    * Enable Node.js package cache in GitHub workflows.
    * @default false
    * @stability stable
@@ -699,6 +713,20 @@ export interface ProjenProjectOptions {
    */
   readonly packageManager?: javascript.NodePackageManager;
   /**
+   * How long to wait, in seconds, for the published package version to be available.
+   * Requires `npmVerifyPublished` to be enabled.
+   * @default 3600
+   * @stability stable
+   */
+  readonly npmVerifyPublishedTimeoutSeconds?: number;
+  /**
+   * Wait until the published package version is available from the npm registry before the publish job completes.
+   * Enable this when packages that depend on the published package are released right after.
+   * @default false
+   * @stability stable
+   */
+  readonly npmVerifyPublished?: boolean;
+  /**
    * Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
    * @default - false
    * @stability stable
@@ -712,7 +740,8 @@ export interface ProjenProjectOptions {
   readonly npmTokenSecret?: string;
   /**
    * The base URL of the npm package registry.
-   * Must be a URL (e.g. start with "https://" or "http://")
+   * Must be a URL (e.g. start with "https://" or "http://").
+   * A trailing slash is added if missing.
    * @default "https://registry.npmjs.org"
    * @stability stable
    */
