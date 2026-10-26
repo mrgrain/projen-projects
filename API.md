@@ -5206,6 +5206,8 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#mrpj.ConstructProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
@@ -5279,6 +5281,7 @@ const constructProjectOptions: ConstructProjectOptions = { ... }
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
+| <code><a href="#mrpj.ConstructProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#mrpj.ConstructProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -6814,7 +6817,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -6841,6 +6845,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="mrpj.ConstructProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="mrpj.ConstructProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -7864,6 +7898,28 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="mrpj.ConstructProjectOptions.property.workflowPermissions"></a>
+
+```typescript
+public readonly workflowPermissions: JobPermissions;
+```
+
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
+
+Permissions for the main build, release and dependency upgrade jobs.
+
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
+
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
+
+---
+
 ##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ConstructProjectOptions.property.yarnBerryOptions"></a>
 
 ```typescript
@@ -8430,6 +8486,8 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.ownerCanSelfApprovePRs">ownerCanSelfApprovePRs</a></code> | <code>boolean</code> | Allow the repo owner to self approve PRs by putting a label on it. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -8502,6 +8560,7 @@ const projenProjectOptions: ProjenProjectOptions = { ... }
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
+| <code><a href="#mrpj.ProjenProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#mrpj.ProjenProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -9887,7 +9946,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -9914,6 +9974,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="mrpj.ProjenProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="mrpj.ProjenProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -10921,6 +11011,28 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="mrpj.ProjenProjectOptions.property.workflowPermissions"></a>
+
+```typescript
+public readonly workflowPermissions: JobPermissions;
+```
+
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
+
+Permissions for the main build, release and dependency upgrade jobs.
+
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
+
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
+
+---
+
 ##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="mrpj.ProjenProjectOptions.property.yarnBerryOptions"></a>
 
 ```typescript
@@ -11278,6 +11390,8 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.ownerCanSelfApprovePRs">ownerCanSelfApprovePRs</a></code> | <code>boolean</code> | Allow the repo owner to self approve PRs by putting a label on it. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
@@ -11345,6 +11459,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
+| <code><a href="#mrpj.TypeScriptProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#mrpj.TypeScriptProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -12658,7 +12773,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -12685,6 +12801,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="mrpj.TypeScriptProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="mrpj.TypeScriptProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -13626,6 +13772,28 @@ public readonly workflowPackageCache: boolean;
 - *Default:* false
 
 Enable Node.js package cache in GitHub workflows.
+
+---
+
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="mrpj.TypeScriptProjectOptions.property.workflowPermissions"></a>
+
+```typescript
+public readonly workflowPermissions: JobPermissions;
+```
+
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
+
+Permissions for the main build, release and dependency upgrade jobs.
+
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
+
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
 
 ---
 
