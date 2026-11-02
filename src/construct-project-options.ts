@@ -124,6 +124,8 @@ export interface ConstructProjectOptions {
   readonly publishToMaven?: cdk.JsiiJavaTarget;
   /**
    * Publish Go bindings to a git repository.
+   * A separate repository is recommended. If `moduleName` refers to the source
+   * repository, set `publishToSourceRepository` to `true`.
    * @default - no publishing
    * @stability stable
    */
